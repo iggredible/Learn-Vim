@@ -9,7 +9,7 @@
 - Ch 2     - Buffers, windows, Tabs
 - Ch 3     - Opening and Managing Files
 - Ch 4     - Vim Grammar
-- [Ch 5    -  Moving in a File](./5_moving_in_file.md)
+- [Ch 5    -  Moving in a File](./ch5_moving_in_file.md)
 - Ch 6     - Moving Between and Searching Files
 - Ch 7     - Insert Mode
 - Ch 8     - Register
