@@ -215,7 +215,7 @@ nL  go n line from bottom
 
 # Scrolling
 
-To scroll, you have 3 speed increments: full-screen (`CTR-F/CTRL-B`), half-screen (`CTRL-D/CTRL-U`), and line (`CTRL-E/CTRL-Y`).
+To scroll, you have 3 speed increments: full-screen (`CTRL-F/CTRL-B`), half-screen (`CTRL-D/CTRL-U`), and line (`CTRL-E/CTRL-Y`).
 
 ```
 Ctrl-e  scroll down a line
