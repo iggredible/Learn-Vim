@@ -58,7 +58,7 @@ The syntax to use count with your motion is:
 [count] + motion
 ```
 
-You can apply this to all motions. If you want to move 9 lines to the right, instead of pressing `l` 9 times, you can do `9l`. As you learn more motions, try to give them count argument.
+You can apply this to all motions. If you want to move 9 characters to the right, instead of pressing `l` 9 times, you can do `9l`. As you learn more motions, try to give them count argument.
 
 # Word navigation
 
