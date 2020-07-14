@@ -225,6 +225,12 @@ Ctrl-y  scroll up a line
 Ctrl-u  scroll up half screen
 Ctrl-b  scroll up whole screen
 ```
+You can also scroll relatively to the current line:
+```
+zt bring the current line near the top of your screen
+zh bring the current line to  the midle (half) of your screen
+zb bring the current line near the bottom of your screen
+```
 
 # Search navigation
 
