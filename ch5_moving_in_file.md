@@ -9,10 +9,10 @@ In this chapter, you will learn essential motions and how to use them efficientl
 The most basic motion unit is moving one character left, down, up, and right.
 
 ```
-h  left
-j  down
-k  up
-l  right
+h   Left
+j   Down
+k   Up
+l   Right
 ```
 
 You can also move with directional arrows. If you are just starting, feel free to use any method you're most comfortable with.
@@ -58,7 +58,7 @@ The syntax to use count with your motion is:
 [count] + motion
 ```
 
-You can apply this to all motions. If you want to move 9 lines to the right, instead of pressing `l` 9 times, you can do `9l`. As you learn more motions, try to give them count argument.
+You can apply this to all motions. If you want to move 9 characters to the right, instead of pressing `l` 9 times, you can do `9l`. As you learn more motions, try to give them count argument.
 
 # Word navigation
 
@@ -67,14 +67,14 @@ Let's move to a larger motion unit: *word*. You can move to the beginning of the
 In addition, there is *WORD*, distinct from word. You can move to the beginning of the next WORD (`W`), to the end of the next WORD (`E`), to the beginning of the previous WORD (`B`), and to the end of the previous WORD (`gE`). To make it easy to remember, WORD uses the same letters as word, except they are uppercased.
 
 ```
-w  move forward to the beginning of the next word
-W  move forward to the beginning of the next WORD*
-e  move forward one word to the end of the next word
-E  move forward one word to the end of the next WORD
-b  move backward to beginning of the previous word
-B  move backward to beginning of the previous WORD
-ge  move backward to end of the previous word
-gE  move backward to end of the previous WORD
+w     Move forward to the beginning of the next word
+W     Move forward to the beginning of the next WORD
+e     Move forward one word to the end of the next word
+E     Move forward one word to the end of the next WORD
+b     Move backward to beginning of the previous word
+B     Move backward to beginning of the previous WORD
+ge    Move backward to end of the previous word
+gE    Move backward to end of the previous WORD
 ```
 
 So what are the similarities and differences between a word and a WORD? Both word and WORD are separated by non-blank characters. A word is a sequence of characters containing only `a-zA-Z0-9_`. A WORD is a sequence of all characters except white space (a white space means either space, tab, and EOL). To learn more, check out `:h word` and `:h WORD`.
@@ -93,11 +93,11 @@ However, you can get from "c" to ";" in one keystroke with current line navigati
 When editing, you often need to navigate horizontally in a line. To jump to the first character in current line, use `0`. To go to the last character in the current line, use `$`. Additionally, you can use `^` to go to the first non-blank character in the current line and `g_` to go to the last non-blank character in the current line. If you want to go to the column `n` in the current line, you can use `n|`.
 
 ```
-0  go to the first character in the current line
-^  go to the first nonblank char in the current line
-g_  go to the last non-blank char in the current line
-$  go to the last char in the current line
-n|  go the column n in the current line
+0     Go to the first character in the current line
+^     Go to the first nonblank char in the current line
+g_    Go to the last non-blank char in the current line
+$     Go to the last char in the current line
+n|    Go the column n in the current line
 ```
 
 You can also perform a current line search with `f` and `t`. The difference between `f` and `t` is that `f` takes you to the first letter of the match and `t` takes you till (right before) the first letter of the match. So if you want to search for and land on "h", use `fh`. If you want to search for first "h" and land right before the match, use `th`. If you want to go to the *next* occurrence of the last current line search, use `;`. To go to the previous occurrence of the last current line match, use `,`.
@@ -105,12 +105,12 @@ You can also perform a current line search with `f` and `t`. The difference betw
 To search backwards for "h", use `Fh`. To keep searching for "h" in the same direction, use `;`. Notice that `;` does not always search forward. `;`  repeats the last search direction. If you used `F`, `;` will search backward while `,` searches forward. If you used `f`, `;` will search forward and `,` backward.
 
 ```
-f  Search forward for a match in the same line
-F  Search backward for a match in the same line
-t  Search forward for a match in the same line, stopping before match
-T  Search backward for a match in the same line, stopping before match
-;  Repeat last search in the same line
-,  Repeat last search in the same line backwards
+f    Search forward for a match in the same line
+F    Search backward for a match in the same line
+t    Search forward for a match in the same line, stopping before match
+T    Search backward for a match in the same line, stopping before match
+;    Repeat the last search in the same line
+,    Repeat the last search in the same line backwards
 ```
 
 Back at the previous example: 
@@ -127,8 +127,8 @@ Next two navigation units are sentence and paragraph.
 
 Let's talk about what a sentence is first.  A sentence ends with either `. ! ?` followed by an end-of-line, a space, or a tab.  You can jump to the next sentence with `)` and the previous sentence with `(`. 
 ```
-( Jump to the previous sentence
-) Jump to the next sentence
+(    Jump to the previous sentence
+)    Jump to the next sentence
 ```
 
 Let's look at some examples. Which phrases do you think are sentences and which aren't? Try navigating with `(` and `)` in Vim!
@@ -143,8 +143,8 @@ By the way, if you're having a problem with Vim not counting a sentence for phra
 Next, let's talk about what a paragraph is. A paragraph begins after each empty line and also at each set of a paragraph macro specified by the pairs of characters in paragraphs option.
 
 ```
-{ Jump to the previous paragraph
-} jump to the next paragraph
+{    Jump to the previous paragraph
+}    Jump to the next paragraph
 
 ```
 
@@ -171,7 +171,7 @@ Programmers often edit files containing codes. It may contain many parentheses, 
 Many programming languages use parentheses, braces, and brackets and you can get lost in them. If you're inside one of them, you can jump to the other pair (if it exists) with `%`. You can also use this to find out whether you have matching parentheses, braces, and brackets.
 
 ```
-%  Navigate to another match, usually works for (), [], {}
+%    Navigate to another match, usually works for (), [], {}
 ```
 
 Let's look at a Scheme code example because it uses parentheses extensively. Move around with `%` inside different parentheses.
@@ -192,10 +192,10 @@ You can jump to line number `n` with `nG`. For example, if you want to jump to l
 Often you don't know exactly which line you are targeting, but you know it's approximately at 70% of the whole file. In this case, you can do `70%`. To jump halfway through the file, you can do `50%`.
 
 ```
-gg  go to the first line
-G  go to the last line
-nG  go to line n
-n%  go to n% in file
+gg    Go to the first line
+G     Go to the last line
+nG    Go to line n
+n%    Go to n% in file
 ```
 
 By the way, if you want to see total lines in a file, you can use `CTRL-G`.
@@ -206,24 +206,30 @@ To quickly go to the top, middle, or bottom of your *window*, you can use `H`, `
 
 You can also pass a count to `H` and `L`. If you use `10H`, you will go to 10 lines below the top of window. If you use `3L`, you will go to 3 lines above the last line of window.
 ```
-H  go to top of screen
-M  go to medium screen
-L  go to bottom of screen
-nH  go n line from top
-nL  go n line from bottom
+H     Go to top of screen
+M     Go to medium screen
+L     Go to bottom of screen
+nH    Go n line from top
+nL    Go n line from bottom
 ```
 
 # Scrolling
 
-To scroll, you have 3 speed increments: full-screen (`CTR-F/CTRL-B`), half-screen (`CTRL-D/CTRL-U`), and line (`CTRL-E/CTRL-Y`).
+To scroll, you have 3 speed increments: full-screen (`CTRL-F/CTRL-B`), half-screen (`CTRL-D/CTRL-U`), and line (`CTRL-E/CTRL-Y`).
 
 ```
-Ctrl-e  scroll down a line
-Ctrl-d  scroll down half screen
-Ctrl-f  scroll down whole screen
-Ctrl-y  scroll up a line
-Ctrl-u  scroll up half screen
-Ctrl-b  scroll up whole screen
+Ctrl-e    Scroll down a line
+Ctrl-d    Scroll down half screen
+Ctrl-f    Scroll down whole screen
+Ctrl-y    Scroll up a line
+Ctrl-u    Scroll up half screen
+Ctrl-b    Scroll up whole screen
+```
+You can also scroll relatively to the current line:
+```
+zt    Bring the current line near the top of your screen
+zh    Bring the current line to the middle (half) of your screen
+zb    Bring the current line near the bottom of your screen
 ```
 
 # Search navigation
@@ -231,10 +237,10 @@ Ctrl-b  scroll up whole screen
 Very often you know that a phrase exists inside a file. You can use search navigation to very quickly reach your target. To search for a phrase, you can use `/` to search forward and `?` to search backward. To repeat the last search you can use `n`. To repeat the last search going opposite direction, you can use `N`.
 
 ```
-/  Search forward for a match
-?  Search backward for a match
-n  Repeat last search (same direction of previous search) 
-N  Repeat last search (opposite direction of previous search)
+/    Search forward for a match
+?    Search backward for a match
+n    Repeat last search (same direction of previous search) 
+N    Repeat last search (opposite direction of previous search)
 ```
 
 Suppose you have this text:
@@ -262,10 +268,10 @@ You can quickly search for the text under the cursor with `*` to search forward 
 Both `\<` and `\>` in `/\<one\>` mean whole word search. It does not match "one" if it is a part of a bigger word. It will match for the word "one" but not "onetwo".  If your cursor is over "one" and you want to search forward to match whole or partial words like "one" and "onetwo", you need to use `g*` instead of `*`.
 
 ```
-*  Search for whole word under cursor forward
-#  Search for whole word under cursor backward
-g* Search for word under cursor forward
-g# Search for word under cursor backward
+*     Search for whole word under cursor forward
+#     Search for whole word under cursor backward
+g*    Search for word under cursor forward
+g#    Search for word under cursor backward
 
 ```
 You can also use regex with search command. To match "user1" to "user9", you can search for `/user[0-9]`. To search for "one", "ore", "ole", anything that starts with "o", any character in the middle, and ends with "e", you can search for `/o.e`. Since this is not a book on regex, I will stop here.
@@ -275,9 +281,9 @@ You can also use regex with search command. To match "user1" to "user9", you can
 You can use marks to save your current position and return to this position later. It's like a bookmark for text editing. You can set a mark with `mx`, where `x` can be any alphabetical letter `a-zA-Z`. There are two ways to return to mark: exact (line and column) with ```x`` and linewise (`'x`).
 
 ```
-ma   mark position with mark "a"
-`a   jump to line and column "a"
-'a   jump to line "a"
+ma    Mark position with mark "a"
+`a    Jump to line and column "a"
+'a    Jump to line "a"
 ```
 
 There is a difference between marking with lowercase letters (a-z) and uppercase letters (A-Z). Lowercase alphabets are local marks and uppercase alphabets are global marks (sometimes known as file marks).
@@ -289,13 +295,13 @@ Unlike local marks where you can have a set of marks in each buffer, you only ge
 To view all marks, use `:marks`. You may notice from the marks list there are more marks other than `a-zA-Z`. Some of them are:
 
 ```
-''    jump back to the last line in current buffer before jump
-``    jump back to the last position in current buffer before jump
-`[    jump to beginning of previously changed / yanked text
-`]    jump to the ending of previously changed / yanked text
-`<    jump to the beginning of last visual selection
-`>    jump to the ending of last visual selection
-`0    jump back to the last edited file when exiting vim
+''    Jump back to the last line in current buffer before jump
+``    Jump back to the last position in current buffer before jump
+`[    Jump to beginning of previously changed / yanked text
+`]    Jump to the ending of previously changed / yanked text
+`<    Jump to the beginning of last visual selection
+`>    Jump to the ending of last visual selection
+`0    Jump back to the last edited file when exiting vim
 ```
 
 There are more marks than the ones listed above. I won't cover them here because I think they are rarely used, but if you're curious, check out `:h marks`. 
@@ -307,25 +313,25 @@ Lastly, let's talk about jumps in Vim. In Vim, you can "jump" to a different fil
 Here are the commands Vim consider as "jump" commands: 
 
 ```
-'     go to the marked line
-`     go to the marked position
-G     go to the line
-/     search forward
-?     search backward
-n     repeat the last search, same direction
-N     repeat the last search, opposite direction
-%     find match
-(     go to the last sentence
-)     go to the next sentence
-{     go to the last paragraph
-}     go to the next paragraph
-L     go to the the last line of displayed window
-M     go to the middle line of displayed window
-H     go to the top line of displayed window
-[[    go to the previous section
-]]    go to the next section
-:s    substitute
-:tag  jump to tag definition
+'       Go to the marked line
+`       Go to the marked position
+G       Go to the line
+/       Search forward
+?       Search backward
+n       Repeat the last search, same direction
+N       Repeat the last search, opposite direction
+%       Find match
+(       Go to the last sentence
+)       Go to the next sentence
+{       Go to the last paragraph
+}       Go to the next paragraph
+L       Go to the the last line of displayed window
+M       Go to the middle line of displayed window
+H       Go to the top line of displayed window
+[[      Go to the previous section
+]]      Go to the next section
+:s      Substitute
+:tag    Jump to tag definition
 ``` 
 
 I don't recommend memorizing this list. A good rule of thumb is, any motion that moves farther than a word and current line navigation is probably a jump. Vim keeps track of where you've been when you move around and you can see this list inside `:jumps`. For more, check out `:h jump-motions`.
