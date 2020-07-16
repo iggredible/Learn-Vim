@@ -66,7 +66,7 @@ const learn = "vim";
 ```
 - To yank everything from your current location to the end of the line: `y$`.
 - To delete from your current location to the beginning of the next word: `dw`.
-- To change the next paragraph, say `c}`.
+- To change from your current location to the end of the current paragraph, say `c}`.
 
 Motions also accept count number as arguments *(I will discuss this further in the next chapter)*. If you need to go up 3 lines, instead of pressing `k` 3 times, you can do `3k`. Count works with Vim grammar.
 
