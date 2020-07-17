@@ -6,8 +6,8 @@
 ## Table Of Contents (In Progress)
 - Ch 0     - Learn Vim the Smart Way
 - Ch 1     - Starting Out
-- Ch 2     - Buffers, windows, Tabs
-- Ch 3     - Opening and Managing Files
+- Ch 2     - Opening and Managing Files
+- Ch 3     - Buffers, Windows, Tabs
 - [Ch 4     - Vim Grammar](./ch4_vim_grammar.md)
 - [Ch 5    -  Moving in a File](./ch5_moving_in_file.md)
 - Ch 6     - Moving Between and Searching Files
