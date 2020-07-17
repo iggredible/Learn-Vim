@@ -1,10 +1,10 @@
-# Moving In File
+# Moving in a File
 
 In the beginning, moving with a keyboard will feel awkward and incredibly slow, but don't give up! Once you get used to it, you can go anywhere in a file faster than a mouse.
 
 In this chapter, you will learn essential motions and how to use them efficiently. Keep in mind that this is **not** the entire motion that Vim has. The goal here is to introduce useful motions to become productive quickly. If you need to learn more, check out `:h motion.txt`.
 
-# Character navigation
+# Character Navigation
 
 The most basic motion unit is moving one character left, down, up, and right.
 
@@ -48,7 +48,7 @@ Why is this useful? This allows me to quickly see how many lines I am away from 
 
 This is 100% personal preference. Experiment with `relativenumber` / `norelativenumber`, `number` / `nonumber` and use whatever you find most useful!
 
-# Count your move
+# Count Your Move
 
 One more thing, let's talk about "count" argument. Motions accept a preceding numerical argument. I mentioned above that you can go down 12 lines with `12j`. The 12 in `12j` is the count number. 
 
@@ -60,7 +60,7 @@ The syntax to use count with your motion is:
 
 You can apply this to all motions. If you want to move 9 characters to the right, instead of pressing `l` 9 times, you can do `9l`. As you learn more motions, try to give them count argument.
 
-# Word navigation
+# Word Navigation
 
 Let's move to a larger motion unit: *word*. You can move to the beginning of the next word (`w`), to the end of the next word (`e`), to the beginning of the previous word (`b`), and to the end of the previous word (`ge`).
 
@@ -88,7 +88,7 @@ With your cursor at the start of the line, to go to the end of the line with `l`
 
 However, you can get from "c" to ";" in one keystroke with current line navigation.
 
-# Current line navigation
+# Current Line Navigation
 
 When editing, you often need to navigate horizontally in a line. To jump to the first character in current line, use `0`. To go to the last character in the current line, use `$`. Additionally, you can use `^` to go to the first non-blank character in the current line and `g_` to go to the last non-blank character in the current line. If you want to go to the column `n` in the current line, you can use `n|`.
 
@@ -165,7 +165,7 @@ You got this.
 
 Check out `:h sentence` and `:h paragraph` to learn more.
 
-# Match navigation
+# Match Navigation
 
 Programmers often edit files containing codes. It may contain many parentheses, braces, and brackets and it can get confusing to know which parentheses you're inside of. 
 Many programming languages use parentheses, braces, and brackets and you can get lost in them. If you're inside one of them, you can jump to the other pair (if it exists) with `%`. You can also use this to find out whether you have matching parentheses, braces, and brackets.
@@ -185,7 +185,7 @@ Let's look at a Scheme code example because it uses parentheses extensively. Mov
 ```
 I personally like to complement `%` using visual indicators plugins like [vim-rainbow](https://github.com/frazrepo/vim-rainbow).  For more, check out `:h %`.
 
-# Line number navigation
+# Line Number Navigation
 
 You can jump to line number `n` with `nG`. For example, if you want to jump to line 7, use `7G`. To jump to the first line, use either `1G` or `gg`. To jump to the last line, use  `G`.
 
@@ -200,7 +200,7 @@ n%    Go to n% in file
 
 By the way, if you want to see total lines in a file, you can use `CTRL-G`.
 
-# Window navigation
+# Window Navigation
 
 To quickly go to the top, middle, or bottom of your *window*, you can use `H`, `M`, and `L`. 
 
@@ -232,7 +232,7 @@ zh    Bring the current line to the middle (half) of your screen
 zb    Bring the current line near the bottom of your screen
 ```
 
-# Search navigation
+# Search Navigation
 
 Very often you know that a phrase exists inside a file. You can use search navigation to very quickly reach your target. To search for a phrase, you can use `/` to search forward and `?` to search backward. To repeat the last search you can use `n`. To repeat the last search going opposite direction, you can use `N`.
 
@@ -276,7 +276,7 @@ g#    Search for word under cursor backward
 ```
 You can also use regex with search command. To match "user1" to "user9", you can search for `/user[0-9]`. To search for "one", "ore", "ole", anything that starts with "o", any character in the middle, and ends with "e", you can search for `/o.e`. Since this is not a book on regex, I will stop here.
 
-# Marking position
+# Marking Position
 
 You can use marks to save your current position and return to this position later. It's like a bookmark for text editing. You can set a mark with `mx`, where `x` can be any alphabetical letter `a-zA-Z`. There are two ways to return to mark: exact (line and column) with ```x`` and linewise (`'x`).
 
@@ -338,7 +338,7 @@ I don't recommend memorizing this list. A good rule of thumb is, any motion that
 
 Why are jumps useful? Because you can navigate the jump list with `Ctrl-o` to move up the jump list and `Ctrl-i` to move down the jump list. You can jump across different files, which I will discuss more in the next part.
 
-# Learn navigation the smart way
+# Learn Navigation the Smart Way
 
 If you are new to Vim, this is a lot to learn. I do not expect anyone to remember everything immediately. It takes time before you can execute them without thinking.
 
