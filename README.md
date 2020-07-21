@@ -6,25 +6,24 @@
 ## Table Of Contents (In Progress)
 - Ch 0     - Learn Vim the Smart Way
 - Ch 1     - Starting Out
-- Ch 2     - Opening and Managing Files
-- Ch 3     - Buffers, Windows, Tabs
+- [Ch 2     - Buffers, Windows, and Tabs](./ch2_buffers_windows_tabs.md)
+- Ch 3     - Opening, Searching, and Moving Between Files
 - [Ch 4     - Vim Grammar](./ch4_vim_grammar.md)
 - [Ch 5    -  Moving in a File](./ch5_moving_in_file.md)
-- Ch 6     - Moving Between and Searching Files
-- Ch 7     - Insert Mode
-- Ch 8     - Register
-- Ch 9     - Undo
-- Ch 10    - Command Line Mode
-- Ch 11    - Search and Substitute
-- Ch 12    - Dot Command
-- Ch 13    - Macros
-- Ch 14    - Global Command
-- Ch 15    - Command Line Integration
-- Ch 16    - Visual Mode
-- Ch 17    - Tags
-- Ch 18    - Git
-- Ch 19    - Fold
-- Ch 20    - Compile
+- Ch 6     - Insert Mode
+- Ch 7     - Register
+- Ch 8     - Undo
+- Ch 9    - Command Line Mode
+- Ch 10    - Search and Substitute
+- Ch 11    - Dot Command
+- Ch 12    - Macros
+- Ch 13    - Global Command
+- Ch 14    - Command Line Integration
+- Ch 15    - Visual Mode
+- Ch 16    - Tags
+- Ch 17    - Git
+- Ch 18    - Fold
+- Ch 19    - Compile
 
 # License & Copyright
 The materials here are all ©2020 Igor Irianto.
