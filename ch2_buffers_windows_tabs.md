@@ -1,6 +1,6 @@
 # Buffers, Windows, and Tabs
 
-If you have used a modern text editor, you are probably familiar with windows and tabs. Vim has three abstractions instead of two: buffers, windows, and tabs. 
+If you have used a modern text editor, you are probably familiar with windows and tabs. Vim has three abstractions instead of two: buffers, windows, and tabs.
 
 In this chapter, I will explain how buffers, windows, and tabs work in Vim.
 
@@ -8,7 +8,11 @@ Before you start, make sure you have `set hidden` option in your `vimrc`. Withou
 
 # Buffers
 
-A buffer is the in-memory text of a file. When you open a file in Vim, it creates a new buffer. From your terminal, open a new file `file1.js`:
+A buffer is a in-memory space where you can write and edit some text. When you are opening a new file in vim its content will be bind to a new buffer:
+  1. From within vim, open a new buffer `:new` (create a new empty buffer)
+  2. From your terminal, open a new file `file1.js` (create a new buffer with `file1.js` bind to it)
+
+If your buffer isn't bind to a file yet but you want to save its content, you can save it with `:w </path/to/file>`.
 
 ```
 vim file1.js
@@ -16,7 +20,7 @@ vim file1.js
 
 ![one buffer displayed with highlight](./img/screen-one-buffer-file1-highlighted.png)
 
-What you are seeing is `file1.js` *buffer*. Whenever we open a new file, Vim creates a new buffer. 
+What you are seeing is `file1.js` *buffer*. Whenever we open a new file, Vim creates a new buffer.
 
 Exit Vim. This time, open two new files:
 
@@ -111,7 +115,7 @@ And here is a list of useful window Ex commands:
 :new filename       Create new window
 ```
 
-For more, check out `:h window`. Take your time to understand them. 
+For more, check out `:h window`. Take your time to understand them.
 
 # Tabs
 
@@ -155,7 +159,7 @@ vim -p file1.js file2.js file3.js
 ```
 # Moving in 3D
 
-Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W h/j/k/l`. 
+Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W h/j/k/l`.
 
 ![cartesian movement in x and y axis](./img/cartesian-xy.png)
 
