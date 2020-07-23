@@ -8,11 +8,11 @@ Before you start, make sure you have `set hidden` option in your `vimrc`. Withou
 
 # Buffers
 
-A buffer is a in-memory space where you can write and edit some text. When you are opening a new file in vim its content will be bind to a new buffer:
+A buffer is a in-memory space where you can write and edit some text. When you are opening a new file in vim its content will be bound to a new buffer:
   1. From within vim, open a new buffer `:new` (create a new empty buffer)
   2. From your terminal, open a new file `file1.js` (create a new buffer with `file1.js` bind to it)
 
-If your buffer isn't bind to a file yet but you want to save its content, you can save it with `:w </path/to/file>`.
+If your buffer isn't bound to a file yet but you want to save its content, you can save it with `:w </path/to/file>`.
 
 ```
 vim file1.js
