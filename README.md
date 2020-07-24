@@ -7,7 +7,7 @@
 - Ch 0     - Learn Vim the Smart Way
 - Ch 1     - Starting Out
 - [Ch 2     - Buffers, Windows, and Tabs](./ch2_buffers_windows_tabs.md)
-- [Ch 3     - Opening, Searching, and Moving Between Files](./ch3_opening_and_searching_files.md)
+- [Ch 3     - Opening and Moving Files](./ch3_opening_and_searching_files.md)
 - [Ch 4     - Vim Grammar](./ch4_vim_grammar.md)
 - [Ch 5    -  Moving in a File](./ch5_moving_in_file.md)
 - Ch 6     - Insert Mode
