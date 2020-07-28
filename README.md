@@ -10,7 +10,7 @@
 - [Ch 3     - Opening and Searching Files](./ch3_opening_and_searching_files.md)
 - [Ch 4     - Vim Grammar](./ch4_vim_grammar.md)
 - [Ch 5    -  Moving in a File](./ch5_moving_in_file.md)
-- Ch 6     - Insert Mode
+- [Ch 6     - Insert Mode](./ch6_insert_mode.md)
 - Ch 7     - Register
 - Ch 8     - Undo
 - Ch 9    - Command Line Mode
