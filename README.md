@@ -11,12 +11,12 @@
 - [Ch 4     - Vim Grammar](./ch4_vim_grammar.md)
 - [Ch 5    -  Moving in a File](./ch5_moving_in_file.md)
 - [Ch 6     - Insert Mode](./ch6_insert_mode.md)
-- Ch 7     - Register
+- [Ch 7     - Registers](./ch7_registers.md)
 - Ch 8     - Macros
-- Ch 9     - Undo
+- Ch 9     - Dot command
 - Ch 10    - Command Line Mode
 - Ch 11    - Search and Substitute
-- Ch 12    - Dot Command
+- Ch 12    - Undo
 - Ch 13    - Global Command
 - Ch 14    - Command Line Integration
 - Ch 15    - Visual Mode
