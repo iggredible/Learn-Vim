@@ -87,6 +87,8 @@ If you:
 
 The yanked register will have the text from step three.
 
+One last tip, while in insert mode, you can quickly paste the text you just yanked using `Ctrl-r 0`. 
+
 ## The Numbered Registers (`"1-9`)
 
 When you change or delete a text that is at least one line long, that text will be stored in the numbered registers 1-9 sorted by the most recent.
@@ -199,7 +201,7 @@ I find doing `=*p` or `=+p` to be cumbersome. To make Vim to paste copied text f
 set clipboard=unnamed
  ```
 
-Now when I copy a text from an external program, I can paste it with the unnamed register, `p`. I can also copy a text from Vim and paste it to an external program with `Ctrl-v`. If you have `+xterm_clipboard` on, you may want to use `unnamedplus` instead of `unnamed`.
+Now when I copy a text from an external program, I can paste it with the unnamed register, `p`. I can also copy a text from Vim and paste it to an external program with `Ctrl-v`. If you have `+xterm_clipboard` on, you may want to use both `unnamed` and `unnamedplus` clipboard options.
 
 # The Black Hole Register (`"_`)
 
