@@ -13,7 +13,7 @@
 - [Ch 6     - Insert Mode](./ch6_insert_mode.md)
 - Ch 7     - Dot command
 - [Ch 8     - Registers](./ch8_registers.md)
-- Ch 9     - Macros
+- [Ch 9     - Macros](./ch9_macros.md)
 - Ch 10    - Command Line Mode
 - Ch 11    - Search and Substitute
 - Ch 12    - Undo
