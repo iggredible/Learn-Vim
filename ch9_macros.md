@@ -158,7 +158,7 @@ This is how you can do it:
 qAA.<esc>q
 ```
 The breakdown:
-- `qA` records the macro in registr "A".
+- `qA` records the macro in register "A".
 - `A.<esc>` inserts a dot (".") at the end of the line (`A`), then exits insert mode (`<esc>`).
 - `q` quits macro recording.
 
