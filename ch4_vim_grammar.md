@@ -74,8 +74,6 @@ Motions also accept count number as arguments *(I will discuss this further in t
 - To delete the next two words: `d2w`.
 - To change the next two lines: `c2j`.
 
-Although the result of `2dw` is equivalent to `d2w`, they are technically different. `2dw` means *delete **a** word **two** times.* `d2w` means *delete the next **two** words **one** time*. The difference is in what Vim considers as a "change”. It will matter when you start using the dot command (`.`). Try to do `2dw` followed by `.`, then do  `d2w` followed by `.`. In the first case, `.`  deletes one word, in the second case, `.`  deletes 2 words. I will cover the dot command in a later chapter, so don't worry about it right now, but keep this at the back of your mind.
-
 Right now, you may  have to think long and hard to do even a simple command. You're not alone. When I first started, I had similar struggles but I got faster in time. So will you.
 
 As a side note, linewise operations are common operations in text editing, so Vim allows you to perform linewise operation by typing the operator command twice. For example, `dd`, `yy`, and `cc` perform **deletion**, **yank**, and **change** on the entire line. Try this with other operators!
