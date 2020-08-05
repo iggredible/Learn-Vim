@@ -9,7 +9,7 @@ In this chapter, you will learn how to use macros to automate mundane tasks (plu
 Here is the basic syntax of a Vim macro:
 
 ```
-qa                     Record a macro in register a
+qa                     Start recording a macro in register a
 q (while recording)    Stop recording macro
 ```
 
@@ -63,7 +63,7 @@ qa0W~jq
 ```
 
 Here's the breakdown of the command above:
-- `qa` records a macro in the "a" register.
+- `qa` starts recording a macro in the "a" register.
 - `0` goes to the beginning of the line.
 - `W` goes to the next WORD.
 - `~` toggles the case of the character under the cursor.
@@ -112,7 +112,7 @@ Here is how you can do it:
 - `:argdo g/donut/normal @a` executes the global command `g/donut/normal @a` on each file inside `:args`.
 - `:argdo update` executes `update` command to save each file inside `:args` when the buffer has been modified.
 
-If you are not fmiliar with the global command `:g/donut/normal @a`, it executes the command you give (`normal @a`) on lines that match the pattern (`/donut/`). I will go over the global command in a later chapter.
+If you are not familiar with the global command `:g/donut/normal @a`, it executes the command you give (`normal @a`) on lines that match the pattern (`/donut/`). I will go over the global command in a later chapter.
 
 # Recursive Macro
 
@@ -158,9 +158,9 @@ This is how you can do it:
 qAA.<esc>q
 ```
 The breakdown:
-- `qA` records the macro in register "A".
+- `qA` starts recording the macro in register "A".
 - `A.<esc>` inserts a dot (".") at the end of the line (`A`), then exits insert mode (`<esc>`).
-- `q` quits macro recording.
+- `q` stops recording macro.
 
 Now when you execute `@a`, it goes to the first character in the line (`0`), goes to the next WORD (`W`), toggles the case of the character under the cursor (`~`), goes to insert mode at the end of the line (`A`), writes a dot ("."), and exits insert mode (`<esc>`).
 
