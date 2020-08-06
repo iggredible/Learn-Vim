@@ -9,17 +9,17 @@
 - [Ch 2     - Buffers, Windows, and Tabs](./ch2_buffers_windows_tabs.md)
 - [Ch 3     - Opening and Searching Files](./ch3_opening_and_searching_files.md)
 - [Ch 4     - Vim Grammar](./ch4_vim_grammar.md)
-- [Ch 5    -  Moving in a File](./ch5_moving_in_file.md)
+- [Ch 5     - Moving in a File](./ch5_moving_in_file.md)
 - [Ch 6     - Insert Mode](./ch6_insert_mode.md)
 - Ch 7     - Dot command
 - [Ch 8     - Registers](./ch8_registers.md)
 - [Ch 9     - Macros](./ch9_macros.md)
-- Ch 10    - Command Line Mode
-- Ch 11    - Search and Substitute
-- Ch 12    - Undo
+- Ch 10    - Undo
+- Ch 11    - Visual Mode
+- Ch 12    - Search and Substitute
 - Ch 13    - Global Command
-- Ch 14    - Command Line Integration
-- Ch 15    - Visual Mode
+- Ch 14    - Command Line Mode
+- Ch 15    - Command Line Integration
 - Ch 16    - Tags
 - Ch 17    - Git
 - Ch 18    - Fold
