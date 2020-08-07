@@ -11,7 +11,7 @@
 - [Ch 4     - Vim Grammar](./ch4_vim_grammar.md)
 - [Ch 5     - Moving in a File](./ch5_moving_in_file.md)
 - [Ch 6     - Insert Mode](./ch6_insert_mode.md)
-- Ch 7     - Dot command
+- [Ch 7     - The Dot command](./ch7_the_dot_command.md)
 - [Ch 8     - Registers](./ch8_registers.md)
 - [Ch 9     - Macros](./ch9_macros.md)
 - Ch 10    - Undo
