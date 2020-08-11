@@ -62,7 +62,7 @@ I personally do not use `U` because it is hard to remember the original state (I
 
 Vim sets a maximum number of how many times you can undo in `undolevels` option variable. You can check it with `:echo &undolevels`. I have mine set to be 1000. To change yours to 1000, run `:set undolevels=1000`. Feel free to set it to any number you like.
 
-# Breaking the blocks
+# Breaking the Blocks
 
 I mentioned earlier that `u` undoes a single "change" similar to the dot command's change. Any text entered between entering the insert mode and exiting is counted as a change.
 
@@ -169,7 +169,7 @@ To traverse each node in the undo tree, you can use `g+`  to go to a newer state
 
 Undo tree is not easy to visualize. I find [vim-mundo](https://github.com/simnalamburt/vim-mundo) plugin to be very useful to help visualize Vim's undo tree. Give it some time to play around with it.
 
-# Persistent undo
+# Persistent Undo
 
 If you start Vim, open a new file, and immediately press `u`, Vim will probably display "*Already at oldest change*" warning. Vim can preserve your undo history with an undo file with `:wundo`.
 
@@ -208,7 +208,7 @@ By now you should have `mynumbers.txt` and `mynumbers.undo` files in your direct
 
 Now if you press `u`, Vim removes "three". Press `u` again to remove "two". It is like you never even closed Vim!
 
-# Time travel
+# Time Travel
 
 Who says that time travel doesn't exist? Vim can travel to a text state in the past with `:earlier` command-line command.
 
