@@ -14,7 +14,7 @@
 - [Ch 7     - The Dot command](./ch7_the_dot_command.md)
 - [Ch 8     - Registers](./ch8_registers.md)
 - [Ch 9     - Macros](./ch9_macros.md)
-- Ch 10    - Undo
+- [Ch 10    - Undo](./ch10_undo.md)
 - Ch 11    - Visual Mode
 - Ch 12    - Search and Substitute
 - Ch 13    - Global Command
