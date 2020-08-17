@@ -208,6 +208,15 @@ By now you should have `mynumbers.txt` and `mynumbers.undo` files in your direct
 
 Now if you press `u`, Vim removes "three". Press `u` again to remove "two". It is like you never even closed Vim!
 
+If you want to have an automatic undo persistence, one way to do it is by adding these lines in your vimrc:
+
+```
+set undodir=~/.vim/undo_dir
+set undofile
+```
+
+I think it's better to put all the undofiles in one centralized directory, in this case, inside the `~/.vim` directory. The name `undo_dir` is arbitrary. `set undofile` tells Vim to turn on `undofile` feature because it is off by default. Now whenever you save, Vim automatically creates and updates the relevant file inside the `undo_dir` directory (make sure that you create the actual `undo_dir` directory inside `~/.vim` directory before running this).
+
 # Time Travel
 
 Who says that time travel doesn't exist? Vim can travel to a text state in the past with `:earlier` command-line command.
