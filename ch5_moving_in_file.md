@@ -255,8 +255,6 @@ let onetwo = 12;
 
 If you are searching for "let", you can do `/let`. To quickly search for "let" again, you can just do `n`. To search for "let" again in opposite direction, you can do `N`. If you used `?let` to search, it will search for it backwards. If you use `n`, it will also search backwards, the same direction as `?let` (`N` will search for "let" forwards now).
 
-The default search command is case sensitive. Meaning `/vim` is not the same as `/Vim`. To enable case insensitivy, you can run `:set ignorecase`. However, sometimes you need to search for strings containing uppercase characters. How can you search case insensitive by default and search case sensitive occassionally? Luckily, you can just turn on smart case feature by running `:set smartcase`. With this, you will do case insensitive search when your search phrase is all in lowercase and to do case sensitive search when the search term contains at least one uppercase.
-
 You can enable search highlight with `:set hlsearch`. Now when you search for `/let`, it will highlight *all* matching phrases in the file. In addition, you can set incremental search with `:set incsearch`. This will highlight the pattern as you're still typing it. By default, your matching phrases will remain highlighted until you search for another phrase. This can quickly turn into an annoyance. To disable highlight, you can run `:nohlsearch`. Because I use this no-highlight feature frequently, I created a mapping: 
 
 ```
@@ -274,8 +272,6 @@ g*    Search for word under cursor forward
 g#    Search for word under cursor backward
 
 ```
-You can also use regex with search command. To match "user1" to "user9", you can search for `/user[0-9]`. To search for "one", "ore", "ole", anything that starts with "o", any character in the middle, and ends with "e", you can search for `/o.e`. Since this is not a book on regex, I will stop here.
-
 # Marking Position
 
 You can use marks to save your current position and return to this position later. It's like a bookmark for text editing. You can set a mark with `mx`, where `x` can be any alphabetical letter `a-zA-Z`. There are two ways to return to mark: exact (line and column) with ```x`` and linewise (`'x`).
