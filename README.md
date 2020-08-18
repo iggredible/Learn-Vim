@@ -15,7 +15,7 @@
 - [Ch 8     - Registers](./ch8_registers.md)
 - [Ch 9     - Macros](./ch9_macros.md)
 - [Ch 10    - Undo](./ch10_undo.md)
-- Ch 11    - Visual Mode
+- [Ch 11    - Visual Mode](./ch11_visual_mode.md)
 - Ch 12    - Search and Substitute
 - Ch 13    - Global Command
 - Ch 14    - Command Line Mode
