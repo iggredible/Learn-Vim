@@ -66,7 +66,7 @@ Vim sets a maximum number of how many times you can undo in `undolevels` option 
 
 I mentioned earlier that `u` undoes a single "change" similar to the dot command's change. Any text entered between entering the insert mode and exiting is counted as a change.
 
-If you do `ione two three<esc>` then press `u`, Vim removes the entire "one two three" text because it is considered a change. This would have been acceptable if you have a short text, but what if you have written several paragraphs under one insert mode session without exiting and later you realized you made a mistake? If you press `u`, everything you have written would be removed. Wouldn't it be useful if you can press `u` to remove only a section of your text?
+If you do `ione two three<esc>` then press `u`, Vim removes the entire "one two three" text because it is considered a change. This would have been acceptable if you have a short text, but what if you have written several paragraphs under one insert mode session without exiting and later you realized you made a mistake? If you press `u`, everything you had written would be removed. Wouldn't it be useful if you can press `u` to remove only a section of your text?
 
 Luckily, you can break the undo blocks. When you are typing in insert mode, pressing `Ctrl-G u`  creates an undo breakpoint. For example, if you do `ione <Ctrl-G u>two <Ctrl-G u>three<esc>`, then press `u`, you will only lose the text "three". Press `u` one more time to remove "two". When you write a long text, use `Ctrl-G u` strategically. The end of each sentence, between two paragraphs, or after each line of code are good locations to add undo breakpoints to make it easier to undo your mistakes if you ever make one.
 
@@ -75,11 +75,11 @@ It is also useful to create an undo breakpoint when deleting chunks in insert mo
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 ```
-With these, when you delete chunks in insert mode, you can easily recover the deleted texts.
+With these, you can easily recover the deleted texts.
 
 # Undo Tree
 
-Vim stores every change ever written in your text in an undo tree. If you start a new empty file:
+Vim stores every change ever written in an undo tree. If you start a new empty file:
 
 ```
 
@@ -163,7 +163,7 @@ one
 four
 ```
 
-In Vim, every time you press `u` then make a different change, Vim stores the previous state's text by creating an "undo branch". In this example, after you typed "two", then pressed `u`, then typed "three", you created an undo leaf branch that stores the state containing the text "two". At that moment, the undo tree contained at least two leaf nodes: the main node containing the text "three" (most recent) and the undo branch node containing the text "two". If you had done another undo and typed the text "four", you now have at least three nodes: a main node containing the text "four" and two nodes containing the texts "three" and "two".
+In Vim, every time you press `u` and then make a different change, Vim stores the previous state's text by creating an "undo branch". In this example, after you typed "two", then pressed `u`, then typed "three", you created an undo leaf branch that stores the state containing the text "two". At that moment, the undo tree contained at least two leaf nodes: the main node containing the text "three" (most recent) and the undo branch node containing the text "two". If you had done another undo and typed the text "four", you now have at least three nodes: a main node containing the text "four" and two nodes containing the texts "three" and "two".
 
 To traverse each node in the undo tree, you can use `g+`  to go to a newer state and `g-` to go to an older state. The difference between `u`, `Ctrl-R`, `g+`, and `g-` is that both `u` and `Ctrl-R` traverse only the *main* nodes in undo tree while `g+` and `g-` traverse *all* nodes in the undo tree.
 
