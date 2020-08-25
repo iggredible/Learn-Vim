@@ -18,8 +18,8 @@
 - [Ch 11    - Visual Mode](./ch11_visual_mode.md)
 - Ch 12    - Search and Substitute
 - Ch 13    - Global Command
-- Ch 14    - Command Line Mode
-- Ch 15    - Command Line Integration
+- Ch 14    - Command Line Integration
+- Ch 15    - Command Line Mode
 - Ch 16    - Tags
 - Ch 17    - Git
 - Ch 18    - Fold
