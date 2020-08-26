@@ -16,9 +16,9 @@
 - [Ch 9     - Macros](./ch9_macros.md)
 - [Ch 10    - Undo](./ch10_undo.md)
 - [Ch 11    - Visual Mode](./ch11_visual_mode.md)
-- Ch 12    - Search and Substitute
+- [Ch 12    - Search and Substitute](./ch12_search_and_substitute.md)
 - Ch 13    - Global Command
-- Ch 14    - Command Line Integration
+- Ch 14    - External Command Integration
 - Ch 15    - Command Line Mode
 - Ch 16    - Tags
 - Ch 17    - Git
