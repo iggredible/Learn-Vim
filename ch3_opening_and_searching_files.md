@@ -30,7 +30,7 @@ You can use `**` to search recursively. If you want to look for all `*.md` files
 ```
 :edit **/*.md<tab>
 ```
-`:edit` can be used to run `netrw`, Vim's built-in text editor (I will cover this later in this chapter). To do that, give  `:edit` a directory argument instead of file. For example:
+`:edit` can be used to run `netrw`, Vim's built-in file explorer (I will cover this later in this chapter). To do that, give  `:edit` a directory argument instead of file. For example:
 ```
 :edit .
 :edit test/unit/
