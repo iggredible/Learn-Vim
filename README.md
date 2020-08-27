@@ -17,7 +17,7 @@
 - [Ch 10    - Undo](./ch10_undo.md)
 - [Ch 11    - Visual Mode](./ch11_visual_mode.md)
 - [Ch 12    - Search and Substitute](./ch12_search_and_substitute.md)
-- Ch 13    - Global Command
+- [Ch 13    - The Global Command](./ch13_the_global_command.md)
 - Ch 14    - External Command Integration
 - Ch 15    - Command Line Mode
 - Ch 16    - Tags
