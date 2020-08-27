@@ -101,7 +101,7 @@ When you are editing, always be on the lookout for a motion that can do several 
 
 # Learn the Dot Command the Smart Way
 
-The dot command's power comes from exchanging several keystrokes for one. It is probably not a profitable exchangeto use the dot command for one-keyed-operations like `x`. If your last change requires a complex operation like `cgnconst<esc>`, the dot command reduces nine keypresses into one, a very good trade-off.
+The dot command's power comes from exchanging several keystrokes for one. It is probably not a profitable exchange to use the dot command for one-keyed-operations like `x`. If your last change requires a complex operation like `cgnconst<esc>`, the dot command reduces nine keypresses into one, a very good trade-off.
 
 When editing, ask if the action you are about to do is repeatable. For example, if I need to remove the next three words, is it more economical to use `d3w` or to do `dw` then `.` two times? Will you be deleting a word again? If so, then it makes sense to use `dw` and repeat it several times instead of `d3w` because `dw` is more reusable than `d3w`. Keep a "change-driven" mindset while editing.
 

@@ -6,7 +6,7 @@ This is the most important chapter in the entire book. Once you understand Vim c
 
 # How to learn a language
 
-I am not a native English speaker. I learned English when I was 13 when I moved to the US. I had to do three things to build up linguistic profiency:
+I am not a native English speaker. I learned English when I was 13 when I moved to the US. I had to do three things to build up linguistic proficiency:
 
 1. Learn grammar rules
 2. Increase my vocabulary

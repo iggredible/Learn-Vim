@@ -253,7 +253,7 @@ Running `99@a`, only executes the macro three times. It does not execute the mac
 
 Recall from earlier section that macros can be executed using the  command line command `:normal` (ex: `:3,5 normal @a` to execute macro "a" on lines 3-5). If you run `:1,$ normal @a`, you will see that the macro is being executed on all lines except the "foo" line. It works!
 
-Although internally Vim does not actually run the macros in parallel, outwardly, it behaves like such. Vim executes `@a` *independently* on each line from the first line to the last line (`1,$`). Since Vim executes these macros indpendently, each line does not know that one of the macro executions had failed on the "foo" line.
+Although internally Vim does not actually run the macros in parallel, outwardly, it behaves like such. Vim executes `@a` *independently* on each line from the first line to the last line (`1,$`). Since Vim executes these macros independently, each line does not know that one of the macro executions had failed on the "foo" line.
 
 # Learn Macros the Smart Way
 

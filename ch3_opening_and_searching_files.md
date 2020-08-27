@@ -127,7 +127,7 @@ For example, to look for all occurrences of "foo" string inside all ruby files (
 :vim /foo/ app/controllers/**/*.rb
 ```
  
-After running that command, you will be redirected to the first result. Vim's `vim` search command uses `quickfix` operation. To see all search results, run `:copen`. This opens a `quickfix` window. Here are some useful quickfix commands to get you productive immmediately:
+After running that command, you will be redirected to the first result. Vim's `vim` search command uses `quickfix` operation. To see all search results, run `:copen`. This opens a `quickfix` window. Here are some useful quickfix commands to get you productive immediately:
 
 ```
 :copen        Open the quickfix window
