@@ -111,7 +111,7 @@ Ctrl-W o    Makes the current window the only one on screen and closes other win
 And here is a list of useful window Ex commands:
 ```
 :vsplit filename    Split window vertically
-:split filename     Split window horiontally
+:split filename     Split window horizontally
 :new filename       Create new window
 ```
 
@@ -163,11 +163,11 @@ Moving between windows is like traveling two-dimensionally along X-Y axis in a C
 
 ![cartesian movement in x and y axis](./img/cartesian-xy.png)
 
-Moving between buffers is like travelling across the Z axis in a Cartesian coordinate. Imagine your buffer files are lined up across the Z axis. You can traverse the Z axis one buffer at a time with `:bnext` and `:bprevious`. You can jump to any coordinate in Z axis with `:buffer filename/buffernumber`.
+Moving between buffers is like traveling across the Z axis in a Cartesian coordinate. Imagine your buffer files are lined up across the Z axis. You can traverse the Z axis one buffer at a time with `:bnext` and `:bprevious`. You can jump to any coordinate in Z axis with `:buffer filename/buffernumber`.
 
 ![cartesian movement in z axis](./img/cartesian-z.png)
 
-You can move in *three-dimensional space* by combining window and buffer movements. You can move to the top, right, bottom, or left window (X-Y navigations) with window navigations. Since each window contains buffers, you can move foward and backward (Z navigations) with buffer movements.
+You can move in *three-dimensional space* by combining window and buffer movements. You can move to the top, right, bottom, or left window (X-Y navigations) with window navigations. Since each window contains buffers, you can move forward and backward (Z navigations) with buffer movements.
 
 ![cartesian movement in x, y, and z axis](./img/cartesian-xyz.png)
 

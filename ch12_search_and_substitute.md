@@ -1,7 +1,7 @@
 # Search and Substitute
 This chapter covers two separate but related concepts: search and substitute. Many times, the texts that you are searching for are not straightforward and you must search for a common pattern. By learning how to use meaningful patterns in search and substitute instead of literal strings, you will be able to target any text quickly.
 
-As a side note, in this chapter, I will mainly use `/` when talking about search. Eveything you can do with `/` can also be done with `?`.
+As a side note, in this chapter, I will mainly use `/` when talking about search. Everything you can do with `/` can also be done with `?`.
 
 # Smart Case Sensitivity
 
@@ -274,7 +274,7 @@ three let = "3";
 four let = "4";
 five let = "5";
 ```
-You neeed to swap all the "let" with the variable names. To do that, run:
+You need to swap all the "let" with the variable names. To do that, run:
 
 ```
 :%s/\(\w\+\) \(\w\+\)/\2 \1/
@@ -389,7 +389,7 @@ If you need to replace a URL with a long path:
 https://mysite.com/a/b/c/d/e
 ```
 
-To suibstitute it with the word "hello", run:
+To substitute it with the word "hello", run:
 ```
 :s/https:\/\/mysite.com\/a\/b\/c\/d\/e/hello/
 ```

@@ -32,7 +32,7 @@ To my surprise, it only took a few days to get used to using  `hjkl`.
 
 *By the way, if you wonder why Vim uses `hjkl` to move, this is because Lear-Siegler ADM-3A terminal where Bill Joy wrote Vi, didn't have arrow keys and used `hjkl` as left/down/up/right.*
 
-If I want to go somewhere close by, like moving from one part of a word to another part of the same word, I would use `h` or `l`. If I want to go up or down a few lines within displayed window, I would use `j` or `k`. If I want to go somewhere farther, I would use a diffferent motion.
+If I want to go somewhere close by, like moving from one part of a word to another part of the same word, I would use `h` or `l`. If I want to go up or down a few lines within displayed window, I would use `j` or `k`. If I want to go somewhere farther, I would use a different motion.
 
 # Relative Numbering
 
