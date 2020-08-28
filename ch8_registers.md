@@ -62,7 +62,7 @@ By default, `p` (or `P`) is connected to the unnamed register (from now on I wil
 
 # The Numbered Registers (`"0-9`)
 
-Numbered registers automatically fill themselves up in ascending order. There are 2 different numbered registers: the yanked register (`0`) and the numbered registers (`0-9`). Let's discuss the yanked register first.
+Numbered registers automatically fill themselves up in ascending order. There are 2 different numbered registers: the yanked register (`0`) and the numbered registers (`1-9`). Let's discuss the yanked register first.
 
 ## The Yanked Register (`"0`)
 
