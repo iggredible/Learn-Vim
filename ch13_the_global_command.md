@@ -447,6 +447,12 @@ By the way, if you want to reduce multiple empty lines into no lines, instead of
 :g/^$/,/./j
 ```
 
+Or simpler:
+
+```
+:g/^$/-j
+```
+
 Your text is now reduced to:
 
 ```
@@ -501,7 +507,7 @@ const arrayA = [
 If you need to sort the elements inside the arrays, but not the arrays themselves, you can run this:
 
 ```
-:g/\[/+1,/\v\]/-1sort
+:g/\[/+1,/\]/-1sort
 ```
 
 Result:
