@@ -36,7 +36,7 @@ Let's try another example:
 pancake, potatoes, fruit-juice,
 ```
 
-This time, you only need to delete only the comma, not the word preceding it. Go to the first comma using `f,`. Delete the character under the cursor with `x`. Repeat with `.` two more times. Easy, right? Wait, it didn't work! Why?
+This time, you only need to delete the comma, not the word preceding it. Go to the first comma using `f,`. Delete the character under the cursor with `x`. Repeat with `.` two more times. Easy, right? Wait, it didn't work! Why?
 
 In Vim, changes exclude motions because they do not update buffer content. When running `f,x`, you have two different actions: the command `f,`  moves the cursor and  `x` updates the buffer. Only the latter caused a change. Contrast that with `df,` from the earlier example. In it, `f,` instructs the delete operator where to delete. It is a part of the whole delete operator, `df,`.
 
