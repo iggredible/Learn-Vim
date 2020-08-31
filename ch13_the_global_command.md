@@ -289,7 +289,7 @@ By the way, here is one interesting fact. Because the default command used by th
 
 It spells *"grep"*, the same `grep` from the command line. This is **not** a coincidence. The `g/re/p` command originally came from the Ed Editor, one of the first line text editors. The `grep` command got its name from Ed. 
 
-Your computer probably stil has the Ed editor. Run `ed` from the terminal (hint: to quit, type `q`).
+Your computer probably still has the Ed editor. Run `ed` from the terminal (hint: to quit, type `q`).
 
 # More examples
 
