@@ -78,6 +78,36 @@ To match both "hello" and  "hola", you can do `/hello\|hola`. You have to escape
 
 If you don't want to type `\|` every time, you can use the `magic` syntax (`\v`) at the start of the search: `/\vhello|hola`. I will not cover `magic` in this chapter, but with `\v`, you don't have to escape special characters anymore. To learn more about `\v`, feel free to check out `:h \v`.
 
+# Setting the Start and End of a Match
+
+Maybe you need to search for a text that is a part of a compound word. If you have these texts:
+
+```
+11vim22
+vim22
+11vim
+vim
+```
+
+If you need to select "vim" but only when it starts with "11" and ends with "22", you can use `\zs` (starting match) and `\ze` (ending match) operators. Run:
+
+```
+/11\zsvim\ze22
+```
+
+Vim still has to match the entire pattern "11vim22", but only highlights the pattern sandwiched between `\zs` and `\ze`. Another example:
+
+```
+foobar
+foobaz
+```
+
+If you need to search for the "foo" in "foobaz" but not in "foobar", run:
+
+```
+/foo\zebaz
+```
+
 # Searching Character Ranges
 
 All your search terms up to this point have been a literal word search. In real life, you may have to use a general pattern to find your text. The most basic pattern is the character range, `[ ]`.
@@ -232,7 +262,7 @@ In Vim, `%` usually means the entire file. If you run `:%s/let/const/`, it will 
 
 # Pattern Matching
 
-The next few sections will cover basic regular expressions.  A strong pattern knowledge is essential to master the substitute command.
+The next few sections will cover basic regular expressions. A strong pattern knowledge is essential to master the substitute command.
 
 If you have the following expressions:
 
@@ -495,6 +525,96 @@ Here is the breakdown:
 - `\1` is the first match group, which is either the text "hello" or "hola".
 - `friend` is the literal word "friend".
 
+# Substituting the Start and the End of a Pattern
+
+Recall that you can use `\zs` and `\ze` to define the start and the end of a match. This technique works in substitution too. If you have:
+
+```
+chocolate pancake
+strawberry sweetcake
+blueberry hotcake
+```
+
+To substitute the "cake" in "hotcake" with "dog" to get a "hotdog":
+
+```
+:%s/hot\zscake/dog/g
+```
+
+Result:
+
+```
+chocolate pancake
+strawberry sweetcake
+blueberry hotdog
+```
+
+You can also substitute the nth match in a line with this trick:
+
+```
+One Mississippi, two Mississippi, three Mississippi, four Mississippi, five Mississippi.
+```
+
+To substitute the third "Mississippi" with "Arkansas", run:
+
+```
+:s/\v(.{-}\zsMississippi){3}/Arkansas/g
+```
+
+The breakdown:
+- `:s/` the substitute command.
+- `\v` is the magic keyword so you don't have to escape special keywords.
+- `.` matches any single character
+- `{-}` performs non-greedy match of 0 or more of the preceding atom.
+- `\zsMississippi` makes "Mississippi" the start of the match.
+- `(...){3}` looks for the third match.
+
+You have seen the `{3}` syntax before. It is a type of `{n,m}`. In this case, you have `{3}` which will match exactly the third match. The new trick here is `{-}`. It is a non-greedy match. It finds the shortest match of the given pattern. In this case, `(.{-}Mississippi)` matches the least amount of "Mississippi" preceded by any character. Contrast this with `(.*Mississippi)` where it finds the longest match of the given pattern.
+
+If you use `(.{-}Mississippi)`, you get five matches: "One Mississippi", "Two Mississippi", etc. If you use `(.*Mississippi)`, you get one match: the last "Mississippi". To learn more check out `:h /\{-` and `:h non-greedy`.
+
+Let's do a simpler example. If you have the string:
+
+```
+abc1de1
+```
+
+You can match "abc1de1" (greedy) with:
+
+```
+/a.*1
+```
+
+You can match "abc1" (non-greedy) with:
+
+```
+/a.\{-}1
+```
+
+So if you need to uppercase the longest match (greedy), run:
+
+```
+:s/a.*1/\U&/g
+```
+
+To get:
+
+```
+ABC1DEFG1
+```
+
+If you need to uppercase the shortest match (non-greedy), run:
+
+```
+:s/a.\{-}1/\U&/g
+```
+
+To get:
+
+```
+ABC1defg1
+```
+
 # Substituting Across Multiple Files
 
 Finally, let's learn how to substitute phrases across multiple files. For this section, assume that you have two files: `food.txt` and `animal.txt`.
@@ -502,9 +622,9 @@ Finally, let's learn how to substitute phrases across multiple files. For this s
 Inside `food.txt`:
 
 ```
-corn dog
-hot dog
-chili dog
+corndog
+hotdog
+chilidog
 ```
 
 Inside `animal.txt`:
