@@ -25,6 +25,9 @@
 - Ch 18    - Fold
 - Ch 19    - Compile
 
+# Translations
+- [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
+
 # License & Copyright
 The materials here are all ©2020 Igor Irianto.
 
