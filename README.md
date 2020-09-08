@@ -1,11 +1,9 @@
-# Aprende Vim (de la manera más inteligente)
+# Learn Vim (the Smart Way)
 
-## ¿De qué trata esto?
-*Aprende Vim (de la manera más inteligente)* es un libro para aprender las partes más interesantes del editor Vim. Es una traducción del libro original en inglés que puedes encontrar en: [https://github.com/iggredible/Learn-Vim](https://github.com/iggredible/Learn-Vim)
+## What is this about?
+*Learn Vim (the Smart Way)* is a book to learn the good parts of Vim.
 
-La idea es trauducir el libro del inglés al español para difundir y dar a conocer este potente editor de texto que es Vim. Traducciones, correcciones y mejoras son bienvenidas. No dudes en hacer un PR.
-
-## Índice de contenidos (En progreso. Se irán traduciendo los diferentes capítulos)
+## Table Of Contents (In Progress)
 - Ch 0     - Learn Vim the Smart Way
 - Ch 1     - Starting Out
 - [Ch 2     - Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)
@@ -27,10 +25,10 @@ La idea es trauducir el libro del inglés al español para difundir y dar a cono
 - Ch 18    - Fold
 - Ch 19    - Compile
 
-# Licencia y derechos de autor
-El materia original en iglés es autoría de ©2020 Igor Irianto. La traducción en español, será autoría de los diferentes colaboradores (si los hubiera). Al colaborar en este repositorio estás de acuerdo en compartir tu trabajo con la licencia utilizada para el repositorio completo.
+# License & Copyright
+The materials here are all ©2020 Igor Irianto.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
-Este trabajo está publicado bajo una licencia <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.
 
