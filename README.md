@@ -3,7 +3,7 @@
 ## ¿De qué trata esto?
 *Aprende Vim (de la manera más inteligente)* es un libro para aprender las partes más interesantes del editor Vim. Es una traducción del libro original en inglés que puedes encontrar en: [https://github.com/iggredible/Learn-Vim](https://github.com/iggredible/Learn-Vim)
 
-La idea es traudcir el libro del inglés al español para difundir y dar a conocer este potente editor de texto que es Vim. Traducciones, correccioes y mejoras son bienvenidas. No dudes en hacer un PR.
+La idea es trauducir el libro del inglés al español para difundir y dar a conocer este potente editor de texto que es Vim. Traducciones, correcciones y mejoras son bienvenidas. No dudes en hacer un PR.
 
 ## Índice de contenidos (En progreso. Se irán traduciendo los diferentes capítulos)
 - Ch 0     - Learn Vim the Smart Way
