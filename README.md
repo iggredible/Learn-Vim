@@ -27,6 +27,7 @@
 
 # Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
+- [Learn-Vim Spanish](https://github.com/victorhck/learn-Vim-es)(`es`) 
 
 # License & Copyright
 The materials here are all ©2020 Igor Irianto.
