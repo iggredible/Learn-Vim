@@ -140,7 +140,7 @@ To yank a word into register "a", you can do it with `"ayiw`.
 
 To get the text from register "a", run `"ap`. You can use all twenty-six alphabetical characters to store twenty-six different texts with named registers.
 
-Sometimes you may want to add to your existing named register. In this case, you can append your text instead of starting all over. To do that, you can use the uppercase version of that register. For example, suppose you have the word "Hello " already stored in register "a". If you want to add "world" into register "a", you can find the text "world" and yank it using "A" register (`"Aiw`).
+Sometimes you may want to add to your existing named register. In this case, you can append your text instead of starting all over. To do that, you can use the uppercase version of that register. For example, suppose you have the word "Hello " already stored in register "a". If you want to add "world" into register "a", you can find the text "world" and yank it using "A" register (`"Ayiw`).
 
 # The Read-Only Registers (`":`, `".`, `"%`)
 
