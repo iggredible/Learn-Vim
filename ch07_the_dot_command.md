@@ -105,4 +105,4 @@ The dot command's power comes from exchanging several keystrokes for one. It is 
 
 When editing, ask if the action you are about to do is repeatable. For example, if I need to remove the next three words, is it more economical to use `d3w` or to do `dw` then `.` two times? Will you be deleting a word again? If so, then it makes sense to use `dw` and repeat it several times instead of `d3w` because `dw` is more reusable than `d3w`. Keep a "change-driven" mindset while editing.
 
-The dot command is an easy and versatile command to start automating simple tasks. In the later chapter, you will learn how to automate more complex actions with Vim macros. But first, let's learn about registers to store and retrieve texts.
+The dot command is an easy and versatile command to start automating simple tasks. In the later chapter, you will learn how to automate more complex actions with Vim macros. But first, let's learn about registers to store and retrieve text.
