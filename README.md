@@ -19,7 +19,7 @@
 - [Ch 12    - Search and Substitute](./ch12_search_and_substitute.md)
 - [Ch 13    - The Global Command](./ch13_the_global_command.md)
 - [Ch 14    - External Commands](./ch14_external_commands.md)
-- Ch 15    - Command Line Mode
+- [Ch 15    - Command-line Mode](./ch15_command-line_mode.md)
 - Ch 16    - Tags
 - Ch 17    - Git
 - Ch 18    - Fold
