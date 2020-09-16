@@ -8,8 +8,8 @@ Before you start, make sure you have `set hidden` option in your `vimrc`. Withou
 
 # Buffers
 
-A buffer is an in-memory space where you can write and edit some text. When you are opening a new file in vim its content will be bound to a new buffer:
-  1. From within vim, open a new buffer `:new` (create a new empty buffer)
+A buffer is an in-memory space where you can write and edit some text. When you are opening a new file in Vim its content will be bound to a new buffer:
+  1. From within Vim, open a new buffer `:new` (create a new empty buffer)
   2. From your terminal, open a new file `file1.js` (create a new buffer with `file1.js` bound to it)
 
 If your buffer isn't bound to a file yet but you want to save its content, you can save it with `:w </path/to/file>`.
@@ -61,7 +61,7 @@ vim file1.js
 
 Earlier I said that you're looking at `file1.js` buffer. While that was correct, it was incomplete. You are looking at `file1.js` buffer displayed through **a window**. A window is what you are seeing a buffer through.
 
-Don't quit vim yet. Run:
+Don't quit Vim yet. Run:
 ```
 :split file2.js
 ```
