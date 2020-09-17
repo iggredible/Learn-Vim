@@ -51,7 +51,7 @@ If you have this text:
 hello hello friend
 ```
 
-Running `/hello$` will match anything because "friend" is the last term in that line, not "hello".
+Running `/hello$` will not match anything because "friend" is the last term in that line, not "hello".
 
 # Repeating Search
 
@@ -216,7 +216,7 @@ Let's start with a basic usage. If you have this text:
 vim is good
 ```
 
-Let's substitute "good" with "awesome" because Vim is awesome. Run `:s/good/awesome/.` You should see:
+Let's substitute "good" with "awesome" because Vim is awesome. Run `:s/good/awesome/`. You should see:
 
 ```
 vim is awesome
