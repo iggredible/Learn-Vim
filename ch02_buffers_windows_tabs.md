@@ -41,7 +41,7 @@ There are several ways you can traverse buffers:
 5. Go to the previously edited buffer with `Ctrl-^`.
 
 
-Once Vim creates a a buffer, it will remain in your buffers list. To remove it, you can type `:bdelete`. It accepts either a buffer number (`:bdelete 3` to delete buffer #3) or a filename (`:bdelete` then use `tab` to autocomplete).
+Once Vim creates a buffer, it will remain in your buffers list. To remove it, you can type `:bdelete`. It accepts either a buffer number (`:bdelete 3` to delete buffer #3) or a filename (`:bdelete` then use `tab` to autocomplete).
 
 The hardest thing for me when learning about buffer was visualizing how it worked. One way to think of it is by imagining my buffers as a deck of cards. If I have 3 buffers, I  have a stack of 3 cards. If I see `file1.js` buffer displayed, then the `file1.js` card is at the top of the deck. I can't see `file2.js` and `file3.js` cards, but I know they are in the deck. If I switch to `file3.js` buffer, I am putting `file1.js` card in the deck and putting `file3.js` card to the top of the deck.
 
