@@ -51,7 +51,7 @@ If you haven't used Vim before, this is a new concept. Take your time to underst
 
 A window is a viewport on a buffer. You can have multiple windows. Most text editors have the ability to display multiple windows. Below you see a VSCode with 3 windows.
 
-![VSCode showing 2 buffers](./img/screen-vscode-3-windows.png)
+![VSCode showing 3 windows](./img/screen-vscode-3-windows.png)
 
 Let's open `file1.js` from the terminal again:
 ```
