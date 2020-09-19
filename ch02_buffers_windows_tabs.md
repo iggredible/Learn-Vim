@@ -51,7 +51,7 @@ If you haven't used Vim before, this is a new concept. Take your time to underst
 
 A window is a viewport on a buffer. You can have multiple windows. Most text editors have the ability to display multiple windows. Below you see a VSCode with 3 windows.
 
-![buffers command showing 2 buffers](./img/screen-vscode-3-windows.png)
+![VSCode showing 2 buffers](./img/screen-vscode-3-windows.png)
 
 Let's open `file1.js` from the terminal again:
 ```
@@ -145,9 +145,9 @@ Below is a list of useful tab navigations:
 :tablast            Go to last tab
 :tabfirst           Go to first tab
 ```
-You can also run `gt` to go to next tab page. You can pass count as argument to `gt`, where count is tab number. To go to the third tab, do `3gt`.
+You can also run `gt` to go to next tab page (you can go to previous tab with `gT`). You can pass count as argument to `gt`, where count is tab number. To go to the third tab, do `3gt`.
 
-One advantage of having multiple tabs is you can have different window arrangements in different tabs. Maybe you want your first tab to have 3 vertical windows and second tab to have a mixed horizontal and horizontal windows layout. Tab is the perfect tool for the job!
+One advantage of having multiple tabs is you can have different window arrangements in different tabs. Maybe you want your first tab to have 3 vertical windows and second tab to have a mixed horizontal and vertical windows layout. Tab is the perfect tool for the job!
 
 ![first tab with multiple windows](./img/tabs-file1js.png)
 
