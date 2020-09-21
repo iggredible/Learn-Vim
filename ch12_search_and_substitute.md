@@ -190,13 +190,20 @@ When sees the first `"`, it begins the pattern capture. The moment Vim sees the 
 ## Capturing a Phone Number
 
 If you want to match a US phone number separated by a hyphen (`-`), like `123-456-7890`, you can use:
+123-456-7890
 ```
-/\v\d\{3\}-\d\{3\}-\d\{4\}
+/\d\{3\}-\d\{3\}-\d\{4\}
 ```
 
 US Phone number consists of a set of three digit number, followed by another three digits, and finally by four digits. Let's break it down:
 - `\d\{3\}` matches a digit repeated exactly three times
 - `-` is a literal hyphen
+
+You can avoid typing escapes with `\v`:
+
+```
+/\v\d{3}-\d{3}-\d{4}
+```
 
 This pattern is also useful to capture any repeating digits, such as IP addresses and zip codes. 
 
