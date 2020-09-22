@@ -141,7 +141,7 @@ Depending on which tag generator you use, the content of your tag file may look 
 2.  {tagname} {TAB} {tagfile} {TAB} {tagaddress} {term} {field} ..
 ```
 
-# `'tags'`
+# The Tag File
 
 You have learned that a new file, `tags`, is created after running `ctags -R .`. How does Vim know where to look for the tag file?
 
