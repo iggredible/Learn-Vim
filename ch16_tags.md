@@ -227,7 +227,7 @@ If you are coding along, don't forget to run `ctags -R .` again since you now ha
 
 Vim will jump to `def pancake` inside `two.rb`, not the `def pancake` inside `one.rb`. This is because Vim sees the `pancake` procedure inside `two.rb` as having a higher priority than the other `pancake` procedure.
 
-# Tags Priority
+# Tag Priority
 
 Not all tags are equal. Some tags have higher priorities. If Vim is presented with duplicate item names, Vim checks the priority of the keyword. The order is:
 
