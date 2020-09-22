@@ -58,16 +58,14 @@ Whoops, Vim could not find the tag file. You need to generate the tag file first
 
 Modern Vim does not come with tag generator, so you will have to download an external tag generator. There are several options to choose:
 
-```
-ctags				       # C only. Available almost everywhere.
-exuberant ctags		 # One of the most popular ones. Has many language support. 
-universal ctags    # Similar to exuberant ctags, but newer.
-etags 				     # For Emacs. Hmm...
-JTags				       # Java
-ptags.py			     # Python
-ptags				       # Perl
-gnatxref			     # Ada
-```
+- ctags = C only. Available almost everywhere.
+- exuberant ctags = One of the most popular ones. Has many language support. 
+- universal ctags = Similar to exuberant ctags, but newer.
+- etags = For Emacs. Hmm...
+- JTags = Java
+- ptags.py = Python
+- ptags = Perl
+- gnatxref = Ada
 
 If you look at Vim tutorials online, many will recommend [exuberant ctags](http://ctags.sourceforge.net/). It supports [41 programming languages](http://ctags.sourceforge.net/languages.html). I used it and it worked great. However, because it has not been maintained since 2009, Universal ctags would be a better choice. It works similar to exuberant ctags and is currently being maintained.
 
