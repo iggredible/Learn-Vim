@@ -326,7 +326,7 @@ Note that the `>` symbol is now on line two, where the `donut` is. `pop` one mor
 
 In normal mode, you can run `Ctrl-T` to achieve the same effect as `:pop`.
 
-# Automatic tag generation
+# Automatic Tag Generation
 
 One of the biggest drawbacks of Vim tags is that each time you make a significant change, you have to regenerate the tag file. If you recently renamed the `pancake` procedure to the `waffle` procedure, the tag file did not know that the `pancake` procedure had been renamed. It still stored `pancake` in the list of tags. You have to run `ctags -R .` to create an updated tag file. Recreating a new tag file can be cumbersome.
 
@@ -375,7 +375,7 @@ I use vim-gutentags. If you use a Vim plugin manager ([vim-plug](https://github.
 
 Tim Pope, author of many great Vim plugins, wrote a blog suggesting to use git hooks. [Check it out](https://tbaggery.com/2011/08/08/effortless-ctags-with-git.html).
 
-# Learn Tags the smart way.
+# Learn Tags the Smart Way
 
 A tag is useful once configured properly. If you are like me and you forget things easily, tags can help you visualize a project.
 
