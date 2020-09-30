@@ -21,7 +21,7 @@
 - [Ch 14    - External Commands](./ch14_external_commands.md)
 - [Ch 15    - Command-line Mode](./ch15_command-line_mode.md)
 - [Ch 16    - Tags](./ch16_tags.md)
-- Ch 17    - Fold
+- [Ch 17    - Fold](./ch17_fold.md)
 - Ch 18    - Git
 - Ch 19    - Compile
 
