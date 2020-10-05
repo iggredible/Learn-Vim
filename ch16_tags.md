@@ -337,7 +337,7 @@ Luckily there are several methods you can employ to generate tags automatically.
 Vim has an autocommand (`autocmd`) method to execute any command on an event trigger. You can use this to generate tags on each save. Run:
 
 ```
-:autocmd BufWritePost * *.rb silent !ctags -R .
+:autocmd BufWritePost *.rb silent !ctags -R .
 ```
 
 Breakdown:
