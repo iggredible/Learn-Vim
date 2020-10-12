@@ -24,6 +24,7 @@
 - [Ch 17    - Fold](./ch17_fold.md)
 - [Ch 18    - Git](./ch18_git.md)
 - Ch 19    - Compile
+- Ch 20    - Sessions
 
 # Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
