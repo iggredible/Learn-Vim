@@ -247,7 +247,7 @@ You made it to the end. Congratulations! That was a lot to take. If you are feel
 I don't think you should memorize everything right away. To become productive, you can start by using only these 3 registers: 
 1. The unnamed register (`""`).
 2. The named registers (`"a-z`).
-3. The numbered Registers (`"0-9`).
+3. The numbered registers (`"0-9`).
 
 Since the unnamed register defaults to `p` or `P`, you only have to learn two registers: the named registers and the numbered registers. Gradually learn more when you need it. Take your time. 
 
