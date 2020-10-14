@@ -47,6 +47,20 @@ The hardest thing for me when learning about buffer was visualizing how it worke
 
 If you haven't used Vim before, this is a new concept. Take your time to understand it. When you're ready, let's move on to windows.
 
+# Exiting Vim
+
+If you have multiple buffers opened and have made some changes, you can close all of them and exit Vim with:
+
+```
+:qall
+```
+
+If you want to exit without saving your changes, just add `!` at the end:
+
+```
+:qall!
+```
+
 # Windows
 
 A window is a viewport on a buffer. You can have multiple windows. Most text editors have the ability to display multiple windows. Below you see a VSCode with 3 windows.
