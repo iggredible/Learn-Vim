@@ -191,7 +191,7 @@ Even better, motions and operators are extendable. You can create custom motions
 
 By the way, it's okay if you don't know `column` or `awk` commands I just did. The point is that Vim integrates very well with terminal commands.
 
-# Learn Grammar the Smart Way
+# Learn Vim Grammar the Smart Way
 
 You just learned about Vim grammar's only rule:
 ```
