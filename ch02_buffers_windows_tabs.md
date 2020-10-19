@@ -34,9 +34,9 @@ Vim displays `file1.js` buffer, but it actually creates two buffers: `file1.js` 
 ![buffers command showing 2 buffers](./img/screen-one-buffer-buffers-command.png)
 
 There are several ways you can traverse buffers:
-1. `:bnext` to go to the next buffer (`:bprevious` to go to the previous buffer).
-2. `:buffer` + filename. Vim can autocomplete filename with `tab`.
-3. `:buffer` + `n`, where `n` is the buffer number. For example, typing `:buffer 2` will take you to buffer #2.
+1. `:bnext` in short you can use `:bn` to go to the next buffer (`:bprevious` or `:bp` in short, to go to the previous buffer).
+2. `:buffer` + filename. Or instead `:buffer` `:b` in short. Vim can autocomplete filename with `tab`.
+3. `:buffer` + `n`, where `n` is the buffer number. Or instead `:buffer` `:b` in short. For example, typing `:buffer 2` (or `:b 2`) will take you to buffer #2.
 4. Jump to the older position in jump list with `Ctrl-o` and to the newer position with `Ctrl-i`. These are not buffer specific methods, but they can be used to jump between different buffers. I will talk more about jumps in Chapter 5.
 5. Go to the previously edited buffer with `Ctrl-^`.
 
