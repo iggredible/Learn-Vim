@@ -136,9 +136,9 @@ To match the lines containing between three to six zeroes, run:
 
 You can pass a range before the `g` command. Here are some ways you can do it:
 
-- `:1,5/g/console/d`  matches the string "console" between lines 1 and 5 and deletes them.
-- `:,5/g/console/d` if there is no address before the comma, then it starts from the current line. It looks for the string "console" between the current line and line 5 and deletes them.
-- `:3,/g/console/d` if there is no address after the comma, then it ends at the current line. It looks for the string "console" between line 3 and the current line and deletes them.
+- `:1,5g/console/d`  matches the string "console" between lines 1 and 5 and deletes them.
+- `:,5g/console/d` if there is no address before the comma, then it starts from the current line. It looks for the string "console" between the current line and line 5 and deletes them.
+- `:3,g/console/d` if there is no address after the comma, then it ends at the current line. It looks for the string "console" between line 3 and the current line and deletes them.
 - `:3g/console/d` if you only pass one address without a comma, it executes the command only on line 3. It looks on line 3 and deletes it if has the string "console".
 
 In addition to numbers, you can also use these symbols as range:
