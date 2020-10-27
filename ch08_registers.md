@@ -135,7 +135,7 @@ Another example:
 The named registers are Vim's most versatile register. It can store yanked, changed, and deleted texts into registers a-z. Unlike the previous 3 register types you've seen which automatically stores texts into registers, you have to explicitly tell Vim to use the named register, giving you full control.
 
 To yank a word into register "a", you can do it with `"ayiw`.
-- `"a` tells vim that the next action (delete / change / yank) will be stored in register "a".
+- `"a` tells Vim that the next action (delete / change / yank) will be stored in register "a".
 - `yiw` yanks the word.
 
 To get the text from register "a", run `"ap`. You can use all twenty-six alphabetical characters to store twenty-six different texts with named registers.
