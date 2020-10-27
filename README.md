@@ -5,7 +5,7 @@
 
 ## Table Of Contents (In Progress)
 - Ch 0     - Learn Vim the Smart Way
-- Ch 1     - Starting Out
+- [Ch 1     - Starting Vim](./ch01_starting_vim.md)
 - [Ch 2     - Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)
 - [Ch 3     - Opening and Searching Files](./ch03_opening_and_searching_files.md)
 - [Ch 4     - Vim Grammar](./ch04_vim_grammar.md)
@@ -36,4 +36,3 @@ The materials here are all ©2020 Igor Irianto.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.
-
