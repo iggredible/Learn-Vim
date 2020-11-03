@@ -4,7 +4,9 @@
 *Learn Vim (the Smart Way)* is a book to learn the good parts of Vim.
 
 ## Table Of Contents (In Progress)
-- Ch 0     - Learn Vim the Smart Way
+
+### Part 1: Learn (to Use) Vim the Smart Way
+
 - [Ch 1     - Starting Vim](./ch01_starting_vim.md)
 - [Ch 2     - Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)
 - [Ch 3     - Opening and Searching Files](./ch03_opening_and_searching_files.md)
@@ -24,7 +26,17 @@
 - [Ch 17    - Fold](./ch17_fold.md)
 - [Ch 18    - Git](./ch18_git.md)
 - [Ch 19    - Compile](./ch19_compile.md)
-- Ch 20    - Sessions
+- Ch 20    - Views, Sessions, and Viminfo
+
+### Part 2: Learn (to Configure) Vim the Smart Way (TBD)
+
+- Ch 21 - Vimrc
+- Ch 22 - Vim runtime (directories)
+- Ch 23 - Vim pack
+
+### Part 3: Learn (Vimscript) the Smart Way (TBD)
+
+- Ch 24 - Vimscript?
 
 # Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
