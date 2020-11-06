@@ -26,7 +26,7 @@
 - [Ch 17    - Fold](./ch17_fold.md)
 - [Ch 18    - Git](./ch18_git.md)
 - [Ch 19    - Compile](./ch19_compile.md)
-- Ch 20    - Views, Sessions, and Viminfo
+- [Ch 20    - Views, Sessions, and Viminfo](./ch20_views_sessions_viminfo.md)
 
 ### Part 2: Learn (to Configure) Vim the Smart Way (TBD)
 
@@ -36,7 +36,7 @@
 
 ### Part 3: Learn (Vimscript) the Smart Way (TBD)
 
-- Ch 24 - Vimscript?
+- Ch 24 - Vimscript
 
 # Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
