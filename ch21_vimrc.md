@@ -13,7 +13,7 @@ Behind the scene, Vim looks at multiple places for a vimrc file, not only the ro
 - `$VIMINIT`
 - `$HOME/.vimrc`
 - `$HOME/.vim/vimrc`
-- `EXINIT`
+- `$EXINIT`
 - `$HOME/.exrc`
 - `$HOME/.vim/exrc`
 - `$VIMRUNTIME/default.vim`
