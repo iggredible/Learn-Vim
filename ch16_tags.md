@@ -1,8 +1,8 @@
-# Tags
+# Ch 16. Tags
 
 One useful feature in text editing is being able to go to any definition quickly. In this chapter, you will learn how to use Vim tags to do that.
 
-# Tag Overview
+## Tag Overview
 
 Suppose someone handed you a new codebase:
 
@@ -28,7 +28,7 @@ Instead of having a name-address pair, tags store definitions paired with addres
 Let's assume that you have these two Ruby files inside the same directory:
 
 ```
-# one.rb
+## one.rb
 class One
   def initialize
     puts "Initialized"
@@ -43,7 +43,7 @@ end
 and
 
 ```
-# two.rb
+## two.rb
 require './one'
 
 one = One.new
@@ -54,7 +54,7 @@ To jump to a definition, you can use `Ctrl-]` in the normal mode. Inside `two.rb
 
 Whoops, Vim could not find the tag file. You need to generate the tag file first.
 
-# Tag Generator
+## Tag Generator
 
 Modern Vim does not come with tag generator, so you will have to download an external tag generator. There are several options to choose:
 
@@ -106,7 +106,7 @@ Yours might look a little different depending on your Vim setting and the ctags 
 
 Now go to `two.rb`, put the cursor on `donut`, and type `Ctrl-]`. Vim will take you to the file `one.rb` on the line where `def donut` is. Success! But how did Vim do this?
 
-# Tags Anatomy
+## Tags Anatomy
 
 Let's look at the `donut` tag item:
 
@@ -141,7 +141,7 @@ Depending on which tag generator you use, the content of your tag file may look 
 2.  {tagname} {TAB} {tagfile} {TAB} {tagaddress} {term} {field} ..
 ```
 
-# The Tag File
+## The Tag File
 
 You have learned that a new file, `tags`, is created after running `ctags -R .`. How does Vim know where to look for the tag file?
 
@@ -157,7 +157,7 @@ To add to a tag file location, just run:
 :set tags+=path/to/my/tags/file
 ```
 
-# Generating Tags For a Large Project.
+## Generating Tags For a Large Project.
 
 If you tried to run ctags in a large project, it may take a long time because Vim also looks inside every nested directories. If you are a Javascript developer, you know that `node_modules` can be very large. Imagine if you have a five sub-projects and each contains its own `node_modules` directory. If you run `ctags -R .`, ctags will try to scan through all 5 `node_modules`. You probably don't need to run ctags on `node_modules`.
 
@@ -173,7 +173,7 @@ This time it should take less than a second. By the way, you can use the `exclud
 ctags -R --exclude=.git --exclude=vendor --exclude=node_modules --exclude=db --exclude=log .
 ```
 
-# Tags Navigation
+## Tags Navigation
 
 You can get good milage using only `Ctrl-]`, but let's learn a few more tricks. The tag jump key `Ctrl-]` has an command-line mode alternative: `:tag my-tag`. If you run:
 
@@ -192,7 +192,7 @@ Vim lists all tags that starts with "d". In this case, "donut".
 In a real project, you may encounter multiple methods with the same name. Let's update the two files. Inside `one.rb`:
 
 ```
-# one.rb
+## one.rb
 class One
   def initialize
     puts "Initialized"
@@ -211,7 +211,7 @@ end
 And `two.rb`:
 
 ```
-# two.rb
+## two.rb
 require './one.rb'
 
 def pancake
@@ -227,7 +227,7 @@ If you are coding along, don't forget to run `ctags -R .` again since you now ha
 
 Vim will jump to `def pancake` inside `two.rb`, not the `def pancake` inside `one.rb`. This is because Vim sees the `pancake` procedure inside `two.rb` as having a higher priority than the other `pancake` procedure.
 
-# Tag Priority
+## Tag Priority
 
 Not all tags are equal. Some tags have higher priorities. If Vim is presented with duplicate item names, Vim checks the priority of the keyword. The order is:
 
@@ -242,7 +242,7 @@ Not all tags are equal. Some tags have higher priorities. If Vim is presented wi
 
 According to the priority list, Vim prioritizes the exact match found on the same file. That's why Vim chooses the `pancake` procedure inside `two.rb` over the `pancake` procedure inside `one.rb`. There are some exceptions to the priority list above depending on your `'tagcase'`, `'ignorecase'`, and `'smartcase'` settings, but I will not discuss them here. If you are interested, check out `:h tag-priority`.
 
-# Selective Tag Jumps
+## Selective Tag Jumps
 
 It would be nice if you can choose which tag items to jump to instead of always going to the highest priority tag item. Maybe you actually need to jump to the `pancake` method in `one.rb` and not the one in `two.rb`. To do that, you can use `:tselect`. Run:
 
@@ -253,7 +253,7 @@ It would be nice if you can choose which tag items to jump to instead of always 
 You will see, on the bottom of the screen:
 
 ```
-# pri kind tag               file
+## pri kind tag               file
 1 F C f    pancake           two.rb
              def pancake
 2 F   f    pancake           one.rb
@@ -283,7 +283,7 @@ Vim will prompt you tag options to choose from, much like running `:tselect panc
 
 Vim has a normal mode key for `tjump`: `g Ctrl-]`. I personally like `g Ctrl-]` better than `Ctrl-]`.
 
-# Autocompletion With Tags
+## Autocompletion With Tags
 
 Tags can assist autocompletions. Recall from chapter 6, Insert Mode, that you can use `Ctrl-X` sub-mode to do various autocompletions. One autocompletion sub-mode that I did not mention was `Ctrl-]`. If you do `Ctrl-X Ctrl-]` while in the insert mode, Vim will use the tag file for autocompletion.
 
@@ -296,7 +296,7 @@ initialize
 pancake
 ```
 
-# Tag Stack
+## Tag Stack
 
 Vim keeps a list of all the tags you have jumped to and from in a tag stack. You can see this stack with `:tags`. If you had first tag-jumped to `pancake`, followed by `donut`, and run `:tags`, you will see:
 
@@ -326,7 +326,7 @@ Note that the `>` symbol is now on line two, where the `donut` is. `pop` one mor
 
 In normal mode, you can run `Ctrl-T` to achieve the same effect as `:pop`.
 
-# Automatic Tag Generation
+## Automatic Tag Generation
 
 One of the biggest drawbacks of Vim tags is that each time you make a significant change, you have to regenerate the tag file. If you recently renamed the `pancake` procedure to the `waffle` procedure, the tag file did not know that the `pancake` procedure had been renamed. It still stored `pancake` in the list of tags. You have to run `ctags -R .` to create an updated tag file. Recreating a new tag file can be cumbersome.
 
@@ -375,7 +375,7 @@ I use vim-gutentags. If you use a Vim plugin manager ([vim-plug](https://github.
 
 Tim Pope, author of many great Vim plugins, wrote a blog suggesting to use git hooks. [Check it out](https://tbaggery.com/2011/08/08/effortless-ctags-with-git.html).
 
-# Learn Tags the Smart Way
+## Learn Tags the Smart Way
 
 A tag is useful once configured properly. If you are like me and you forget things easily, tags can help you visualize a project.
 

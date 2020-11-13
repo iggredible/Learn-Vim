@@ -1,10 +1,10 @@
-# Vim Grammar
+# Ch 04. Vim Grammar
 
 It is easy to get intimidated by the complexity of many Vim commands. If you see a Vim user doing `gUfV` or `1GdG`, you may not immediately know what these commands do. In this chapter, I will break down the general structure of Vim commands into a simple grammar rule.
 
 This is the most important chapter in the entire book. Once you understand Vim commands' grammar-like structure, you will be able to "speak" to Vim. By the way, when I say *Vim language* in this chapter, I am not talking about Vimscript (the built-in programming language to customize and to create Vim plugins). Here it means the general pattern of normal mode commands.
 
-# How to learn a language
+## How to learn a language
 
 I am not a native English speaker. I learned English when I was 13 when I moved to the US. I had to do three things to build up linguistic proficiency:
 
@@ -14,7 +14,7 @@ I am not a native English speaker. I learned English when I was 13 when I moved 
 
 Likewise, to speak Vim language, you need to learn the grammar rules, increase your vocabulary, and practice until you can run the commands without thinking.
 
-# Grammar Rule
+## Grammar Rule
 
 You only need to know one grammar rule to speak Vim language:
 
@@ -32,7 +32,7 @@ This is equivalent to saying these English phrases:
 
 Now you need to build up your vocabulary with basic Vim verbs and nouns.
 
-# Vocabulary
+## Vocabulary
 ## Nouns (Motions)
 
 Let's talk about motions as nouns. Motions are used to move around in Vim. They are also Vim nouns. Below you'll see some motion examples:
@@ -146,7 +146,7 @@ t         XML tags
 ```
 To learn more, check out `:h text-objects`.
 
-# Composability and Grammar
+## Composability and Grammar
 
 After learning Vim grammar, let's discuss composability in Vim and why this is a great feature to have in a text editor.
 
@@ -191,7 +191,7 @@ Even better, motions and operators are extendable. You can create custom motions
 
 By the way, it's okay if you don't know `column` or `awk` commands I just did. The point is that Vim integrates very well with terminal commands.
 
-# Learn Vim Grammar the Smart Way
+## Learn Vim Grammar the Smart Way
 
 You just learned about Vim grammar's only rule:
 ```

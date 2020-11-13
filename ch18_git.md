@@ -1,8 +1,8 @@
-# Git
+# Ch 18. Git
 
 Vim and git are two great tools for two different things. Git is a version control tool. Vim is a text editor. In this chapter, you will learn different ways to integrate Vim and git together.
 
-# Diffing
+## Diffing
 
 In the last chapter, you saw how you can run a `vimdiff` command to show differences between multiple files.
 
@@ -60,7 +60,7 @@ If you need to transfer the text from the other buffer (orange juice) to replace
 
 `:diffput` *puts out* the text from the current buffer to another buffer. `:diffget` *gets* the text from another buffer to the current buffer. If you have multiple buffers, you can run `:diffput fileN.txt` and `:diffget fileN.txt` to target the fileN buffer.
 
-# Vim as a Merge Tool
+## Vim as a Merge Tool
 
 > "I love resolving merge conflicts!" - Nobody
 
@@ -203,7 +203,7 @@ If you notice, you also have a file `breakfast.txt.orig` now. Git creates a back
 git config --global mergetool.keepBackup false
 ```
 
-# Git Inside Vim
+## Git Inside Vim
 
 Vim does not have a native git integration. However, one way to run git commands from Vim is to use the bang operator, `!`, in the command-line mode.
 
@@ -223,7 +223,7 @@ You can also use Vim's `%` (current buffer) or `#` (other buffer) conventions:
 :!git checkout #    " git checkout the other file
 ```
 
-# Plugins
+## Plugins
 
 To integrate git inside Vim, you have to use plugins. Below is a list of popular git-related plugins for Vim:
 
@@ -237,7 +237,7 @@ To integrate git inside Vim, you have to use plugins. Below is a list of popular
 
 One of the most popular ones is vim-fugitive. For the remaining of the chapter, I will go over a several git workflow using this plugin.
 
-# Vim-fugitive
+## Vim-fugitive
 
 The vim-fugitive plugin allows you to run the git CLI without leaving the Vim editor. You will find that some commands are better when executed from inside Vim.
 
@@ -312,7 +312,7 @@ These are only a few examples of what vim-fugitive can do. To learn more about v
 
 If you are inside one of vim-fugitive's "special mode" (for example, inside `:Git` or `:Git blame` mode) and you want to learn what shortcuts are available, press `g?`. Vim-fugitive will display the appropriate `:help` window for the mode you are in. Neat!
 
-# Learn Vim and Git the smart way
+## Learn Vim and Git the smart way
 
 Everybody has a different git workflow. You may find vim-fugitive to be a good compliment to your workflow (or not). Regardless, I would strongly encourage you to check out all the plugins listed above. There are probably others I didn't list. Use the best tool for the job.
 

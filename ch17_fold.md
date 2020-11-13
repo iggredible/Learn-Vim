@@ -1,10 +1,10 @@
-# Fold
+# Ch 17. Fold
 
 When you read a file, often there are many irrelevant text that hinders you from understanding what that file does. To hide this unnecessary information, you can use Vim fold.
 
 In this chapter, you will learn how to use different folding methods.
 
-# Manual Fold
+## Manual Fold
 
 Imagine that you are folding a sheet of paper to cover some text. The actual text does not go away, it is still there. Vim fold works the same way. It *folds* a range of text, hiding it from display without actually deleting it.
 
@@ -49,7 +49,7 @@ There are many other fold and unfold commands. I find them too many to remember 
 
 You can run `zR` and `zM` on any line, but `za` only works when you are on a folded / unfolded line. To learn more folding commands, check out `:h fold-commands`.
 
-# Different Fold Methods
+## Different Fold Methods
 
 The section above covers Vim's manual fold. There are six different folding methods in Vim:
 1. Manual
@@ -63,7 +63,7 @@ To see which folding method you are currently using, run `:set foldmethod?`. By 
 
 In the rest of the chapter, you will learn the other five folding methods. Let's get started with the indent fold.
 
-# Indent Fold
+## Indent Fold
 
 To use an indent fold, change the `'foldmethod'` to indent:
 
@@ -138,7 +138,7 @@ What's this? A fold within a fold?
 
 You can have nested folds. The text "Two" and "Two again" have fold level of one. The text "Three" and "Three again" have fold level of two. If you have a foldable text with a higher fold level within a foldable text, you can have multiple fold layers.
 
-# Marker Fold
+## Marker Fold
 
 To use a marker fold, run:
 
@@ -190,7 +190,7 @@ foo2
 
 Now Vim uses `foo1` and `foo2` as the new folding markers. As a side note, an indicator must be a literal string and cannot be a regex.
 
-# Syntax Fold
+## Syntax Fold
 
 Vim has a syntax system to customize the text syntax (highlight, weight, color, etc). This chapter won't discuss how the syntax system works, but you can use this to indicate which text to fold. To use a syntax fold, run:
 
@@ -227,7 +227,7 @@ Here is the breakdown:
 - `transparent` to prevent highlights.
 - `fold` increases the fold level when the syntax matches the starting and ending characters.
 
-# Expression Fold
+## Expression Fold
 
 Expression folding allows you to define an expression to match for a fold. After you define the fold expressions, Vim scans each line for the value of `'foldexpr'`. This is the variable that you have to configure to return the appropriate value. If the `'foldexpr'` returns 0, then the line is not folded. If it returns 1, then that line has a fold level of 1. If it returns 2, then that line has a fold level of 2. There are more values other than integers, but I won't go over them. If you are curious, check out `:h fold-expr`.
 
@@ -271,7 +271,7 @@ salmon
 scrambled eggs
 ```
 
-# Diff Fold
+## Diff Fold
 
 Vim can do a diff procedure to compare two or more files.
 
@@ -320,7 +320,7 @@ vim is awesome
 
 Vim automatically folds some of the identical lines. When you are running the `vimdiff` command, Vim automatically uses `foldmethod=diff`. If you run `:set foldmethod?`, it will return `diff`.
 
-# Persisting Fold
+## Persisting Fold
 
 You loses all fold information when you close the Vim session. If you have this file, `count.txt`:
 
@@ -372,7 +372,7 @@ Now after you fold inside a `.txt` file and exit Vim, the next time you open tha
 
 By default, Vim saves the fold information when running `mkview` inside `~/.vim/view` for the Unix system. For more information, check out `:h 'viewdir'`.
 
-# Learn Fold the Smart Way
+## Learn Fold the Smart Way
 
 When I first started Vim, I would skip learning Vim fold because I didn't think it was useful. However, the longer I code, the more useful I find folding is. Strategically placed folds can give you a better overview of the text structure, like a book's *table of content*.
 

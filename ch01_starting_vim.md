@@ -1,8 +1,8 @@
-# Starting Vim
+# Ch 01. Starting Vim
 
 In this chapter, you will learn different ways to start Vim from the terminal. I highly recommend you use Vim from the terminal as you are typing along. I am currently using Vim 8.2. You should be fine if you use a lower version, but some commands might not be available.
 
-# Installing
+## Installing
 
 I will not go through the detailed instruction how to install Vim (because there are many different distros out there). The good news is, most Unix computers should come with Vim installed. If not, most distros should have a way to install Vim.
 
@@ -12,7 +12,7 @@ For more download information, check out Vim's official download website:
 
 Alternatively, you can also check out Vim's [official github repository](https://github.com/vim/vim).
 
-# `vim`
+## `vim`
 
 Now that you have Vim installed, run this from the terminal:
 
@@ -22,7 +22,7 @@ vim
 
 You should see an intro screen. This is the where you will be working on your file. Unlike most text editors and IDEs, Vim is a modal editor. If you want to type "Hello", you need to switch to Insert mode with `i`. Type: `ihello<Esc>`.
 
-# Exiting Vim
+## Exiting Vim
 
 There are several ways to exit Vim. The most common one is to type:
 
@@ -58,7 +58,7 @@ To quit without saving any changes, add `!` after `:q` to force quit:
 
 There are other ways to exit Vim, but these are the ones you will use daily. 
 
-# Help
+## Help
 
 Throughout the book, I will refer you to various Vim help pages. You can access the help page by typing the following Command-line command:
 
@@ -72,7 +72,7 @@ Or `:h` for short. You can also pass the `:h` command the subject you want to le
 :h write-quit
 ```
 
-# Opening a File
+## Opening a File
 
 From the terminal, to open `hello1.txt` file, run:
 
@@ -88,7 +88,7 @@ vim hello1.txt hello2.txt hello3.txt
 
 Vim opens `hello1.txt`, `hello2.txt`, and `hello3.txt` in separate buffers. You will learn more about buffers in the next chapter.
 
-# Arguments
+## Arguments
 
 You can pass the `vim` terminal command with different flags and options.
 
@@ -139,7 +139,7 @@ vim -c %s/foo/bar/g -c %s/bar/baz/g -c %s/baz/donut/g hello.txt
 
 Throughout this book you will learn various Command-line commands. These commands can all be executed on start.
 
-# Opening multiple windows
+## Opening multiple windows
 
 You can launch Vim on split windows (horizontal and vertical) with `o` and `O`, respectively.
 
@@ -169,13 +169,13 @@ vim -O5
 vim -O5 hello1.txt hello2.txt
 ```
 
-# Suspending
+## Suspending
 
 If you need to suspend Vim while in the middle of editing, you can press `Ctrl-Z`. Alternatively, you can also run either the `:stop` or `:suspend` command.
 
 To return to the suspended Vim, run `fg` from the terminal.
 
-# Starting Vim the Smart Way
+## Starting Vim the Smart Way
 
 You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `c cmd`). As you learn more command-line commands throughout this book, see if you can apply it on start.
 

@@ -1,8 +1,8 @@
-# Visual Mode
+# Ch 11. Visual Mode
 
 You probably know that you can highlight a block of text and apply changes to it. Vim can too, with visual mode. Vim has three different visual modes to use. In this chapter, you will learn how to use each visual mode to manipulate blocks of texts efficiently.
 
-# The Three Types of Visual Modes
+## The Three Types of Visual Modes
 The three modes are:
 
 ```
@@ -39,7 +39,7 @@ gv    Go to the previous visual mode
 
 It will start the same visual mode on the same highlighted text block as you did last time.
 
-# Visual mode navigation
+## Visual mode navigation
 
 While in a visual mode, you can expand the highlighted text block with Vim motions.
 
@@ -101,7 +101,7 @@ two
 t]hree
 ```
 
-# Visual Mode Grammar
+## Visual Mode Grammar
 
 Visual mode is one of Vim's modes. Being a mode means that the same key may work differently than in another mode. Luckily, visual mode shares many common keys with normal mode.
 
@@ -158,7 +158,7 @@ Chapter One
 To learn more about operators in visual mode, check out `:h visual-operators`.
 
 
-# Visual Mode and Ex Commands
+## Visual Mode and Ex Commands
 
 You can selectively apply Ex commands on a highlighted text block. If you have these expressions:
 
@@ -176,7 +176,7 @@ const three = "three";
 ```
 Notice I said you can do this with *any* visual mode. You do not have to highlight the entire line to run Ex command on that line. As long as you select at least a character on each line, the Ex command will be applied.
 
-# Editing Across Multiple Lines 
+## Editing Across Multiple Lines 
 
 You can edit text across multiple lines in Vim using the block-wise visual mode. If you need to add a semicolon at the end of each line:
  
@@ -201,7 +201,7 @@ Alternatively, you can also use the `:normal` command:
 
 Remember, `:normal` command executes normal mode commands. You can instruct it to run `A;` to append text ";" at the end of the line. 
 
-# Incrementing numbers
+## Incrementing numbers
 
 Vim has `Ctrl-X` and `Ctrl-A` commands to decrement and increment numbers. When used with visual mode, you can increment numbers across multiple lines.
 
@@ -251,7 +251,7 @@ Put your cursor on the second "app-a". Use the same technique as above (`Ctrl-V 
 <div id="app-d"></div>
 <div id="app-e"></div>
 ```
-# Selecting the Last Visual Mode Area
+## Selecting the Last Visual Mode Area
 
 You learned that `gv` can quickly highlight the last visual mode highlight. You can also go to the location of the start and the end of the last visual mode with these two special marks:
 
@@ -270,7 +270,7 @@ You were actually executing `s/const/let/g` command using marks as range. You ca
 :`<,$s/const/let/g
 ```
 
-# Entering Visual Mode from Insert Mode
+## Entering Visual Mode from Insert Mode
 
 You can also enter visual mode from the insert mode. To go to character-wise visual mode while you are in insert mode:
 
@@ -280,7 +280,7 @@ Ctrl-O v
 
 Recall that running `Ctrl-O` while in the insert mode lets you to execute a normal mode command. While in this normal-mode-command-pending mode, run `v` to enter character-wise visual mode. Notice that on the bottom left of the screen, it says `--(insert) VISUAL--`. This trick works with any visual mode operator: `v`, `V`, and `Ctrl-V`.
 
-# Select Mode
+## Select Mode
 
 Vim has a mode similar to visual mode called the *select mode*. Like visual mode, it also has three different modes:
 ```
@@ -299,7 +299,7 @@ Contrast this behavior with visual mode: if you  highlight a line of text with l
 
 I personally never used select mode, but it's good to know that it exists.
 
-# Learn Visual Mode the Smart Way
+## Learn Visual Mode the Smart Way
 
 The visual mode is Vim's representation of the text highlighting procedure. 
 

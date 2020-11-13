@@ -1,4 +1,4 @@
-# Views, Sessions, and Viminfo
+# Ch 20. Views, Sessions, and Viminfo
 
 After you worked on a project for a while, you may find that the project to gradually take shape with its own settings, folds, buffers, layouts, etc. It's like decorating your apartment to make it feel like home.
 
@@ -6,7 +6,7 @@ The problem is, when you close Vim, you lose those changes. Wouldn't it be nice 
 
 Vim has three tools for this: View, Session, and Viminfo. In this chapter, you will learn how to leverage all three to take a "snapshot" of your project.
 
-# Views
+## Views
 
 A View is the smallest subset of the three (View, Session, Viminfo). A Vim View is a collection of settings for one window. If you spend a long time working on a window and you want to preserve the mappings and folds, you can use a View.
 
@@ -165,7 +165,7 @@ au BufWinEnter *.txt silent loadview
 
 Now you don't have to worry about creating and loading View anymore when you are working with `txt` files. Keep in mind that over time, your `~/.vim/view` might start to accumulate View files. It's good to clean it up once every few months.
 
-# Sessions
+## Sessions
 
 If a View saves the settings of a window, a Session saves the information of all windows (including the layout).
 
@@ -299,7 +299,7 @@ Session is a useful tool to preserve your project's external attributes. However
 
 To save them, you need to use Viminfo!
 
-# Viminfo
+## Viminfo
 
 After yanking a word into register a and quitting Vim, the next time you open Vim you can immediately paste the text from register a. This is actually one of Viminfo's features. Without it, Vim won't remember the register after you close.
 
@@ -399,7 +399,7 @@ This looks cryptic. Let's break it down:
 
 There are other options. To learn more, check out `:h 'viminfo'`.
 
-# Using Views, Sessions, and Viminfo the Smart Way
+## Using Views, Sessions, and Viminfo the Smart Way
 
 Vim has View, Session, and Viminfo to take different level of "snapshot" of your Vim environment. For small projects, use Views. For larger projects, use Sessions. You should take your time to check out all the options that View, Session, and Viminfo offers.
 

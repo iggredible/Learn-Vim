@@ -1,10 +1,10 @@
-# External Commands
+# Ch 14. External Commands
 
 Inside the Unix system, you will find many small, hyper-specialized commands where each does one thing well. You can chain these commands  to work together to solve a complex problem. Wouldn't it be great if you can use these commands from inside Vim?
 
 In this chapter, you will learn how extend Vim to work seamlessly with external commands.
 
-# The Bang Command
+## The Bang Command
 
 Vim has a bang (`!`) command that can do three things:
 
@@ -13,7 +13,7 @@ Vim has a bang (`!`) command that can do three things:
 3. Execute an external command from inside Vim.
 
 
-# Reading the STDOUT of a Command Into Vim
+## Reading the STDOUT of a Command Into Vim
 
 The syntax to read the STDOUT of an external command into the current buffer is:
 
@@ -57,7 +57,7 @@ The `r` command also accepts an address:
 
 Now the STDOUT from running `cat file.txt` will be inserted after line 10.
 
-# Writing the Buffer Content Into an External Command
+## Writing the Buffer Content Into an External Command
 
 In addition to saving a file, you can also use the write command (`:w`) to pass the text in the current buffer as the STDIN for an external command. The syntax is:
 
@@ -90,7 +90,7 @@ Vim only uses the text from the second line into the `node` interpreter.
 
 There is a subtle but significant difference between `:w !node` and `:w! node`. With `:w !node`, you are "writing" the text in the current buffer into the external command `node`. With `:w! node`, you are force-saving a file and naming the file "node".
 
-# Executing an External Command
+## Executing an External Command
 
 You can execute an external command from inside Vim with the bang command. The syntax is:
 
@@ -112,7 +112,7 @@ To kill a process that is running on PID 3456, you can run:
 
 You can run any external command without leaving Vim so you can stay focused on your task.
 
-# Filtering Texts
+## Filtering Texts
 
 If you give `!` a range, it can be used to filter texts. Suppose you have this:
 
@@ -186,7 +186,7 @@ The breakdown:
 - `sort -nk 3` sorts numerically (`n`) using the values from column 3 (`k 3`).
 - `column -t` organizes the text with even spacing.
 
-# Normal mode command
+## Normal mode command
 
 Vim has a filter operator (`!`) in the normal mode. If you have the following greetings:
 
@@ -208,7 +208,7 @@ The breakdown:
 
 The filter normal command only works on motions / text objects that are at least one line or longer. If you had tried running `!iwtr '[a-z]' '[A-Z]'` (execute `tr` on inner word), you will find that it applies the `tr` command on the entire line, not the word your cursor is on.
 
-# Learn External Commands the Smart Way
+## Learn External Commands the Smart Way
 
 Vim is not an IDE. It is a lightweight modal editor that is highly extensible by design. Because of this extensibility, you have easy access to any external command in your system. With this, Vim is one step closer from becoming an IDE. Someone said that the Unix system is the first IDE ever.
 

@@ -1,9 +1,10 @@
-# Search and Substitute
+# Ch 12. Search and Substitute
+
 This chapter covers two separate but related concepts: search and substitute. Many times, the texts that you are searching for are not straightforward and you must search for a common pattern. By learning how to use meaningful patterns in search and substitute instead of literal strings, you will be able to target any text quickly.
 
 As a side note, in this chapter, I will mainly use `/` when talking about search. Everything you can do with `/` can also be done with `?`.
 
-# Smart Case Sensitivity
+## Smart Case Sensitivity
 
 It can be tricky trying to match the case of the search term. If you are searching for the text "Learn Vim", you can easily mistype the case of one letter and get a false search result. Wouldn't it be easier and safer if you can match any case? This is where the option `ignorecase` shines. Just add `set ignorecase` in your vimrc and all your search terms become case insensitive. Now you don't have to do `/Learn Vim` anymore. `/learn vim` will work.
 
@@ -33,7 +34,7 @@ You can control case insensitivity with the case of your search phrase:
 
 There is one downside. What if you need to search for only a lowercase string? When you do `/hello`, Vim will always match its uppercase variants. What if you don't want to match them? You can use `\C` pattern in front of your search term to tell Vim that the subsequent search term will be case sensitive. If you do `/\Chello`, it will strictly match "hello", not "HELLO" or "Hello".
 
-# First and Last Character in a Line
+## First and Last Character in a Line
 
 You can use `^` to match the first character in a line and `$` to match the last character in a line.
 
@@ -53,7 +54,7 @@ hello hello friend
 
 Running `/hello$` will not match anything because "friend" is the last term in that line, not "hello".
 
-# Repeating Search
+## Repeating Search
 
 You can repeat the previous search with `//`. If you have just searched for `/hello`, running `//` is equivalent to running `/hello`. This shortcut can save you some keystrokes especially if you just did a long search term. Also recall that you can also use `n` and `N` to repeat the last search with the same direction and opposite direction, respectively.
 
@@ -61,7 +62,7 @@ What if you want to quickly recall *n* last search term? You can quickly travers
 
 When you reach the end of a file while searching, Vim throws an error: `"Search hit the BOTTOM without match for: <your-search>"`. Sometimes this can be a good safeguard from oversearching, but other times you want to cycle the search back to the top again. You can use the `set wrapscan` option to make Vim to search back at the top of the file when you reach the end of the file. To turn this feature off, do `set nowrapscan`.
 
-# Searching for Alternative Words
+## Searching for Alternative Words
 
 It is common to search for multiple words at once. If you need to search for *either* "hello vim" or "hola vim", but not "salve vim" or "bonjour vim", you can use the `|` pipe alternative syntax.
 
@@ -78,7 +79,7 @@ To match both "hello" and  "hola", you can do `/hello\|hola`. You have to escape
 
 If you don't want to type `\|` every time, you can use the `magic` syntax (`\v`) at the start of the search: `/\vhello|hola`. I will not cover `magic` in this chapter, but with `\v`, you don't have to escape special characters anymore. To learn more about `\v`, feel free to check out `:h \v`.
 
-# Setting the Start and End of a Match
+## Setting the Start and End of a Match
 
 Maybe you need to search for a text that is a part of a compound word. If you have these texts:
 
@@ -108,7 +109,7 @@ If you need to search for the "foo" in "foobaz" but not in "foobar", run:
 /foo\zebaz
 ```
 
-# Searching Character Ranges
+## Searching Character Ranges
 
 All your search terms up to this point have been a literal word search. In real life, you may have to use a general pattern to find your text. The most basic pattern is the character range, `[ ]`.
 
@@ -120,7 +121,7 @@ You can combine these ranges together. If you need to search for digits 0-9 and 
 
 To do a negative search, you can add `^` inside the character range brackets. To search for a non-digit, run `/[^0-9]`. Vim will match any character as long as it is not a digit. Beware that the caret (`^`) inside the range brackets is different from the beginning-of-a-line caret (ex: `/^hello`). If a caret is outside of a pair of brackets and is the first character in the search term, it means "the first character in a line". If a caret is inside a pair of brackets and it is the first character inside the brackets, it means a negative search operator. `/^abc` matches the first "abc" in a line and `/[^abc]` matches any character except for an "a", "b", or "c".
 
-# Searching for Repeating Characters
+## Searching for Repeating Characters
 
 If you need to search for double digits in this text:
 
@@ -148,7 +149,7 @@ Here are the four different variations of the `count` syntax:
 
 The count arguments `\{0,\}` (zero or more) and `\{1,\}` (one or more) are common search patterns and Vim has special operators for them: `*` and `+` (`+` needs to be escaped while `*` works fine without the escape). If you do `/[0-9]*`, it is the same as `/[0-9]\{0,\}`. It searches for zero or more digits. It will match "", "1", "123". By the way, it will also match non-digits like "a", because there is technically zero digit in the letter "a". Think carefully before using `*`. If you do `/[0-9]\+`, it is the same as `/[0-9]\{1,\}`. It searches for one or more digits. It will match "1" and "12".
 
-# Predefined Ranges
+## Predefined Ranges
 
 Vim has predefined ranges for common characters like digits and alphas. I will not go through every single one here, but you can find the full list inside `:h /character-classes`. Here are the useful ones:
 
@@ -164,7 +165,7 @@ Vim has predefined ranges for common characters like digits and alphas. I will n
 
 You can use them like you would use character ranges. To search for any single digit, instead of using `/[0-9]`, you can use `/\d` for a more concise syntax.
 
-# More Search Examples
+## More Search Examples
 ## Capturing a Text Between a Pair of Similar Characters
 
 If you want to search for a phrase surrounded by a pair of double quotes:
@@ -209,7 +210,7 @@ This pattern is also useful to capture any repeating digits, such as IP addresse
 
 That covers the search part of this chapter. Now let's move to substitution.
 
-# Basic Substitution
+## Basic Substitution
 
 Vim's substitute command is a useful command to quickly find and replace any pattern. The substitution syntax is:
 
@@ -229,13 +230,13 @@ Let's substitute "good" with "awesome" because Vim is awesome. Run `:s/good/awes
 vim is awesome
 ```
 
-# Repeating the Last Substitution
+## Repeating the Last Substitution
 
 You can repeat the last substitute command with either the normal command `&` or by running `:s`. If you have just run `:s/good/awesome/`, running either `&` or `:s` will repeat it. 
 
 Also, earlier in this chapter I mentioned that you can use `//` to repeat the previous search pattern.  This trick works with the substitution command. If `/good` was done recently and you leave the first substitute pattern argument blank, like in `:s//awesome/`, it is the same as running `:s/good/awesome/`.
 
-# Substitution Range
+## Substitution Range
 
 Just like many Ex commands, you can pass a range argument into the substitute command. The syntax is:
 
@@ -267,7 +268,7 @@ The substitute command's range syntax is similar to the count syntax in search (
 
 In Vim, `%` usually means the entire file. If you run `:%s/let/const/`, it will do substitution on all lines.
 
-# Pattern Matching
+## Pattern Matching
 
 The next few sections will cover basic regular expressions. A strong pattern knowledge is essential to master the substitute command.
 
@@ -375,7 +376,7 @@ You would have gotten a different result:
 
 This is because you now only have two groups. The first group,captured by `(\d\d)`, is stored within `\1` and has the value of "12". The second group, captured by `(\d)`, is stored inside `\2` and has the value of "3". `\2\1` then, returns "312".
 
-# Substitution Flags
+## Substitution Flags
 
 If you have the sentence:
 
@@ -418,7 +419,7 @@ There are more flags that I do not list above. To read about all the flags, chec
 
 By the way, the repeat-substitution commands (`&` and `:s`) do not retain the flags. Running `&` will only repeat `:s/pancake/donut/` without `g`. To quickly repeat the last substitute command with all the flags, run `:&&`.
 
-# Changing the Delimiter
+## Changing the Delimiter
 
 If you need to replace a URL with a long path:
 
@@ -439,7 +440,7 @@ However, it is hard to tell which forward slashes (`/`) are part of the substitu
 
 It is now easier to see where the delimiters are.
 
-# Special Replace
+## Special Replace
 
 You can also modify the case of the text you are substituting. Given the following expressions:
 
@@ -500,7 +501,7 @@ Here is the breakdowns:
 
 To learn more of substitution's special replace symbols like `\u` and `\U`, check out `:h sub-replace-special`.
 
-# Alternative Patterns
+## Alternative Patterns
 
 Sometimes you need to match multiple patterns simultaneously. If you have the following greetings:
 
@@ -532,7 +533,7 @@ Here is the breakdown:
 - `\1` is the first match group, which is either the text "hello" or "hola".
 - `friend` is the literal word "friend".
 
-# Substituting the Start and the End of a Pattern
+## Substituting the Start and the End of a Pattern
 
 Recall that you can use `\zs` and `\ze` to define the start and the end of a match. This technique works in substitution too. If you have:
 
@@ -622,7 +623,7 @@ To get:
 ABC1defg1
 ```
 
-# Substituting Across Multiple Files
+## Substituting Across Multiple Files
 
 Finally, let's learn how to substitute phrases across multiple files. For this section, assume that you have two files: `food.txt` and `animal.txt`.
 
@@ -686,7 +687,7 @@ This performs substitution against the all files inside the  `:args` list. Final
 
 `:args` and `:argdo` are  useful tools to apply command line commands across multiple files. Try it with other commands!
 
-# Substituting Across Multiple Files with Macros
+## Substituting Across Multiple Files with Macros
 
 Alternatively, you can also run the substitute command across multiple files with macros. Let's start by getting the relevant files into the args list. Run:
 
@@ -707,7 +708,7 @@ Here is the breakdown of the steps:
 - `q` stops the macro recording.
 - `99@q` executes the macro ninety-nine times. Vim will stop the macro execution after it encounters the first error, so Vim won't actually execute the macro ninety-nine times.
 
-# Learning Search and Substitution the Smart Way
+## Learning Search and Substitution the Smart Way
 
 The ability to do search well is a necessary skill in editing. Mastering the search lets you to utilize the flexibility of regular expressions to search for any pattern in a file. Take your time to learn these. Actually do the searches and substitutions in this chapter yourself. I once read a book about regular expression without actually doing it and I forgot almost everything I read afterwards. Active coding is the best way to master any skill.
 

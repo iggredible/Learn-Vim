@@ -1,10 +1,11 @@
-# Opening and Searching Files
+# Ch 03. Opening and Searching Files
 
 The goal of this chapter is to introduce you to opening and searching files in Vim. Being able to search quickly is a great way to jump-start your Vim productivity. One reason it took me a long time to get onboard with Vim is because I didn't know how to find things quickly like many popular text editors. 
 
 This chapter is divided into two parts. In the first part, I will show you how to open and search files without plugins. In the second part, I will show you how to open and search files with [FZF.vim](https://github.com/junegunn/fzf.vim) plugin. Feel free to jump to whichever section you need to learn.  However, I highly recommend you to go through everything. With that said, let's get started!
 
-# Opening and Editing Files with `:edit`
+## Opening and Editing Files with `:edit`
+
 `:edit` is the simplest way to open a file in Vim. 
 
 ```
@@ -24,6 +25,7 @@ Autocomplete (`tab`) works with `:edit`. For example, if your file is inside a [
 ```
 :edit *.yml<tab>
 ```
+
 After pressing tab, Vim will give you a list of all `.yml` files in the current directory to choose from.
 
 You can use `**` to search recursively. If you want to look for all `*.md` files in your project, but you are not sure in which directories, you can do this:
@@ -41,7 +43,7 @@ You can use `**` to search recursively. If you want to look for all `*.md` files
 - To go to the first line containing `"const"` (`/const`): `:edit +/const /test/unit/helper.spec.js`
 - To delete all empty lines (`:g/^$/d`): `:edit +g/^$/d test/unit/helper.spec.js`
 
-# Searching Files with `:find`
+## Searching Files with `:find`
 You can find files with `:find`. For example:
 
 ```
@@ -106,7 +108,7 @@ You might be thinking to add the entire project directories so when you press `t
 
 Updating `path` takes only a few seconds and doing this will save you a lot of time. 
 
-# Searching in Files with `:grep`
+## Searching in Files with `:grep`
 
 If you need to find in files, you can use grep. Vim has two ways of doing that:
 - Internal grep (`:vim`. Yes, it is spelled `:vim`. It is short for `:vimgrep`).
@@ -152,7 +154,7 @@ Just like `:vim`, `:grep` accepts `*` and `**` wildcards. It also displays all m
 
 Vim uses `grepprg` variable to determine which external program to run when running `:grep` so you don't have to always use the terminal `grep` command. Later in this article, I will show you how to change default the external command.
 
-# Browsing Files with `netrw`
+## Browsing Files with `netrw`
 
 `netrw` is Vim's built-in file explorer. It is useful to see a project's structural hierarchy. To run `netrw`, you need these two settings in your `.vimrc`:
 
@@ -198,13 +200,13 @@ D    Delete a file or directory
 
 If you find `netrw` too bland and need more flavor, [vim-vinegar](https://github.com/tpope/vim-vinegar) is a good plugin to improve `netrw`. If you're looking for a different file explorer, [NERDTree](https://github.com/preservim/nerdtree) is a good alternative. Check them out!
 
-# FZF
+## FZF
 
 Now that you've learned how to open and search files in Vim with built-in tools, it's time to use plugins to level up your search game.
 
 One thing that modern text editors got right that Vim didn't is how easy it is to find files and to find in files . In this second half of the chapter, I will show you how to use [FZF.vim](https://github.com/junegunn/fzf.vim) to make searching in Vim easy and powerful.
 
-# Setup
+## Setup
 
 But first, make sure you have [FZF](https://github.com/junegunn/fzf) and [ripgrep](https://github.com/BurntSushi/ripgrep) download. Follow the instruction on their github repo. The commands `fzf` and `rg` should now be available after successful installs.
 
@@ -231,7 +233,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 For more info about this plugin, you can check out [FZF.vim repo](https://github.com/junegunn/fzf/blob/master/README-VIM.md).
 
-# FZF Syntax
+## FZF Syntax
 
 To be able to use FZF efficiently, you should learn some basic FZF syntax. Fortunately, the list is short:
 
@@ -243,7 +245,7 @@ To be able to use FZF efficiently, you should learn some basic FZF syntax. Fortu
 
 You can mix and match these options. For example, `^hello | ^welcome friends$` will search for the phrase starting with either "welcome" or "hello" and ending with "friends".
 
-# Finding Files
+## Finding Files
 
 To search for files inside Vim using FZF.vim plugin, you can use the `:Files` method. Run `:Files` from Vim and you will be prompted with FZF search prompt.
 
@@ -258,7 +260,7 @@ Since you will be using this command frequently, it is good to have this mapped.
 nnoremap <silent> <C-f> :Files<CR>
 ```
 
-# Finding in Files
+## Finding in Files
 To search inside files, you can use the `:Rg` command. 
 
 <p align="center">
@@ -272,7 +274,7 @@ Again, since you will probably use this frequently, let's map it. I map mine wit
 nnoremap <silent> <Leader>f :Rg<CR>
 ``` 
 
-# Other Searches
+## Other Searches
 
 FZF.vim provides many other search commands. I won't go through each one of them here, but you can check them out [here](https://github.com/junegunn/fzf.vim#commands).
 
@@ -290,7 +292,7 @@ nnoremap <silent> <Leader>h: :History:<CR>
 nnoremap <silent> <Leader>h/ :History/<CR> 
 ```
 
-# Replacing `grep` with `rg`
+## Replacing `grep` with `rg`
 
 As I mentioned earlier, Vim has two ways to search in files: `:vim` and `:grep`. `:grep` uses external search tool that you can reassign using `grepprg` keyword. I will show you how to configure Vim to use ripgrep instead of terminal grep when running the `:grep` command.
 
@@ -308,7 +310,7 @@ You might wonder, "Well, this is nice but I never used `:grep` in Vim, plus can'
 
 That is a very good question. You may need to use `:grep` in Vim to do search and replace in multiple files, which I will cover next.
 
-# Search and Replace in Multiple Files
+## Search and Replace in Multiple Files
 
 Modern text editors like VSCode make it very easy to search and replace a string across multiple files. In my early Vim days, when I had to search and replace a string in multiple files, I would use [Atom](https://atom.io/) because I couldn't do it easily in Vim. In this section, I will show you two different methods to easily do that in Vim.
 
@@ -331,7 +333,7 @@ The second method is to search and replace in select files. With this method, yo
 3. Select all files you want to perform search and replace on. To select multiple files, use `tab` / `shift+tab`. This is only possible if you have `-m` option in `FZF_DEFAULT_OPTS` (refer to earlier FZF setup section for the `-m` option).
 4. Run `:bufdo %s/pizza/donut/g | update`. The command `:bufdo %s/pizza/donut/g | update` looks similar to the earlier `:cfdo %s/pizza/donut/g | update` command. That's because they are. The difference is instead of substituting all quickfix entries (`:cfdo`), you are substituting all buffer entries (`:bufdo`).
 
-# Learn Search the Smart Way
+## Learn Search the Smart Way
 
 Searching is the bread-and-butter of text editing. Learning how to search well in Vim will help your text editing workflow. 
 

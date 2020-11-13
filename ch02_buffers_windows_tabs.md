@@ -1,4 +1,4 @@
-# Buffers, Windows, and Tabs
+# Ch 02. Buffers, Windows, and Tabs
 
 If you have used a modern text editor, you are probably familiar with windows and tabs. Vim has three abstractions instead of two: buffers, windows, and tabs.
 
@@ -6,7 +6,7 @@ In this chapter, I will explain how buffers, windows, and tabs work in Vim.
 
 Before you start, make sure you have `set hidden` option in your `vimrc`. Without this, whenever you switch buffers, Vim will prompt you to save the file (you don't want that if you want to move quickly between buffers). For more information, check out `:h hidden`.
 
-# Buffers
+## Buffers
 
 A buffer is an in-memory space where you can write and edit some text. When you are opening a new file in Vim its content will be bound to a new buffer:
   1. From within Vim, open a new buffer `:new` (create a new empty buffer)
@@ -47,7 +47,7 @@ The hardest thing for me when learning about buffer was visualizing how it worke
 
 If you haven't used Vim before, this is a new concept. Take your time to understand it. When you're ready, let's move on to windows.
 
-# Exiting Vim
+## Exiting Vim
 
 If you have multiple buffers opened and have made some changes, you can close all of them and exit Vim with:
 
@@ -61,7 +61,7 @@ If you want to exit without saving your changes, just add `!` at the end:
 :qall!
 ```
 
-# Windows
+## Windows
 
 A window is a viewport on a buffer. You can have multiple windows. Most text editors have the ability to display multiple windows. Below you see a VSCode with 3 windows.
 
@@ -131,7 +131,7 @@ And here is a list of useful window Ex commands:
 
 For more, check out `:h window`. Take your time to understand them.
 
-# Tabs
+## Tabs
 
 A tab is a collection of windows. Think of it like a layout for windows. In most modern text editors (and modern internet browsers), a tab means an open file/ page and when you close it, that file/page goes away. In Vim, a tab does not represent an open file. When you close a tab in Vim, you are not closing a file. Remember, Vim stores files in-memory via buffers. Closing a tab (or a window) does not make that file disappear from the buffers.
 
@@ -171,7 +171,7 @@ To start Vim with multiple tabs, you can do this from the terminal:
 ```
 vim -p file1.js file2.js file3.js
 ```
-# Moving in 3D
+## Moving in 3D
 
 Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W h/j/k/l`.
 
@@ -186,7 +186,7 @@ You can move in *three-dimensional space* by combining window and buffer movemen
 ![cartesian movement in x, y, and z axis](./img/cartesian-xyz.png)
 
 
-# Using Buffers, Windows, and Tabs the Smart Way
+## Using Buffers, Windows, and Tabs the Smart Way
 
 You have learned how buffers, windows, and tabs work in Vim. To use them efficiently, you need to understand what they are designed for and apply them in your own workflow. Everyone has a different workflow, here is one example.
 

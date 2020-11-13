@@ -1,8 +1,8 @@
-# Undo
+# Ch 10. Undo
 
 Undo is an essential feature in any modern software. Vim's undo system is not only capable of undoing and redoing mistakes, but allows you to manipulate and retrieve text across time. In this chapter, you will learn how to undo and redo your text, navigate an undo branch, persist undo, and travel through time.
 
-# Undo, Redo, and UNDO
+## Undo, Redo, and UNDO
 
 To perform a basic undo, you can use `u` or run `:undo`.
 
@@ -62,7 +62,7 @@ I personally do not use `U` because it is hard to remember the original state (I
 
 Vim sets a maximum number of how many times you can undo in `undolevels` option variable. You can check it with `:echo &undolevels`. I have mine set to be 1000. To change yours to 1000, run `:set undolevels=1000`. Feel free to set it to any number you like.
 
-# Breaking the Blocks
+## Breaking the Blocks
 
 I mentioned earlier that `u` undoes a single "change" similar to the dot command's change. Any text entered between entering the insert mode and exiting is counted as a change.
 
@@ -77,7 +77,7 @@ inoremap <c-w> <c-g>u<c-w>
 ```
 With these, you can easily recover the deleted texts.
 
-# Undo Tree
+## Undo Tree
 
 Vim stores every change ever written in an undo tree. If you start a new empty file:
 
@@ -169,7 +169,7 @@ To traverse each node in the undo tree, you can use `g+`  to go to a newer state
 
 Undo tree is not easy to visualize. I find [vim-mundo](https://github.com/simnalamburt/vim-mundo) plugin to be very useful to help visualize Vim's undo tree. Give it some time to play around with it.
 
-# Persistent Undo
+## Persistent Undo
 
 If you start Vim, open a new file, and immediately press `u`, Vim will probably display "*Already at oldest change*" warning. Vim can preserve your undo history with an undo file with `:wundo`.
 
@@ -217,7 +217,7 @@ set undofile
 
 I think it's better to put all the undofiles in one centralized directory, in this case, inside the `~/.vim` directory. The name `undo_dir` is arbitrary. `set undofile` tells Vim to turn on `undofile` feature because it is off by default. Now whenever you save, Vim automatically creates and updates the relevant file inside the `undo_dir` directory (make sure that you create the actual `undo_dir` directory inside `~/.vim` directory before running this).
 
-# Time Travel
+## Time Travel
 
 Who says that time travel doesn't exist? Vim can travel to a text state in the past with `:earlier` command-line command.
 
@@ -258,7 +258,7 @@ The same set of arguments work with `:earlier` counterpart: `:later`.
 :later 10f    go to the state 10 saves later
 ```
 
-# Learn Undo the Smart Way
+## Learn Undo the Smart Way
 
 `u` and `Ctrl-R` are two indispensable Vim commands. Learn them first. I do not use UNDO in my workflow, however I think it's good to be aware that it exists. Next, learn how to use `:earlier` and `:later` using the time arguments first. After that, take your time to understand the undo tree. The [vim-mundo](https://github.com/simnalamburt/vim-mundo) plugin helped me a lot. Type along the texts in this chapter and check the undo tree as you make each change. Once you grasp it, you will never see undo system the same way again.
 

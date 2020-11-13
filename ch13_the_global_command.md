@@ -1,10 +1,10 @@
-# The Global Command
+# Ch 13. The Global Command
 
 So far you have learned how to repeat the last change with the dot command (`.`), to replay actions with macros (`q`), and to store texts in the registers (`"`). 
 
 In this chapter, you will learn how to repeat a command-line command with the global command. Run once, apply everywhere (in a buffer).
 
-# Global Command Overview
+## Global Command Overview
 
 Vim's global command is used to running a command-line command on multiple lines simultaneously. 
 
@@ -67,7 +67,7 @@ console.log("two: ", two);
 console.log("three: ", three);
 ```
 
-# Inverse Match
+## Inverse Match
 
 To run the global command on non-matching lines, you can run:
 
@@ -83,7 +83,7 @@ or
 
 If you run `:v/console/d`, it will delete all lines *not* containing "console".
 
-# Pattern
+## Pattern
 
 The global command uses the same pattern system as the substitute command, so this section will serve as a refresher.  Feel free to skip to the next section or read along!
 
@@ -132,7 +132,7 @@ To match the lines containing between three to six zeroes, run:
 :g/0\{3,6\}/d
 ```
 
-# Passing a Range
+## Passing a Range
 
 You can pass a range before the `g` command. Here are some ways you can do it:
 
@@ -148,7 +148,7 @@ In addition to numbers, you can also use these symbols as range:
 
 If you don't give it any range, by default it affects the entire file. This is actually not the norm. Most of Vim's command-line commands run on only the current line if you don't pass it any range. The two notable exceptions are the global (`:g`) and the save (`:w`) commands. 
 
-# Normal Command
+## Normal Command
 
 You can run a normal command with the global command with `:normal` command-line command.
 
@@ -174,7 +174,7 @@ Let's break it down:
 - `/./` is a pattern for "non-empty lines". Recall that the dot (`.`) in regex represents *any character*. It matches the lines with at least one character, so it matches the lines with "const" and "console". It does not match empty lines.
 - `normal A;` runs the `:normal` command-line command. `A;` is the normal mode command to insert a ";" at the end of the line.
 
-# Executing a Macro
+## Executing a Macro
 
 You can also execute a macro with the global command. A macro is just a normal mode operation, so it is possible to execute a macro with `:normal`. If you have the expressions:
 
@@ -214,7 +214,7 @@ const three = 3;
 console.log("three: ", three);
 ```
 
-# Recursive Global Command
+## Recursive Global Command
 
 The global command itself is a type of a command-line command, so you can technically run the global command inside a global command.
 
@@ -247,7 +247,7 @@ You can also combine `g` with `v` to find positive and negative patterns. For ex
 
 Instead of looking for the line containing the pattern "two", it will look for the lines *not* containing the pattern "two".
 
-# Changing the Delimiter
+## Changing the Delimiter
 
 You can change the global command's delimiter like the substitute command. The rules are the same: you can use any single byte character except for alphabets, numbers, `"`, `|`, and `\`.
 
@@ -265,7 +265,7 @@ g@one@s+const+let+g
 
 Here the global command will look for all lines containing "one". The substitute command will substitute, from those matches, the string "const" with "let".
 
-# The Default Command
+## The Default Command
 
 What happens if you don't specify any command-line command in the global command? 
 
@@ -291,7 +291,7 @@ It spells *"grep"*, the same `grep` from the command line. This is **not** a coi
 
 Your computer probably still has the Ed editor. Run `ed` from the terminal (hint: to quit, type `q`).
 
-# More examples
+## More examples
 
 ## Reverse the Entire Buffer
 
@@ -550,7 +550,7 @@ This is great! But the command looks complicated. Let's break it down. The comma
 
 If you are still confused by the command, do not worry. It took me a long time to grasp it. Take a break, leave the screen, and come back again with a fresh mind.
 
-# Learn the Global Command the Smart Way
+## Learn the Global Command the Smart Way
 
 The global command executes the command-line command against all matching lines. With it, you only need to run a command once and Vim will do the rest for you. To become proficient at the global command, two things are required: a good vocabulary of command-line commands and a knowledge of regular expressions. As you spend more time using Vim, you will naturally learn more command-line commands. A regular expression knowledge will require a more active approach. But once you become comfortable with regular expressions, you will be ahead of many. 
 
