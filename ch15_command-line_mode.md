@@ -1,4 +1,5 @@
 # Ch 15. Command-line Mode
+
 In the last three chapters, you learned how to use the search commands (`/`, `?`), substitute command (`:s`), global command (`:g`), and external command (`!`). These are examples of command-line mode commands.
 
 In this chapter, you will learn various tips and tricks for the command-line mode.
