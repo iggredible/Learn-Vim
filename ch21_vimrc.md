@@ -1,4 +1,4 @@
-# Ch 21. Configuring Vimrc
+# Ch 21. Vimrc
 
 In the previous chapters, you learned how to use Vim. From now on, you will learn how to customize Vim to fit your coding style.
 
@@ -234,7 +234,7 @@ vim -u ~/.vimrc-extra
 
 The `u` flag overwrites all the seven vimrc paths mentioned earlier.
 
-## Configuring Vimrc The Smart Way
+## Configure Vimrc The Smart Way
 
 In the beginning, there is a strong temptation to copy other people's vimrc. Resist it. By copying other people's vimrc, you might not always know what you're copying. It doesn't matter if other developer has over 1000 lines of vimrc while yours only have 10. As long as you get the job done, that's all that matters.
 
