@@ -76,12 +76,12 @@ Here are what they mean:
 
 The take-home here is that you can modify your own paths. Let's assume this is your project structure:
 ```
-▾ app/
-  ▸ assets/
-  ▾ controllers/
-      application_controller.rb
-      comments_controller.rb
-      users_controller.rb
+app/
+  - assets/
+  - controllers/
+    - application_controller.rb
+    - comments_controller.rb
+    - users_controller.rb
   ...
 ```
 

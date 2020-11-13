@@ -645,8 +645,8 @@ small dog
 Assume your directory structure looks like this:
 
 ```
-├── food.txt
-├── animal.txt
+- food.txt
+- animal.txt
 ```
 
 First, capture both `food.txt` and `animal.txt` inside `:args`. Recall from earlier chapters that `:args` can be used to create a list of file names. There are several ways to do this from inside Vim:
