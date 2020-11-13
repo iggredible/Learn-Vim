@@ -33,7 +33,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 ### Part 2: Customize Vim the Smart Way (TBD)
 
-- [Ch 21 - Configuring Vimrc](./ch21_configuring_vimrc.md)
+- [Ch 21 - Vimrc](./ch21_vimrc.md)
 - Ch 22 - Vim pack
 - Ch 23 - Vim runtime 
 
