@@ -141,7 +141,7 @@ Throughout this book you will learn various Command-line commands. These command
 
 ## Opening multiple windows
 
-You can launch Vim on split windows (horizontal and vertical) with `o` and `O`, respectively.
+You can launch Vim on split windows, horizontal and vertical, with `o` and `O`, respectively.
 
 To open Vim with two horizontal windows, run:
 
