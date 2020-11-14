@@ -218,21 +218,31 @@ Your vimrc should look like this:
 +-- 4 lines: mappings --------
 ```
 
-## Running vim without vimrc
+## Running Vim With Or Without Vimrc And Plugins
 
-If you need to run Vim without any vimrc, run this from the terminal:
+If you need to run Vim without both vimrc and plugins, run:
 
 ```
 vim -u NONE
 ```
 
-If you need to run Vim with a *different* vimrc, say `~/.vimrc-extra`, run this from the terminal:
+If you need to launch Vim without vimrc but with plugins, run:
+
+```
+vim -u NORC
+```
+
+If you need to run Vim with vimrc but without plugins, run:
+
+```
+vim --noplugin
+```
+
+If you need to run Vim with a *different* vimrc, say `~/.vimrc-extra`, run:
 
 ```
 vim -u ~/.vimrc-extra
 ```
-
-The `u` flag overwrites all the seven vimrc paths mentioned earlier.
 
 ## Configure Vimrc The Smart Way
 
