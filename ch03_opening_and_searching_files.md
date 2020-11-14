@@ -251,7 +251,7 @@ You can mix and match these options. For example, `^hello | ^welcome friends$` w
 To search for files inside Vim using FZF.vim plugin, you can use the `:Files` method. Run `:Files` from Vim and you will be prompted with FZF search prompt.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fzf-files.gif">
+  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fzf-files.gif" />
 </p>
 
 
@@ -265,7 +265,7 @@ nnoremap <silent> <C-f> :Files<CR>
 To search inside files, you can use the `:Rg` command. 
 
 <p align="center">
-  <img alt="FInding in Files in FZF" width="900" height="auto" src="./img/fzf-in-files.gif">
+  <img alt="FInding in Files in FZF" width="900" height="auto" src="./img/fzf-in-files.gif"/>
 </p>
 
 
