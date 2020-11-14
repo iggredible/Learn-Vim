@@ -81,13 +81,13 @@ Running `@a` in normal mode is not the only way you can execute macros in Vim. Y
 
 The `:normal` command accepts range as arguments. You can use this to run macro in select ranges. If you want to execute your "a" macro between lines 2 and 3, you can run `:2,3 normal @a`. I will go over command line commands in a later chapter.
 
-## Executing a Macro Across Multiple Files
+## Executing A Macro Across Multiple Files
 
 Suppose you have multiple `.txt` files, each containing different lists. Moreover, you need to uppercase the first word only on lines containing the word "donut". How can we execute macros across multiple files on select lines? 
 
 First file:
 ```
-## savory.txt
+## savory.Txt
 a. cheddar jalapeno donut
 b. mac n cheese donut
 c. fried dumpling
@@ -95,7 +95,7 @@ c. fried dumpling
 
 Second file:
 ```
-## sweet.txt
+## sweet.Txt
 a. chocolate donut
 b. chocolate pancake
 c. powdered sugar donut
@@ -103,7 +103,7 @@ c. powdered sugar donut
 
 Third file:
 ```
-## plain.txt
+## plain.Txt
 a. wheat bread
 b. plain donut
 ```
@@ -144,7 +144,7 @@ Now you can just run `@a` and watch Vim execute the macro recursively.
 
 How does the macro know when to stop? When the macro is on the last line, it tries to run `j`, finds no extra line to go to, and stops the macro execution.
 
-## Appending a Macro
+## Appending A Macro
 
 If you need to add more actions to an existing macro, instead of redoing it, you can append actions to it. In the register chapter, you learned that you can append a named register by using its uppercased symbol. To append actions to a macro in register "a", use register "A". Suppose in addition to toggling the case of the first word, you also want to add a dot at the end of the line. 
 
@@ -164,7 +164,7 @@ The breakdown:
 
 Now when you execute `@a`, it goes to the first character in the line (`0`), goes to the next WORD (`W`), toggles the case of the character under the cursor (`~`), goes to insert mode at the end of the line (`A`), writes a dot ("."), and exits insert mode (`<esc>`).
 
-## Amending a Macro
+## Amending A Macro
 
 Appending is great technique to add new actions at the end of your existing macros, but what if you need to add new actions in the middle of it? In this section, I will show you how to amend a macro.
 
@@ -212,7 +212,7 @@ You can easily duplicate macros from one register to another. For example, to du
 
 I find creating a redundancy useful on my most frequently used macros. In my workflow, I usually record macros in the first seven alphabetical letters (a-g) and I often replace them without much thought. If I move the useful macros towards the end of the alphabets, I can preserve them without worrying that I might accidentally replace them.
 
-## Series vs Parallel Macro
+## Series Vs Parallel Macro
 
 Vim can execute macros in series and parallel. Suppose you have this text:
 
@@ -255,7 +255,7 @@ Recall from earlier section that macros can be executed using the  command line 
 
 Although internally Vim does not actually run the macros in parallel, outwardly, it behaves like such. Vim executes `@a` *independently* on each line from the first line to the last line (`1,$`). Since Vim executes these macros independently, each line does not know that one of the macro executions had failed on the "foo" line.
 
-## Learn Macros the Smart Way
+## Learn Macros The Smart Way
 
 Many things you do in editing are repetitive. To get better at editing, get into the habit of detecting repetitive actions. Use macros (or dot command) so you don't have to perform the same action twice. Almost everything that you can do in Vim can be done with macros.
 

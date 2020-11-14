@@ -1,10 +1,10 @@
-# Ch 03. Opening and Searching Files
+# Ch 03. Opening And Searching Files
 
 The goal of this chapter is to introduce you to opening and searching files in Vim. Being able to search quickly is a great way to jump-start your Vim productivity. One reason it took me a long time to get onboard with Vim is because I didn't know how to find things quickly like many popular text editors. 
 
 This chapter is divided into two parts. In the first part, I will show you how to open and search files without plugins. In the second part, I will show you how to open and search files with [FZF.vim](https://github.com/junegunn/fzf.vim) plugin. Feel free to jump to whichever section you need to learn.  However, I highly recommend you to go through everything. With that said, let's get started!
 
-## Opening and Editing Files with `:edit`
+## Opening And Editing Files With `:edit`
 
 `:edit` is the simplest way to open a file in Vim. 
 
@@ -43,7 +43,8 @@ You can use `**` to search recursively. If you want to look for all `*.md` files
 - To go to the first line containing `"const"` (`/const`): `:edit +/const /test/unit/helper.spec.js`
 - To delete all empty lines (`:g/^$/d`): `:edit +g/^$/d test/unit/helper.spec.js`
 
-## Searching Files with `:find`
+## Searching Files With `:find`
+
 You can find files with `:find`. For example:
 
 ```
@@ -108,7 +109,7 @@ You might be thinking to add the entire project directories so when you press `t
 
 Updating `path` takes only a few seconds and doing this will save you a lot of time. 
 
-## Searching in Files with `:grep`
+## Searching In Files With `:grep`
 
 If you need to find in files, you can use grep. Vim has two ways of doing that:
 - Internal grep (`:vim`. Yes, it is spelled `:vim`. It is short for `:vimgrep`).
@@ -154,7 +155,7 @@ Just like `:vim`, `:grep` accepts `*` and `**` wildcards. It also displays all m
 
 Vim uses `grepprg` variable to determine which external program to run when running `:grep` so you don't have to always use the terminal `grep` command. Later in this article, I will show you how to change default the external command.
 
-## Browsing Files with `netrw`
+## Browsing Files With `netrw`
 
 `netrw` is Vim's built-in file explorer. It is useful to see a project's structural hierarchy. To run `netrw`, you need these two settings in your `.vimrc`:
 
@@ -260,7 +261,7 @@ Since you will be using this command frequently, it is good to have this mapped.
 nnoremap <silent> <C-f> :Files<CR>
 ```
 
-## Finding in Files
+## Finding In Files
 To search inside files, you can use the `:Rg` command. 
 
 <p align="center">
@@ -292,7 +293,7 @@ nnoremap <silent> <Leader>h: :History:<CR>
 nnoremap <silent> <Leader>h/ :History/<CR> 
 ```
 
-## Replacing `grep` with `rg`
+## Replacing `grep` With `rg`
 
 As I mentioned earlier, Vim has two ways to search in files: `:vim` and `:grep`. `:grep` uses external search tool that you can reassign using `grepprg` keyword. I will show you how to configure Vim to use ripgrep instead of terminal grep when running the `:grep` command.
 
@@ -310,7 +311,7 @@ You might wonder, "Well, this is nice but I never used `:grep` in Vim, plus can'
 
 That is a very good question. You may need to use `:grep` in Vim to do search and replace in multiple files, which I will cover next.
 
-## Search and Replace in Multiple Files
+## Search and Replace In Multiple Files
 
 Modern text editors like VSCode make it very easy to search and replace a string across multiple files. In my early Vim days, when I had to search and replace a string in multiple files, I would use [Atom](https://atom.io/) because I couldn't do it easily in Vim. In this section, I will show you two different methods to easily do that in Vim.
 
@@ -333,7 +334,7 @@ The second method is to search and replace in select files. With this method, yo
 3. Select all files you want to perform search and replace on. To select multiple files, use `tab` / `shift+tab`. This is only possible if you have `-m` option in `FZF_DEFAULT_OPTS` (refer to earlier FZF setup section for the `-m` option).
 4. Run `:bufdo %s/pizza/donut/g | update`. The command `:bufdo %s/pizza/donut/g | update` looks similar to the earlier `:cfdo %s/pizza/donut/g | update` command. That's because they are. The difference is instead of substituting all quickfix entries (`:cfdo`), you are substituting all buffer entries (`:bufdo`).
 
-## Learn Search the Smart Way
+## Learn Search The Smart Way
 
 Searching is the bread-and-butter of text editing. Learning how to search well in Vim will help your text editing workflow. 
 

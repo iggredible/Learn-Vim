@@ -2,7 +2,7 @@
 
 You probably know that you can highlight a block of text and apply changes to it. Vim can too, with visual mode. Vim has three different visual modes to use. In this chapter, you will learn how to use each visual mode to manipulate blocks of texts efficiently.
 
-## The Three Types of Visual Modes
+## The Three Types Of Visual Modes
 The three modes are:
 
 ```
@@ -39,7 +39,7 @@ gv    Go to the previous visual mode
 
 It will start the same visual mode on the same highlighted text block as you did last time.
 
-## Visual mode navigation
+## Visual Mode Navigation
 
 While in a visual mode, you can expand the highlighted text block with Vim motions.
 
@@ -158,7 +158,7 @@ Chapter One
 To learn more about operators in visual mode, check out `:h visual-operators`.
 
 
-## Visual Mode and Ex Commands
+## Visual Mode And Ex Commands
 
 You can selectively apply Ex commands on a highlighted text block. If you have these expressions:
 
@@ -201,7 +201,7 @@ Alternatively, you can also use the `:normal` command:
 
 Remember, `:normal` command executes normal mode commands. You can instruct it to run `A;` to append text ";" at the end of the line. 
 
-## Incrementing numbers
+## Incrementing Numbers
 
 Vim has `Ctrl-X` and `Ctrl-A` commands to decrement and increment numbers. When used with visual mode, you can increment numbers across multiple lines.
 
@@ -251,7 +251,7 @@ Put your cursor on the second "app-a". Use the same technique as above (`Ctrl-V 
 <div id="app-d"></div>
 <div id="app-e"></div>
 ```
-## Selecting the Last Visual Mode Area
+## Selecting The Last Visual Mode Area
 
 You learned that `gv` can quickly highlight the last visual mode highlight. You can also go to the location of the start and the end of the last visual mode with these two special marks:
 
@@ -270,7 +270,7 @@ You were actually executing `s/const/let/g` command using marks as range. You ca
 :`<,$s/const/let/g
 ```
 
-## Entering Visual Mode from Insert Mode
+## Entering Visual Mode From Insert Mode
 
 You can also enter visual mode from the insert mode. To go to character-wise visual mode while you are in insert mode:
 
@@ -299,7 +299,7 @@ Contrast this behavior with visual mode: if you  highlight a line of text with l
 
 I personally never used select mode, but it's good to know that it exists.
 
-## Learn Visual Mode the Smart Way
+## Learn Visual Mode The Smart Way
 
 The visual mode is Vim's representation of the text highlighting procedure. 
 

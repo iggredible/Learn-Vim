@@ -132,7 +132,7 @@ To match the lines containing between three to six zeroes, run:
 :g/0\{3,6\}/d
 ```
 
-## Passing a Range
+## Passing A Range
 
 You can pass a range before the `g` command. Here are some ways you can do it:
 
@@ -174,7 +174,7 @@ Let's break it down:
 - `/./` is a pattern for "non-empty lines". Recall that the dot (`.`) in regex represents *any character*. It matches the lines with at least one character, so it matches the lines with "const" and "console". It does not match empty lines.
 - `normal A;` runs the `:normal` command-line command. `A;` is the normal mode command to insert a ";" at the end of the line.
 
-## Executing a Macro
+## Executing A Macro
 
 You can also execute a macro with the global command. A macro is just a normal mode operation, so it is possible to execute a macro with `:normal`. If you have the expressions:
 
@@ -247,7 +247,7 @@ You can also combine `g` with `v` to find positive and negative patterns. For ex
 
 Instead of looking for the line containing the pattern "two", it will look for the lines *not* containing the pattern "two".
 
-## Changing the Delimiter
+## Changing The Delimiter
 
 You can change the global command's delimiter like the substitute command. The rules are the same: you can use any single byte character except for alphabets, numbers, `"`, `|`, and `\`.
 
@@ -291,9 +291,9 @@ It spells *"grep"*, the same `grep` from the command line. This is **not** a coi
 
 Your computer probably still has the Ed editor. Run `ed` from the terminal (hint: to quit, type `q`).
 
-## More examples
+## More Examples
 
-## Reverse the Entire Buffer
+## Reverse The Entire Buffer
 
 To reverse the entire file, run:
 
@@ -394,7 +394,7 @@ Recall from the register chapter that deleted texts are stored inside the number
 
 By passing `_` after `d`, Vim won't save the deleted lines into any registers.
 
-## Reduce Multiple Empty Lines to One Empty Line
+## Reduce Multiple Empty Lines To One Empty Line
 
 If you have a file with multiple empty lines like the following:
 
@@ -464,7 +464,7 @@ const three = 3;
 console.log("three: ", three);
 ```
 
-## Advanced sort
+## Advanced Sort
 
 Vim has a `:sort` command to sort the lines within a range. For example:
 
@@ -550,7 +550,7 @@ This is great! But the command looks complicated. Let's break it down. The comma
 
 If you are still confused by the command, do not worry. It took me a long time to grasp it. Take a break, leave the screen, and come back again with a fresh mind.
 
-## Learn the Global Command the Smart Way
+## Learn The Global Command The Smart Way
 
 The global command executes the command-line command against all matching lines. With it, you only need to run a command once and Vim will do the rest for you. To become proficient at the global command, two things are required: a good vocabulary of command-line commands and a knowledge of regular expressions. As you spend more time using Vim, you will naturally learn more command-line commands. A regular expression knowledge will require a more active approach. But once you become comfortable with regular expressions, you will be ahead of many. 
 

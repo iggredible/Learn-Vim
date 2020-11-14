@@ -157,7 +157,7 @@ To add to a tag file location, just run:
 :set tags+=path/to/my/tags/file
 ```
 
-## Generating Tags For a Large Project.
+## Generating Tags For A Large Project.
 
 If you tried to run ctags in a large project, it may take a long time because Vim also looks inside every nested directories. If you are a Javascript developer, you know that `node_modules` can be very large. Imagine if you have a five sub-projects and each contains its own `node_modules` directory. If you run `ctags -R .`, ctags will try to scan through all 5 `node_modules`. You probably don't need to run ctags on `node_modules`.
 
@@ -332,7 +332,7 @@ One of the biggest drawbacks of Vim tags is that each time you make a significan
 
 Luckily there are several methods you can employ to generate tags automatically. My goal in this section is not to create a foolproof process, but to suggest some ideas so you can expand them.
 
-## Generate a Tag on Save
+## Generate A Tag On Save
 
 Vim has an autocommand (`autocmd`) method to execute any command on an event trigger. You can use this to generate tags on each save. Run:
 
@@ -371,11 +371,11 @@ There are several plugins to generate ctags automatically:
 
 I use vim-gutentags. If you use a Vim plugin manager ([vim-plug](https://github.com/junegunn/vim-plug), [vundle](https://github.com/VundleVim/Vundle.vim), [dein.vim](https://github.com/Shougo/dein.vim), etc), just install the plugin and it will work right ouf of the box!
 
-## Ctags and Git Hooks
+## Ctags And Git Hooks
 
 Tim Pope, author of many great Vim plugins, wrote a blog suggesting to use git hooks. [Check it out](https://tbaggery.com/2011/08/08/effortless-ctags-with-git.html).
 
-## Learn Tags the Smart Way
+## Learn Tags The Smart Way
 
 A tag is useful once configured properly. If you are like me and you forget things easily, tags can help you visualize a project.
 

@@ -4,7 +4,7 @@ It is easy to get intimidated by the complexity of many Vim commands. If you see
 
 This is the most important chapter in the entire book. Once you understand Vim commands' grammar-like structure, you will be able to "speak" to Vim. By the way, when I say *Vim language* in this chapter, I am not talking about Vimscript (the built-in programming language to customize and to create Vim plugins). Here it means the general pattern of normal mode commands.
 
-## How to learn a language
+## How To Learn A Language
 
 I am not a native English speaker. I learned English when I was 13 when I moved to the US. I had to do three things to build up linguistic proficiency:
 
@@ -146,7 +146,7 @@ t         XML tags
 ```
 To learn more, check out `:h text-objects`.
 
-## Composability and Grammar
+## Composability And Grammar
 
 After learning Vim grammar, let's discuss composability in Vim and why this is a great feature to have in a text editor.
 
@@ -191,7 +191,7 @@ Even better, motions and operators are extendable. You can create custom motions
 
 By the way, it's okay if you don't know `column` or `awk` commands I just did. The point is that Vim integrates very well with terminal commands.
 
-## Learn Vim Grammar the Smart Way
+## Learn Vim Grammar The Smart Way
 
 You just learned about Vim grammar's only rule:
 ```

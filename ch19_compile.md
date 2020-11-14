@@ -105,7 +105,7 @@ You should see an error running that command. To view that error, run the `quick
 || make: *** No rule to make target `dontexist'.  Stop.
 ```
 
-## Compile with `make`
+## Compile With `make`
 
 Let's use the makefile to compile a basic `.cpp` program. First, let's create a `hello.cpp` file:
 
@@ -175,7 +175,7 @@ When you run `:make` from inside `./hello.cpp`, it is compiled into `./hello`. T
 
 For more, check out `:h :compiler` and `:h write-compiler-plugin`.
 
-## Auto-compile on Save
+## Auto-Compile On Save
 
 You can further make life easier by automating compilation. Recall that you can use Vim's `autocommand` to automate actions based on certain events. To automatically compile `.cpp` files on each save:
 
@@ -312,7 +312,7 @@ In this chapter, I will go over vim-dispatch, but I would strongly encourage you
 
 *Vim and NeoVim actually supports async jobs, but they are beyond the scope of this chapter. If you're curious, check out `:h job-channel-overview.txt`.*
 
-## Plugin: vim dispatch
+## Plugin: Vim-dispatch
 
 Vim-dispatch has several commands, but the two main ones are `:Make` and `:Dispatch` commands.
 
@@ -360,7 +360,7 @@ autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec %'
 
 Now each time you enter a file (`BufEnter`) that ends with `_spec.rb`, running `:Dispatch` automatically executes `bundle exec rspec <your-current-ruby-spec-file>`. 
 
-## Learn Compile the Smart Way
+## Learn Compile The Smart Way
 
 In this chapter, you learned that you can use the `make` and `compiler` commands to run *any* process from inside Vim asynchronously to complement your programming workflow. Vim's ability to extend itself with other programs makes it powerful.
 

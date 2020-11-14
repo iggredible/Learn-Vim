@@ -1,4 +1,4 @@
-# Ch 05. Moving in a File
+# Ch 05. Moving In A File
 
 In the beginning, moving with a keyboard will feel awkward and incredibly slow, but don't give up! Once you get used to it, you can go anywhere in a file faster than a mouse.
 
@@ -50,7 +50,7 @@ This is 100% personal preference. Experiment with `relativenumber` / `norelative
 
 ## Count Your Move
 
-One more thing, let's talk about "count" argument. Motions accept a preceding numerical argument. I mentioned above that you can go down 12 lines with `12j`. The 12 in `12j` is the count number. 
+Let's talk about "count" argument. Motions accept a preceding numerical argument. I mentioned above that you can go down 12 lines with `12j`. The 12 in `12j` is the count number. 
 
 The syntax to use count with your motion is:
 
@@ -121,7 +121,7 @@ const hello = "world";
 
 With your cursor at the start of the line, you can go to the last character in current line (";") with one key press: `$`. If you want to go to "w" in "world", you can use `fw`. A good tip to go anywhere in a line is to look for least-common-letters like "j", "x", "z" near your target.
 
-## Sentence and Paragraph Navigation
+## Sentence And Paragraph Navigation
 
 Next two navigation units are sentence and paragraph.
 
@@ -334,7 +334,7 @@ I don't recommend memorizing this list. A good rule of thumb is, any motion that
 
 Why are jumps useful? Because you can navigate the jump list with `Ctrl-o` to move up the jump list and `Ctrl-i` to move down the jump list. You can jump across different files, which I will discuss more in the next part.
 
-## Learn Navigation the Smart Way
+## Learn Navigation The Smart Way
 
 If you are new to Vim, this is a lot to learn. I do not expect anyone to remember everything immediately. It takes time before you can execute them without thinking.
 

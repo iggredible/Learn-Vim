@@ -74,7 +74,7 @@ In the future if you need to remove unused plugins, you just need to remove the 
 
 Vim 8 has its own built-in package managers. You can check out `:h packages` for more information. In a later chapter, I will show you how to use it.
 
-## Modifying vimrc
+## Modifying Vimrc
 
 A vimrc is nothing but a collection of command-line commands. For example, to display `number` and `relativenumber` settings, you can run `:set relativenumber number` command from the current buffer. But this command is not permanent, you will lose it when you close Vim. You need to add them to your vimrc:
 

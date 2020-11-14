@@ -44,8 +44,7 @@ Both `p` and `P` accept a count and a register symbol as arguments. For example,
 
 The general syntax to get the content from a specific register is `"x`, where `x` is the register symbol.
 
-
-## Calling Registers from Insert Mode
+## Calling Registers From Insert Mode
 
 Everything you learn in this chapter can also be executed in insert mode. To get the text from register "a", normally you do `"ap`. But if you are in insert mode, run `Ctrl-r a`. The syntax to call registers from insert mode is:
 ```
@@ -130,7 +129,7 @@ Another example:
 
 `"-p` gives you the deleted word from step three. Likewise, `"1p` gives you the deleted line from step two. Unfortunately, there is no way to retrieve the deleted word from step one because the small delete register only stores one item. However, if you want to preserve the text from step one, you can do it with the named registers.
 
-## The Named Register (`"a-z`)
+## The Named Register (`"A-Z`)
 
 The named registers are Vim's most versatile register. It can store yanked, changed, and deleted texts into registers a-z. Unlike the previous 3 register types you've seen which automatically stores texts into registers, you have to explicitly tell Vim to use the named register, giving you full control.
 
@@ -195,7 +194,7 @@ endfunction
 
 You can retrieve its value by calling it. To call it from normal mode, you can do: `"=HelloFunc()`, press return, then `p`. From insert mode `Ctrl-r =HelloFunc()`.
 
-## The Selection registers (`"*`, `"+`)
+## The Selection Registers (`"*`, `"+`)
 
 Don't you sometimes wish that you can copy a text from external programs and paste it locally in Vim, and vice versa? With Vim's selection registers, you can. Vim has two selection registers: `quotestar` (`"*`) and `quoteplus` (`"+`). You can use them to access copied text from external programs.
 
@@ -222,25 +221,25 @@ You can use the black hole register (`"_`). To delete a line and not have Vim st
 To paste your last search (`/` or `?`) query, you can use the last search pattern register (`"/`). To paste the last search term, use `"/p`.
 
 
-## Viewing the Registers
+## Viewing The Registers
 
 To view all your registers, use the `:register` command. To view only registers "a", "1", and "-", use `:register a 1 -`.
 
 There is a plugin called [vim-peekaboo](https://github.com/junegunn/vim-peekaboo) that lets you to peek into the contents of the registers when you hit `"` or `@` in normal mode and `Ctrl-r` in insert mode. I find this plugin very useful because most times, I can't remember the content in my registers. Give it a try!
 
-## Executing a Register
+## Executing A Register
 
 The named registers are not just for storing texts. They can also be used to execute macros with `@`. I will go over macros in the next chapter. If you store the text "Hello Vim" in register "a", and you later record a macro in the same register (`qa{macro-commands}q`), that macro will overwrite your "Hello Vim" text stored earlier (you can execute the macro stored in register "a" with `@a`).
 
-## Clearing a Register
+## Clearing A Register
 
 Technically, there is no need to clear any register because the next register you store under the same name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in the register "a". Another alternative is to run the command `:call setreg('a', '')` where "a" is the register "a". One more way to clear register is to set the content of "a" register to an empty string with the expression `:let @a = ''`.
 
-## Putting the Content of a Register
+## Putting The Content Of A Register
 
 You can use the `:put` command to paste the content of any one register. For example, if you run `:put a`, Vim will print the content of register "a". This behaves much like `"ap`, with the difference that the normal mode command `p` prints the register content after the cursor and the command `:put` prints the register content at newline.
 
-## Learning Registers the Smart Way
+## Learning Registers The Smart Way
 
 You made it to the end. Congratulations! That was a lot to take. If you are feeling overwhelmed by the sheer information, you are not alone. I was too, when I first started learning about Vim registers.
 

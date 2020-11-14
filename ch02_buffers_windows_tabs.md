@@ -1,4 +1,4 @@
-# Ch 02. Buffers, Windows, and Tabs
+# Ch 02. Buffers, Windows, And Tabs
 
 If you have used a modern text editor, you are probably familiar with windows and tabs. Vim has three abstractions instead of two: buffers, windows, and tabs.
 
@@ -171,7 +171,7 @@ To start Vim with multiple tabs, you can do this from the terminal:
 ```
 vim -p file1.js file2.js file3.js
 ```
-## Moving in 3D
+## Moving In 3D
 
 Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W h/j/k/l`.
 
@@ -186,7 +186,7 @@ You can move in *three-dimensional space* by combining window and buffer movemen
 ![cartesian movement in x, y, and z axis](./img/cartesian-xyz.png)
 
 
-## Using Buffers, Windows, and Tabs the Smart Way
+## Using Buffers, Windows, and Tabs The Smart Way
 
 You have learned how buffers, windows, and tabs work in Vim. To use them efficiently, you need to understand what they are designed for and apply them in your own workflow. Everyone has a different workflow, here is one example.
 

@@ -139,7 +139,7 @@ vim -c %s/foo/bar/g -c %s/bar/baz/g -c %s/baz/donut/g hello.txt
 
 Throughout this book you will learn various Command-line commands. These commands can all be executed on start.
 
-## Opening multiple windows
+## Opening Multiple Windows
 
 You can launch Vim on split windows, horizontal and vertical, with `o` and `O`, respectively.
 
@@ -175,7 +175,7 @@ If you need to suspend Vim while in the middle of editing, you can press `Ctrl-Z
 
 To return to the suspended Vim, run `fg` from the terminal.
 
-## Starting Vim the Smart Way
+## Starting Vim The Smart Way
 
 You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `c cmd`). As you learn more command-line commands throughout this book, see if you can apply it on start.
 

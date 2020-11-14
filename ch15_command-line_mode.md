@@ -1,10 +1,10 @@
-# Ch 15. Command-line Mode
+# Ch 15. Command-Line Mode
 
 In the last three chapters, you learned how to use the search commands (`/`, `?`), substitute command (`:s`), global command (`:g`), and external command (`!`). These are examples of command-line mode commands.
 
 In this chapter, you will learn various tips and tricks for the command-line mode.
 
-## Entering and Exiting the Command-line Mode
+## Entering And Exiting The Command-Line Mode
 The command-line mode is a mode in itself, just like normal mode, insert mode, and visual mode. When you are in this mode, the cursor goes to the bottom of the screen where you can type in different commands.
 
 There are 4 different commands you can use to enter the command-line mode:
@@ -18,14 +18,14 @@ To leave the command-line mode, you can use `<esc>`, `Ctrl-C, or Ctrl-[`.
 
 *Sometimes other literatures might refer the "Command-line command" as "Ex command" and the "External command" as "filter command" or "bang operator".*
 
-## Repeating the Previous Command
+## Repeating The Previous Command
 You can repeat the previous command-line command or external command with `@:`. 
 
 If you just ran `:s/foo/bar/g`, running `@:` repeats that substitution.
 
 If you just ran `:.!tr '[a-z]' '[A-Z]'`, running `@:` repeats the last external command translation filter.
 
-## Command-line Mode Shortcuts
+## Command-Line Mode Shortcuts
 
 While in the command-line mode, you can move to the left or to the right, one character at a time, with the `Left` or `Right` arrow.
 
@@ -41,7 +41,7 @@ Ctrl-W    Delete one word
 Ctrl-U    Delete the entire line
 ```
 
-## Register and Autocomplete
+## Register And Autocomplete
 
 When programming, whenever possible, do not repeat if you can autocomplete it. This mindset will not only save you time but reduces the chances of typing the wrong characters.
 
@@ -58,7 +58,7 @@ You can view the histoy of command-line commands and search terms (make sure tha
 To open the command-line history, run `:his :`:
 
 ```
-##  cmd history
+##  cmd History
 2  e file1.txt
 3  g/foo/d
 4  s/foo/bar/g
@@ -79,7 +79,7 @@ Similarly, to view the search history, run `:his /`. You can also traverse the h
 
 Vim is smart enough to distinguish different histories. If you press `Up` or `Down` after pressing `:`, Vim automatically the command history. If you press `Up` or `Down` after pressing `/`, Vim automatically searches the search history.
 
-## Command-line Window
+## Command-Line Window
 
 The history window displays the list of previously used command-line commands, but you can't execute the command from the history window. To execute a command while browsing, use the *command-line window*. There are three different command-line windows:
 
@@ -93,7 +93,7 @@ Run `q:` to launch the command-line window for command-line commands. Vim will l
 
 Similarly, to launch the command-line window for search, run `q/` to search forward and `q?` to search backward.
 
-## Learn Command-line Mode the Smart Way
+## Learn Command-Line Mode The Smart Way
 
 Compared to the other three modes, the command-line mode is like the Swiss Army knife of text editing. You can edit text, modify files, and execute commands, just to name a few.  This chapter is a collection of odds and ends of the command-line mode. It also brings Vim modes into closure. Now that you know how to use the normal, insert, visual, and command-line mode you can edit text with Vim faster than ever.
 
