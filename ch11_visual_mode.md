@@ -1,6 +1,6 @@
 # Ch 11. Visual Mode
 
-You probably know that you can highlight a block of text and apply changes to it. Vim can too, with visual mode. Vim has three different visual modes to use. In this chapter, you will learn how to use each visual mode to manipulate blocks of texts efficiently.
+With visual editors (like LibreOffice Writer, Microsoft Word) you probably know that you can highlight a block of text and apply changes to it. Vim can too, with visual mode. Vim has three different visual modes to use. In this chapter, you will learn how to use each visual mode to manipulate blocks of texts efficiently.
 
 ## The Three Types Of Visual Modes
 The three modes are:
