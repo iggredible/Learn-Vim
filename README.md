@@ -8,7 +8,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 ## Table Of Contents (In Progress)
 
-### Part 1: Learn Vim the Smart Way
+### Part 1: Learn Vim the Smart Way (DONE)
 
 - [Ch 1     - Starting Vim](./ch01_starting_vim.md)
 - [Ch 2     - Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)
@@ -31,11 +31,11 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 - [Ch 19    - Compile](./ch19_compile.md)
 - [Ch 20    - Views, Sessions, and Viminfo](./ch20_views_sessions_viminfo.md)
 
-### Part 2: Customize Vim the Smart Way (TBD)
+### Part 2: Customize Vim the Smart Way (In Progress)
 
 - [Ch 21 - Vimrc](./ch21_vimrc.md)
-- Ch 22 - Vim pack
-- Ch 23 - Vim runtime 
+- [Ch 22 - Vim Packages](./ch22_vim_packages.md)
+- Ch 23 - Vim runtime
 
 ### Part 3: Learn Vimscript the Smart Way (TBD)
 
