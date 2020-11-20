@@ -101,6 +101,8 @@ two
 t]hree
 ```
 
+As you can see, with `o` or `O` in visual mode, the cursor jumps from the begining to the end of the block highlighted, keeping the highlighted block while lets you expand the highlighted block.
+
 ## Visual Mode Grammar
 
 Visual mode is one of Vim's modes. Being a mode means that the same key may work differently than in another mode. Luckily, visual mode shares many common keys with normal mode.
