@@ -101,7 +101,7 @@ two
 t]hree
 ```
 
-As you can see, with `o` or `O` in visual mode, the cursor jumps from the begining to the end of the block highlighted, keeping the highlighted block while lets you expand the highlighted block.
+With `o` or `O` in visual mode, the cursor jumps from the beginning to the end of the highlighted block, keeping the block highlighted while letting you expand the highlighted block.
 
 ## Visual Mode Grammar
 
