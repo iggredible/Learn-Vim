@@ -211,93 +211,71 @@ Vim runs the `$VIMRUNTIME/compiler/ruby.vim` script and changes the `makeprg` to
 
 You don't have to use the `:compiler` and `makeprg` to compile a program. You can run a test script, lint a file, send a signal, or anything you want. 
 
-You can also create your own custom compilers. Let's create two simple compilers and call them `foo` and `bar` compilers. In your `~/.vim` directory, if there isn't already, add a `/compiler` directory (`~/.vim/compiler`). Inside, create two files: `~/.vim/compiler/foo.vim` and `~/.vim/compiler/bar.vim`. Inside the `foo.vim`, add:
+## Creating A Custom Compiler
+
+Let's create a simple Typescript compiler. Install Typescript (`npm install -g typescript`) to your machine. You should now have the `tsc` command. If you haven't played with typescript before, `tsc` compiles a Typescript file into a Javascript file. Suppose that you have a file, `hello.ts`:
 
 ```
-if exists("current_compiler")
-  finish
-endif
-let current_compiler = "foo"
-
-if exists(":CompilerSet") != 2
-  command -nargs=* CompilerSet setlocal <args>
-endif
-
-let s:cpo_save = &cpo
-set cpo-=C
-
-CompilerSet makeprg=echo\\ \\"Hello\\ foo\\"
-
-let &cpo = s:cpo_save
-unlet s:cpo_save
-
-" vim: nowrap sw=2 sts=2 ts=8:
+const hello = "hello";
+console.log(hello);
 ```
 
-If most of these sound like gibberish, don't worry. Most of these lines are boilerplates that I got from `$VIMRUNTIME/compiler/<some-language>.vim`. The important line is:
+If you run `tsc hello.ts`, it will compile into `hello.js`. However, if you have the following expressions inside `hello.ts`:
 
 ```
-CompilerSet makeprg=echo\\ \\"Hello\\ foo\\"
+const hello = "hello";
+hello = "hello again";
+console.log(hello);
 ```
 
-This line defines the `makeprg` when you call `:compiler foo`. With this, the makeprg will run an `echo "Hello foo"` command. Since the spaces and double quotes are special characters, you need to escape them.
-
-Inside `bar.vim`, add:
+This will throw an error because you can't mutate a `const` variable. Running `tsc hello.ts` will throw an error:
 
 ```
-if exists("current_compiler")
-  finish
-endif
-let current_compiler = "bar"
+hello.ts:2:1 - error TS2588: Cannot assign to 'person' because it is a constant.
 
-if exists(":CompilerSet") != 2
-  command -nargs=* CompilerSet setlocal <args>
-endif
+2 person = "hello again";
+  ~~~~~~
 
-let s:cpo_save = &cpo
-set cpo-=C
 
-CompilerSet makeprg=cp\\ %\\ %<
-
-let &cpo = s:cpo_save
-unlet s:cpo_save
-
-" vim: nowrap sw=2 sts=2 ts=8:
+Found 1 error.
 ```
 
-For the `bar` compiler, the `makeprg` is set to run a `cp % %<` command. It copies the current file and name it with the same name minus the extension. If you're running it from `hello.txt`, it will create the file `hello`. 
-
-Let's switch to the `foo` compiler:
+To create a simple Typescript compiler, in your `~/.vim/` directory, add a `compiler` directory (`~/.vim/compiler/`), then create a `typescript.vim` file (`~/.vim/compiler/typescript.vim`). Put this inside:
 
 ```
-:compiler foo
+CompilerSet makeprg=tsc
+CompilerSet errorformat=%f:\ %m
 ```
 
-Then run:
+The first line sets the `makeprg` to run the `tsc` command. The second line sets the error format to display the file (`%f`), followed by a literal colon (`:`) and an escaped space (`\ `), followed by the error message (`%m`). To learn more about the error formatting, check out `:h errorformat`. 
+
+You should also read some of the pre-made compilers to see how others do it. Check out `:e $VIMRUNTIME/compiler/<some-language>.vim`.
+
+Because some plugins may interfere with the Typescript file, let's open the `hello.ts` without any plugin, using the `--noplugin` flag:
 
 ```
-:make
+vim --noplugin hello.ts
 ```
 
-You should see the echo output:
+Check the `makeprg`:
 
 ```
-Hello foo
+:set makeprg?
 ```
 
-Let's quickly switch it to the `bar` compiler. Run:
+It should say the default `make` program. To use the new Typescript compiler, run:
 
 ```
-:compiler bar
+:compiler typescript
 ```
 
-Then run:
+When you run `:set makeprg?`, it should say `tsc` now. Let's put it to the test. Run:
 
 ```
-:make
+:make %
 ```
 
-You should see the copy of the current file you're in *without* the extension. If you need to define your own compilers (or set of commands), you can use the `:compiler` method to quickly switch compilers.
+Recall that `%` means the current file. Watch your Typescript compiler work as expected! To see the list of error(s), run `:copen`.
 
 ## Async Compiler
 
