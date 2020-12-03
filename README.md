@@ -35,11 +35,15 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 - [Ch 21 - Vimrc](./ch21_vimrc.md)
 - [Ch 22 - Vim Packages](./ch22_vim_packages.md)
-- Ch 23 - Vim runtime
+- [Ch 23 - Vim runtime](./ch23_vim_runtime.md)
 
 ### Part 3: Learn Vimscript the Smart Way (TBD)
 
-- Ch 24 - Vimscript
+- [Ch 24 - Vimscript Fundamental Data Types
+- Ch 25 - Vimscript Basic Expressions
+- Ch 26 - Vimscript Variable Scopes
+- Ch 27 - Vimscript Functions
+- Ch 28+ - ?
 
 # Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
