@@ -265,7 +265,7 @@ Have you ever tried running Vim without syntax plugin like vim-polyglot and yet 
 
 To learn more, check out `:h $VIMRUNTIME`.
 
-## 'runtimepath'
+## `'runtimepath'`
 
 To check your runtimepath, run `:set runtimepath?`
 
