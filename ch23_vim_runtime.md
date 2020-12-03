@@ -54,15 +54,11 @@ au BufNewFile,BufRead *.chocodonut set filetype=chocodonut
 
 This should look familiar. `BufNewFile` and `BufRead` are triggered whenever you create a new buffer or open a new buffer. `*.chocodonut` means that this event will only be triggered if the opened buffer has a `.chocodonut` filename extension. Finally, `set filetype=chocodonut` command sets the file type to be a chocodonut type.
 
-Restart Vim. Now open `hello.chocodonut` file and run `:set filetype?`. It returns:
-
-```
-filetype=chocodonut
-```
+Restart Vim. Now open `hello.chocodonut` file and run `:set filetype?`. It returns `filetype=chocodonut`
 
 Scrumptious! You can put as many files as you want inside `ftdetect/`. In the future, you can maybe add `ftdetect/strawberrydonut.vim`, `ftdetect/plaindonut.vim`, etc., if you ever decide to expand your donut file types.
 
-There are actually two ways to set a filetype in Vim. One is what you just used `set filetype=chocodonut`. The other way is to run `setfiletype chocodonut`.
+There are actually two ways to set a file type in Vim. One is what you just used `set filetype=chocodonut`. The other way is to run `setfiletype chocodonut`.
 
 The former command `set filetype=chocodonut` will *always* set the file type to chocodonut type, while the latter command `setfiletype chocodonut` will only set the file type if no file type was set yet.
 
@@ -130,7 +126,7 @@ if getline(1) =~ '^\\<donutify\\>'
 endif
 ```
 
-The function `did_filetype()` is a Vim built-in function. It will return true when a filetype-related event is triggered at least once. It is used as a guard to stop re-running filetype event.
+The function `did_filetype()` is a Vim built-in function. It will return true when a file type related event is triggered at least once. It is used as a guard to stop re-running file type event.
 
 Open the `sugardonut` file and run `:set filetype?`, Vim now returns `filetype=donut`.
 
@@ -156,7 +152,7 @@ echo "Calling from plaindonut ftplugin"
 
 Now each time you open a chocodonut file type, Vim runs the scripts from `~/.vim/ftplugin/chocodonut.vim`. Each time you open a plaindonut file type, Vim runs the scripts from `~/.vim/ftplugin/plaindonut.vim`.
 
-One warning: these files are run each time a buffer's filetype is set (`set filetype=chocodonut` for example). If you open 3 different chocodonut files, the scripts will be run a *total* of three times.
+One warning: these files are run each time a buffer's file type is set (`set filetype=chocodonut` for example). If you open 3 different chocodonut files, the scripts will be run a *total* of three times.
 
 ## Indent Files
 
