@@ -35,7 +35,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 - [Ch 21 - Vimrc](./ch21_vimrc.md)
 - [Ch 22 - Vim Packages](./ch22_vim_packages.md)
-- [Ch 23 - Vim runtime](./ch23_vim_runtime.md)
+- [Ch 23 - Vim Runtime](./ch23_vim_runtime.md)
 
 ### Part 3: Learn Vimscript the Smart Way (TBD)
 
