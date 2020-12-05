@@ -40,6 +40,9 @@ Ctrl-H    Delete one character
 Ctrl-W    Delete one word
 Ctrl-U    Delete the entire line
 ```
+Finally, if you want to edit the command like you would a normal textfile use `Ctrl-F`.
+
+This also allows you to search through the previous commands, edit them and rerun them by pressing `Enter` in "command-line editing normal mode".
 
 ## Register And Autocomplete
 
