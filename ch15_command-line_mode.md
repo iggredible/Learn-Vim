@@ -39,9 +39,8 @@ Similar to the insert mode, inside the command-line mode, you have three ways to
 Ctrl-H    Delete one character
 Ctrl-W    Delete one word
 Ctrl-U    Delete the entire line
-Ctrl-F    Show previous and current commands and rerun/edit them
 ```
-If you want to edit the command like you would a normal textfile use `Ctrl-F`.
+Finally, if you want to edit the command like you would a normal textfile use `Ctrl-F`.
 
 This also allows you to search through the previous commands, edit them and rerun them by pressing `Enter` in "command-line editing normal mode".
 
