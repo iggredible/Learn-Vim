@@ -41,7 +41,7 @@ all:
 	echo "Hello all"
 foo:
 	echo "Hello foo"
-list_pls: 
+list_pls:
 	ls
 ```
 
@@ -75,7 +75,7 @@ all:
 	echo "Hello all"
 foo:
 	echo "Hello foo"
-list_pls: 
+list_pls:
 	ls
 ```
 
@@ -209,7 +209,7 @@ Recall that if you run `:make`, Vim executes whatever command is assigned to `ma
 
 Vim runs the `$VIMRUNTIME/compiler/ruby.vim` script and changes the `makeprg` to use the `ruby` command. Now if you run `:set makeprg?`, it should say `makeprg=ruby` (this depends on what is inside your `$VIMRUNTIME/compiler/ruby.vim` file or if you have another custom ruby compilers. Yours might be different). The `:compiler <your-lang>` command allows you to switch to different compilers  quickly. This is useful if your project uses multiple languages.
 
-You don't have to use the `:compiler` and `makeprg` to compile a program. You can run a test script, lint a file, send a signal, or anything you want. 
+You don't have to use the `:compiler` and `makeprg` to compile a program. You can run a test script, lint a file, send a signal, or anything you want.
 
 ## Creating A Custom Compiler
 
@@ -247,7 +247,7 @@ CompilerSet makeprg=tsc
 CompilerSet errorformat=%f:\ %m
 ```
 
-The first line sets the `makeprg` to run the `tsc` command. The second line sets the error format to display the file (`%f`), followed by a literal colon (`:`) and an escaped space (`\ `), followed by the error message (`%m`). To learn more about the error formatting, check out `:h errorformat`. 
+The first line sets the `makeprg` to run the `tsc` command. The second line sets the error format to display the file (`%f`), followed by a literal colon (`:`) and an escaped space (`\ `), followed by the error message (`%m`). To learn more about the error formatting, check out `:h errorformat`.
 
 You should also read some of the pre-made compilers to see how others do it. Check out `:e $VIMRUNTIME/compiler/<some-language>.vim`.
 
@@ -336,7 +336,7 @@ Vim-dispatch has `b:dispatch` buffer variable that you can configure to evaluate
 autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec %'
 ```
 
-Now each time you enter a file (`BufEnter`) that ends with `_spec.rb`, running `:Dispatch` automatically executes `bundle exec rspec <your-current-ruby-spec-file>`. 
+Now each time you enter a file (`BufEnter`) that ends with `_spec.rb`, running `:Dispatch` automatically executes `bundle exec rspec <your-current-ruby-spec-file>`.
 
 ## Learn Compile The Smart Way
 

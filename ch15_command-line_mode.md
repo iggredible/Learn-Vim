@@ -12,14 +12,14 @@ There are 4 different commands you can use to enter the command-line mode:
 - Command-line commands (`:`)
 - External commands (`!`)
 
-You can enter the command-line mode from the normal mode or the visual mode. 
+You can enter the command-line mode from the normal mode or the visual mode.
 
-To leave the command-line mode, you can use `<esc>`, `Ctrl-C, or Ctrl-[`.
+To leave the command-line mode, you can use `<esc>`, `Ctrl-c, or Ctrl-[`.
 
 *Sometimes other literatures might refer the "Command-line command" as "Ex command" and the "External command" as "filter command" or "bang operator".*
 
 ## Repeating The Previous Command
-You can repeat the previous command-line command or external command with `@:`. 
+You can repeat the previous command-line command or external command with `@:`.
 
 If you just ran `:s/foo/bar/g`, running `@:` repeats that substitution.
 
@@ -31,16 +31,16 @@ While in the command-line mode, you can move to the left or to the right, one ch
 
 If you need to move word-wise, use `Shift-Left` or `Shift-Right` (in some OS, you might have to use `Ctrl` instead of `Shift`).
 
-To go to the start of the line, use `Ctrl-B`. To go to the end of the line, use `Ctrl-E`.
+To go to the start of the line, use `Ctrl-b`. To go to the end of the line, use `Ctrl-e`.
 
 Similar to the insert mode, inside the command-line mode, you have three ways to delete characters:
 
 ```
-Ctrl-H    Delete one character
-Ctrl-W    Delete one word
-Ctrl-U    Delete the entire line
+Ctrl-h    Delete one character
+Ctrl-w    Delete one word
+Ctrl-u    Delete the entire line
 ```
-Finally, if you want to edit the command like you would a normal textfile use `Ctrl-F`.
+Finally, if you want to edit the command like you would a normal textfile use `Ctrl-f`.
 
 This also allows you to search through the previous commands, edit them and rerun them by pressing `Enter` in "command-line editing normal mode".
 
@@ -48,9 +48,9 @@ This also allows you to search through the previous commands, edit them and reru
 
 When programming, whenever possible, do not repeat if you can autocomplete it. This mindset will not only save you time but reduces the chances of typing the wrong characters.
 
-You can insert texts from Vim register with `Ctrl-R` (the same way as the insert mode). If you have the string "foo" saved in the register "a" (`"a`), you can insert it by running `Ctrl-R a`. Everything that you can get from the register in the insert mode, you can do the same from the command-line mode.
+You can insert texts from Vim register with `Ctrl-r` (the same way as the insert mode). If you have the string "foo" saved in the register "a" (`"a`), you can insert it by running `Ctrl-r a`. Everything that you can get from the register in the insert mode, you can do the same from the command-line mode.
 
-You can also autocomplete commands. To autocomplete the `echo` command, while in the command-line mode, type "ec", then press `<Tab>`. You should see on the bottom left Vim commands starting with "ec" (example: `echo echoerr echohl echomsg econ`). To go to the next option, press either `<Tab>` or `Ctrl-N`. To go the previous option, press either `<Shift-Tab>` or `Ctrl-P`.
+You can also autocomplete commands. To autocomplete the `echo` command, while in the command-line mode, type "ec", then press `<Tab>`. You should see on the bottom left Vim commands starting with "ec" (example: `echo echoerr echohl echomsg econ`). To go to the next option, press either `<Tab>` or `Ctrl-n`. To go the previous option, press either `<Shift-Tab>` or `Ctrl-p`.
 
 Some command-line commands accept file names as arguments. One example is `edit`. After typing the command, `:e ` (don't forget the space), press `<Tab>`. Vim will list all the relevant file names.
 
@@ -76,7 +76,7 @@ When you are in the command-line mode, you can traverse this history list by pre
 53  s/foo//g
 ```
 
-If you press `:` then press `Up` once, you'll see `:s/foo//g`. Press `Up` one more time to see `:s/foo/baz/g`. Vim goes up the history list. 
+If you press `:` then press `Up` once, you'll see `:s/foo//g`. Press `Up` one more time to see `:s/foo/baz/g`. Vim goes up the history list.
 
 Similarly, to view the search history, run `:his /`. You can also traverse the history stack by pressing `Up` or `Down` after running the history command `/`.
 
@@ -92,7 +92,7 @@ q/    Forward search window
 q?    Backward search window
 ```
 
-Run `q:` to launch the command-line window for command-line commands. Vim will launch a new window at the bottom of the screen. You can traverse upward with the `Up` or `Ctrl-P` keys and traverse downward with the `Down` or `Ctrl-N` keys. If you press `<Return>`, Vim executes that command. To quit the command-line window, either press `Ctrl-C`, `Ctrl-W C`, or type `:quit`.
+Run `q:` to launch the command-line window for command-line commands. Vim will launch a new window at the bottom of the screen. You can traverse upward with the `Up` or `Ctrl-p` keys and traverse downward with the `Down` or `Ctrl-n` keys. If you press `<Return>`, Vim executes that command. To quit the command-line window, either press `Ctrl-c`, `Ctrl-w c`, or type `:quit`.
 
 Similarly, to launch the command-line window for search, run `q/` to search forward and `q?` to search backward.
 

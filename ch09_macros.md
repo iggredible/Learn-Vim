@@ -71,7 +71,7 @@ Here's the breakdown of the command above:
 - `q` stops recording.
 
 
-I like to overcount my macro calls, so I usually would call it ninety-nine times (`99@a`). With this command, Vim does not actually run this macro ninety-nine times. When Vim reaches the last line and runs `j` action, it finds no more lines to go down to, sees an error, and stops the macro execution. 
+I like to overcount my macro calls, so I usually would call it ninety-nine times (`99@a`). With this command, Vim does not actually run this macro ninety-nine times. When Vim reaches the last line and runs `j` action, it finds no more lines to go down to, sees an error, and stops the macro execution.
 
 The fact that macro execution stops upon the first error encounter is a good feature, otherwise Vim will continue to execute this macro ninety-nine times even though it already reaches the end of the line.
 
@@ -83,7 +83,7 @@ The `:normal` command accepts range as arguments. You can use this to run macro 
 
 ## Executing A Macro Across Multiple Files
 
-Suppose you have multiple `.txt` files, each containing different lists. Moreover, you need to uppercase the first word only on lines containing the word "donut". How can we execute macros across multiple files on select lines? 
+Suppose you have multiple `.txt` files, each containing different lists. Moreover, you need to uppercase the first word only on lines containing the word "donut". How can we execute macros across multiple files on select lines?
 
 First file:
 ```
@@ -140,13 +140,13 @@ Here is the breakdown of the steps:
 - `@a` executes macro "a". When recording this, `@a` should be empty because you had just called `qaq`.
 - `q` stops recording.
 
-Now you can just run `@a` and watch Vim execute the macro recursively. 
+Now you can just run `@a` and watch Vim execute the macro recursively.
 
 How does the macro know when to stop? When the macro is on the last line, it tries to run `j`, finds no extra line to go to, and stops the macro execution.
 
 ## Appending A Macro
 
-If you need to add more actions to an existing macro, instead of redoing it, you can append actions to it. In the register chapter, you learned that you can append a named register by using its uppercased symbol. To append actions to a macro in register "a", use register "A". Suppose in addition to toggling the case of the first word, you also want to add a dot at the end of the line. 
+If you need to add more actions to an existing macro, instead of redoing it, you can append actions to it. In the register chapter, you learned that you can append a named register by using its uppercased symbol. To append actions to a macro in register "a", use register "A". Suppose in addition to toggling the case of the first word, you also want to add a dot at the end of the line.
 
 Assume you have the following actions stored as a macro in register "a":
 

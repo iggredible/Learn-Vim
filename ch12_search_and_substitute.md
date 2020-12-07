@@ -12,7 +12,7 @@ However, there are times when you need to search for a case specific phrase. One
 
 Is there a setting that allows you to do case insensitive search most of the time, but also know to do case sensitive search when you need it? Turns out there is a way.
 
-Vim has a `smartcase` option to override `ignorecase` if the search pattern *contains at least one uppercase character*. You can combine both `ignorecase` and `smartcase` to perform a case insensitive search when you enter all lowercase characters and a case sensitive search when you enter one or more uppercase characters. 
+Vim has a `smartcase` option to override `ignorecase` if the search pattern *contains at least one uppercase character*. You can combine both `ignorecase` and `smartcase` to perform a case insensitive search when you enter all lowercase characters and a case sensitive search when you enter one or more uppercase characters.
 
 Inside your vimrc, add:
 
@@ -44,7 +44,7 @@ If you have this text:
 hello hello
 ```
 
-You can target the first "hello" with `/^hello`. The character that follows `^` must be the first character in a line. To target the last "hello", run `/hello$`. The character before `$` must be the last character in a line. 
+You can target the first "hello" with `/^hello`. The character that follows `^` must be the first character in a line. To target the last "hello", run `/hello$`. The character before `$` must be the last character in a line.
 
 If you have this text:
 
@@ -58,7 +58,7 @@ Running `/hello$` will not match anything because "friend" is the last term in t
 
 You can repeat the previous search with `//`. If you have just searched for `/hello`, running `//` is equivalent to running `/hello`. This shortcut can save you some keystrokes especially if you just did a long search term. Also recall that you can also use `n` and `N` to repeat the last search with the same direction and opposite direction, respectively.
 
-What if you want to quickly recall *n* last search term? You can quickly traverse the search history by first pressing `/`, then press `up`/`down` arrow keys (or `Ctrl-N`/`Ctrl-P`) until you find the search term you need. To see all your search history, you can run `:history /`.
+What if you want to quickly recall *n* last search term? You can quickly traverse the search history by first pressing `/`, then press `up`/`down` arrow keys (or `Ctrl-n`/`Ctrl-p`) until you find the search term you need. To see all your search history, you can run `:history /`.
 
 When you reach the end of a file while searching, Vim throws an error: `"Search hit the BOTTOM without match for: <your-search>"`. Sometimes this can be a good safeguard from oversearching, but other times you want to cycle the search back to the top again. You can use the `set wrapscan` option to make Vim to search back at the top of the file when you reach the end of the file. To turn this feature off, do `set nowrapscan`.
 
@@ -75,7 +75,7 @@ salve vim
 bonjour vim
 ```
 
-To match both "hello" and  "hola", you can do `/hello\|hola`. You have to escape (`\`) the pipe (`|`) operator, otherwise Vim will literally search for the string "|". 
+To match both "hello" and  "hola", you can do `/hello\|hola`. You have to escape (`\`) the pipe (`|`) operator, otherwise Vim will literally search for the string "|".
 
 If you don't want to type `\|` every time, you can use the `magic` syntax (`\v`) at the start of the search: `/\vhello|hola`. I will not cover `magic` in this chapter, but with `\v`, you don't have to escape special characters anymore. To learn more about `\v`, feel free to check out `:h \v`.
 
@@ -113,11 +113,11 @@ If you need to search for the "foo" in "foobaz" but not in "foobar", run:
 
 All your search terms up to this point have been a literal word search. In real life, you may have to use a general pattern to find your text. The most basic pattern is the character range, `[ ]`.
 
-If you need to search for any digit, you probably don't want to type `/0\|1\|2\|3\|4\|5\|6\|7\|8\|9\|0` every single time. Instead, use `/[0-9]` to match for a single digit. The `0-9` expression represents a range of numbers 0-9 that Vim will try to match, so if you are looking for digits between 1 to 5 instead, use `/[1-5]`. 
+If you need to search for any digit, you probably don't want to type `/0\|1\|2\|3\|4\|5\|6\|7\|8\|9\|0` every single time. Instead, use `/[0-9]` to match for a single digit. The `0-9` expression represents a range of numbers 0-9 that Vim will try to match, so if you are looking for digits between 1 to 5 instead, use `/[1-5]`.
 
-Digits are not the only data types Vim can look up. You can also do `/[a-z]` to search for lowercase alphas and `/[A-Z]` to search for uppercase alphas. 
+Digits are not the only data types Vim can look up. You can also do `/[a-z]` to search for lowercase alphas and `/[A-Z]` to search for uppercase alphas.
 
-You can combine these ranges together. If you need to search for digits 0-9 and both lowercase and uppercase alphas from a to f (a hex), you can do `/[0-9a-fA-F]`. 
+You can combine these ranges together. If you need to search for digits 0-9 and both lowercase and uppercase alphas from a to f (a hex), you can do `/[0-9a-fA-F]`.
 
 To do a negative search, you can add `^` inside the character range brackets. To search for a non-digit, run `/[^0-9]`. Vim will match any character as long as it is not a digit. Beware that the caret (`^`) inside the range brackets is different from the beginning-of-a-line caret (ex: `/^hello`). If a caret is outside of a pair of brackets and is the first character in the search term, it means "the first character in a line". If a caret is inside a pair of brackets and it is the first character inside the brackets, it means a negative search operator. `/^abc` matches the first "abc" in a line and `/[^abc]` matches any character except for an "a", "b", or "c".
 
@@ -182,11 +182,11 @@ Run this:
 
 Let's break it down:
 - `"` is a literal double quote. It matches the first double quote.
-- `[^"]` means any character except for a double quote. It matches any alphanumeric and whitespace character as long as it is not a double quote. 
+- `[^"]` means any character except for a double quote. It matches any alphanumeric and whitespace character as long as it is not a double quote.
 - `\+` means one or more. Since it is preceded by `[^"]`, Vim looks for one or more character that is not a double quote.
 - `"` is a literal double quote. IT matches the closing double quote.
 
-When sees the first `"`, it begins the pattern capture. The moment Vim sees the second double quote in a line, it matches the second `"` pattern and stops the pattern capture. Meanwhile, all non-`"` characters between the two `"` are captured by the `[^"]\+` pattern, in this case, the phrase `Vim is awesome!`. This is a common pattern to capture a phrase surrounded by a pair of similar delimiters: to capture a phrase surrounded by a single quote, you can use `/'[^']\+'`. 
+When sees the first `"`, it begins the pattern capture. The moment Vim sees the second double quote in a line, it matches the second `"` pattern and stops the pattern capture. Meanwhile, all non-`"` characters between the two `"` are captured by the `[^"]\+` pattern, in this case, the phrase `Vim is awesome!`. This is a common pattern to capture a phrase surrounded by a pair of similar delimiters: to capture a phrase surrounded by a single quote, you can use `/'[^']\+'`.
 
 ## Capturing A Phone Number
 
@@ -206,7 +206,7 @@ You can avoid typing escapes with `\v`:
 /\v\d{3}-\d{3}-\d{4}
 ```
 
-This pattern is also useful to capture any repeating digits, such as IP addresses and zip codes. 
+This pattern is also useful to capture any repeating digits, such as IP addresses and zip codes.
 
 That covers the search part of this chapter. Now let's move to substitution.
 
@@ -232,7 +232,7 @@ vim is awesome
 
 ## Repeating The Last Substitution
 
-You can repeat the last substitute command with either the normal command `&` or by running `:s`. If you have just run `:s/good/awesome/`, running either `&` or `:s` will repeat it. 
+You can repeat the last substitute command with either the normal command `&` or by running `:s`. If you have just run `:s/good/awesome/`, running either `&` or `:s` will repeat it.
 
 Also, earlier in this chapter I mentioned that you can use `//` to repeat the previous search pattern.  This trick works with the substitution command. If `/good` was done recently and you leave the first substitute pattern argument blank, like in `:s//awesome/`, it is the same as running `:s/good/awesome/`.
 
@@ -299,7 +299,7 @@ let five = "5";
 
 Let's break down the command:
 - `:%s` targets the entire file to perform substitution.
-- `\d` is Vim's predefined range for digits (`[0-9]`). 
+- `\d` is Vim's predefined range for digits (`[0-9]`).
 - `"\0"` the double quotes are literal double quotes. `\0` is a special character representing "the whole matched pattern". The matched pattern here is a single digit number, `\d`. On line one, `\0` has the value of "1". On line two, value of "2". On line three, value of "3", and so on.
 
 Alternatively, `&` also represents "the whole matched pattern" like `\0`. `:s/\d/"&"/` would have also worked.
@@ -396,7 +396,7 @@ The command above will only substitute the first match, giving you:
 chocolate donut, strawberry pancake, blueberry pancake
 ```
 
-There are two ways to solve this. First, you can run the substitute command twice more. Second, you can pass it a global (`g`) flag to substitute all of the matches in a line. 
+There are two ways to solve this. First, you can run the substitute command twice more. Second, you can pass it a global (`g`) flag to substitute all of the matches in a line.
 
 Let's talk about the global flag. Run:
 
@@ -653,13 +653,13 @@ Assume your directory structure looks like this:
 First, capture both `food.txt` and `animal.txt` inside `:args`. Recall from earlier chapters that `:args` can be used to create a list of file names. There are several ways to do this from inside Vim:
 
 ```
-:args *.txt                  captures all txt files in current location 
+:args *.txt                  captures all txt files in current location
 :args food.txt animal.txt    captures only index and server js files
 :args **/*.txt               captures every txt files
-:args **                     captures everything 
+:args **                     captures everything
 ```
 
-You can also run the commands above from outside Vim, passing the files as *arguments* for Vim (hence it is called the "args" command). From the terminal, run 
+You can also run the commands above from outside Vim, passing the files as *arguments* for Vim (hence it is called the "args" command). From the terminal, run
 
 ```
 vim food.txt animal.txt

@@ -59,7 +59,7 @@ Whoops, Vim could not find the tag file. You need to generate the tag file first
 Modern Vim does not come with tag generator, so you will have to download an external tag generator. There are several options to choose:
 
 - ctags = C only. Available almost everywhere.
-- exuberant ctags = One of the most popular ones. Has many language support. 
+- exuberant ctags = One of the most popular ones. Has many language support.
 - universal ctags = Similar to exuberant ctags, but newer.
 - etags = For Emacs. Hmm...
 - JTags = Java
@@ -198,7 +198,7 @@ class One
     puts "Initialized"
   end
 
-  def donut 
+  def donut
     puts "one donut"
   end
 
@@ -285,9 +285,9 @@ Vim has a normal mode key for `tjump`: `g Ctrl-]`. I personally like `g Ctrl-]` 
 
 ## Autocompletion With Tags
 
-Tags can assist autocompletions. Recall from chapter 6, Insert Mode, that you can use `Ctrl-X` sub-mode to do various autocompletions. One autocompletion sub-mode that I did not mention was `Ctrl-]`. If you do `Ctrl-X Ctrl-]` while in the insert mode, Vim will use the tag file for autocompletion.
+Tags can assist autocompletions. Recall from chapter 6, Insert Mode, that you can use `Ctrl-x` sub-mode to do various autocompletions. One autocompletion sub-mode that I did not mention was `Ctrl-]`. If you do `Ctrl-x Ctrl-]` while in the insert mode, Vim will use the tag file for autocompletion.
 
-If you go into the insert mode and type `Ctrl-X Ctrl-]`, you will see:
+If you go into the insert mode and type `Ctrl-x Ctrl-]`, you will see:
 
 ```
 One
@@ -324,7 +324,7 @@ Note that the `>` symbol is now on line two, where the `donut` is. `pop` one mor
   2  1 donut               9  one.donut
 ```
 
-In normal mode, you can run `Ctrl-T` to achieve the same effect as `:pop`.
+In normal mode, you can run `Ctrl-t` to achieve the same effect as `:pop`.
 
 ## Automatic Tag Generation
 

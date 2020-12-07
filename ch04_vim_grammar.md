@@ -22,7 +22,7 @@ You only need to know one grammar rule to speak Vim language:
 verb + noun
 ```
 
-That's it! 
+That's it!
 
 This is equivalent to saying these English phrases:
 
@@ -62,7 +62,7 @@ c    Delete text, save to register, and start insert mode
 Now that you know basic nouns and verbs, let's apply our grammar rule! Suppose you have this expression:
 
 ```
-const learn = "vim"; 
+const learn = "vim";
 ```
 - To yank everything from your current location to the end of the line: `y$`.
 - To delete from your current location to the beginning of the next word: `dw`.
@@ -84,7 +84,7 @@ I hope everything starts to make sense. But I am not quite done yet. Vim has one
 
 Imagine you are somewhere inside a pair of parentheses like `(hello vim)` and you need to delete the entire phrase inside the parentheses. How can you quickly do it? Is there a way to delete the "group" you are inside of?
 
-The answer is yes. Texts often come structured. They are often put inside parentheses, quotes, brackets, braces, and so on. Vim has a way to capture this structure with text objects. 
+The answer is yes. Texts often come structured. They are often put inside parentheses, quotes, brackets, braces, and so on. Vim has a way to capture this structure with text objects.
 
 Text objects are used with operators. There are two types of text objects:
 
@@ -101,16 +101,16 @@ Let's look at a different example. Suppose you have this Javascript function and
 
 ```
 const hello = function() {
-  console.log("Hello Vim"); 
+  console.log("Hello Vim");
   return true;
 }
 ```
 
 - To delete the entire "Hello Vim": `di(`.
 - To delete the content of function (surrounded by `{}`): `di{`.
-- To delete the "Hello" string: `diw`. 
+- To delete the "Hello" string: `diw`.
 
-Text objects are powerful because you can target different objects from one location. You can delete the objects inside the pair of parentheses, the function block, or the whole word. Moreover, when you see `di(`, `di{`, and `diw`, you get a pretty good idea what text objects they represent (a pair of parentheses, a pair of braces, and a word). 
+Text objects are powerful because you can target different objects from one location. You can delete the objects inside the pair of parentheses, the function block, or the whole word. Moreover, when you see `di(`, `di{`, and `diw`, you get a pretty good idea what text objects they represent (a pair of parentheses, a pair of braces, and a word).
 
 Let's look at one last example. Suppose you have these HTML tags:
 ```
@@ -179,7 +179,7 @@ Result:
 03  Bunny   Ok
 ```
 
-Great! Even piping works from inside Vim. 
+Great! Even piping works from inside Vim.
 
 This is the power of Vim's composability. The more you know your operators, motions, and terminal commands, your ability to compose complex actions is *multiplied*.
 
@@ -199,6 +199,6 @@ verb + noun
 ```
 One of my biggest Vim "AHA!" moments was when I had just learned about the uppercase (`gU`) operator and wanted to uppercase a word, I instinctively ran `gUiw` and it worked! The word I was on was uppercased. I finally began to understand Vim. My hope is that you will have your own "AHA!" moment soon, if not already.
 
-The goal is this chapter is to show you the `verb + noun` pattern in Vim so you will approach learning Vim like learning a new language instead of memorizing every command combinations. 
+The goal is this chapter is to show you the `verb + noun` pattern in Vim so you will approach learning Vim like learning a new language instead of memorizing every command combinations.
 
 Learn the pattern and understand the implications. That's the smart way to learn.

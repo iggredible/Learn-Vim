@@ -1,12 +1,12 @@
 # Ch 13. The Global Command
 
-So far you have learned how to repeat the last change with the dot command (`.`), to replay actions with macros (`q`), and to store texts in the registers (`"`). 
+So far you have learned how to repeat the last change with the dot command (`.`), to replay actions with macros (`q`), and to store texts in the registers (`"`).
 
 In this chapter, you will learn how to repeat a command-line command with the global command. Run once, apply everywhere (in a buffer).
 
 ## Global Command Overview
 
-Vim's global command is used to running a command-line command on multiple lines simultaneously. 
+Vim's global command is used to running a command-line command on multiple lines simultaneously.
 
 By the way, you may have heard of the term "Ex Commands" before. In this book, I refer them as command-line commands, but both Ex commands and command-line commands are the same. They are the commands that start with a colon (`:`). In the last chapter, you learned about the substitute command. It was an example of an Ex command. They are called Ex because they originally came from the Ex text editor. I will continue to refer to them as command-line commands in this book. For a full list of Ex commands, check out `:h ex-cmd-index`.
 
@@ -146,7 +146,7 @@ In addition to numbers, you can also use these symbols as range:
 - `$` means the last line in the file. `3,$` range means between line 3 and the last line.
 - `+n` means n lines after the current line. You can use it with `.` or without. `3,+1` or `3,.+1` means between line 3 and the line after the current line.
 
-If you don't give it any range, by default it affects the entire file. This is actually not the norm. Most of Vim's command-line commands run on only the current line if you don't pass it any range. The two notable exceptions are the global (`:g`) and the save (`:w`) commands. 
+If you don't give it any range, by default it affects the entire file. This is actually not the norm. Most of Vim's command-line commands run on only the current line if you don't pass it any range. The two notable exceptions are the global (`:g`) and the save (`:w`) commands.
 
 ## Normal Command
 
@@ -267,7 +267,7 @@ Here the global command will look for all lines containing "one". The substitute
 
 ## The Default Command
 
-What happens if you don't specify any command-line command in the global command? 
+What happens if you don't specify any command-line command in the global command?
 
 The global command will use the print (`:p`) command to print the current line's text. If you run:
 
@@ -287,7 +287,7 @@ By the way, here is one interesting fact. Because the default command used by th
 - `re` = the regex pattern
 - `p` = the print command
 
-It spells *"grep"*, the same `grep` from the command line. This is **not** a coincidence. The `g/re/p` command originally came from the Ed Editor, one of the first line text editors. The `grep` command got its name from Ed. 
+It spells *"grep"*, the same `grep` from the command line. This is **not** a coincidence. The `g/re/p` command originally came from the Ed Editor, one of the first line text editors. The `grep` command got its name from Ed.
 
 Your computer probably still has the Ed editor. Run `ed` from the terminal (hint: to quit, type `q`).
 
@@ -298,7 +298,7 @@ Your computer probably still has the Ed editor. Run `ed` from the terminal (hint
 To reverse the entire file, run:
 
 ```
-:g/^/m 0 
+:g/^/m 0
 ```
 
 `^` is a pattern for the "beginning of a line". Use `^` to match all lines, including empty lines.
@@ -476,7 +476,7 @@ e
 c
 ```
 
-You can sort them by running `:sort`. If you give it a range, it will sort only the lines within that range. For example, `:3,5sort` sorts only between lines three and five. 
+You can sort them by running `:sort`. If you give it a range, it will sort only the lines within that range. For example, `:3,5sort` sorts only between lines three and five.
 
 If you have the following expressions:
 
@@ -537,7 +537,7 @@ const arrayA = [
 
 This is great! But the command looks complicated. Let's break it down. The command consists of three main parts: the global command pattern, the sort command range, and the sort command.
 
-`:g/\[/` is the global command pattern. 
+`:g/\[/` is the global command pattern.
 - `:g` is the global command.
 - `/\[/` is the pattern used by the global command. `\[` looks for a literal "[" string.
 
@@ -552,7 +552,7 @@ If you are still confused by the command, do not worry. It took me a long time t
 
 ## Learn The Global Command The Smart Way
 
-The global command executes the command-line command against all matching lines. With it, you only need to run a command once and Vim will do the rest for you. To become proficient at the global command, two things are required: a good vocabulary of command-line commands and a knowledge of regular expressions. As you spend more time using Vim, you will naturally learn more command-line commands. A regular expression knowledge will require a more active approach. But once you become comfortable with regular expressions, you will be ahead of many. 
+The global command executes the command-line command against all matching lines. With it, you only need to run a command once and Vim will do the rest for you. To become proficient at the global command, two things are required: a good vocabulary of command-line commands and a knowledge of regular expressions. As you spend more time using Vim, you will naturally learn more command-line commands. A regular expression knowledge will require a more active approach. But once you become comfortable with regular expressions, you will be ahead of many.
 
 Some of the examples here are complicated. Do not be intimidated. Really take your time to understand them. Learn to read the patterns. Make sure you know what each letter in each command represent. Do not give up.
 
