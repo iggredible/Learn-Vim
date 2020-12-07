@@ -2,7 +2,7 @@
 
 Learning Vim registers is like learning algebra for the first time. You don't think you need them until you learn them.
 
-You've probably used Vim registers when you yanked or deleted a text then pasted it with `p` or `P`. However, did you know that Vim has 10 different types of registers? 
+You've probably used Vim registers when you yanked or deleted a text then pasted it with `p` or `P`. However, did you know that Vim has 10 different types of registers?
 
 In this chapter, I will go over all Vim register types and how to use them efficiently.
 
@@ -86,7 +86,7 @@ If you:
 
 The yanked register will have the text from step three.
 
-One last tip, while in insert mode, you can quickly paste the text you just yanked using `Ctrl-r 0`. 
+One last tip, while in insert mode, you can quickly paste the text you just yanked using `Ctrl-r 0`.
 
 ## The Numbered Registers (`"1-9`)
 
@@ -107,7 +107,7 @@ The numbered registers are automatically incremented when using the dot command.
 - Do `.` to paste the content from the numbered register two (`"2`).
 - Do `.` to paste the content from the numbered register three (`"3`).
 
-During each sequential dot command call, Vim automatically increments the numbered registers. This trick works with any numbered register. If you started with `"5P`,  `.`  would do `"6P`, `.` again would do `"7P`, and so on. 
+During each sequential dot command call, Vim automatically increments the numbered registers. This trick works with any numbered register. If you started with `"5P`,  `.`  would do `"6P`, `.` again would do `"7P`, and so on.
 
 Small deletions like a word deletion (`dw`) or word change (`cw`) do not get stored in the numbered registers. They are stored in the small delete register (`"-`), which I will discuss next.
 
@@ -185,7 +185,7 @@ Ctrl-r =@a
 
 You can also evaluate Vim scripts with the expression register. If you define a variable `i` by running `:let i = 1`, you can get it with `"=i`, press return, then `p`. To get it while in insert mode, run `Ctrl-r=i`.
 
-Suppose you have a function: 
+Suppose you have a function:
 ```
 function! HelloFunc()
 	return "Hello Vim Script!"
@@ -214,7 +214,7 @@ Now when I copy a text from an external program, I can paste it with the unnamed
 
 Everytime you delete or change a text, that text is stored in Vim register automatically. Sometimes you just don't want to save anything into the register. How can you do that?
 
-You can use the black hole register (`"_`). To delete a line and not have Vim store the deleted line into any register, use `"_dd`. It’s the `/dev/null` of registers. 
+You can use the black hole register (`"_`). To delete a line and not have Vim store the deleted line into any register, use `"_dd`. It’s the `/dev/null` of registers.
 
 ## The Last Search Pattern Register (`"/`)
 
@@ -243,12 +243,12 @@ You can use the `:put` command to paste the content of any one register. For exa
 
 You made it to the end. Congratulations! That was a lot to take. If you are feeling overwhelmed by the sheer information, you are not alone. I was too, when I first started learning about Vim registers.
 
-I don't think you should memorize everything right away. To become productive, you can start by using only these 3 registers: 
+I don't think you should memorize everything right away. To become productive, you can start by using only these 3 registers:
 1. The unnamed register (`""`).
 2. The named registers (`"a-z`).
 3. The numbered registers (`"0-9`).
 
-Since the unnamed register defaults to `p` or `P`, you only have to learn two registers: the named registers and the numbered registers. Gradually learn more when you need it. Take your time. 
+Since the unnamed register defaults to `p` or `P`, you only have to learn two registers: the named registers and the numbered registers. Gradually learn more when you need it. Take your time.
 
 The average human has a limited short-term memory capacity, about seven items at once. That is why in my everyday editing, I only use about three to seven named registers. There is no way I can remember all twenty-six in my head. I normally start with register "a", then "b", ascending the alphabetical order. Try it and experiment around to see what technique works best for you.
 

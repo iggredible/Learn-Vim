@@ -17,7 +17,7 @@ l   Right
 
 You can also move with directional arrows. If you are just starting, feel free to use any method you're most comfortable with.
 
-I prefer `hjkl` because my right hand can stay in home row. Doing this gives me shorter reach to surrounding keys. 
+I prefer `hjkl` because my right hand can stay in home row. Doing this gives me shorter reach to surrounding keys.
 To get used to it, I actually disabled the arrow buttons when starting out by adding these in `~/.vimrc`:
 
 ```
@@ -50,7 +50,7 @@ This is 100% personal preference. Experiment with `relativenumber` / `norelative
 
 ## Count Your Move
 
-Let's talk about "count" argument. Motions accept a preceding numerical argument. I mentioned above that you can go down 12 lines with `12j`. The 12 in `12j` is the count number. 
+Let's talk about "count" argument. Motions accept a preceding numerical argument. I mentioned above that you can go down 12 lines with `12j`. The 12 in `12j` is the count number.
 
 The syntax to use count with your motion is:
 
@@ -113,7 +113,7 @@ T    Search backward for a match in the same line, stopping before match
 ,    Repeat the last search in the same line backwards
 ```
 
-Back at the previous example: 
+Back at the previous example:
 
 ```
 const hello = "world";
@@ -125,7 +125,7 @@ With your cursor at the start of the line, you can go to the last character in c
 
 Next two navigation units are sentence and paragraph.
 
-Let's talk about what a sentence is first.  A sentence ends with either `. ! ?` followed by an end-of-line, a space, or a tab.  You can jump to the next sentence with `)` and the previous sentence with `(`. 
+Let's talk about what a sentence is first.  A sentence ends with either `. ! ?` followed by an end-of-line, a space, or a tab.  You can jump to the next sentence with `)` and the previous sentence with `(`.
 ```
 (    Jump to the previous sentence
 )    Jump to the next sentence
@@ -167,7 +167,7 @@ Check out `:h sentence` and `:h paragraph` to learn more.
 
 ## Match Navigation
 
-Programmers often edit files containing codes. It may contain many parentheses, braces, and brackets and it can get confusing to know which parentheses you're inside of. 
+Programmers often edit files containing codes. It may contain many parentheses, braces, and brackets and it can get confusing to know which parentheses you're inside of.
 Many programming languages use parentheses, braces, and brackets and you can get lost in them. If you're inside one of them, you can jump to the other pair (if it exists) with `%`. You can also use this to find out whether you have matching parentheses, braces, and brackets.
 
 ```
@@ -239,7 +239,7 @@ Very often you know that a phrase exists inside a file. You can use search navig
 ```
 /    Search forward for a match
 ?    Search backward for a match
-n    Repeat last search (same direction of previous search) 
+n    Repeat last search (same direction of previous search)
 N    Repeat last search (opposite direction of previous search)
 ```
 
@@ -255,7 +255,7 @@ let onetwo = 12;
 
 If you are searching for "let", you can do `/let`. To quickly search for "let" again, you can just do `n`. To search for "let" again in opposite direction, you can do `N`. If you used `?let` to search, it will search for it backwards. If you use `n`, it will also search backwards, the same direction as `?let` (`N` will search for "let" forwards now).
 
-You can enable search highlight with `:set hlsearch`. Now when you search for `/let`, it will highlight *all* matching phrases in the file. In addition, you can set incremental search with `:set incsearch`. This will highlight the pattern as you're still typing it. By default, your matching phrases will remain highlighted until you search for another phrase. This can quickly turn into an annoyance. To disable highlight, you can run `:nohlsearch`. Because I use this no-highlight feature frequently, I created a mapping: 
+You can enable search highlight with `:set hlsearch`. Now when you search for `/let`, it will highlight *all* matching phrases in the file. In addition, you can set incremental search with `:set incsearch`. This will highlight the pattern as you're still typing it. By default, your matching phrases will remain highlighted until you search for another phrase. This can quickly turn into an annoyance. To disable highlight, you can run `:nohlsearch`. Because I use this no-highlight feature frequently, I created a mapping:
 
 ```
 nnoremap <esc><esc> :noh<return><esc>
@@ -284,7 +284,7 @@ ma    Mark position with mark "a"
 
 There is a difference between marking with lowercase letters (a-z) and uppercase letters (A-Z). Lowercase alphabets are local marks and uppercase alphabets are global marks (sometimes known as file marks).
 
-Let's talk about local marks. Each buffer can have its own set of local marks. If I have two files opened, I can set a mark "a" (`ma`)  in the first file and another mark "a" (`ma)` in the second file. 
+Let's talk about local marks. Each buffer can have its own set of local marks. If I have two files opened, I can set a mark "a" (`ma`)  in the first file and another mark "a" (`ma)` in the second file.
 
 Unlike local marks where you can have a set of marks in each buffer, you only get one set of global marks. If you set `mA` inside `myFile.txt`, the next time you set `mA` in a different file, it will overwrite the "A" mark. One advantage of global marks is you can jump to any global mark even if you are inside a completely different project. Global marks can travel across files.
 
@@ -300,13 +300,13 @@ To view all marks, use `:marks`. You may notice from the marks list there are mo
 `0    Jump back to the last edited file when exiting vim
 ```
 
-There are more marks than the ones listed above. I won't cover them here because I think they are rarely used, but if you're curious, check out `:h marks`. 
+There are more marks than the ones listed above. I won't cover them here because I think they are rarely used, but if you're curious, check out `:h marks`.
 
 ## Jump
 
-Lastly, let's talk about jumps in Vim. In Vim, you can "jump" to a different file or different part of a file with certain motions. Not all motions count as a jump, though. Going down with `j` does not count as a jump, even if you go 10 steps down with `10j`. Going to line 10 with `10G` counts as a jump. 
+Lastly, let's talk about jumps in Vim. In Vim, you can "jump" to a different file or different part of a file with certain motions. Not all motions count as a jump, though. Going down with `j` does not count as a jump, even if you go 10 steps down with `10j`. Going to line 10 with `10G` counts as a jump.
 
-Here are the commands Vim consider as "jump" commands: 
+Here are the commands Vim consider as "jump" commands:
 
 ```
 '       Go to the marked line
@@ -328,7 +328,7 @@ H       Go to the top line of displayed window
 ]]      Go to the next section
 :s      Substitute
 :tag    Jump to tag definition
-``` 
+```
 
 I don't recommend memorizing this list. A good rule of thumb is, any motion that moves farther than a word and current line navigation is probably a jump. Vim keeps track of where you've been when you move around and you can see this list inside `:jumps`. For more, check out `:h jump-motions`.
 
@@ -343,9 +343,9 @@ I think the best way to get started is to memorize a few essential motions. I re
 
 To get better at navigation, I can offer two suggestions:
 
-1. Watch for repeated actions. If you find yourself doing `l` repeatedly, look for a motion that will take you forward faster. You will find that you can use `w` to move between words. If you catch yourself repeatedly doing `w`, look if there is a motion that will take you to the end of the line immediately. You will find that you can use `$`. If you can describe your need verbally, there is a good chance Vim has a way to do it. 
+1. Watch for repeated actions. If you find yourself doing `l` repeatedly, look for a motion that will take you forward faster. You will find that you can use `w` to move between words. If you catch yourself repeatedly doing `w`, look if there is a motion that will take you to the end of the line immediately. You will find that you can use `$`. If you can describe your need verbally, there is a good chance Vim has a way to do it.
 2. Whenever you learn a new move, spend a considerable amount of time until you can do it without thinking.
 
 Finally, you do not need to know every single Vim command to be productive. Most Vim users don't. I don't. Learn the commands that will help you accomplish your task at that moment.
 
-Take your time. Navigation skill is a very important skill in Vim. Learn one small thing every day and learn it well. 
+Take your time. Navigation skill is a very important skill in Vim. Learn one small thing every day and learn it well.

@@ -1,12 +1,12 @@
 # Ch 03. Opening And Searching Files
 
-The goal of this chapter is to introduce you to opening and searching files in Vim. Being able to search quickly is a great way to jump-start your Vim productivity. One reason it took me a long time to get onboard with Vim is because I didn't know how to find things quickly like many popular text editors. 
+The goal of this chapter is to introduce you to opening and searching files in Vim. Being able to search quickly is a great way to jump-start your Vim productivity. One reason it took me a long time to get onboard with Vim is because I didn't know how to find things quickly like many popular text editors.
 
 This chapter is divided into two parts. In the first part, I will show you how to open and search files without plugins. In the second part, I will show you how to open and search files with [FZF.vim](https://github.com/junegunn/fzf.vim) plugin. Feel free to jump to whichever section you need to learn.  However, I highly recommend you to go through everything. With that said, let's get started!
 
 ## Opening And Editing Files With `:edit`
 
-`:edit` is the simplest way to open a file in Vim. 
+`:edit` is the simplest way to open a file in Vim.
 
 ```
 :edit file.txt
@@ -107,7 +107,7 @@ You might be thinking to add the entire project directories so when you press `t
 
 `$PWD` is the current working directory. If you try to add your entire project to `path` so all files are reachable upon a `tab` press, although this may work for a small project, doing this may slow down your search significantly if you have many files in your project. I recommend adding only the `path` of your most visited files / directories.
 
-Updating `path` takes only a few seconds and doing this will save you a lot of time. 
+Updating `path` takes only a few seconds and doing this will save you a lot of time.
 
 ## Searching In Files With `:grep`
 
@@ -129,7 +129,7 @@ For example, to look for all occurrences of "foo" string inside all ruby files (
 ```
 :vim /foo/ app/controllers/**/*.rb
 ```
- 
+
 After running that command, you will be redirected to the first result. Vim's `vim` search command uses `quickfix` operation. To see all search results, run `:copen`. This opens a `quickfix` window. Here are some useful quickfix commands to get you productive immediately:
 
 ```
@@ -262,7 +262,7 @@ nnoremap <silent> <C-f> :Files<CR>
 ```
 
 ## Finding In Files
-To search inside files, you can use the `:Rg` command. 
+To search inside files, you can use the `:Rg` command.
 
 <p align="center">
   <img alt="FInding in Files in FZF" width="900" height="auto" src="./img/fzf-in-files.gif"/>
@@ -273,7 +273,7 @@ Again, since you will probably use this frequently, let's map it. I map mine wit
 
 ```
 nnoremap <silent> <Leader>f :Rg<CR>
-``` 
+```
 
 ## Other Searches
 
@@ -290,14 +290,14 @@ nnoremap <silent> <Leader>g :Commits<CR>
 nnoremap <silent> <Leader>H :Helptags<CR>
 nnoremap <silent> <Leader>hh :History<CR>
 nnoremap <silent> <Leader>h: :History:<CR>
-nnoremap <silent> <Leader>h/ :History/<CR> 
+nnoremap <silent> <Leader>h/ :History/<CR>
 ```
 
 ## Replacing `grep` With `rg`
 
 As I mentioned earlier, Vim has two ways to search in files: `:vim` and `:grep`. `:grep` uses external search tool that you can reassign using `grepprg` keyword. I will show you how to configure Vim to use ripgrep instead of terminal grep when running the `:grep` command.
 
-Now let's setup `grepprg` so `:grep` uses ripgrep. Add this in your `vimrc`. 
+Now let's setup `grepprg` so `:grep` uses ripgrep. Add this in your `vimrc`.
 ```
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 ```
@@ -336,10 +336,10 @@ The second method is to search and replace in select files. With this method, yo
 
 ## Learn Search The Smart Way
 
-Searching is the bread-and-butter of text editing. Learning how to search well in Vim will help your text editing workflow. 
+Searching is the bread-and-butter of text editing. Learning how to search well in Vim will help your text editing workflow.
 
 FZF.vim is a game-changer. I can't imagine using Vim without it.  I think it is very important to have a good search tool when starting Vim. I've seen people struggling to transition to Vim because it is missing critical features modern text editors have, like a powerful and easy search. I was one. I hope this chapter addresses one of the issues and help to make the transition to Vim easier. To improve your searching prowess even more, I suggest to check out [fzf repo](https://github.com/junegunn/fzf).
 
-You also just saw Vim's extensibility in action - the ability to extend search functionality with a plugin and / or an external program. In the future, keep in mind of what other features you wish to extend in Vim. Chances are, someone has created a plugin or there is a program for it already. 
+You also just saw Vim's extensibility in action - the ability to extend search functionality with a plugin and / or an external program. In the future, keep in mind of what other features you wish to extend in Vim. Chances are, someone has created a plugin or there is a program for it already.
 
 Next, let's talk about a very important topic in Vim: grammar.

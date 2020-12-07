@@ -75,7 +75,7 @@ one
 three
 ```
 
-Is there a way to freely expand visual selection to go to any direction you want? 
+Is there a way to freely expand visual selection to go to any direction you want?
 
 The answer is yes.  Let's back up a little bit to where you have the line "two" and "three" highlighted.
 
@@ -178,10 +178,10 @@ const three = "three";
 ```
 Notice I said you can do this with *any* visual mode. You do not have to highlight the entire line to run Ex command on that line. As long as you select at least a character on each line, the Ex command will be applied.
 
-## Editing Across Multiple Lines 
+## Editing Across Multiple Lines
 
 You can edit text across multiple lines in Vim using the block-wise visual mode. If you need to add a semicolon at the end of each line:
- 
+
 ```
 const one = "one"
 const two = "two"
@@ -201,7 +201,7 @@ Alternatively, you can also use the `:normal` command:
 - Highlight all 3 lines (`vjj`).
 - Type `:normal! A;`.
 
-Remember, `:normal` command executes normal mode commands. You can instruct it to run `A;` to append text ";" at the end of the line. 
+Remember, `:normal` command executes normal mode commands. You can instruct it to run `A;` to append text ";" at the end of the line.
 
 ## Incrementing Numbers
 
@@ -291,7 +291,7 @@ gH         Line-wise select mode
 gCtrl-h    Block-wise select mode
 ```
 
-Select mode emulates a regular editor's text highlighting behavior closer than Vim's visual mode does. 
+Select mode emulates a regular editor's text highlighting behavior closer than Vim's visual mode does.
 
 In a regular editor, after you highlight a text block and type a letter, say the letter "y", it will delete the highlighted text and insert the letter "y".
 
@@ -303,6 +303,6 @@ I personally never used select mode, but it's good to know that it exists.
 
 ## Learn Visual Mode The Smart Way
 
-The visual mode is Vim's representation of the text highlighting procedure. 
+The visual mode is Vim's representation of the text highlighting procedure.
 
 If you find yourself using visual mode operation far more often than normal mode operations, be careful. I think this is an anti-pattern. It takes more keystrokes to run a visual mode operation than its normal mode counterpart. If you need to delete an inner word, why use four keystrokes, `viwd` (visually highlight an inner word then delete), if you can accomplish it with just three keystrokes (`diw`)? The latter is more direct and concise. Of course, there will be times when visual modes are appropriate, but in general, favor a more direct approach.

@@ -2,7 +2,7 @@
 
 Insert mode is the default mode of many text editors. In this mode, what you type is what you get.
 
-In this chapter, you will learn how to use features in Vim insert mode to improve your typing efficiency. 
+In this chapter, you will learn how to use features in Vim insert mode to improve your typing efficiency.
 
 ## Ways To Go To Insert Mode
 
@@ -31,7 +31,7 @@ Ctrl-[    Exits insert mode and go to normal mode
 Ctrl-c    Like Ctrl-[ and <esc>, but does not check for abbreviation
 ```
 
-I find `esc` key too far to reach, so I map my computer `caps lock` to behave like `esc`. If you search for Bill Joy's ADM-3A keyboard (Vi creator), you will see that `esc` key is not located on far top left like modern keyboards, but to the left of `q` key. This is why I think it makes sense to map  `caps lock` to `esc`. 
+I find `esc` key too far to reach, so I map my computer `caps lock` to behave like `esc`. If you search for Bill Joy's ADM-3A keyboard (Vi creator), you will see that `esc` key is not located on far top left like modern keyboards, but to the left of `q` key. This is why I think it makes sense to map  `caps lock` to `esc`.
 
 Another common convention I have seen Vim users do is to map `esc` to `jj` or `jk` in insert mode.
 

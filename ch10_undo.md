@@ -18,13 +18,13 @@ one
 two
 ```
 
-If you do `u`, Vim undoes the text "two". 
+If you do `u`, Vim undoes the text "two".
 
-How does Vim know how much to undo? Vim undoes a single "change" at a time, similar to a dot command's change (unlike the dot command, command-line commands also count as change). 
+How does Vim know how much to undo? Vim undoes a single "change" at a time, similar to a dot command's change (unlike the dot command, command-line commands also count as change).
 
 To redo the last change, run `Ctrl-r` or `:redo`. After you undo the text above to remove "two", you can run `Ctrl-r` to get the removed text back.
 
-Vim also has UNDO that you can run with `U`. It undoes all latest changes. 
+Vim also has UNDO that you can run with `U`. It undoes all latest changes.
 
 How is `U` different from `u`? First, `U` removes *all* the changes on the latest changed line, while `u` only removes one change at a time. Second, while doing `u` does not count as a change, doing `U` counts as a change.
 
@@ -198,7 +198,7 @@ Now create your undo file. The syntax is `:wundo myundofile`. If you need to ove
 :wundo! mynumbers.undo
 ```
 
-Then exit Vim. 
+Then exit Vim.
 
 By now you should have `mynumbers.txt` and `mynumbers.undo` files in your directory. Open up `mynumbers.txt` again and try pressing `u`. You can't. You haven't made any changes since you opened the file. Now load your undo history by reading the undo file with `:rundo`:
 
@@ -237,7 +237,7 @@ If you had typed "two" less than ten seconds ago, you can go back to the state w
 :earlier 10s
 ```
 
-You can use `:undolist` to see when the last change was made. `:earlier` also accepts minutes (`m`), hours (`h`), and days (`d`) as arguments. 
+You can use `:undolist` to see when the last change was made. `:earlier` also accepts minutes (`m`), hours (`h`), and days (`d`) as arguments.
 
 ```
 :earlier 10s    go to the state 10 seconds before

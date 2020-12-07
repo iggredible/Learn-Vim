@@ -8,7 +8,7 @@ In this chapter, you will learn how to use different folding methods.
 
 Imagine that you are folding a sheet of paper to cover some text. The actual text does not go away, it is still there. Vim fold works the same way. It *folds* a range of text, hiding it from display without actually deleting it.
 
-The fold operator is `z`. When you fold a paper, the fold looks like the letter "z" too. 
+The fold operator is `z`. When you fold a paper, the fold looks like the letter "z" too.
 
 Suppose you have this text:
 
@@ -134,7 +134,7 @@ One
 +-- 2 lines: Three -----
 ```
 
-What's this? A fold within a fold? 
+What's this? A fold within a fold?
 
 You can have nested folds. The text "Two" and "Two again" have fold level of one. The text "Three" and "Three again" have fold level of two. If you have a foldable text with a higher fold level within a foldable text, you can have multiple fold layers.
 
@@ -315,7 +315,7 @@ vim is awesome
 vim is awesome
 vim is awesome
 vim is awesome
-[vim is awesome] / [emacs is ok] 
+[vim is awesome] / [emacs is ok]
 ```
 
 Vim automatically folds some of the identical lines. When you are running the `vimdiff` command, Vim automatically uses `foldmethod=diff`. If you run `:set foldmethod?`, it will return `diff`.

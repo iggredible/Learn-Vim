@@ -12,14 +12,14 @@ There are 4 different commands you can use to enter the command-line mode:
 - Command-line commands (`:`)
 - External commands (`!`)
 
-You can enter the command-line mode from the normal mode or the visual mode. 
+You can enter the command-line mode from the normal mode or the visual mode.
 
 To leave the command-line mode, you can use `<esc>`, `Ctrl-c, or Ctrl-[`.
 
 *Sometimes other literatures might refer the "Command-line command" as "Ex command" and the "External command" as "filter command" or "bang operator".*
 
 ## Repeating The Previous Command
-You can repeat the previous command-line command or external command with `@:`. 
+You can repeat the previous command-line command or external command with `@:`.
 
 If you just ran `:s/foo/bar/g`, running `@:` repeats that substitution.
 
@@ -76,7 +76,7 @@ When you are in the command-line mode, you can traverse this history list by pre
 53  s/foo//g
 ```
 
-If you press `:` then press `Up` once, you'll see `:s/foo//g`. Press `Up` one more time to see `:s/foo/baz/g`. Vim goes up the history list. 
+If you press `:` then press `Up` once, you'll see `:s/foo//g`. Press `Up` one more time to see `:s/foo/baz/g`. Vim goes up the history list.
 
 Similarly, to view the search history, run `:his /`. You can also traverse the history stack by pressing `Up` or `Down` after running the history command `/`.
 

@@ -56,7 +56,7 @@ To quit without saving any changes, add `!` after `:q` to force quit:
 :q!
 ```
 
-There are other ways to exit Vim, but these are the ones you will use daily. 
+There are other ways to exit Vim, but these are the ones you will use daily.
 
 ## Help
 

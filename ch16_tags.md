@@ -59,7 +59,7 @@ Whoops, Vim could not find the tag file. You need to generate the tag file first
 Modern Vim does not come with tag generator, so you will have to download an external tag generator. There are several options to choose:
 
 - ctags = C only. Available almost everywhere.
-- exuberant ctags = One of the most popular ones. Has many language support. 
+- exuberant ctags = One of the most popular ones. Has many language support.
 - universal ctags = Similar to exuberant ctags, but newer.
 - etags = For Emacs. Hmm...
 - JTags = Java
@@ -198,7 +198,7 @@ class One
     puts "Initialized"
   end
 
-  def donut 
+  def donut
     puts "one donut"
   end
 

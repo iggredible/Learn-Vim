@@ -4,7 +4,7 @@ When editing a text, as much as you can, avoid redoing what you just did. In thi
 
 ## Usage
 
-Just like its name, you can use the dot command by pressing the dot key (`.`). 
+Just like its name, you can use the dot command by pressing the dot key (`.`).
 
 For example, if you want to replace all "let" with "const" in the following expressions:
 ```

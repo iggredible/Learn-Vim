@@ -78,7 +78,7 @@ Make sure you have [node](https://nodejs.org/en/) installed in your machine, the
 :w !node
 ```
 
-Vim will use `node` to execute the Javascript expressions to print "Hello Vim" and "Vim is awesome". 
+Vim will use `node` to execute the Javascript expressions to print "Hello Vim" and "Vim is awesome".
 
 When using the `:w` command, Vim uses all texts in the current buffer, similar to the global command (most command-line commands, if you don't pass it a range, only executes the command against the current line). If you pass `:w` a specific address:
 
@@ -155,7 +155,7 @@ hello
 
 The breakdown:
 - `:%!` executes the filter command on all lines (`%`).
-- `awk "{print $1}"` prints only the first column of the match. In this case, the word "hello". 
+- `awk "{print $1}"` prints only the first column of the match. In this case, the word "hello".
 
 You can chain multiple commands with the chain operator (`|`) just like in the terminal. Let's say you have a file with these delicious breakfast items:
 
@@ -203,7 +203,7 @@ To uppercase the current line and the line below, you can run:
 ```
 
 The breakdown:
-- `!j` runs the normal command filter operator (`!`) targetting the current line and the line below it. Recall that because it is a normal mode operator, the grammar rule `verb + noun` applies. 
+- `!j` runs the normal command filter operator (`!`) targetting the current line and the line below it. Recall that because it is a normal mode operator, the grammar rule `verb + noun` applies.
 - `tr '[a-z]' '[A-Z]'` replaces the lowercase letters with the uppercase letters.
 
 The filter normal command only works on motions / text objects that are at least one line or longer. If you had tried running `!iwtr '[a-z]' '[A-Z]'` (execute `tr` on inner word), you will find that it applies the `tr` command on the entire line, not the word your cursor is on.

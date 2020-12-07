@@ -2,7 +2,7 @@
 
 ## What is this about?
 
-*Learn Vim (the Smart Way)* is a book to learn the good parts of Vim. 
+*Learn Vim (the Smart Way)* is a book to learn the good parts of Vim.
 
 Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
@@ -47,7 +47,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 # Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
-- [Learn-Vim Spanish](https://github.com/victorhck/learn-Vim-es)(`es`) 
+- [Learn-Vim Spanish](https://github.com/victorhck/learn-Vim-es)(`es`)
 
 # License & Copyright
 The materials here are all ©2020 Igor Irianto.
