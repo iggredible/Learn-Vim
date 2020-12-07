@@ -22,7 +22,7 @@ If you do `u`, Vim undoes the text "two".
 
 How does Vim know how much to undo? Vim undoes a single "change" at a time, similar to a dot command's change (unlike the dot command, command-line commands also count as change). 
 
-To redo the last change, run `Ctrl-R` or `:redo`. After you undo the text above to remove "two", you can run `Ctrl-R` to get the removed text back.
+To redo the last change, run `Ctrl-r` or `:redo`. After you undo the text above to remove "two", you can run `Ctrl-r` to get the removed text back.
 
 Vim also has UNDO that you can run with `U`. It undoes all latest changes. 
 
@@ -68,9 +68,9 @@ I mentioned earlier that `u` undoes a single "change" similar to the dot command
 
 If you do `ione two three<esc>` then press `u`, Vim removes the entire "one two three" text because it is considered a change. This would have been acceptable if you have a short text, but what if you have written several paragraphs under one insert mode session without exiting and later you realized you made a mistake? If you press `u`, everything you had written would be removed. Wouldn't it be useful if you can press `u` to remove only a section of your text?
 
-Luckily, you can break the undo blocks. When you are typing in insert mode, pressing `Ctrl-G u`  creates an undo breakpoint. For example, if you do `ione <Ctrl-G u>two <Ctrl-G u>three<esc>`, then press `u`, you will only lose the text "three". Press `u` one more time to remove "two". When you write a long text, use `Ctrl-G u` strategically. The end of each sentence, between two paragraphs, or after each line of code are good locations to add undo breakpoints to make it easier to undo your mistakes if you ever make one.
+Luckily, you can break the undo blocks. When you are typing in insert mode, pressing `Ctrl-g u`  creates an undo breakpoint. For example, if you do `ione <Ctrl-g u>two <Ctrl-g u>three<esc>`, then press `u`, you will only lose the text "three". Press `u` one more time to remove "two". When you write a long text, use `Ctrl-g u` strategically. The end of each sentence, between two paragraphs, or after each line of code are good locations to add undo breakpoints to make it easier to undo your mistakes if you ever make one.
 
-It is also useful to create an undo breakpoint when deleting chunks in insert mode with `Ctrl-W` (delete the word before the cursor) and `Ctrl-U` (delete all text before the cursor). A friend suggested to use the following mappings:
+It is also useful to create an undo breakpoint when deleting chunks in insert mode with `Ctrl-w` (delete the word before the cursor) and `Ctrl-u` (delete all text before the cursor). A friend suggested to use the following mappings:
 ```
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
@@ -165,7 +165,7 @@ four
 
 In Vim, every time you press `u` and then make a different change, Vim stores the previous state's text by creating an "undo branch". In this example, after you typed "two", then pressed `u`, then typed "three", you created an undo leaf branch that stores the state containing the text "two". At that moment, the undo tree contained at least two leaf nodes: the main node containing the text "three" (most recent) and the undo branch node containing the text "two". If you had done another undo and typed the text "four", you now have at least three nodes: a main node containing the text "four" and two nodes containing the texts "three" and "two".
 
-To traverse each node in the undo tree, you can use `g+`  to go to a newer state and `g-` to go to an older state. The difference between `u`, `Ctrl-R`, `g+`, and `g-` is that both `u` and `Ctrl-R` traverse only the *main* nodes in undo tree while `g+` and `g-` traverse *all* nodes in the undo tree.
+To traverse each node in the undo tree, you can use `g+`  to go to a newer state and `g-` to go to an older state. The difference between `u`, `Ctrl-r`, `g+`, and `g-` is that both `u` and `Ctrl-r` traverse only the *main* nodes in undo tree while `g+` and `g-` traverse *all* nodes in the undo tree.
 
 Undo tree is not easy to visualize. I find [vim-mundo](https://github.com/simnalamburt/vim-mundo) plugin to be very useful to help visualize Vim's undo tree. Give it some time to play around with it.
 
@@ -260,7 +260,7 @@ The same set of arguments work with `:earlier` counterpart: `:later`.
 
 ## Learn Undo The Smart Way
 
-`u` and `Ctrl-R` are two indispensable Vim commands. Learn them first. I do not use UNDO in my workflow, however I think it's good to be aware that it exists. Next, learn how to use `:earlier` and `:later` using the time arguments first. After that, take your time to understand the undo tree. The [vim-mundo](https://github.com/simnalamburt/vim-mundo) plugin helped me a lot. Type along the texts in this chapter and check the undo tree as you make each change. Once you grasp it, you will never see undo system the same way again.
+`u` and `Ctrl-r` are two indispensable Vim commands. Learn them first. I do not use UNDO in my workflow, however I think it's good to be aware that it exists. Next, learn how to use `:earlier` and `:later` using the time arguments first. After that, take your time to understand the undo tree. The [vim-mundo](https://github.com/simnalamburt/vim-mundo) plugin helped me a lot. Type along the texts in this chapter and check the undo tree as you make each change. Once you grasp it, you will never see undo system the same way again.
 
 Prior to this chapter, you learned how to find any text in a project space, with undo, you can now find any text in a time dimension. You are now able to search for any text by its location and time written. You have achieved Vim-omnipresence.
 

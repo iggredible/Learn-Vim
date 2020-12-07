@@ -32,7 +32,7 @@ You can open a folded text with `zo`. To close the fold, use `zc`.
 
 Vim fold follows the grammar rule. You can pass the fold operator with a motion or text object. To fold an outer paragraph, run `zfap`. To fold to the end of a file, run `zfG`. To fold the texts between `{` and `}`, run `zfa{`.
 
-You can fold from the visual mode. Highlight the area you want to fold (`v`, `V`, or `Ctrl-V`), then run `zf`.
+You can fold from the visual mode. Highlight the area you want to fold (`v`, `V`, or `Ctrl-v`), then run `zf`.
 
 A Vim operator is not complete without the command-line mode version. You can execute a fold from the command-line mode with the `:fold` command. To fold the current line and the line after it, run:
 

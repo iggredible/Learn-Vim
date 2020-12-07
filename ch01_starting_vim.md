@@ -171,7 +171,7 @@ vim -O5 hello1.txt hello2.txt
 
 ## Suspending
 
-If you need to suspend Vim while in the middle of editing, you can press `Ctrl-Z`. Alternatively, you can also run either the `:stop` or `:suspend` command.
+If you need to suspend Vim while in the middle of editing, you can press `Ctrl-z`. Alternatively, you can also run either the `:stop` or `:suspend` command.
 
 To return to the suspended Vim, run `fg` from the terminal.
 

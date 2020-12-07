@@ -198,11 +198,11 @@ nG    Go to line n
 n%    Go to n% in file
 ```
 
-By the way, if you want to see total lines in a file, you can use `CTRL-G`.
+By the way, if you want to see total lines in a file, you can use `Ctrl-g`.
 
 ## Window Navigation
 
-To quickly go to the top, middle, or bottom of your *window*, you can use `H`, `M`, and `L`. 
+To quickly go to the top, middle, or bottom of your *window*, you can use `H`, `M`, and `L`.
 
 You can also pass a count to `H` and `L`. If you use `10H`, you will go to 10 lines below the top of window. If you use `3L`, you will go to 3 lines above the last line of window.
 ```
@@ -215,7 +215,7 @@ nL    Go n line from bottom
 
 ## Scrolling
 
-To scroll, you have 3 speed increments: full-screen (`CTRL-F/CTRL-B`), half-screen (`CTRL-D/CTRL-U`), and line (`CTRL-E/CTRL-Y`).
+To scroll, you have 3 speed increments: full-screen (`Ctrl-f/Ctrl-b`), half-screen (`Ctrl-d/Ctrl-u`), and line (`Ctrl-e/Ctrl-y`).
 
 ```
 Ctrl-e    Scroll down a line

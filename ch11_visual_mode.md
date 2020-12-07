@@ -22,15 +22,15 @@ Character-wise visual mode is used to select individual characters. Press `v` on
 
 Line-wise visual mode works with line units. Press `V` and watch Vim selects the entire line your cursor is on. Just like character-wise visual mode, if you run `gU`, Vim uppercases the highlighted characters.
 
-Block-wise visual mode works with rows and columns. It gives you more freedom to move around than the other two modes. Press `Ctrl-V`. Vim highlights the character under the cursor just like character-wise visual mode, except instead of highlighting each character until the end of the line before going to the next line, it can go to the next line without highlighting the entire character on the current line. Try moving around with `h/j/k/l` and watch the cursor movements. 
+Block-wise visual mode works with rows and columns. It gives you more freedom to move around than the other two modes. Press `Ctrl-v`. Vim highlights the character under the cursor just like character-wise visual mode, except instead of highlighting each character until the end of the line before going to the next line, it can go to the next line without highlighting the entire character on the current line. Try moving around with `h/j/k/l` and watch the cursor movements.
 
 On the bottom left of your Vim window, you will see either `-- VISUAL --`, `-- VISUAL LINE --`, or `-- VISUAL BLOCK --` displayed to indicate which visual mode you are in.
 
-While you are inside a visual mode, you can switch to another visual mode by pressing either `v`, `V`, or `Ctrl-V`. For example, if you are in line-wise visual mode and you want to switch to block-wise visual mode, run `Ctrl-V`. Try it!
+While you are inside a visual mode, you can switch to another visual mode by pressing either `v`, `V`, or `Ctrl-v`. For example, if you are in line-wise visual mode and you want to switch to block-wise visual mode, run `Ctrl-v`. Try it!
 
-There are three ways to exit the visual mode: `esc`, `Ctrl-C`, and the same key as your current visual mode.
+There are three ways to exit the visual mode: `esc`, `Ctrl-c`, and the same key as your current visual mode.
 
-What the latter one means is if you are currently in the line-wise visual mode (`V`), you can exit it by pressing `V` again. If you are in the character-wise visual mode, you can exit it by pressing `v`. If you are in the block-wise visual mode, press `Ctrl-V`.
+What the latter one means is if you are currently in the line-wise visual mode (`V`), you can exit it by pressing `V` again. If you are in the character-wise visual mode, you can exit it by pressing `v`. If you are in the block-wise visual mode, press `Ctrl-v`.
 
 There is actually one more way to enter the visual mode:
 ```
@@ -189,7 +189,7 @@ const three = "three"
 ```
 
 With your cursor on the first line:
-- Run block-wise visual mode and go down two lines (`Ctrl-V jj`).
+- Run block-wise visual mode and go down two lines (`Ctrl-v jj`).
 - Highlight to the end of the line (`$`).
 - Append (`A`) then type ";".
 - Exit visual mode (`esc`).
@@ -205,7 +205,7 @@ Remember, `:normal` command executes normal mode commands. You can instruct it t
 
 ## Incrementing Numbers
 
-Vim has `Ctrl-X` and `Ctrl-A` commands to decrement and increment numbers. When used with visual mode, you can increment numbers across multiple lines.
+Vim has `Ctrl-x` and `Ctrl-a` commands to decrement and increment numbers. When used with visual mode, you can increment numbers across multiple lines.
 
 If you have these HTML elements:
 ```
@@ -218,8 +218,8 @@ If you have these HTML elements:
 
 It is a bad practice to have several ids having the same name, so let's increment them to make them unique:
 - Move your cursor to the *second* "1".
-- Start block-wise visual mode and go down 3 lines (`Ctrl-V 3j`). This highlights the remaining  "1"s.
-- Run `g Ctrl-A`.
+- Start block-wise visual mode and go down 3 lines (`Ctrl-v 3j`). This highlights the remaining  "1"s.
+- Run `g Ctrl-a`.
 
 You should see this result:
 ```
@@ -230,13 +230,13 @@ You should see this result:
 <div id="app-5"></div>
 ```
 
-`g Ctrl-A` increments numbers on multiple lines. `Ctrl-X/Ctrl-A` can increment letters too. If you run:
+`g Ctrl-a` increments numbers on multiple lines. `Ctrl-x/Ctrl-a` can increment letters too. If you run:
 
 ```
 :set nrformats+=alpha
 ```
 
-The `nrformats` option instructs Vim which bases are considered as "numbers" for `Ctrl-A` and `Ctrl-X` to increment and decrement. By adding `alpha`, an alphabetical character is now considered as a number. If you have the following HTML elements:
+The `nrformats` option instructs Vim which bases are considered as "numbers" for `Ctrl-a` and `Ctrl-x` to increment and decrement. By adding `alpha`, an alphabetical character is now considered as a number. If you have the following HTML elements:
 ```
 <div id="app-a"></div>
 <div id="app-a"></div>
@@ -245,7 +245,7 @@ The `nrformats` option instructs Vim which bases are considered as "numbers" for
 <div id="app-a"></div>
 ```
 
-Put your cursor on the second "app-a". Use the same technique as above (`Ctrl-V 3j` then `g Ctrl-A`) to increment the ids.
+Put your cursor on the second "app-a". Use the same technique as above (`Ctrl-v 3j` then `g Ctrl-a`) to increment the ids.
 ```
 <div id="app-a"></div>
 <div id="app-b"></div>
@@ -277,10 +277,10 @@ You were actually executing `s/const/let/g` command using marks as range. You ca
 You can also enter visual mode from the insert mode. To go to character-wise visual mode while you are in insert mode:
 
 ```
-Ctrl-O v
+Ctrl-o v
 ```
 
-Recall that running `Ctrl-O` while in the insert mode lets you to execute a normal mode command. While in this normal-mode-command-pending mode, run `v` to enter character-wise visual mode. Notice that on the bottom left of the screen, it says `--(insert) VISUAL--`. This trick works with any visual mode operator: `v`, `V`, and `Ctrl-V`.
+Recall that running `Ctrl-o` while in the insert mode lets you to execute a normal mode command. While in this normal-mode-command-pending mode, run `v` to enter character-wise visual mode. Notice that on the bottom left of the screen, it says `--(insert) VISUAL--`. This trick works with any visual mode operator: `v`, `V`, and `Ctrl-v`.
 
 ## Select Mode
 

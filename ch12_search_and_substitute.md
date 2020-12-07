@@ -58,7 +58,7 @@ Running `/hello$` will not match anything because "friend" is the last term in t
 
 You can repeat the previous search with `//`. If you have just searched for `/hello`, running `//` is equivalent to running `/hello`. This shortcut can save you some keystrokes especially if you just did a long search term. Also recall that you can also use `n` and `N` to repeat the last search with the same direction and opposite direction, respectively.
 
-What if you want to quickly recall *n* last search term? You can quickly traverse the search history by first pressing `/`, then press `up`/`down` arrow keys (or `Ctrl-N`/`Ctrl-P`) until you find the search term you need. To see all your search history, you can run `:history /`.
+What if you want to quickly recall *n* last search term? You can quickly traverse the search history by first pressing `/`, then press `up`/`down` arrow keys (or `Ctrl-n`/`Ctrl-p`) until you find the search term you need. To see all your search history, you can run `:history /`.
 
 When you reach the end of a file while searching, Vim throws an error: `"Search hit the BOTTOM without match for: <your-search>"`. Sometimes this can be a good safeguard from oversearching, but other times you want to cycle the search back to the top again. You can use the `set wrapscan` option to make Vim to search back at the top of the file when you reach the end of the file. To turn this feature off, do `set nowrapscan`.
 

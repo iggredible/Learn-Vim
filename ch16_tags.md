@@ -285,9 +285,9 @@ Vim has a normal mode key for `tjump`: `g Ctrl-]`. I personally like `g Ctrl-]` 
 
 ## Autocompletion With Tags
 
-Tags can assist autocompletions. Recall from chapter 6, Insert Mode, that you can use `Ctrl-X` sub-mode to do various autocompletions. One autocompletion sub-mode that I did not mention was `Ctrl-]`. If you do `Ctrl-X Ctrl-]` while in the insert mode, Vim will use the tag file for autocompletion.
+Tags can assist autocompletions. Recall from chapter 6, Insert Mode, that you can use `Ctrl-x` sub-mode to do various autocompletions. One autocompletion sub-mode that I did not mention was `Ctrl-]`. If you do `Ctrl-x Ctrl-]` while in the insert mode, Vim will use the tag file for autocompletion.
 
-If you go into the insert mode and type `Ctrl-X Ctrl-]`, you will see:
+If you go into the insert mode and type `Ctrl-x Ctrl-]`, you will see:
 
 ```
 One
@@ -324,7 +324,7 @@ Note that the `>` symbol is now on line two, where the `donut` is. `pop` one mor
   2  1 donut               9  one.donut
 ```
 
-In normal mode, you can run `Ctrl-T` to achieve the same effect as `:pop`.
+In normal mode, you can run `Ctrl-t` to achieve the same effect as `:pop`.
 
 ## Automatic Tag Generation
 

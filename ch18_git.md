@@ -247,7 +247,7 @@ To get started, install the vim-fugitive with a vim plugin manager ( [vim-plug](
 
 When you run the `:Git` command without any parameters, vim-fugitive displays a git summary window. It shows the untracked, unstaged, and staged file(s). While in this "`git status`" mode, you can do several things:
 
-- `Ctrl-N` / `Ctrl-P` to go up or down the file list.
+- `Ctrl-n` / `Ctrl-p` to go up or down the file list.
 - `-` to stage or unstage the file name under the cursor.
 - `s` to stage the file name under the cursor.
 - `u` to unstage the file name under the cursor.

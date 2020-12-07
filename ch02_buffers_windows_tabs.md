@@ -87,10 +87,10 @@ Now you are looking at two buffers through **two windows**. The top window displ
 By the way, if you want to navigate between windows, you can use these commands:
 
 ```
-Ctrl-W h    Moves the cursor to the left window
-Ctrl-W j    Moves the cursor to the window below
-Ctrl-W k    Moves the cursor to the window upper
-Ctrl-W l    Moves the cursor to the right window
+Ctrl-w h    Moves the cursor to the left window
+Ctrl-w j    Moves the cursor to the window below
+Ctrl-w k    Moves the cursor to the window upper
+Ctrl-w l    Moves the cursor to the right window
 ```
 
 
@@ -113,14 +113,14 @@ You can have multiple windows displaying the same buffer. While you're on the to
 
 Now both top left and top right windows are displaying `file2.js` buffer. If you start typing on the top left, you'll see that the content on both top left and top right window are changing in real time.
 
-To close the current window, you can run `Ctrl-W c` or type `:quit`. When you close a window, the buffer will still be there (again, to view your buffers, you can use `:buffers, :ls, :files`).
+To close the current window, you can run `Ctrl-w c` or type `:quit`. When you close a window, the buffer will still be there (again, to view your buffers, you can use `:buffers, :ls, :files`).
 
 Here are some useful normal mode window commands:
 ```
-Ctrl-W v    Opens a new vertical split
-Ctrl-W s    Opens a new horizontal split
-Ctrl-W c    Closes a window
-Ctrl-W o    Makes the current window the only one on screen and closes other windows
+Ctrl-w v    Opens a new vertical split
+Ctrl-w s    Opens a new horizontal split
+Ctrl-w c    Closes a window
+Ctrl-w o    Makes the current window the only one on screen and closes other windows
 ```
 And here is a list of useful window Ex commands:
 ```
@@ -173,7 +173,7 @@ vim -p file1.js file2.js file3.js
 ```
 ## Moving In 3D
 
-Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W h/j/k/l`.
+Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-w h/j/k/l`.
 
 ![cartesian movement in x and y axis](./img/cartesian-xy.png)
 
