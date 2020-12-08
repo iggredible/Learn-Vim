@@ -770,7 +770,7 @@ Similar to `v:none`.
 " returns {"test": null}
 ```
 
-## Learn data types the smart way
+## Learn Data Types The Smart Way
 
 In this chapter, you learned about Vimscript's basic data types: number, float, string, list, dictionary, and special. Learning these is the first step to start Vimscript programming.
 
