@@ -734,7 +734,7 @@ By the way, `v:` is Vim's built-in variable. They will be covered more in Ch 26.
 
 In my experience, you won't use these special primitives often. If you need a truthy / falsy value, you can just use 0 (falsy) and non-0 (truthy). If you need an empty string, just use `""`. But it is still good to know, so let's quickly go over them.
 
-### v:true
+### `v:true`
 
 This is equivalent to `true`. It is equivalent to a number with value of non-0 . When decoding json with `json_encode()`, it is interpreted as "true".
 
@@ -743,7 +743,7 @@ This is equivalent to `true`. It is equivalent to a number with value of non-0 .
 " returns {"test": true}
 ```
 
-### v:false
+### `v:false`
 
 This is equivalent to `false`. It is equivalent to a number with value of 0. When decoding json with `json_encode()`, it is interpreted as "false".
 
@@ -752,7 +752,7 @@ This is equivalent to `false`. It is equivalent to a number with value of 0. Whe
 " returns {"test": false}
 ```
 
-### v:none
+### `v:none`
 
 It is equivalent to an empty string. When decoding json with `json_encode()`, it is interpreted as an empty item (`null`).
 
@@ -761,7 +761,7 @@ It is equivalent to an empty string. When decoding json with `json_encode()`, it
 " returns {"test": null}
 ```
 
-### v:null
+### `v:null`
 
 Similar to `v:none`.
 
