@@ -31,7 +31,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 - [Ch 19    - Compile](./ch19_compile.md)
 - [Ch 20    - Views, Sessions, and Viminfo](./ch20_views_sessions_viminfo.md)
 
-### Part 2: Customize Vim the Smart Way (In Progress)
+### Part 2: Customize Vim the Smart Way (DONE)
 
 - [Ch 21 - Vimrc](./ch21_vimrc.md)
 - [Ch 22 - Vim Packages](./ch22_vim_packages.md)
@@ -39,7 +39,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 ### Part 3: Learn Vimscript the Smart Way (TBD)
 
-- [Ch 24 - Vimscript Fundamental Data Types
+- [Ch 24 - Vimscript Basic Data Types](./ch24_vimscript_basic_data_types)
 - Ch 25 - Vimscript Basic Expressions
 - Ch 26 - Vimscript Variable Scopes
 - Ch 27 - Vimscript Functions
