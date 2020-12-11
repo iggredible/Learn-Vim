@@ -30,7 +30,7 @@ Hello
 You can control case insensitivity with the case of your search phrase:
 - `/hello` matches "hello", "HELLO", and "Hello".
 - `/HELLO` matches only "HELLO".
-- `/Hello` matches only "Hello"
+- `/Hello` matches only "Hello".
 
 There is one downside. What if you need to search for only a lowercase string? When you do `/hello`, Vim will always match its uppercase variants. What if you don't want to match them? You can use `\C` pattern in front of your search term to tell Vim that the subsequent search term will be case sensitive. If you do `/\Chello`, it will strictly match "hello", not "HELLO" or "Hello".
 
