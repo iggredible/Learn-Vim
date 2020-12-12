@@ -16,7 +16,7 @@ Alternatively, you can also check out Vim's [official github repository](https:/
 
 Now that you have Vim installed, run this from the terminal:
 
-```
+```bash
 vim
 ```
 
@@ -76,13 +76,13 @@ Or `:h` for short. You can also pass the `:h` command the subject you want to le
 
 From the terminal, to open `hello1.txt` file, run:
 
-```
+```bash
 vim hello1.txt
 ```
 
 You can also open multiple files at once:
 
-```
+```bash
 vim hello1.txt hello2.txt hello3.txt
 ```
 
@@ -94,7 +94,7 @@ You can pass the `vim` terminal command with different flags and options.
 
 To check the current Vim version, run:
 
-```
+```bash
 vim --version
 ```
 
@@ -118,13 +118,13 @@ If you want to open the file `hello.txt` and immediately execute a command, you 
 
 In Vim, you can substitute text with the `:s` command (short for `:substitute`). If you want to open `hello.txt` and substitute all "foo" with "bar", run:
 
-```
+```bash
 vim +%s/foo/bar/g hello.txt
 ```
 
 These commands can also be stacked:
 
-```
+```bash
 vim +%s/foo/bar/g +%s/bar/baz/g +%s/baz/donut/g hello.txt
 ```
 
@@ -132,7 +132,7 @@ Vim will first replace all instances of "foo" with "bar", then replace "bar" wit
 
 You can also pass the `c` flag followed by the command instead of the `+` syntax:
 
-```
+```bash
 vim -c %s/foo/bar/g hello.txt
 vim -c %s/foo/bar/g -c %s/bar/baz/g -c %s/baz/donut/g hello.txt
 ```
@@ -145,25 +145,25 @@ You can launch Vim on split windows, horizontal and vertical, with `o` and `O`, 
 
 To open Vim with two horizontal windows, run:
 
-```
+```bash
 vim -o
 ```
 
 To open Vim with 5 horizontal windows, run:
 
-```
+```bash
 vim -o5
 ```
 
 To open Vim with 5 horizontal windows and fill up the first two with `hello1.txt` and `hello2.txt`, run:
 
-```
+```bash
 vim -o5 hello1.txt hello2.txt
 ```
 
 Retrospectively, to open Vim with two vertical windows, 5 vertical windows, and 5 vertical windows with 2 files:
 
-```
+```bash
 vim -O
 vim -O5
 vim -O5 hello1.txt hello2.txt

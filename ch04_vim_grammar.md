@@ -61,7 +61,7 @@ c    Delete text, save to register, and start insert mode
 
 Now that you know basic nouns and verbs, let's apply our grammar rule! Suppose you have this expression:
 
-```
+```javascript
 const learn = "vim";
 ```
 - To yank everything from your current location to the end of the line: `y$`.
@@ -99,7 +99,7 @@ Inner text object selects the object inside *without* the white space or the sur
 
 Let's look at a different example. Suppose you have this Javascript function and your cursor is on "Hello":
 
-```
+```javascript
 const hello = function() {
   console.log("Hello Vim");
   return true;
@@ -113,7 +113,7 @@ const hello = function() {
 Text objects are powerful because you can target different objects from one location. You can delete the objects inside the pair of parentheses, the function block, or the whole word. Moreover, when you see `di(`, `di{`, and `diw`, you get a pretty good idea what text objects they represent (a pair of parentheses, a pair of braces, and a word).
 
 Let's look at one last example. Suppose you have these HTML tags:
-```
+```html
 <div>
   <h1>Header1</h1>
   <p>Paragraph1</p>
