@@ -117,7 +117,7 @@ If you need to search for any digit, you probably don't want to type `/0\|1\|2\|
 
 Digits are not the only data types Vim can look up. You can also do `/[a-z]` to search for lowercase alphas and `/[A-Z]` to search for uppercase alphas.
 
-You can combine these ranges together. If you need to search for digits 0-9 and both lowercase and uppercase alphas from a to f (a hex), you can do `/[0-9a-fA-F]`.
+You can combine these ranges together. If you need to search for digits 0-9 and both lowercase and uppercase alphas from "a" to "f" (a hex), you can do `/[0-9a-fA-F]`.
 
 To do a negative search, you can add `^` inside the character range brackets. To search for a non-digit, run `/[^0-9]`. Vim will match any character as long as it is not a digit. Beware that the caret (`^`) inside the range brackets is different from the beginning-of-a-line caret (ex: `/^hello`). If a caret is outside of a pair of brackets and is the first character in the search term, it means "the first character in a line". If a caret is inside a pair of brackets and it is the first character inside the brackets, it means a negative search operator. `/^abc` matches the first "abc" in a line and `/[^abc]` matches any character except for an "a", "b", or "c".
 
