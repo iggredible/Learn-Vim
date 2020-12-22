@@ -40,10 +40,9 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 ### Part 3: Learn Vimscript the Smart Way (TBD)
 
 - [Ch 24 - Vimscript Basic Data Types](./ch24_vimscript_basic_data_types)
-- Ch 25 - Vimscript Basic Expressions
+- [Ch 25 - Vimscript Basic Expressions](./ch25_vimscript_equalities_conditionals_and_loops.md)
 - Ch 26 - Vimscript Variable Scopes
 - Ch 27 - Vimscript Functions
-- Ch 28+ - ?
 
 # Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
