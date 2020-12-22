@@ -334,8 +334,8 @@ let five = "5";
 ```
 
 Great! Let's break down that command:
-- `:%s` targets all the lines in the file
-- `(\w+) (\w+) `groups the patterns. `\w` is one of Vim's predefined ranges for a word character (`[0-9A-Za-z_]`). The `( )` surrounding it captures a word character match in a group. Notice the space between the two groupings. `(\w+) (\w+)` captures in two groups. On the first line, the first group captures "one" and the second group captures "two".
+- `:%s` targets all the lines in the file.
+- `(\w+) (\w+) ` groups the patterns. `\w` is one of Vim's predefined ranges for a word character (`[0-9A-Za-z_]`). The `( )` surrounding it captures a word character match in a group. Notice the space between the two groupings. `(\w+) (\w+)` captures in two groups. On the first line, the first group captures "one" and the second group captures "two".
 - `\2 \1` returns the captured group in a reversed order. `\2` contains the captured string "let" and `\1` the string "one". Having `\2 \1` returns the string "let one".
 
 Recall that `\0` represents the entire matched pattern. You can break the matched string into smaller groups with `( )`. Each group is represented by `\1`, `\2`, `\3`, etc.
@@ -374,7 +374,7 @@ You would have gotten a different result:
 978
 ```
 
-This is because you now only have two groups. The first group,captured by `(\d\d)`, is stored within `\1` and has the value of "12". The second group, captured by `(\d)`, is stored inside `\2` and has the value of "3". `\2\1` then, returns "312".
+This is because you now only have two groups. The first group, captured by `(\d\d)`, is stored within `\1` and has the value of "12". The second group, captured by `(\d)`, is stored inside `\2` and has the value of "3". `\2\1` then, returns "312".
 
 ## Substitution Flags
 
