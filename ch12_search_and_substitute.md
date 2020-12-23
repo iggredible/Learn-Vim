@@ -411,8 +411,8 @@ Vim substitutes all pancakes with donuts in one swift command. The global comman
 g    Replace all matches in the line.
 c    Ask for substitution confirmation.
 e    Prevent error message from displaying when substitution fails.
-i    Perform case insensitive substitution
-I    Perform case sensitive substitution
+i    Perform case insensitive substitution.
+I    Perform case sensitive substitution.
 ```
 
 There are more flags that I do not list above. To read about all the flags, check out `:h s_flags`.
@@ -470,7 +470,7 @@ let FIVE = "5";
 
 Here is the breakdown of that command:
 - `(\w+) (\w+)` captures the first two matched groups, such as "let" and "one".
-- `\1` returns the value of the first group, "let"
+- `\1` returns the value of the first group, "let".
 - `\U\2` uppercases (`\U`) the second group (`\2`).
 
 The trick of this command is the expression `\U\2`. `\U` instructs the following character to be uppercased.
@@ -494,9 +494,9 @@ Vim Is The Greatest Text Editor In The Whole Galaxy
 ```
 
 Here is the breakdowns:
-- `:s` substitutes the current line
+- `:s` substitutes the current line.
 - `\<.` is comprised of two parts: `\<` to match the start of a word and `.` to match any character. `\<` operator makes the following character to be the first character of a word. Since `.` is the next character, it will match the first character of any word.
-- `\u&`  uppercases the subsequent symbol, `&`. Recall that `&` (or `\0`) represents the whole match. It matches the first character of nay word.
+- `\u&`  uppercases the subsequent symbol, `&`. Recall that `&` (or `\0`) represents the whole match. It matches the first character of any word.
 - `g` the global flag. Without it, this command only substitutes the first match. You need to substitute every match on this line.
 
 To learn more of substitution's special replace symbols like `\u` and `\U`, check out `:h sub-replace-special`.
@@ -528,7 +528,7 @@ bonjour vim
 
 Here is the breakdown:
 - `%s` runs the substitute command on each line in a file.
-- `(hello|hola)` Matches *either* "hello" or "hola" and consider it as a group.
+- `(hello|hola)` matches *either* "hello" or "hola" and consider it as a group.
 - `vim` is the literal word "vim".
 - `\1` is the first match group, which is either the text "hello" or "hola".
 - `friend` is the literal word "friend".
@@ -572,7 +572,7 @@ To substitute the third "Mississippi" with "Arkansas", run:
 The breakdown:
 - `:s/` the substitute command.
 - `\v` is the magic keyword so you don't have to escape special keywords.
-- `.` matches any single character
+- `.` matches any single character.
 - `{-}` performs non-greedy match of 0 or more of the preceding atom.
 - `\zsMississippi` makes "Mississippi" the start of the match.
 - `(...){3}` looks for the third match.
