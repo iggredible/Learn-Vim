@@ -14,7 +14,7 @@ A buffer is an in-memory space where you can write and edit some text. When you 
 
 If your buffer isn't bound to a file yet but you want to save its content, you can save it with `:w </path/to/file>`.
 
-```
+```bash
 vim file1.js
 ```
 
@@ -24,7 +24,7 @@ What you are seeing is `file1.js` *buffer*. Whenever we open a new file, Vim cre
 
 Exit Vim. This time, open two new files:
 
-```
+```bash
 vim file1.js file2.js
 ```
 ![one buffer displayed.png](./img/screen-one-buffer.png)
@@ -68,7 +68,7 @@ A window is a viewport on a buffer. You can have multiple windows. Most text edi
 ![VSCode showing 3 windows](./img/screen-vscode-3-windows.png)
 
 Let's open `file1.js` from the terminal again:
-```
+```bash
 vim file1.js
 ```
 ![one buffer displayed.png](./img/screen-one-buffer.png)
@@ -136,7 +136,7 @@ For more, check out `:h window`. Take your time to understand them.
 A tab is a collection of windows. Think of it like a layout for windows. In most modern text editors (and modern internet browsers), a tab means an open file/ page and when you close it, that file/page goes away. In Vim, a tab does not represent an open file. When you close a tab in Vim, you are not closing a file. Remember, Vim stores files in-memory via buffers. Closing a tab (or a window) does not make that file disappear from the buffers.
 
 Let's see Vim tabs in action. Open `file1.js`:
-```
+```bash
 vim file1.js
 ```
 
@@ -168,7 +168,7 @@ One advantage of having multiple tabs is you can have different window arrangeme
 ![second tab with multiple windows](./img/tabs-file2js.png)
 
 To start Vim with multiple tabs, you can do this from the terminal:
-```
+```bash
 vim -p file1.js file2.js file3.js
 ```
 ## Moving In 3D

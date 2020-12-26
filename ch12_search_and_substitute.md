@@ -30,7 +30,7 @@ Hello
 You can control case insensitivity with the case of your search phrase:
 - `/hello` matches "hello", "HELLO", and "Hello".
 - `/HELLO` matches only "HELLO".
-- `/Hello` matches only "Hello"
+- `/Hello` matches only "Hello".
 
 There is one downside. What if you need to search for only a lowercase string? When you do `/hello`, Vim will always match its uppercase variants. What if you don't want to match them? You can use `\C` pattern in front of your search term to tell Vim that the subsequent search term will be case sensitive. If you do `/\Chello`, it will strictly match "hello", not "HELLO" or "Hello".
 
@@ -117,7 +117,7 @@ If you need to search for any digit, you probably don't want to type `/0\|1\|2\|
 
 Digits are not the only data types Vim can look up. You can also do `/[a-z]` to search for lowercase alphas and `/[A-Z]` to search for uppercase alphas.
 
-You can combine these ranges together. If you need to search for digits 0-9 and both lowercase and uppercase alphas from a to f (a hex), you can do `/[0-9a-fA-F]`.
+You can combine these ranges together. If you need to search for digits 0-9 and both lowercase and uppercase alphas from "a" to "f" (a hex), you can do `/[0-9a-fA-F]`.
 
 To do a negative search, you can add `^` inside the character range brackets. To search for a non-digit, run `/[^0-9]`. Vim will match any character as long as it is not a digit. Beware that the caret (`^`) inside the range brackets is different from the beginning-of-a-line caret (ex: `/^hello`). If a caret is outside of a pair of brackets and is the first character in the search term, it means "the first character in a line". If a caret is inside a pair of brackets and it is the first character inside the brackets, it means a negative search operator. `/^abc` matches the first "abc" in a line and `/[^abc]` matches any character except for an "a", "b", or "c".
 
@@ -334,8 +334,8 @@ let five = "5";
 ```
 
 Great! Let's break down that command:
-- `:%s` targets all the lines in the file
-- `(\w+) (\w+) `groups the patterns. `\w` is one of Vim's predefined ranges for a word character (`[0-9A-Za-z_]`). The `( )` surrounding it captures a word character match in a group. Notice the space between the two groupings. `(\w+) (\w+)` captures in two groups. On the first line, the first group captures "one" and the second group captures "two".
+- `:%s` targets all the lines in the file.
+- `(\w+) (\w+) ` groups the patterns. `\w` is one of Vim's predefined ranges for a word character (`[0-9A-Za-z_]`). The `( )` surrounding it captures a word character match in a group. Notice the space between the two groupings. `(\w+) (\w+)` captures in two groups. On the first line, the first group captures "one" and the second group captures "two".
 - `\2 \1` returns the captured group in a reversed order. `\2` contains the captured string "let" and `\1` the string "one". Having `\2 \1` returns the string "let one".
 
 Recall that `\0` represents the entire matched pattern. You can break the matched string into smaller groups with `( )`. Each group is represented by `\1`, `\2`, `\3`, etc.
@@ -374,7 +374,7 @@ You would have gotten a different result:
 978
 ```
 
-This is because you now only have two groups. The first group,captured by `(\d\d)`, is stored within `\1` and has the value of "12". The second group, captured by `(\d)`, is stored inside `\2` and has the value of "3". `\2\1` then, returns "312".
+This is because you now only have two groups. The first group, captured by `(\d\d)`, is stored within `\1` and has the value of "12". The second group, captured by `(\d)`, is stored inside `\2` and has the value of "3". `\2\1` then, returns "312".
 
 ## Substitution Flags
 
@@ -411,8 +411,8 @@ Vim substitutes all pancakes with donuts in one swift command. The global comman
 g    Replace all matches in the line.
 c    Ask for substitution confirmation.
 e    Prevent error message from displaying when substitution fails.
-i    Perform case insensitive substitution
-I    Perform case sensitive substitution
+i    Perform case insensitive substitution.
+I    Perform case sensitive substitution.
 ```
 
 There are more flags that I do not list above. To read about all the flags, check out `:h s_flags`.
@@ -470,7 +470,7 @@ let FIVE = "5";
 
 Here is the breakdown of that command:
 - `(\w+) (\w+)` captures the first two matched groups, such as "let" and "one".
-- `\1` returns the value of the first group, "let"
+- `\1` returns the value of the first group, "let".
 - `\U\2` uppercases (`\U`) the second group (`\2`).
 
 The trick of this command is the expression `\U\2`. `\U` instructs the following character to be uppercased.
@@ -494,9 +494,9 @@ Vim Is The Greatest Text Editor In The Whole Galaxy
 ```
 
 Here is the breakdowns:
-- `:s` substitutes the current line
+- `:s` substitutes the current line.
 - `\<.` is comprised of two parts: `\<` to match the start of a word and `.` to match any character. `\<` operator makes the following character to be the first character of a word. Since `.` is the next character, it will match the first character of any word.
-- `\u&`  uppercases the subsequent symbol, `&`. Recall that `&` (or `\0`) represents the whole match. It matches the first character of nay word.
+- `\u&`  uppercases the subsequent symbol, `&`. Recall that `&` (or `\0`) represents the whole match. It matches the first character of any word.
 - `g` the global flag. Without it, this command only substitutes the first match. You need to substitute every match on this line.
 
 To learn more of substitution's special replace symbols like `\u` and `\U`, check out `:h sub-replace-special`.
@@ -528,7 +528,7 @@ bonjour vim
 
 Here is the breakdown:
 - `%s` runs the substitute command on each line in a file.
-- `(hello|hola)` Matches *either* "hello" or "hola" and consider it as a group.
+- `(hello|hola)` matches *either* "hello" or "hola" and consider it as a group.
 - `vim` is the literal word "vim".
 - `\1` is the first match group, which is either the text "hello" or "hola".
 - `friend` is the literal word "friend".
@@ -572,7 +572,7 @@ To substitute the third "Mississippi" with "Arkansas", run:
 The breakdown:
 - `:s/` the substitute command.
 - `\v` is the magic keyword so you don't have to escape special keywords.
-- `.` matches any single character
+- `.` matches any single character.
 - `{-}` performs non-greedy match of 0 or more of the preceding atom.
 - `\zsMississippi` makes "Mississippi" the start of the match.
 - `(...){3}` looks for the third match.

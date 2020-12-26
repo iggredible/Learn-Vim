@@ -31,7 +31,7 @@ In this chapter, you will learn the first six types. In Ch. 27, you will learn a
 
 Since Vim does not technically have a REPL, you can use `echo` or `echom` commands. The former prints the evaluated expression you give. The latter does the same, but in addition, it stores the result in the message history.
 
-```
+```viml
 :echom "hello echo message"
 ```
 
@@ -73,7 +73,7 @@ Octals start with `0`, `0o`, and `0O`. Mnemonic: **O**ctal.
 
 If you `echo` either a hexadecimal, binary, or octal number, Vim automatically converts them to decimals.
 
-```
+```viml
 :echo 42
 " returns 42
 
@@ -93,7 +93,7 @@ In Vim, 0 is falsy and all non-0 values are truthy.
 
 The following will not echo anything.
 
-```
+```viml
 :if 0
 :  echo "Nope"
 :endif
@@ -101,7 +101,7 @@ The following will not echo anything.
 
 However, this will:
 
-```
+```viml
 :if 1
 :  echo "Yes"
 :endif
@@ -113,7 +113,7 @@ Any values other than 0 will be truthy, including negative numbers. 100 is truth
 
 Numbers can be used to run arithmetic expressions:
 
-```
+```viml
 :echo 3 + 1
 " returns 4
 
@@ -129,7 +129,7 @@ Numbers can be used to run arithmetic expressions:
 
 When dividing a number with a remainder, Vim drops the remainder.
 
-```
+```viml
 :echo 5 / 2
 " returns 2 instead of 2.5
 ```
@@ -140,7 +140,7 @@ To get a more accurate result, you need to use a float number.
 
 Floats are numbers with trailing decimals. There are two ways to represent floating numbers: dot point notation (like 31.4) and exponent (3.14e01). Similar to numbers, you can use positive and negative signs:
 
-```
+```viml
 :echo +123.4
 " returns 123.4
 
@@ -160,7 +160,7 @@ You need to give a float a dot and trailing digits. `25e-2` (no dot) and `1234.`
 
 When doing an arithmetic expression between a number and a float, Vim coerces the result to a float.
 
-```
+```viml
 :echo 5 / 2.0
 " returns 2.5
 ```
@@ -180,7 +180,7 @@ Strings are characters surrounded by either double-quotes (`""`) or single-quote
 
 To concatenate a string in Vim, use the `.` operator.
 
-```
+```viml
 :echo "Hello" . " world"
 " returns "Hello world"
 ```
@@ -189,7 +189,7 @@ To concatenate a string in Vim, use the `.` operator.
 
 When you run arithmetic operators (`+ - * /`) against a string, Vim coerces the string into a number.
 
-```
+```viml
 :echo "12 donuts" + 3
 " returns 15
 ```
@@ -198,14 +198,14 @@ When Vim sees "12 donuts", it extracts the 12 from the string and converts it in
 
 The following won't work because 12 is not the first character in the string:
 
-```
+```viml
 :echo "donuts 12" + 3
 " returns 3
 ```
 
 This also won't work because an empty space is the first character of the string:
 
-```
+```viml
 :echo " 12 donuts" + 3
 " returns 3
 ```
@@ -219,7 +219,7 @@ This coercion works even with multiple strings:
 
 This works with any arithmetic operator, not only `+`:
 
-```
+```viml
 :echo "12 donuts" * "5 boxes"
 " returns 60
 
@@ -232,7 +232,7 @@ This works with any arithmetic operator, not only `+`:
 
 A neat trick to force a string-to-number conversion is to just add 0 or multiply by 1:
 
-```
+```viml
 :echo "12" + 0
 " returns 12
 
@@ -251,7 +251,7 @@ When arithmetic is done against a float number, Vim only looks at the number par
 
 You can coerce a number into a string with a dot operator (`.`):
 
-```
+```viml
 :echo 12 . "donuts"
 " returns "12donuts"
 ```
@@ -269,7 +269,7 @@ Recall that 0 is falsy and all non-0 numbers are truthy. This is also true when 
 
 In the following if statement, Vim coerces "12donuts" into 12, which is truthy:
 
-```
+```viml
 :if "12donuts"
 :  echo "Yum"
 :endif
@@ -277,7 +277,7 @@ In the following if statement, Vim coerces "12donuts" into 12, which is truthy:
 
 On the other hand, this is falsy:
 
-```
+```viml
 :if "donuts12"
 :  echo "Nope"
 :endif
@@ -291,7 +291,7 @@ Double quotes behave differently than single quotes. Single quotes display chara
 
 What are special characters? Check out the newline and double-quotes display:
 
-```
+```viml
 :echo "hello\\nworld"
 " returns
 " hello
@@ -428,7 +428,7 @@ If you don't pass `m` (`[n:]`), Vim will return the rest of the elements startin
 
 You can pass an index that exceeds the maximum items when slicing an array.
 
-```
+```viml
 :echo ["chocolate", "glazed", "plain", "strawberry", "lemon", "sugar", "cream"][2:999]
 " returns ['plain', 'strawberry', 'lemon', 'sugar', 'cream']
 ```
@@ -437,7 +437,7 @@ You can pass an index that exceeds the maximum items when slicing an array.
 
 Many list targetting and slicing techniques above can be applied to string:
 
-```
+```viml
 :echo "choco"[0]
 " returns "c"
 
@@ -455,7 +455,7 @@ Many list targetting and slicing techniques above can be applied to string:
 
 You can use `+` to concatenate and mutate a list:
 
-```
+```viml
 :let sweetList = ["chocolate", "strawberry"]
 :let sweetList += ["sugar"]
 :echo sweetList
