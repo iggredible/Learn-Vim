@@ -654,7 +654,7 @@ First, capture both `food.txt` and `animal.txt` inside `:args`. Recall from earl
 
 ```
 :args *.txt                  captures all txt files in current location
-:args food.txt animal.txt    captures only index and server js files
+:args food.txt animal.txt    captures only given files 
 :args **/*.txt               captures every txt files
 :args **                     captures everything
 ```
@@ -703,7 +703,7 @@ q
 Here is the breakdown of the steps:
 - `:args animal.txt food.txt` lists the relevant files into the `:args` list.
 - `qq` starts the macro in the "q" register.
-- `:%s/dog/chicken/g` substitutes "dog" with "chicken on all lines in the current file.
+- `:%s/dog/chicken/g` substitutes "dog" with "chicken" on all lines in the current file.
 - `:wnext` writes (saves) the file then go to the next file on the `args` list. It's like running `:w` and `:next` at the same time.
 - `q` stops the macro recording.
 - `99@q` executes the macro ninety-nine times. Vim will stop the macro execution after it encounters the first error, so Vim won't actually execute the macro ninety-nine times.
