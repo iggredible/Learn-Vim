@@ -260,6 +260,6 @@ A variable prepended with `v:` is a special built-in Vim variable. You cannot de
 
 There are other variables. For a list of Vim built-in variables, check out `:h vim-variable` or `:h v:`.
 
-## Using Vim Variables The Smart Way
+## Using Vim Variable Scopes The Smart Way
 
 Being able to quickly access environment, option, and register variables give you a broad flexibility to customize your editor and terminal environment. You also learned that Vim has 9 different Vimscript variable scopes, each existing under a certain constraints. You can take advantage of these unique variable types to write your own custom plugins. But before that, let's learn how to create functions!
