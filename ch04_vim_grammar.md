@@ -1,7 +1,7 @@
 ---
 title: "Vim Grammar"
 metaTitle: "Vim Grammar"
-metaDescription: "Learn how to speak to Vim"
+metaDescription: "Learn how to speak to Vim."
 ---
 
 It is easy to get intimidated by the complexity of many Vim commands. If you see a Vim user doing `gUfV` or `1GdG`, you may not immediately know what these commands do. In this chapter, I will break down the general structure of Vim commands into a simple grammar rule.

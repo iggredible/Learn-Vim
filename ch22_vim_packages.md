@@ -1,7 +1,7 @@
 ---
 title: "Vim Packages"
 metaTitle: "Vim Packages"
-metaDescription: "Vim Packages"
+metaDescription: "How to install packages natively?"
 ---
 
 The previous chapter talked about using external plugin managers to install plugins. However, starting at version 8, Vim comes with its own built-in plugin manager called *packages*. In this chapter, you will learn how to use Vim packages to install plugins.

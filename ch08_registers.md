@@ -1,7 +1,7 @@
 ---
 title: "Registers"
 metaTitle: "Registers"
-metaDescription: "Registers"
+metaDescription: "Learn how to store data inside Vim registers."
 ---
 
 Learning Vim registers is like learning algebra for the first time. You don't think you need them until you learn them.

@@ -1,7 +1,7 @@
 ---
 title: "Vimscript Basic Data Types"
 metaTitle: "Vimscript Basic Data Types"
-metaDescription: "Vimscript Basic Data Types"
+metaDescription: "Learn the common data types of Vimscript."
 ---
 
 In the next few chapters, you will learn about Vimscript, Vim's built-in programming language.

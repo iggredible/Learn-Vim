@@ -1,7 +1,7 @@
 ---
 title: "Equalities, Conditionals, and Loops"
 metaTitle: "Equalities, Conditionals, and Loops"
-metaDescription: "Equalities, Conditionals, and Loops"
+metaDescription: "How to write basic expressions with equalities, conditionals, and loops."
 ---
 
 In this chapter, you will learn about equalities, conditionals, and loops using the data types you learned in the previous chapter.

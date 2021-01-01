@@ -1,7 +1,7 @@
 ---
 title: "Tags"
 metaTitle: "Tags"
-metaDescription: "Tags"
+metaDescription: "How to use tags to jump to any definition?"
 ---
 
 One useful feature in text editing is being able to go to any definition quickly. In this chapter, you will learn how to use Vim tags to do that.

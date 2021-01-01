@@ -1,7 +1,7 @@
 ---
 title: "Insert Mode"
 metaTitle: "Insert Mode"
-metaDescription: "Insert Mode"
+metaDescription: "How to work with insert mode."
 ---
 
 Insert mode is the default mode of many text editors. In this mode, what you type is what you get.

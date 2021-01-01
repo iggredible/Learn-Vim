@@ -1,7 +1,7 @@
 ---
 title: "Undo"
 metaTitle: "Undo"
-metaDescription: "Undo"
+metaDescription: "Vim undo deep dive."
 ---
 
 Undo is an essential feature in any modern software. Vim's undo system is not only capable of undoing and redoing mistakes, but allows you to manipulate and retrieve text across time. In this chapter, you will learn how to undo and redo your text, navigate an undo branch, persist undo, and travel through time.

@@ -1,7 +1,7 @@
 ---
 title: "Vimrc"
 metaTitle: "Vimrc"
-metaDescription: "Vimrc"
+metaDescription: "Learn about vimrc structure."
 ---
 
 In the previous chapters, you learned how to use Vim. From now on, you will learn how to customize Vim to fit your coding style.

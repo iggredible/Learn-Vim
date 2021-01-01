@@ -1,7 +1,7 @@
 ---
 title: "Search and Substitute"
 metaTitle: "Search and Substitute"
-metaDescription: "Search and Substitute"
+metaDescription: "Learn how to search and substitute all things."
 ---
 
 This chapter covers two separate but related concepts: search and substitute. Many times, the texts that you are searching for are not straightforward and you must search for a common pattern. By learning how to use meaningful patterns in search and substitute instead of literal strings, you will be able to target any text quickly.
