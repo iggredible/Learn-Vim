@@ -1,4 +1,8 @@
-# Ch 17. Fold
+---
+title: "Fold"
+metaTitle: "Fold"
+metaDescription: "Fold"
+---
 
 When you read a file, often there are many irrelevant text that hinders you from understanding what that file does. To hide this unnecessary information, you can use Vim fold.
 

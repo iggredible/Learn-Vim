@@ -1,10 +1,8 @@
 ---
 title: "Starting Vim"
 metaTitle: "Starting Vim"
-metaDescription: "Learn different ways to start Vim from the terminal."
+metaDescription: "Learn different ways to start Vim from the terminal"
 ---
-
-# Ch 01. Starting Vim
 
 In this chapter, you will learn different ways to start Vim from the terminal. I highly recommend you use Vim from the terminal as you are typing along. I am currently using Vim 8.2. You should be fine if you use a lower version, but some commands might not be available.
 
@@ -18,7 +16,7 @@ For more download information, check out Vim's official download website:
 
 Alternatively, you can also check out Vim's [official github repository](https://github.com/vim/vim).
 
-## `vim`
+## The Vim Command
 
 Now that you have Vim installed, run this from the terminal:
 

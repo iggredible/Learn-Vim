@@ -1,4 +1,8 @@
-# Ch 05. Moving In A File
+---
+title: "Moving In A File"
+metaTitle: "Moving In A File"
+metaDescription: "Moving In A File"
+---
 
 In the beginning, moving with a keyboard will feel awkward and incredibly slow, but don't give up! Once you get used to it, you can go anywhere in a file faster than a mouse.
 

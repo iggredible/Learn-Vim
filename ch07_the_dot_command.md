@@ -1,4 +1,8 @@
-# Ch 07. The Dot Command
+---
+title: "The Dot Command"
+metaTitle: "The Dot Command"
+metaDescription: "The Dot Command"
+---
 
 When editing a text, as much as you can, avoid redoing what you just did. In this chapter, you will learn how to use the dot command to easily replay the previous change. It is the simplest and most versatile command to reduce repetitions.
 

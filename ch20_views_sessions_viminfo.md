@@ -1,4 +1,8 @@
-# Ch 20. Views, Sessions, And Viminfo
+---
+title: "Views, Sessions, And Viminfo"
+metaTitle: "Views, Sessions, And Viminfo"
+metaDescription: "Views, Sessions, And Viminfo"
+---
 
 After you worked on a project for a while, you may find that the project to gradually take shape with its own settings, folds, buffers, layouts, etc. It's like decorating your apartment to make it feel like home.
 

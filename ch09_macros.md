@@ -1,4 +1,8 @@
-# Ch 09. Macros
+---
+title: "Macros"
+metaTitle: "Macros"
+metaDescription: "Macros"
+---
 
 When editing files, you may find yourself repeating the same actions. Wouldn't it be nice if you can do those actions once and replay them whenever you need it?  With Vim macros, you can record actions and store them inside Vim registers.
 

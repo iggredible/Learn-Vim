@@ -1,4 +1,8 @@
-# Ch 19. Compile
+---
+title: "Compile"
+metaTitle: "Compile"
+metaDescription: "Compile"
+---
 
 Compiling is an important subject for many languages. In this chapter, you will learn how to compile from Vim. In addition, you will look at ways to take advantage of Vim's `:make` command.
 

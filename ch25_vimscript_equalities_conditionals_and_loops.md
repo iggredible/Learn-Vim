@@ -1,4 +1,8 @@
-# Equalities, Conditionals, and Loops
+---
+title: "Equalities, Conditionals, and Loops"
+metaTitle: "Equalities, Conditionals, and Loops"
+metaDescription: "Equalities, Conditionals, and Loops"
+---
 
 In this chapter, you will learn how to do equalities, conditionals, and loops using the data types you learned in the previous chapter.
 

@@ -1,4 +1,8 @@
-# Ch 06. Insert Mode
+---
+title: "Insert Mode"
+metaTitle: "Insert Mode"
+metaDescription: "Insert Mode"
+---
 
 Insert mode is the default mode of many text editors. In this mode, what you type is what you get.
 

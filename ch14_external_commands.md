@@ -1,4 +1,8 @@
-# Ch 14. External Commands
+---
+title: "External Commands"
+metaTitle: "External Commands"
+metaDescription: "External Commands"
+---
 
 Inside the Unix system, you will find many small, hyper-specialized commands where each does one thing well. You can chain these commands  to work together to solve a complex problem. Wouldn't it be great if you can use these commands from inside Vim?
 

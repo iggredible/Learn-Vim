@@ -1,4 +1,8 @@
-# Ch 03. Opening And Searching Files
+---
+title: "Opening And Searching Files"
+metaTitle: "Opening And Searching Files"
+metaDescription: "How to open and search files in Vim?"
+---
 
 The goal of this chapter is to introduce you to opening and searching files in Vim. Being able to search quickly is a great way to jump-start your Vim productivity. One reason it took me a long time to get onboard with Vim is because I didn't know how to find things quickly like many popular text editors.
 

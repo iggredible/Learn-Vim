@@ -1,4 +1,8 @@
-# Ch 13. The Global Command
+---
+title: "The Global Command"
+metaTitle: "The Global Command"
+metaDescription: "The Global Command"
+---
 
 So far you have learned how to repeat the last change with the dot command (`.`), to replay actions with macros (`q`), and to store texts in the registers (`"`).
 

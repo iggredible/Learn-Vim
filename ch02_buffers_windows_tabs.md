@@ -1,4 +1,8 @@
-# Ch 02. Buffers, Windows, And Tabs
+---
+title: "Buffers, Windows, and Tabs"
+metaTitle: "Buffers, Windows, and Tabs"
+metaDescription: "What do buffers, windows, and tabs represent in Vim?"
+---
 
 If you have used a modern text editor, you are probably familiar with windows and tabs. Vim has three abstractions instead of two: buffers, windows, and tabs.
 

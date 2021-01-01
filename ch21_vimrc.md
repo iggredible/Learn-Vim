@@ -1,4 +1,8 @@
-# Ch 21. Vimrc
+---
+title: "Vimrc"
+metaTitle: "Vimrc"
+metaDescription: "Vimrc"
+---
 
 In the previous chapters, you learned how to use Vim. From now on, you will learn how to customize Vim to fit your coding style.
 

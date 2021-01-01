@@ -1,4 +1,8 @@
-# Ch 08. Registers
+---
+title: "Registers"
+metaTitle: "Registers"
+metaDescription: "Registers"
+---
 
 Learning Vim registers is like learning algebra for the first time. You don't think you need them until you learn them.
 
@@ -238,6 +242,9 @@ Technically, there is no need to clear any register because the next register yo
 ## Putting The Content Of A Register
 
 You can use the `:put` command to paste the content of any one register. For example, if you run `:put a`, Vim will print the content of register "a". This behaves much like `"ap`, with the difference that the normal mode command `p` prints the register content after the cursor and the command `:put` prints the register content at newline.
+
+TODO:
+One cool trick is t quickly add a null register (`_`) to insert a blank line. `:put _` adds a blank line. You can combine this with the global command (will cover global command later), such as `:g/^$/put _` to put a blank line after a blank line.
 
 ## Learning Registers The Smart Way
 
