@@ -6,7 +6,7 @@ metaDescription: "What are the different variable scopes in Vim?"
 
 Before diving into Vimscript functions, let's learn about the different sources and scopes of Vim variables.
 
-## `let` and `const`
+## Mutable And Immutable Variable
 
 You can assign a value to a variable in Vim with `let`:
 
@@ -56,7 +56,7 @@ let waffle = "pancake"
 
 Before learning native Vimscript variables, it's good to learn the different sources of Vim variables that you can use. There are three more "variables" you can use inside Vim expressions: environment variable, option variable, and register variable.
 
-### Environment Variable (`$VAR`)
+### Environment Variable
 
 Suppose that you have a `SHELL` environment variable already available in your terminal. To access it from Vim:
 
