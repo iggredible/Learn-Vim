@@ -114,7 +114,7 @@ You should see an error running that command. To view that error, run the `quick
 Let's use the makefile to compile a basic `.cpp` program. First, let's create a `hello.cpp` file:
 
 ```
-## nclude <iostream>
+#include <iostream>
 
 int main() {
     std::cout << "Hello!\\n";
