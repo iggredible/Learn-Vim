@@ -229,10 +229,10 @@ Ctrl-y    Scroll up a line
 Ctrl-u    Scroll up half screen
 Ctrl-b    Scroll up whole screen
 ```
-You can also scroll relatively to the current line:
+You can also scroll relatively to the current line (zoom screen sight):
 ```
 zt    Bring the current line near the top of your screen
-zh    Bring the current line to the middle (half) of your screen
+zz    Bring the current line to the middle of your screen
 zb    Bring the current line near the bottom of your screen
 ```
 
