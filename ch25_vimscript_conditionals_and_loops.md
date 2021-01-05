@@ -1,10 +1,10 @@
 ---
-title: "Equalities, Conditionals, and Loops"
-metaTitle: "Equalities, Conditionals, and Loops"
-metaDescription: "How to write basic expressions with equalities, conditionals, and loops."
+title: "Conditionals and Loops"
+metaTitle: "Conditionals and Loops"
+metaDescription: "How to write basic expressions with conditionals and loops."
 ---
 
-In this chapter, you will learn about equalities, conditionals, and loops using the data types you learned in the previous chapter.
+In this chapter, you will learn about conditionals and loops using the data types you learned in the previous chapter.
 
 ## Relational Operators
 
@@ -511,6 +511,6 @@ Now if you `source` vimrc without `gruvbox` directory, Vim will use the `colorsc
 
 ## Learn conditionals the smart way
 
-In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using equalities, conditionals, and loops. These are the building blocks of programming.
+In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using conditionals and loops. These are the building blocks of programming.
 
 Next, let's learn about variable scopes.
