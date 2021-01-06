@@ -158,14 +158,14 @@ You can run a normal command with the global command with `:normal` command-line
 
 If you have this text:
 ```
-const one = 1;
-console.log("one: ", one);
+const one = 1
+console.log("one: ", one)
 
-const two = 2;
-console.log("two: ", two);
+const two = 2
+console.log("two: ", two)
 
-const three = 3;
-console.log("three: ", three);
+const three = 3
+console.log("three: ", three)
 
 ```
 To add a ";" to the end of each line, run:
