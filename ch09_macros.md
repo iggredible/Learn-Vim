@@ -41,13 +41,13 @@ qa0gU$jq
 
 Here is the breakdown of the command above:
 
-- `qa` starts recording a macro in the "a" register.
+- `qa` starts recording a macro in the "a register.
 - `0` goes to beginning of the line.
 - `gU$` uppercases the text from your current location to the end of the line.
 - `j` goes down one line.
 - `q` stops recording.
 
-To replay that macro, run `@a`. Just like many other Vim commands, you can pass a count argument to macros. For example, you can run `3@a` to execute "a" macro three times. You can run `3@@` to execute the last executed macro three times.
+To replay that macro, run `@a`. Just like many other Vim commands, you can pass a count argument to macros. For example, you can run `3@a` to execute "a macro three times. You can run `3@@` to execute the last executed macro three times.
 
 ## Safety Guard
 
@@ -67,7 +67,7 @@ qa0W~jq
 ```
 
 Here's the breakdown of the command above:
-- `qa` starts recording a macro in the "a" register.
+- `qa` starts recording a macro in the "a register.
 - `0` goes to the beginning of the line.
 - `W` goes to the next WORD.
 - `~` toggles the case of the character under the cursor.
@@ -83,7 +83,7 @@ The fact that macro execution stops upon the first error encounter is a good fea
 
 Running `@a` in normal mode is not the only way you can execute macros in Vim. You can also run `:normal @a` command line. `:normal` allows the user to execute any normal mode command given as argument. By passing it `@a`, it is the same as running `@a` from normal mode.
 
-The `:normal` command accepts range as arguments. You can use this to run macro in select ranges. If you want to execute your "a" macro between lines 2 and 3, you can run `:2,3 normal @a`. I will go over command line commands in a later chapter.
+The `:normal` command accepts range as arguments. You can use this to run macro in select ranges. If you want to execute your "a macro between lines 2 and 3, you can run `:2,3 normal @a`. I will go over command line commands in a later chapter.
 
 ## Executing A Macro Across Multiple Files
 
@@ -135,13 +135,13 @@ qaqqa0W~j@aq
 ```
 
 Here is the breakdown of the steps:
-- `qaq` records an empty macro "a". It is necessary to record an empty macro in the same register name because when you execute the "a" macro later, you don't want that register to contain anything.
-- `qa` starts recording on register "a".
+- `qaq` records an empty macro "a. It is necessary to record an empty macro in the same register name because when you execute the "a macro later, you don't want that register to contain anything.
+- `qa` starts recording on register "a.
 - `0` goes to the first character in the current line.
 - `W` goes to the next WORD.
 - `~` toggles the case of the character under the cursor.
 - `j` goes down one line.
-- `@a` executes macro "a". When recording this, `@a` should be empty because you had just called `qaq`.
+- `@a` executes macro "a. When recording this, `@a` should be empty because you had just called `qaq`.
 - `q` stops recording.
 
 Now you can just run `@a` and watch Vim execute the macro recursively.
@@ -150,9 +150,9 @@ How does the macro know when to stop? When the macro is on the last line, it tri
 
 ## Appending A Macro
 
-If you need to add more actions to an existing macro, instead of redoing it, you can append actions to it. In the register chapter, you learned that you can append a named register by using its uppercased symbol. To append actions to a macro in register "a", use register "A". Suppose in addition to toggling the case of the first word, you also want to add a dot at the end of the line.
+If you need to add more actions to an existing macro, instead of redoing it, you can append actions to it. In the register chapter, you learned that you can append a named register by using its uppercased symbol. To append actions to a macro in register "a, use register "A. Suppose in addition to toggling the case of the first word, you also want to add a dot at the end of the line.
 
-Assume you have the following actions stored as a macro in register "a":
+Assume you have the following actions stored as a macro in register "a:
 
 ```
 0W~
@@ -162,7 +162,7 @@ This is how you can do it:
 qAA.<esc>q
 ```
 The breakdown:
-- `qA` starts recording the macro in register "A".
+- `qA` starts recording the macro in register "A.
 - `A.<esc>` inserts a dot (".") at the end of the line (`A`), then exits insert mode (`<esc>`).
 - `q` stops recording macro.
 
@@ -182,7 +182,7 @@ c. powdered sugar donut
 d. plain donut
 ```
 
-First, let's call the existing macro (assume you have kept the macro from the previous section in register "a") with `:put a`:
+First, let's call the existing macro (assume you have kept the macro from the previous section in register "a) with `:put a`:
 
 ```
 0W~A.^[
@@ -204,15 +204,15 @@ There is a small problem. Vim does not understand `<esc>`. You will have to writ
 0W~$bideep fried ^[A.^[
 ```
 
-To add the amended instruction into register "a", you can do it the same way as adding a new entry into a named register. At the start of the line, run `"ay$`. This tells Vim that you're using the named register "a" (`"a`) to store the yanked text from the current position to the end of the line (`y$`).
+To add the amended instruction into register "a, you can do it the same way as adding a new entry into a named register. At the start of the line, run `"ay$`. This tells Vim that you're using the named register "a (`"a`) to store the yanked text from the current position to the end of the line (`y$`).
 
 Now when you execute `@a`, your macro will toggle the case of the first word, add "deep fried " before "donut", and add a "." at the end of the line.
 
-An alternative way to amend a macro is to use a command line expression. Do `:let @a="`, then do `Ctrl-r Ctrl-r a`, this will literally paste the content of register "a". Finally, don't forget to close the double quotes (`"`). If you need to insert special characters using internal codes while editing a command line expression, you can use `Ctrl-v`.
+An alternative way to amend a macro is to use a command line expression. Do `:let @a="`, then do `Ctrl-r Ctrl-r a`, this will literally paste the content of register "a. Finally, don't forget to close the double quotes (`"`). If you need to insert special characters using internal codes while editing a command line expression, you can use `Ctrl-v`.
 
 ## Macro Redundancy
 
-You can easily duplicate macros from one register to another. For example, to duplicate a macro in register "a" to register "z", you can do `:let @z = @a`. `@a` represents the content of register "a". Now if you run `@z`, it does the exact same actions as `@a`.
+You can easily duplicate macros from one register to another. For example, to duplicate a macro in register "a to register "z, you can do `:let @z = @a`. `@a` represents the content of register "a. Now if you run `@z`, it does the exact same actions as `@a`.
 
 I find creating a redundancy useful on my most frequently used macros. In my workflow, I usually record macros in the first seven alphabetical letters (a-g) and I often replace them without much thought. If I move the useful macros towards the end of the alphabets, I can preserve them without worrying that I might accidentally replace them.
 
@@ -235,7 +235,7 @@ qa0f{gui{jq
 ```
 
 Here is the breakdown:
-- `qa` starts recording in register "a".
+- `qa` starts recording in register "a.
 - `0` goes to first line.
 - `f{` finds the first instance of "{".
 - `gui{` lowercases (`gu`) the text inside the bracket text-object (`i{`).
@@ -255,7 +255,7 @@ import { FUNC5 } from "library5";
 
 Running `99@a`, only executes the macro three times. It does not execute the macro on last two lines because the execution fails to run `f{` on the "foo" line. This is expected when running the macro in series. You can always go to the next line where "FUNC4" is and replay that macro again. But what if you want to get everything done in one go? You can run the macro in parallel.
 
-Recall from earlier section that macros can be executed using the  command line command `:normal` (ex: `:3,5 normal @a` to execute macro "a" on lines 3-5). If you run `:1,$ normal @a`, you will see that the macro is being executed on all lines except the "foo" line. It works!
+Recall from earlier section that macros can be executed using the  command line command `:normal` (ex: `:3,5 normal @a` to execute macro "a on lines 3-5). If you run `:1,$ normal @a`, you will see that the macro is being executed on all lines except the "foo" line. It works!
 
 Although internally Vim does not actually run the macros in parallel, outwardly, it behaves like such. Vim executes `@a` *independently* on each line from the first line to the last line (`1,$`). Since Vim executes these macros independently, each line does not know that one of the macro executions had failed on the "foo" line.
 
@@ -265,4 +265,4 @@ Many things you do in editing are repetitive. To get better at editing, get into
 
 In the beginning, I find it very awkward to write macros, but don't give up. With enough practice, you will get into the habit of automating everything.
 
-You might find it helpful to use mnemonics to help remember your macros. If you have a macro that creates a function, use the "f" register (`qf`). If you have a macro for numerical operations, the "n" register may be a good fit (`qn`). Name it with the *first named register* that comes to your mind when you think of that operation. I also find that "q" register makes a good default macro register because `qq` does not require much brain power to use. Lastly, I like to increment my macros in alphabetical orders, like `qa`, then `qb`, then `qc`, and so on. Find a method that works best for you.
+You might find it helpful to use mnemonics to help remember your macros. If you have a macro that creates a function, use the "f register (`qf`). If you have a macro for numerical operations, the "n register may be a good fit (`qn`). Name it with the *first named register* that comes to your mind when you think of that operation. I also find that "q register makes a good default macro register because `qq` does not require much brain power to use. Lastly, I like to increment my macros in alphabetical orders, like `qa`, then `qb`, then `qc`, and so on. Find a method that works best for you.

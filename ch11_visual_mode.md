@@ -301,7 +301,7 @@ In a regular editor, after you highlight a text block and type a letter, say the
 
 If you highlight a line of text with line-wise select mode (`gH`) and type "y", it will delete the highlighted text and insert the letter "y", much like the regular text editor.
 
-Contrast this behavior with visual mode: if you  highlight a line of text with line-wise visual mode (`V`) and type "y", the highlighted text will not be deleted and replaced by the literal letter "y". It will only be yanked and stored in the yanked register `"0`.
+Contrast this behavior with visual mode: if you  highlight a line of text with line-wise visual mode (`V`) and type "y", the highlighted text will not be deleted and replaced by the literal letter "y". It will only be yanked and stored in the yanked register "0.
 
 I personally never used select mode, but it's good to know that it exists.
 
