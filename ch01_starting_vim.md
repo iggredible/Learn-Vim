@@ -4,17 +4,15 @@ metaTitle: "Starting Vim"
 metaDescription: "Learn different ways to start Vim from the terminal."
 ---
 
-In this chapter, you will learn different ways to start Vim from the terminal. I highly recommend you use Vim from the terminal as you are typing along. I am currently using Vim 8.2. You should be fine if you use a lower version, but some commands might not be available.
+In this chapter, you will learn different ways to start Vim from the terminal. I was using Vim 8.2 when writing this book. If you use Neovim or an older version of Vim, you should be (mostly) fine, but be aware that some commands might not be available.
 
 ## Installing
 
-I will not go through the detailed instruction how to install Vim (because there are many different distros out there). The good news is, most Unix computers should come with Vim installed. If not, most distros should have a way to install Vim.
+I will not go through the detailed instruction how to install Vim in your specific machine. The good news is, most Unix-based computers should come with Vim installed. If not, most distros should have a way to install Vim.
 
-For more download information, check out Vim's official download website:
-
-[https://www.vim.org/download.php](https://www.vim.org/download.php)
-
-Alternatively, you can also check out Vim's [official github repository](https://github.com/vim/vim).
+For download informations, check out Vim's official download website or Vim's official github repository:
+- [Vim website](https://www.vim.org/download.php)
+- [Vim github](https://github.com/vim/vim).
 
 ## The Vim Command
 
@@ -24,7 +22,7 @@ Now that you have Vim installed, run this from the terminal:
 vim
 ```
 
-You should see an intro screen. This is the where you will be working on your file. Unlike most text editors and IDEs, Vim is a modal editor. If you want to type "Hello", you need to switch to Insert mode with `i`. Type: `ihello<Esc>`.
+You should see an intro screen. This is the where you will be working on your file. Unlike most text editors and IDEs, Vim is a modal editor. If you want to type "hello", you need to switch to Insert mode with `i`. Press `ihello<Esc>` to insert the text "hello".
 
 ## Exiting Vim
 
@@ -70,11 +68,13 @@ Throughout the book, I will refer you to various Vim help pages. You can access 
 :help
 ```
 
-Or `:h` for short. You can also pass the `:h` command the subject you want to learn as an argument. For example, to learn more about different ways to quit Vim, you can type:
+`:h` for short. You can also pass the `:h` command the subject you want to learn as an argument. For example, to learn more about different ways to quit Vim, you can type:
 
 ```
 :h write-quit
 ```
+
+How do I know to search for `write-quit`? I actually don't. I just type `:h`, type "quit", then press `<tab>`. Vim displays relevant keyword options to choose from. If you ever need to look for a functionality ("I wish Vim can do this..."), just type `:h` and try pressing `<tab>` against the different keywords. 
 
 ## Opening a File
 
@@ -102,9 +102,9 @@ To check the current Vim version, run:
 vim --version
 ```
 
-This flag tells you the Vim version and all available features marked with either `+` or `.` Some of these features in this guide require certain features to be available. For example, you will explore Vim's command-line history in chapter 15 with the `:history` command. Your Vim needs to have `+cmdline_history` feature for the command to work.
+This flag tells you the Vim version and all available features marked with either `+` or `-` Some of these features in this guide require certain features to be available. For example, you will explore Vim's command-line history in chapter 15 with the `:history` command. Your Vim needs to have `+cmdline_history` feature for the command to work.
 
-This may sound like a lot of work, but the popular Vim downloads should have all the necessary features. In my Mac, the Vim version that I installed from `brew install vim` has all the features I need.
+This may sound like a lot of work, but the popular Vim downloads should have all the necessary features included in the build. In my Mac, the Vim version that I installed from `brew install vim` has all the key features I need.
 
 Alternatively, to see the version information from *inside* Vim, you can also run this command:
 
@@ -181,7 +181,7 @@ To return to the suspended Vim, run `fg` from the terminal.
 
 ## Starting Vim The Smart Way
 
-You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `c cmd`). As you learn more command-line commands throughout this book, see if you can apply it on start.
+You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `c cmd`). As you learn more command-line commands throughout this book, see if you can apply it on start. Also being a terminal command, you can combine `vim` with many other terminal commands. For example, you can redirect the output of the `ls` command to be edited in Vim with `ls -l | vim -`.
 
 To learn more about the different options you can pass from the terminal, check out `man vim`. To learn more about Vim modes and commands, check out `:help`.
 
