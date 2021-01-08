@@ -373,7 +373,7 @@ To start Vim without Viminfo data, you can run from the terminal:
 vim -i NONE
 ```
 
-To make it permanent, you can add this in your `vimrc` file:
+To make it permanent, you can add this in your vimrc file:
 
 ```
 set viminfo="NONE"

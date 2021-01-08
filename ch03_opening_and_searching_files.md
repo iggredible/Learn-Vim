@@ -301,7 +301,7 @@ nnoremap <silent> <Leader>h/ :History/<CR>
 
 As I mentioned earlier, Vim has two ways to search in files: `:vim` and `:grep`. `:grep` uses external search tool that you can reassign using `grepprg` keyword. I will show you how to configure Vim to use ripgrep instead of terminal grep when running the `:grep` command.
 
-Now let's setup `grepprg` so `:grep` uses ripgrep. Add this in your `vimrc`.
+Now let's setup `grepprg` so `:grep` uses ripgrep. Add this in your vimrc.
 ```
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 ```
