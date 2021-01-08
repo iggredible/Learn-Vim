@@ -14,7 +14,7 @@ If you don't have a vimrc, create one (to see where you should create the vimrc,
 set hidden
 ```
 
-Then source it (run `:source %` from inside the vimrc).
+Save it, then source it (run `:source %` from inside the vimrc).
 
 ## Buffers
 
