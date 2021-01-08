@@ -4,11 +4,17 @@ metaTitle: "Buffers, Windows, and Tabs"
 metaDescription: "What do buffers, windows, and tabs represent in Vim?."
 ---
 
-If you have used a modern text editor, you are probably familiar with windows and tabs. Vim has three abstractions instead of two: buffers, windows, and tabs.
+If you have used a modern text editor, you are probably familiar with windows and tabs. Vim has three abstractions instead of two: buffers, windows, and tabs. In this chapter, I will explain how buffers, windows, and tabs work in Vim.
 
-In this chapter, I will explain how buffers, windows, and tabs work in Vim.
+Before you start, make sure you have the `set hidden` option. Without this, whenever you switch buffers, Vim will prompt you to save the file (you don't want that if you want to move quickly between buffers). For more information, check out `:h hidden`.
 
-Before you start, make sure you have `set hidden` option in your `vimrc`. Without this, whenever you switch buffers, Vim will prompt you to save the file (you don't want that if you want to move quickly between buffers). For more information, check out `:h hidden`.
+If you don't have a vimrc, create one (to see where you should create the vimrc, check out `:h vimrc`; in my Mac, I have it on `~/.vimrc`). Inside, add:
+
+```
+set hidden
+```
+
+Then source it (run `:source %` from inside the vimrc).
 
 ## Buffers
 
