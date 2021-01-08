@@ -198,13 +198,12 @@ You can move in *three-dimensional space* by combining window and buffer movemen
 
 ## Using Buffers, Windows, and Tabs The Smart Way
 
-You have learned how buffers, windows, and tabs work in Vim. To use them efficiently, you need to understand what they are designed for and apply them in your own workflow. Everyone has a different workflow, here is one example.
+You have learned how buffers, windows, and tabs work in Vim. To use them efficiently, you need to understand what they are designed for and apply them in your own workflow. 
 
-I would use buffers to open up all required files to get the current task done. This task may require opening seven or seven times seven buffer files, but it doesn't matter because Vim can handle many buffers before it starts slowing down. Plus having many buffers opened won't crowd my screen. I am only seeing one buffer (assuming I have only one window) at any time and I can quickly fly to any buffer I wish.
-
-I would use multiple windows to view multiple buffers at once, usually when diffing files, comparing codes, or following a code flow. I usually don't keep more than three windows opened at the same time because my screen will get crowded. When I am done, I would close any extra windows. I prefer having as few opened windows as possible.
-
-I would use a tab to handle client-side codes and a separate tab for back-end codes. Personally, I do not use tabs in my workflow. I use [tmux](https://github.com/tmux/tmux/wiki) windows as substitute for Vim tabs. My tmux workflow is similar to Vim tabs workflow. Instead of having multiple **Vim tabs** opened for each context, I would have multiple **tmux windows** (one tmux window for client-side codes and another window for back-end codes).
+Everyone has a different workflow, here is one example:
+- I use buffers to open up all required files to get the current task done. This task may require opening seven or seventy buffer files, but the number of opened buffer doesn't really matter because Vim can handle many buffers before it starts slowing down. Plus having many buffers opened won't crowd my screen. I am only seeing one buffer (assuming I have only one window) at any time and I can quickly fly to any buffer I wish.
+- I use multiple windows to view multiple buffers at once, usually when diffing files, comparing codes, or following a code flow. I usually don't keep more than three windows opened at the same time because my screen will get crowded. When I am done, I would close any extra windows. I prefer having as few opened windows as possible.
+-  I don't use tabs in my workflow. I use [tmux](https://github.com/tmux/tmux/wiki) windows instead of Vim tabs. I have multiple tmux windows, one tmux window for client-side codes and another window for back-end codes. You could use a tab to handle client-side codes and a separate tab for back-end codes.
 
 My workflow may look different than yours based on your editing style and that's fine. Experiment around to discover your own flow and find what works for you best.
 
