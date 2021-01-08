@@ -12,7 +12,7 @@ I will not go through the detailed instruction how to install Vim in your specif
 
 For download informations, check out Vim's official download website or Vim's official github repository:
 - [Vim website](https://www.vim.org/download.php)
-- [Vim github](https://github.com/vim/vim).
+- [Vim github](https://github.com/vim/vim)
 
 ## The Vim Command
 
@@ -74,7 +74,7 @@ Throughout the book, I will refer you to various Vim help pages. You can access 
 :h write-quit
 ```
 
-How do I know to search for `write-quit`? I actually don't. I just type `:h`, type "quit", then press `<tab>`. Vim displays relevant keyword options to choose from. If you ever need to look for a functionality ("I wish Vim can do this..."), just type `:h` and try pressing `<tab>` against the different keywords. 
+How do I know to search for `write-quit`? I actually don't. I just type `:h`, type "quit", then press `<tab>`. Vim displays relevant keyword options to choose from. If you ever need to look for a functionality ("I wish Vim can do this..."), just type `:h` and try pressing `<tab>` against the different keywords.
 
 ## Opening a File
 
