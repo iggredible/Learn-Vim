@@ -42,13 +42,13 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 - [Ch 24 - Vimscript Basic Data Types](./ch24_vimscript_basic_data_types)
 - [Ch 25 - Vimscript Basic Expressions](./ch25_vimscript_equalities_conditionals_and_loops.md)
 - [Ch 26 - Vimscript Variable Scopes](./ch26_vimscript_variables_scopes.md)
-- Ch 27 - Vimscript Functions
+- [Ch 27 - Vimscript Functions](./ch27_vimscript_functions.md)
 
-# Translations
+## Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
 - [Learn-Vim Spanish](https://github.com/victorhck/learn-Vim-es)(`es`)
 
-# License & Copyright
+## License & Copyright
 The materials here are all ©2020 Igor Irianto.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />
