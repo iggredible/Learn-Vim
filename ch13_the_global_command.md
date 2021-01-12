@@ -12,7 +12,7 @@ In this chapter, you will learn how to repeat a command-line command with the gl
 
 Vim's global command is used to running a command-line command on multiple lines simultaneously.
 
-By the way, you may have heard of the term "Ex Commands" before. In this book, I refer them as command-line commands, but both Ex commands and command-line commands are the same. They are the commands that start with a colon (`:`). In the last chapter, you learned about the substitute command. It was an example of an Ex command. They are called Ex because they originally came from the Ex text editor. I will continue to refer to them as command-line commands in this book. For a full list of Ex commands, check out `:h ex-cmd-index`.
+By the way, you may have heard of the term "Ex Commands" before. In this guide, I refer them as command-line commands, but both Ex commands and command-line commands are the same. They are the commands that start with a colon (`:`). In the last chapter, you learned about the substitute command. It was an example of an Ex command. They are called Ex because they originally came from the Ex text editor. I will continue to refer to them as command-line commands in this guide. For a full list of Ex commands, check out `:h ex-cmd-index`.
 
 The global command has the following syntax:
 

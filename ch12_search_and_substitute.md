@@ -479,7 +479,7 @@ Here is the breakdown of that command:
 
 The trick of this command is the expression `\U\2`. `\U` instructs the following character to be uppercased.
 
-Let's do one more example. Suppose you are writing a Vim book and you need to capitalize the first letter of each word in a line.
+Let's do one more example. Suppose you are writing a Vim guide and you need to capitalize the first letter of each word in a line.
 
 ```
 vim is the greatest text editor in the whole galaxy

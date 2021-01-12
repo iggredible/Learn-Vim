@@ -4,7 +4,7 @@ metaTitle: "Starting Vim"
 metaDescription: "Learn different ways to start Vim from the terminal."
 ---
 
-In this chapter, you will learn different ways to start Vim from the terminal. I was using Vim 8.2 when writing this book. If you use Neovim or an older version of Vim, you should be (mostly) fine, but be aware that some commands might not be available.
+In this chapter, you will learn different ways to start Vim from the terminal. I was using Vim 8.2 when writing this guide. If you use Neovim or an older version of Vim, you should be (mostly) fine, but be aware that some commands might not be available.
 
 ## Installing
 
@@ -62,7 +62,7 @@ There are other ways to exit Vim, but these are the ones you will use daily.
 
 ## Help
 
-Throughout the book, I will refer you to various Vim help pages. You can access the help page by typing the following Command-line command:
+Throughout this guide, I will refer you to various Vim help pages. You can access the help page by typing the following Command-line command:
 
 ```
 :help
@@ -141,7 +141,7 @@ vim -c %s/foo/bar/g hello.txt
 vim -c %s/foo/bar/g -c %s/bar/baz/g -c %s/baz/donut/g hello.txt
 ```
 
-Throughout this book you will learn various Command-line commands. These commands can all be executed on start.
+Throughout this guide you will learn various Command-line commands. These commands can all be executed on start.
 
 ## Opening Multiple Windows
 
@@ -181,7 +181,7 @@ To return to the suspended Vim, run `fg` from the terminal.
 
 ## Starting Vim The Smart Way
 
-You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `c cmd`). As you learn more command-line commands throughout this book, see if you can apply it on start. Also being a terminal command, you can combine `vim` with many other terminal commands. For example, you can redirect the output of the `ls` command to be edited in Vim with `ls -l | vim -`.
+You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `c cmd`). As you learn more command-line commands throughout this guide, see if you can apply it on start. Also being a terminal command, you can combine `vim` with many other terminal commands. For example, you can redirect the output of the `ls` command to be edited in Vim with `ls -l | vim -`.
 
 To learn more about the different options you can pass from the terminal, check out `man vim`. To learn more about Vim modes and commands, check out `:help`.
 
