@@ -1,8 +1,4 @@
----
-title: "Vimrc"
-metaTitle: "Vimrc"
-metaDescription: "Learn about vimrc structure."
----
+# Ch21. Vimrc
 
 In the previous chapters, you learned how to use Vim. In this chapter, you will learn how to orgnize and configure vimrc. 
 

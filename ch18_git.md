@@ -1,8 +1,4 @@
----
-title: "Git"
-metaTitle: "Git"
-metaDescription: "How to integrate Vim and git."
----
+# Ch18. Git
 
 Vim and git are two great tools for two different things. Git is a version control tool. Vim is a text editor. In this chapter, you will learn different ways to integrate Vim and git together.
 

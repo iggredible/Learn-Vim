@@ -1,8 +1,4 @@
----
-title: "Conditionals and Loops"
-metaTitle: "Conditionals and Loops"
-metaDescription: "How to write basic expressions with conditionals and loops."
----
+# Ch25. Vimscript Conditionals And Loops
 
 In this chapter, you will learn about conditionals and loops using the data types you learned in the previous chapter.
 

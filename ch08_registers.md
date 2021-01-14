@@ -1,8 +1,4 @@
----
-title: "Registers"
-metaTitle: "Registers"
-metaDescription: "Learn how to store data inside Vim registers."
----
+# Ch08. Registers
 
 Learning Vim registers is like learning algebra for the first time. You don't think you need them until you learn them.
 

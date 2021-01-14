@@ -1,8 +1,4 @@
----
-title: "Vimscript Functions"
-metaTitle: "Vimscript Functions"
-metaDescription: "Vimscript Functions"
----
+# Ch27. Vimscript Functions
 
 Functions are the pinnacles of programming. Can you imagine a programming language without functions? It is the ultimate means of abstraction. In this chapter, you will learn how to create your own Vimscript functions.
 

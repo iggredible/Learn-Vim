@@ -1,8 +1,4 @@
----
-title: "Vim Runtime"
-metaTitle: "Vim Runtime"
-metaDescription: "Learn about how Vim runtime paths work."
----
+# Ch23. Vim Runtime
 
 In the previous chapters, you learned that Vim automatically looks for special paths like `pack/` (Ch 22) and `compiler/` (Ch 19) inside the `~/.vim/` directory. These are examples of Vim runtime paths.
 
