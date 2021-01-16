@@ -14,7 +14,7 @@ Save it, then source it (run `:source %` from inside the vimrc).
 
 What is a *buffer*?
 
-A buffer is an in-memory space where you can write and edit some text. When you open a file in Vim, it is bound to a buffer. When you open 3 files in Vim, you have 3 buffers.
+A buffer is an in-memory space where you can write and edit some text. When you open a file in Vim, the data is bound to a buffer. When you open 3 files in Vim, you have 3 buffers.
 
 Have two empty files, `file1.js` and `file2.j` (if possible, create them with Vim) available. Run this in the terminal:
 
