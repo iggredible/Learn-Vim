@@ -22,7 +22,7 @@ Have two empty files, `file1.js` and `file2.j` (if possible, create them with Vi
 vim file1.js
 ```
 
-![one buffer displayed with highlight](./img/screen-one-buffer-file1-highlighted.png)
+![one buffer displayed with highlight](./image/screen-one-buffer-file1-highlighted.png)
 
 What you are seeing is `file1.js` *buffer*. Whenever you open a new file, Vim creates a new buffer.
 
@@ -32,11 +32,11 @@ Exit Vim. This time, open two new files:
 vim file1.js file2.js
 ```
 
-![one buffer displayed.png](./img/screen-one-buffer.png)
+![one buffer displayed.png](./image/screen-one-buffer.png)
 
 Vim displays `file1.js` buffer, but it actually creates two buffers: `file1.js` buffer and `file2.js` buffer. Run `:buffers` to see all the buffers (alternatively, you can use `:ls` or `:files` too).
 
-![buffers command showing 2 buffers](./img/screen-one-buffer-buffers-command.png)
+![buffers command showing 2 buffers](./image/screen-one-buffer-buffers-command.png)
 
 There are several ways you can traverse buffers:
 - `:bnext` to go to the next buffer (`:bprevious` to go to the previous buffer).
@@ -75,7 +75,7 @@ To save and quit all, run:
 
 A window is a viewport on a buffer. You can have multiple windows. Most text editors have the ability to display multiple windows. Below you see a VSCode with 3 windows:
 
-![VSCode showing 3 windows](./img/screen-vscode-3-windows.png)
+![VSCode showing 3 windows](./image/screen-vscode-3-windows.png)
 
 Let's open `file1.js` from the terminal again:
 
@@ -83,7 +83,7 @@ Let's open `file1.js` from the terminal again:
 vim file1.js
 ```
 
-![one buffer displayed.png](./img/screen-one-buffer.png)
+![one buffer displayed.png](./image/screen-one-buffer.png)
 
 Earlier I said that you're looking at `file1.js` buffer. While that was correct, it was incomplete. You are looking at `file1.js` buffer displayed through **a window**. A window is what you are seeing a buffer through.
 
@@ -93,7 +93,7 @@ Don't quit Vim yet. Run:
 :split file2.js
 ```
 
-![split window horizontally](./img/screen-split-window.png)
+![split window horizontally](./image/screen-split-window.png)
 
 Now you are looking at two buffers through **two windows**. The top window displays `file2.js` buffer. The bottom window displays `file1.js` buffer.
 
@@ -112,7 +112,7 @@ Now run:
 :vsplit file3.js
 ```
 
-![split window vertically and horizontally](./img/screen-split-window-vertically-and-horizontally.png)
+![split window vertically and horizontally](./image/screen-split-window-vertically-and-horizontally.png)
 
 
 You are now seeing three windows displaying three buffers. The top left window displays `file3.js` buffer, the top right window displays `file2.js` buffer, and the bottom window displays `file1.js` buffer.
@@ -121,7 +121,7 @@ You can have multiple windows displaying the same buffer. While you're on the to
 ```
 :buffer file2.js
 ```
-![split window vertically and horizontally with two file2.js](./img/screen-split-window-vertically-and-horizontally-two-file2.png)
+![split window vertically and horizontally with two file2.js](./image/screen-split-window-vertically-and-horizontally-two-file2.png)
 
 
 Now both top left and top right windows are displaying `file2.js` buffer. If you start typing on the top left, you can see that the content on both top left and top right window are being updated in real-time.
@@ -162,7 +162,7 @@ To open `file2.js` in a new tab:
 :tabnew file2.js
 ```
 
-![screen displays tab 2](./img/screen-tab2.png)
+![screen displays tab 2](./image/screen-tab2.png)
 
 You can also let Vim autocomplete the file you want to open in a *new tab* by pressing `<Tab>` (no pun intended).
 
@@ -181,9 +181,9 @@ You can also run `gt` to go to next tab page (you can go to previous tab with `g
 
 One advantage of having multiple tabs is you can have different window arrangements in different tabs. Maybe you want your first tab to have 3 vertical windows and second tab to have a mixed horizontal and vertical windows layout. Tab is the perfect tool for the job!
 
-![first tab with multiple windows](./img/tabs-file1js.png)
+![first tab with multiple windows](./image/tabs-file1js.png)
 
-![second tab with multiple windows](./img/tabs-file2js.png)
+![second tab with multiple windows](./image/tabs-file2js.png)
 
 To start Vim with multiple tabs, you can do this from the terminal:
 
@@ -195,15 +195,15 @@ vim -p file1.js file2.js file3.js
 
 Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W H/J/K/L`.
 
-![cartesian movement in x and y axis](./img/cartesian-xy.png)
+![cartesian movement in x and y axis](./image/cartesian-xy.png)
 
 Moving between buffers is like traveling across the Z axis in a Cartesian coordinate. Imagine your buffer files lining up across the Z axis. You can traverse the Z axis one buffer at a time with `:bnext` and `:bprevious`. You can jump to any coordinate in Z axis with `:buffer filename/buffernumber`.
 
-![cartesian movement in z axis](./img/cartesian-z.png)
+![cartesian movement in z axis](./image/cartesian-z.png)
 
 You can move in *three-dimensional space* by combining window and buffer movements. You can move to the top, right, bottom, or left window (X-Y navigations) with window navigations. Since each window contains buffers, you can move forward and backward (Z navigations) with buffer movements.
 
-![cartesian movement in x, y, and z axis](./img/cartesian-xyz.png)
+![cartesian movement in x, y, and z axis](./image/cartesian-xyz.png)
 
 ## Using Buffers, Windows, and Tabs The Smart Way
 
