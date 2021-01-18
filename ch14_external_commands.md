@@ -55,7 +55,7 @@ The `r` command also accepts an address:
 :10r !cat file1.txt
 ```
 
-Now the STDOUT from running `cat file.txt` will be inserted after line 10.
+Now the STDOUT from running `cat file1.txt` will be inserted after line 10.
 
 ## Writing The Buffer Content Into An External Command
 
