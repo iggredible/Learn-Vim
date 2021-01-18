@@ -1,8 +1,4 @@
----
-title: "Views, Sessions, and Viminfo"
-metaTitle: "Views, Sessions, and Viminfo"
-metaDescription: "Views, Sessions, and Viminfo."
----
+# Ch20. Views, Sessions, And Viminfo
 
 After you worked on a project for a while, you may find that the project to gradually take shape with its own settings, folds, buffers, layouts, etc. It's like decorating your apartment to make it feel like home.
 
@@ -224,7 +220,7 @@ baz10
 
 And you've been working on these 3 files for a while, so that your windows layout look like (using strategically placed `split` and `vsplit`):
 
-![./img/session-layout.png](./img/session-layout.png)
+![Session Layout](images/session-layout.png)
 
 To save the Session, run:
 
@@ -373,7 +369,7 @@ To start Vim without Viminfo data, you can run from the terminal:
 vim -i NONE
 ```
 
-To make it permanent, you can add this in your `vimrc` file:
+To make it permanent, you can add this in your vimrc file:
 
 ```
 set viminfo="NONE"

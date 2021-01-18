@@ -1,14 +1,10 @@
----
-title: "Equalities, Conditionals, and Loops"
-metaTitle: "Equalities, Conditionals, and Loops"
-metaDescription: "How to write basic expressions with equalities, conditionals, and loops."
----
+# Ch25. Vimscript Conditionals And Loops
 
-In this chapter, you will learn about equalities, conditionals, and loops using the data types you learned in the previous chapter.
+In this chapter, you will learn about conditionals and loops using the data types you learned in the previous chapter.
 
-## Equalities (Logical Operators)
+## Relational Operators
 
-Below are Vim's logical operators:
+Below are Vim's relational operators:
 
 ```
 a == b		equal to
@@ -46,7 +42,7 @@ echo 5 == "foo5"
 
 ### String Logic Operators
 
-Vim has more logical operators for comparing strings:
+Vim has more relational operators for comparing strings:
 
 ```
 a =~ b
@@ -99,7 +95,7 @@ echo str =~ "Hearty"
 
 If you are writing a plugin for others, this is a tricky situation. Does the user have `ignorecase` or `noignorecase` setting? You definitely do *not* want to force your users to mutate their case ignore option. So what do you do?
 
-Luckily, Vim has a logical operator that can *always* ignore or match case. To always match case, add a `#` at the end.
+Luckily, Vim has an operator that can *always* ignore or match case. To always match case, add a `#` at the end.
 
 ```
 set ignorecase
@@ -511,6 +507,6 @@ Now if you `source` vimrc without `gruvbox` directory, Vim will use the `colorsc
 
 ## Learn conditionals the smart way
 
-In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using equalities, conditionals, and loops. These are the building blocks of programming.
+In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using conditionals and loops. These are the building blocks of programming.
 
 Next, let's learn about variable scopes.

@@ -1,8 +1,4 @@
----
-title: "The Global Command"
-metaTitle: "The Global Command"
-metaDescription: "How to perform multiple commands with the global command?"
----
+# Ch13. The Global Command
 
 So far you have learned how to repeat the last change with the dot command (`.`), to replay actions with macros (`q`), and to store texts in the registers (`"`).
 
@@ -12,7 +8,7 @@ In this chapter, you will learn how to repeat a command-line command with the gl
 
 Vim's global command is used to running a command-line command on multiple lines simultaneously.
 
-By the way, you may have heard of the term "Ex Commands" before. In this book, I refer them as command-line commands, but both Ex commands and command-line commands are the same. They are the commands that start with a colon (`:`). In the last chapter, you learned about the substitute command. It was an example of an Ex command. They are called Ex because they originally came from the Ex text editor. I will continue to refer to them as command-line commands in this book. For a full list of Ex commands, check out `:h ex-cmd-index`.
+By the way, you may have heard of the term "Ex Commands" before. In this guide, I refer them as command-line commands, but both Ex commands and command-line commands are the same. They are the commands that start with a colon (`:`). In the last chapter, you learned about the substitute command. It was an example of an Ex command. They are called Ex because they originally came from the Ex text editor. I will continue to refer to them as command-line commands in this guide. For a full list of Ex commands, check out `:h ex-cmd-index`.
 
 The global command has the following syntax:
 
@@ -193,7 +189,7 @@ const three = 3
 console.log("three: ", three);
 ```
 
-Notice that the lines with "const" do not have semi-colons. Let's create a macro to add a comma to the end of those lines in the register "a":
+Notice that the lines with "const" do not have semi-colons. Let's create a macro to add a comma to the end of those lines in the register "a:
 
 ```
 qa0A;<esc>q
@@ -400,7 +396,7 @@ By passing `_` after `d`, Vim won't save the deleted lines into any registers.
 
 ## Reduce Multiple Empty Lines To One Empty Line
 
-If you have a file with multiple empty lines like the following:
+If you have a text with multiple empty lines:
 
 ```
 const one = 1;
@@ -418,7 +414,7 @@ const three = 3;
 console.log("three: ", three);
 ```
 
-You can quickly reduce each the long empty lines to one empty line. Run:
+You can quickly reduce the empty lines into one empty line with:
 
 ```
 :g/^$/,/./-1j
@@ -437,13 +433,12 @@ const three = 3;
 console.log("three: ", three);
 ```
 
-Let's break it down:
-- `:g` is the global command
-- `/^$/` is the pattern for an empty line. Recall that `^` means the beginning of the line and `$` the end of the line. `^$` matches an empty line (a line with zero characters long).
-- `,/./-1` is the range for the `j` command. Since you don't pass a value for the starting range, it starts from the current line. You just learned earlier that `/./` is a pattern for a non-empty line. `,/./` is a range from the current line to the next non-empty line. The global command's range, `/^$/`, takes you to the first match on the line below `console.log("one: ", one);`. This is the current line. `/./` matches the first non-empty line, the line `const two = 2;`. Finally, `-1` offsets that by one line. The effective range for the first match is the empty line below the `console.log("one: ", one);` and the empty line above the `const two = 2;`.
-- `j` is the join command `:j`. You can join all the lines given as its range. For example, `:1,5j` joins lines one through five.
+Normally the global command accepts the following form: `:g/pattern/command`. However, you can also run the global command with the following form: `:g/pattern1/,/pattern2/command`. With this, Vim will apply the `command` within `pattern1` and `pattern2`.
 
-Notice that you are passing a range (`,/./-1`) before the `j` command. Just because you are using a command-line command with the global command, does not mean you cannot give it a range. In this code, you are passing to the `j` command its own range to execute on. You can pass a range to any command while executing the global command.
+With that in mind, let's break down the command `:g/^$/,/./-1j` according to `:g/pattern1/,/pattern2/command`:
+- `/pattern1/` is `/^$/`. It represents an empty line (a line with zero character).
+- `/pattern2/` is `/./` with `-1` line modifier. `/./` represents a non-empty line (a line with at least one character). The `-1` means the line above that.
+- `command` is `j`, the join command (`:j`). In this context, this global command joins all the given lines.
 
 By the way, if you want to reduce multiple empty lines into no lines, instead of using `,/./-1` as the range for `j` command, just use `,/./` as the range instead:
 
@@ -451,7 +446,7 @@ By the way, if you want to reduce multiple empty lines into no lines, instead of
 :g/^$/,/./j
 ```
 
-Or simpler:
+A simpler alternative:
 
 ```
 :g/^$/-j

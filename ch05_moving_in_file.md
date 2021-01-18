@@ -1,8 +1,4 @@
----
-title: "Moving In A File"
-metaTitle: "Moving In A File"
-metaDescription: "How to efficiently move around in a file."
----
+# Ch05. Moving In A File
 
 In the beginning, moving with a keyboard will feel awkward and incredibly slow, but don't give up! Once you get used to it, you can go anywhere in a file faster than a mouse.
 
@@ -229,10 +225,10 @@ Ctrl-y    Scroll up a line
 Ctrl-u    Scroll up half screen
 Ctrl-b    Scroll up whole screen
 ```
-You can also scroll relatively to the current line:
+You can also scroll relatively to the current line (zoom screen sight):
 ```
 zt    Bring the current line near the top of your screen
-zh    Bring the current line to the middle (half) of your screen
+zz    Bring the current line to the middle of your screen
 zb    Bring the current line near the bottom of your screen
 ```
 

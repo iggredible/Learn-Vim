@@ -1,8 +1,4 @@
----
-title: "Git"
-metaTitle: "Git"
-metaDescription: "How to integrate Vim and git."
----
+# Ch18. Git
 
 Vim and git are two great tools for two different things. Git is a version control tool. Vim is a text editor. In this chapter, you will learn different ways to integrate Vim and git together.
 
@@ -49,7 +45,7 @@ vim -d file1.txt file2.txt
 ```
 
 <p align="center">
-  <img alt="Basic diffing with Vim" width="900" height="auto" src="./img/diffing-basic.png">
+  <img alt="Basic diffing with Vim" width="900" height="auto" src="images/diffing-basic.png">
 </p>
 
 `vimdiff` displays two buffers side-by-side. On the left is `file1.txt` and on the right is `file2.txt`. The two differences (apples and oranges) are highlighted on both lines.
@@ -57,7 +53,7 @@ vim -d file1.txt file2.txt
 Suppose you want to make the second buffer to have apples, not oranges. To transfer the content from your current position, `file1.txt`, to `file2.txt`, jump to the next diff with `]c` (to jump to the previous diff, use `[c`). The cursor should be on apples now. Run `:diffput`. Both files should now have apples.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/diffing-apples.png">
+  <img alt="Finding files in FZF" width="900" height="auto" src="images/diffing-apples.png">
 </p>
 
 If you need to transfer the text from the other buffer (orange juice) to replace the text on the current buffer (apple juice), first jump to the next diff with `]c`. Your cursor now should be on apple juice. Run `:diffget` to get the orange juice from another buffer to replace apple juice in our buffer.
@@ -174,7 +170,7 @@ git mergetool
 ```
 
 <p align="center">
-  <img alt="Three-way mergetool with Vim" width="900" height="auto" src="./img/mergetool-initial.png">
+  <img alt="Three-way mergetool with Vim" width="900" height="auto" src="images/mergetool-initial.png">
 </p>
 
 Vim displays four windows. Pay attention to the top three:
@@ -258,7 +254,7 @@ When you run the `:Git` command without any parameters, vim-fugitive displays a 
 - `>` / `<` to display or hide an inline diff of the file name under the cursor.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-git.png">
+  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-git.png">
 </p>
 
 For more, check out `:h fugitive-staging-maps`.
@@ -277,7 +273,7 @@ Some things you can do while in this `"git blame"` mode:
 For more, check out `:h :Git_blame`.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-git-blame.png">
+  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-git-blame.png">
 </p>
 
 ## Gdiffsplit
@@ -285,7 +281,7 @@ For more, check out `:h :Git_blame`.
 When you run the `:Gdiffsplit` command, vim-fugitive runs a `vimdiff` of the current file's latest changes against the index or work tree. If you run `:Gdiffsplit <commit>`, vim-fugitive runs a `vimdiff` against that file inside `<commit>`.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-gdiffsplit.png">
+  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-gdiffsplit.png">
 </p>
 
 Because you are in a `vimdiff` mode, you can *get* or *put* the diff with `:diffput` and `:diffget`.
@@ -301,7 +297,7 @@ When you run the `:Gread` command in a file after you make changes, vim-fugitive
 When you run the `:Gclog` command, vim-fugitive displays the commit history. It is like running the `git log` command. Vim-fugitive uses Vim's quickfix to accomplish this, so you can use `:cnext` and `:cprevious` to traverse to the next or previous log information. You can open and close the log list with `:copen` and `:cclose`.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-git-log.png">
+  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-git-log.png">
 </p>
 
 While in this `"git log"` mode, you can do two things:

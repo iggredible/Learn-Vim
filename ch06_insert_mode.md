@@ -1,8 +1,4 @@
----
-title: "Insert Mode"
-metaTitle: "Insert Mode"
-metaDescription: "How to work with insert mode."
----
+# Ch06. Insert Mode
 
 Insert mode is the default mode of many text editors. In this mode, what you type is what you get.
 
@@ -75,7 +71,7 @@ To see it in action, first you need to yank a word to register a. You can do thi
 - `"a` tells Vim that the target of your next action will go to register a.
 - `yiw` yanks inner word. Review the chapter on Vim grammar.
 
-Register "a" now contains the word you just yanked. While in insert mode, to paste the text stored in register "a":
+Register "a now contains the word you just yanked. While in insert mode, to paste the text stored in register "a:
 
 ```
 Ctrl-r a

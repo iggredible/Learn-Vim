@@ -1,8 +1,4 @@
----
-title: "Search and Substitute"
-metaTitle: "Search and Substitute"
-metaDescription: "Learn how to search and substitute all things."
----
+# Ch12. Search And Substitute
 
 This chapter covers two separate but related concepts: search and substitute. Many times, the texts that you are searching for are not straightforward and you must search for a common pattern. By learning how to use meaningful patterns in search and substitute instead of literal strings, you will be able to target any text quickly.
 
@@ -479,7 +475,7 @@ Here is the breakdown of that command:
 
 The trick of this command is the expression `\U\2`. `\U` instructs the following character to be uppercased.
 
-Let's do one more example. Suppose you are writing a Vim book and you need to capitalize the first letter of each word in a line.
+Let's do one more example. Suppose you are writing a Vim guide and you need to capitalize the first letter of each word in a line.
 
 ```
 vim is the greatest text editor in the whole galaxy

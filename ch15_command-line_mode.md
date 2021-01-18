@@ -1,8 +1,4 @@
----
-title: "Command-Line Mode"
-metaTitle: "Command-Line Mode"
-metaDescription: "What is the command-line mode in Vim?"
----
+# Ch15. Command-line Mode
 
 In the last three chapters, you learned how to use the search commands (`/`, `?`), substitute command (`:s`), global command (`:g`), and external command (`!`). These are examples of command-line mode commands.
 
@@ -52,7 +48,7 @@ This also allows you to search through the previous commands, edit them and reru
 
 When programming, whenever possible, do not repeat if you can autocomplete it. This mindset will not only save you time but reduces the chances of typing the wrong characters.
 
-You can insert texts from Vim register with `Ctrl-r` (the same way as the insert mode). If you have the string "foo" saved in the register "a" (`"a`), you can insert it by running `Ctrl-r a`. Everything that you can get from the register in the insert mode, you can do the same from the command-line mode.
+You can insert texts from Vim register with `Ctrl-r` (the same way as the insert mode). If you have the string "foo" saved in the register "a, you can insert it by running `Ctrl-r a`. Everything that you can get from the register in the insert mode, you can do the same from the command-line mode.
 
 You can also autocomplete commands. To autocomplete the `echo` command, while in the command-line mode, type "ec", then press `<Tab>`. You should see on the bottom left Vim commands starting with "ec" (example: `echo echoerr echohl echomsg econ`). To go to the next option, press either `<Tab>` or `Ctrl-n`. To go the previous option, press either `<Shift-Tab>` or `Ctrl-p`.
 

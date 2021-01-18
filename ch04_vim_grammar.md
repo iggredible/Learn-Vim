@@ -1,12 +1,8 @@
----
-title: "Vim Grammar"
-metaTitle: "Vim Grammar"
-metaDescription: "Learn how to speak to Vim."
----
+# Ch04. Vim Grammar
 
 It is easy to get intimidated by the complexity of many Vim commands. If you see a Vim user doing `gUfV` or `1GdG`, you may not immediately know what these commands do. In this chapter, I will break down the general structure of Vim commands into a simple grammar rule.
 
-This is the most important chapter in the entire book. Once you understand Vim commands' grammar-like structure, you will be able to "speak" to Vim. By the way, when I say *Vim language* in this chapter, I am not talking about Vimscript (the built-in programming language to customize and to create Vim plugins). Here it means the general pattern of normal mode commands.
+This is the most important chapter in the entire guide. Once you understand Vim commands' grammar-like structure, you will be able to "speak" to Vim. By the way, when I say *Vim language* in this chapter, I am not talking about Vimscript (the built-in programming language to customize and to create Vim plugins). Here it means the general pattern of normal mode commands.
 
 ## How To Learn A Language
 

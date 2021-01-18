@@ -1,8 +1,4 @@
----
-title: "Variables and Scopes"
-metaTitle: "Variables and Scopes"
-metaDescription: "What are the different variable scopes in Vim?"
----
+# Ch26. Vimscript Variables And Scopes
 
 Before diving into Vimscript functions, let's learn about the different sources and scopes of Vim variables.
 
