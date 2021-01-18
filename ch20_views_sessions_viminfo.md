@@ -220,7 +220,7 @@ baz10
 
 And you've been working on these 3 files for a while, so that your windows layout look like (using strategically placed `split` and `vsplit`):
 
-![Session Layout](./image/session-layout.png)
+![Session Layout](./images/session-layout.png)
 
 To save the Session, run:
 
