@@ -1,22 +1,22 @@
 # Ch04. Vim Grammar
 
-It is easy to get intimidated by the complexity of many Vim commands. If you see a Vim user doing `gUfV` or `1GdG`, you may not immediately know what these commands do. In this chapter, I will break down the general structure of Vim commands into a simple grammar rule.
+It is easy to get intimidated by the complexity of Vim commands. If you see a Vim user doing `gUfV` or `1GdG`, you may not immediately know what these commands do. In this chapter, I will break down the general structure of Vim commands into a simple grammar rule.
 
-This is the most important chapter in the entire guide. Once you understand Vim commands' grammar-like structure, you will be able to "speak" to Vim. By the way, when I say *Vim language* in this chapter, I am not talking about Vimscript (the built-in programming language to customize and to create Vim plugins). Here it means the general pattern of normal mode commands.
+This is the most important chapter in the entire guide. Once you understand the underlying grammatical structure, you will be able to "speak" to Vim. By the way, when I say *Vim language* in this chapter, I am not talking about Vimscript language (Vim's built-in programming language, you will learn that in later chapters).
 
 ## How To Learn A Language
 
-I am not a native English speaker. I learned English when I was 13 when I moved to the US. I had to do three things to build up linguistic proficiency:
+I am not a native English speaker. I learned English when I was 13 when I moved to the US. There are three things you need to do to learn to speak a new language:
 
-1. Learn grammar rules
-2. Increase my vocabulary
+1. Learn grammar rules.
+2. Increase vocabulary.
 3. Practice, practice, practice.
 
-Likewise, to speak Vim language, you need to learn the grammar rules, increase your vocabulary, and practice until you can run the commands without thinking.
+Likewise, to speak Vim language, you need to learn the grammar rules, increase vocabulary, and practice until you can run the commands without thinking.
 
 ## Grammar Rule
 
-You only need to know one grammar rule to speak Vim language:
+There is only one grammar rule in Vim language:
 
 ```
 verb + noun
@@ -24,7 +24,7 @@ verb + noun
 
 That's it!
 
-This is equivalent to saying these English phrases:
+This is like saying these English phrases:
 
 - *"Eat (verb) a donut (noun)"*
 - *"Kick (verb) a ball (noun)"*
@@ -32,10 +32,9 @@ This is equivalent to saying these English phrases:
 
 Now you need to build up your vocabulary with basic Vim verbs and nouns.
 
-## Vocabulary
 ## Nouns (Motions)
 
-Let's talk about motions as nouns. Motions are used to move around in Vim. They are also Vim nouns. Below you'll see some motion examples:
+Nouns are Vim motions. Motions are used to move around in Vim. Below is a list of some of Vim motions:
 
 ```
 h    Left
@@ -59,45 +58,49 @@ d    Delete text and save to register
 c    Delete text, save to register, and start insert mode
 ```
 
-Now that you know basic nouns and verbs, let's apply our grammar rule! Suppose you have this expression:
+Btw, after you yank a text, you can paste it with `p` (after the cursor) or `P` (before the cursor).
+
+## Verb And Noun
+
+Now that you know basic nouns and verbs, let's apply the grammar rule, verb + noun! Suppose you have this expression:
 
 ```javascript
 const learn = "vim";
 ```
+
 - To yank everything from your current location to the end of the line: `y$`.
 - To delete from your current location to the beginning of the next word: `dw`.
 - To change from your current location to the end of the current paragraph, say `c}`.
 
-Motions also accept count number as arguments *(I will discuss this further in the next chapter)*. If you need to go up 3 lines, instead of pressing `k` 3 times, you can do `3k`. Count works with Vim grammar.
-
+Motions also accept count number as arguments (I will discourse this in the next chapter). If you need to go up 3 lines, instead of pressing `k` 3 times, you can do `3k`. Count works with Vim grammar.
 - To yank two characters to the left: `y2h`.
 - To delete the next two words: `d2w`.
 - To change the next two lines: `c2j`.
 
-Right now, you may  have to think long and hard to do even a simple command. You're not alone. When I first started, I had similar struggles but I got faster in time. So will you.
+Right now, you may have to think long and hard to do even a simple command. You're not alone. When I first started, I had similar struggles but I got faster in time. So will you. Repetition, repetition, repetition.
 
-As a side note, linewise operations are common operations in text editing, so Vim allows you to perform linewise operation by typing the operator command twice. For example, `dd`, `yy`, and `cc` perform **deletion**, **yank**, and **change** on the entire line. Try this with other operators!
+As a side note, linewise operations (operations affecting the entire line) are common operations in text editing. In general, by typing an operator command twice, Vim performs a linewise operation for that action. For example, `dd`, `yy`, and `cc` perform **deletion**, **yank**, and **change** on the entire line. Try this with other operators!
 
-I hope everything starts to make sense. But I am not quite done yet. Vim has one more type of noun: text objects.
+This is really cool. I am seeing a pattern here. But I am not quite done yet. Vim has one more type of noun: text objects.
 
 ## More Nouns (Text Objects)
 
-Imagine you are somewhere inside a pair of parentheses like `(hello vim)` and you need to delete the entire phrase inside the parentheses. How can you quickly do it? Is there a way to delete the "group" you are inside of?
+Imagine you are somewhere inside a pair of parentheses like `(hello Vim)` and you need to delete the entire phrase inside the parentheses. How can you quickly do it? Is there a way to delete the "group" you are inside of?
 
-The answer is yes. Texts often come structured. They are often put inside parentheses, quotes, brackets, braces, and so on. Vim has a way to capture this structure with text objects.
+The answer is yes. Texts often come structured. They often contain parentheses, quotes, brackets, braces, and more. Vim has a way to capture this structure with text objects.
 
-Text objects are used with operators. There are two types of text objects:
+Text objects are used with operators. There are two types of text objects: inner and outer text objects.
 
 ```
 i + object    Inner text object
 a + object    Outer text object
 ```
-Inner text object selects the object inside *without* the white space or the surrounding objects. Outer text object selects the object inside *including* the white space or the surrounding objects. Outer text object always selects more text than inner text object. So if your cursor is somewhere inside the parentheses in the expression `(hello vim)`:
 
+Inner text object selects the object inside *without* the white space or the surrounding objects. Outer text object selects the object inside *including* the white space or the surrounding objects. Generally, an outer text object always selects more text than an inner text object. If your cursor is somewhere inside the parentheses in the expression `(hello vim)`:
 - To delete the text inside the parentheses without deleting the parentheses: `di(`.
 - To delete the parentheses and the text inside: `da(`.
 
-Let's look at a different example. Suppose you have this Javascript function and your cursor is on "Hello":
+Let's look at a different example. Suppose you have this Javascript function and your cursor is on the "H" in "Hello":
 
 ```javascript
 const hello = function() {
@@ -110,9 +113,10 @@ const hello = function() {
 - To delete the content of function (surrounded by `{}`): `di{`.
 - To delete the "Hello" string: `diw`.
 
-Text objects are powerful because you can target different objects from one location. You can delete the objects inside the pair of parentheses, the function block, or the whole word. Moreover, when you see `di(`, `di{`, and `diw`, you get a pretty good idea what text objects they represent (a pair of parentheses, a pair of braces, and a word).
+Text objects are powerful because you can target different objects from one location. You can delete the objects inside the parentheses, the function block, or the current word. Mnemonically, when you see `di(`, `di{`, and `diw`, you get a pretty good idea which text objects they represent: a pair of parentheses, a pair of braces, and a word.
 
 Let's look at one last example. Suppose you have these HTML tags:
+
 ```html
 <div>
   <h1>Header1</h1>
@@ -120,6 +124,7 @@ Let's look at one last example. Suppose you have these HTML tags:
   <p>Paragraph2</p>
 </div>
 ```
+
 If your cursor is on "Header1" text:
 - To delete "Header1": `dit`.
 - To delete `<h1>Header1</h1>`: `dat`.
@@ -144,22 +149,26 @@ t         XML tags
 '         A Pair of ' '
 `         A pair of ` `
 ```
+
 To learn more, check out `:h text-objects`.
 
 ## Composability And Grammar
 
-After learning Vim grammar, let's discuss composability in Vim and why this is a great feature to have in a text editor.
+Vim grammar is subset of Vim's composability feature. Let's discuss composability in Vim and why this is a great feature to have in a text editor.
 
 Composability means having a set of general commands that can be combined (composed) to perform more complex commands. Just like in programming where you can create more complex abstractions from simpler abstractions, in Vim you can execute complex commands from simpler commands. Vim grammar is the manifestation of Vim's composable nature.
 
 The true power of Vim's composability shines when it integrates with external programs. Vim has a filter operator (`!`) to use external programs as filters for our texts. Suppose you have this messy text below and you want to tabularize it:
+
 ```
 Id|Name|Cuteness
 01|Puppy|Very
 02|Kitten|Ok
 03|Bunny|Ok
 ```
-This cannot be easily done with Vim commands, but you can get it done quickly with `column` terminal command. With your cursor on "Id", run `!}column -t -s "|"`. Voila! Now you have this pretty tabular data:
+
+This cannot be easily done with Vim commands, but you can get it done quickly with `column` terminal command (assuming your terminal has `column` command). With your cursor on "Id", run `!}column -t -s "|"`. Voila! Now you have this pretty tabular data with just one quick command.
+
 ```
 Id  Name    Cuteness
 01  Puppy   Very
@@ -167,37 +176,34 @@ Id  Name    Cuteness
 03  Bunny   Ok
 ```
 
-Let's break down the command. The verb was `!` (filter operator) and the noun was `}` (go to next paragraph). The filter operator `!` accepted another argument, a terminal command, so I gave it `column -t -s "|"`. I won't go through how `column` worked, but in short, it tabularized the text.
+Let's break down the command. The verb was `!` (filter operator) and the noun was `}` (go to next paragraph). The filter operator `!` accepted another argument, a terminal command, so I gave it `column -t -s "|"`. I won't go through how `column` worked, but in effect, it tabularized the text.
 
 Suppose you want to not only tabularize your text, but to display only the rows with "Ok". You know that `awk` can do the job easily. You can do this instead:
+
 ```
 !}column -t -s "|" | awk 'NR > 1 && /Ok/ {print $0}'
 ```
+
 Result:
+
 ```
 02  Kitten  Ok
 03  Bunny   Ok
 ```
 
-Great! Even piping works from inside Vim.
+Great! The external command operator can also use pipe (`|`).
 
 This is the power of Vim's composability. The more you know your operators, motions, and terminal commands, your ability to compose complex actions is *multiplied*.
 
-Let me elaborate. Suppose you only know four motions: `w, $, }, G` and the delete (`d`) operator. You can do 8 things: move 4 different ways (`w, $, }, G`) and delete 4 different targets (`dw, d$, d}, dG`). Then one day you learn about the uppercase (`gU`) operator. You have added not just one new ability to your Vim tool belt, but *four*: `gUw, gU$, gU}, gUG`. Now you have 12 tools in your Vim tool belt. Each new knowledge is a multiplier to your current abilities. If you know 10 motions and 5 operators, now you have 60 moves (50 operations + 10 motions) in your arsenal. Moreover, the  line number motion (`nG`) gives you `n` motions, where `n` is how many lines you have in your file (example: to go to line 5, `5G`). The search motion (`/`) practically gives you near unlimited number motion because you can search for anything. External command operator (`!`) gives you as many filtering tools as the number of terminal commands you know. Using a composable tool like Vim, everything you know can be connected together to do more complex operations. The more you know, the more powerful you become.
+Suppose you only know four motions, `w, $, }, G` and only one operator, `d`. You can do 8 actions: *move* 4 different ways (`w, $, }, G`) and *delete* 4 different targets (`dw, d$, d}, dG`). Then one day you learn about the uppercase (`gU`) operator. You have added not just one new ability to your Vim tool belt, but *four*: `gUw, gU$, gU}, gUG`. This makes at 12 tools in your Vim tool belt. Each new knowledge is a multiplier to your current abilities. If you know 10 motions and 5 operators, you have 60 moves (50 operations + 10 motions) in your arsenal. Vim has a line-number motion (`nG`) that gives you `n` motions, where `n` is how many lines you have in your file (to go to line 5, run `5G`). The search motion (`/`) practically gives you near unlimited number motions because you can search for anything. External command operator (`!`) gives you as many filtering tools as the number of terminal commands you know. Using a composable tool like Vim, everything you know can be linked together to do operations with increasing complexity. The more you know, the more powerful you become.
 
-This composable behavior echoes Unix philosophy: *do one thing well*. An operator has one job: do Y. A motion has one job: go to X. By combining an operator with a motion, you get YX: do Y on X.
+This composable behavior echoes Unix philosophy: *do one thing well*. An operator has one job: do Y. A motion has one job: go to X. By combining an operator with a motion, you predictably get YX: do Y on X.
 
-Even better, motions and operators are extendable. You can create custom motions and operators to add to your Vim toolbelt. [`vim-textobj-user`](https://github.com/kana/vim-textobj-user) has a [list](https://github.com/kana/vim-textobj-user/wiki) of custom text objects.
-
-By the way, it's okay if you don't know `column` or `awk` commands I just did. The point is that Vim integrates very well with terminal commands.
+Motions and operators are extendable. You can create custom motions and operators to add to your Vim toolbelt. The [`vim-textobj-user`](https://github.com/kana/vim-textobj-user) plugin allows you to create your own text objects. It also contains a [list](https://github.com/kana/vim-textobj-user/wiki) of user-made custom text objects.
 
 ## Learn Vim Grammar The Smart Way
 
-You just learned about Vim grammar's only rule:
-```
-verb + noun
-```
-One of my biggest Vim "AHA!" moments was when I had just learned about the uppercase (`gU`) operator and wanted to uppercase a word, I instinctively ran `gUiw` and it worked! The word I was on was uppercased. I finally began to understand Vim. My hope is that you will have your own "AHA!" moment soon, if not already.
+You just learned about Vim grammar's rule: `verb + noun`. One of my biggest Vim "AHA!" moments was when I had just learned about the uppercase (`gU`) operator and wanted to uppercase the current word, I *instinctively* ran `gUiw` and it worked! The word was uppercased. At that moment, I finally began to understand Vim. My hope is that you will have your own "AHA!" moment soon, if not already.
 
 The goal is this chapter is to show you the `verb + noun` pattern in Vim so you will approach learning Vim like learning a new language instead of memorizing every command combinations.
 
