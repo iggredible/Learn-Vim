@@ -18,7 +18,7 @@ Now that you have Vim installed, run this from the terminal:
 vim
 ```
 
-You should see an intro screen. This is the where you will be working on your file. Unlike most text editors and IDEs, Vim is a modal editor. If you want to type "hello", you need to switch to Insert mode with `i`. Press `ihello<Esc>` to insert the text "hello".
+You should see an intro screen. This is the where you will be working on your file. Unlike most text editors and IDEs, Vim is a modal editor. If you want to type "hello", you need to switch to insert mode with `i`. Press `ihello<Esc>` to insert the text "hello".
 
 ## Exiting Vim
 
@@ -28,7 +28,7 @@ There are several ways to exit Vim. The most common one is to type:
 :quit
 ```
 
-You can type `:q` for short. That command is a command-line mode command (another one of Vim modes). If you type `:` in Normal mode, the cursor will move to the bottom of the screen where you can type some commands. You will learn about the command-line mode later in chapter 15. If you are in Insert mode, typing `:` will literally produce the character ":" on the screen. In this case, you need to switch back to Normal mode. Type `<Esc>` to switch to Normal mode. By the way, you can also return to Normal mode from command-line mode by pressing `<Esc>`. You will notice that you can "escape" out of several Vim modes back to Normal mode by pressing `<Esc>`.
+You can type `:q` for short. That command is a command-line mode command (another one of Vim modes). If you type `:` in normal mode, the cursor will move to the bottom of the screen where you can type some commands. You will learn about the command-line mode later in chapter 15. If you are in insert mode, typing `:` will literally produce the character ":" on the screen. In this case, you need to switch back to normal mode. Type `<Esc>` to switch to normal mode. By the way, you can also return to normal mode from command-line mode by pressing `<Esc>`. You will notice that you can "escape" out of several Vim modes back to normal mode by pressing `<Esc>`.
 
 To save your changes, type:
 
