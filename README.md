@@ -12,7 +12,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 - [Ch 1     - Starting Vim](./ch01_starting_vim.md)
 - [Ch 2     - Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)
-- [Ch 3     - Opening and Searching Files](./ch03_opening_and_searching_files.md)
+- [Ch 3     - Opening and Searching Files](./ch03_searching_files.md)
 - [Ch 4     - Vim Grammar](./ch04_vim_grammar.md)
 - [Ch 5     - Moving in a File](./ch05_moving_in_file.md)
 - [Ch 6     - Insert Mode](./ch06_insert_mode.md)
