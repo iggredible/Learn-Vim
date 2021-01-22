@@ -1,8 +1,8 @@
 # Ch14. External Commands
 
-Inside the Unix system, you will find many small, hyper-specialized commands where each does one thing well. You can chain these commands  to work together to solve a complex problem. Wouldn't it be great if you can use these commands from inside Vim?
+Inside the Unix system, you will find many small, hyper-specialized commands that does one thing (and does it well). You can chain these commands to work together to solve a complex problem. Wouldn't it be great if you can use these commands from inside Vim?
 
-In this chapter, you will learn how extend Vim to work seamlessly with external commands.
+Definitely. In this chapter, you will learn how extend Vim to work seamlessly with external commands.
 
 ## The Bang Command
 
@@ -12,6 +12,7 @@ Vim has a bang (`!`) command that can do three things:
 2. Write the content of your buffer as the STDIN to an external command.
 3. Execute an external command from inside Vim.
 
+Let's go through each of them.
 
 ## Reading The STDOUT Of A Command Into Vim
 
@@ -59,10 +60,10 @@ Now the STDOUT from running `cat file1.txt` will be inserted after line 10.
 
 ## Writing The Buffer Content Into An External Command
 
-In addition to saving a file, you can also use the write command (`:w`) to pass the text in the current buffer as the STDIN for an external command. The syntax is:
+The command `:w`, in addition to saving a file, can be used to pass the text in the current buffer as the STDIN for an external command. The syntax is:
 
 ```
-:w !cmd
+:w !{cmd}
 ```
 
 If you have these expressions:
@@ -78,7 +79,7 @@ Make sure you have [node](https://nodejs.org/en/) installed in your machine, the
 :w !node
 ```
 
-Vim will use `node` to execute the Javascript expressions to print "Hello Vim" and "Vim is awesome".
+Vim will use `node` to execute the JavaScript expressions to print "Hello Vim" and "Vim is awesome".
 
 When using the `:w` command, Vim uses all texts in the current buffer, similar to the global command (most command-line commands, if you don't pass it a range, only executes the command against the current line). If you pass `:w` a specific address:
 
@@ -114,7 +115,7 @@ You can run any external command without leaving Vim so you can stay focused on 
 
 ## Filtering Texts
 
-If you give `!` a range, it can be used to filter texts. Suppose you have this:
+If you give `!` a range, it can be used to filter texts. Suppose you have the following texts:
 
 ```
 hello vim
@@ -155,7 +156,7 @@ hello
 
 The breakdown:
 - `:%!` executes the filter command on all lines (`%`).
-- `awk "{print $1}"` prints only the first column of the match. In this case, the word "hello".
+- `awk "{print $1}"` prints only the first column of the match.
 
 You can chain multiple commands with the chain operator (`|`) just like in the terminal. Let's say you have a file with these delicious breakfast items:
 
@@ -203,13 +204,13 @@ To uppercase the current line and the line below, you can run:
 ```
 
 The breakdown:
-- `!j` runs the normal command filter operator (`!`) targetting the current line and the line below it. Recall that because it is a normal mode operator, the grammar rule `verb + noun` applies.
+- `!j` runs the normal command filter operator (`!`) targetting the current line and the line below it. Recall that because it is a normal mode operator, the grammar rule `verb + noun` applies. `!` is the verb and `j` is the noun.
 - `tr '[a-z]' '[A-Z]'` replaces the lowercase letters with the uppercase letters.
 
 The filter normal command only works on motions / text objects that are at least one line or longer. If you had tried running `!iwtr '[a-z]' '[A-Z]'` (execute `tr` on inner word), you will find that it applies the `tr` command on the entire line, not the word your cursor is on.
 
 ## Learn External Commands The Smart Way
 
-Vim is not an IDE. It is a lightweight modal editor that is highly extensible by design. Because of this extensibility, you have easy access to any external command in your system. With this, Vim is one step closer from becoming an IDE. Someone said that the Unix system is the first IDE ever.
+Vim is not an IDE. It is a lightweight modal editor that is highly extensible by design. Because of this extensibility, you have an easy access to any external command in your system. Armed with these external commands, Vim is one step closer from becoming an IDE. Someone said that the Unix system is the first IDE ever.
 
-The bang command is as useful as how many external commands you know. Don't worry if your external command knowledge is limited. I still have a lot to learn too. Take this as a motivation for continuous learning. Whenever you need to filter a text, look if there is an external command that can solve your problem. Don't worry about mastering everything about a particular command. Just learn the ones you need to complete the current task.
+The bang command is as useful as how many external commands you know. Don't worry if your external command knowledge is limited. I still have a lot to learn too. Take this as a motivation for continuous learning. Whenever you need to modify a text, look if there is an external command that can solve your problem. Don't worry about mastering everything, just learn the ones you need to complete the current task.
