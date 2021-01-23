@@ -94,7 +94,7 @@ Ctrl-X Ctrl-E    Scroll down
 
 ## Autocompletion
 
-As mentioned above, if you press `Ctrl-X` from insert mode, Vim will enter a sub-mode. You can do text autocompletion while in this insert mode sub-mode. Although it is not as good as [intellisense](https://code.visualstudio.com/docs/editor/intellisense) or any other Language Server Protocol (LSP), but for something that is available right out-of-the-box, it is a very capable feature.
+As mentioned above, if you press `Ctrl-X` from insert mode, Vim will enter a sub-mode. You can do text autocompletion while in this insert mode sub-mode. Although it is not as good as [intellisense](https://code.visualstudio.com/docs/editor/intellisense) or any other Language Server Protocol (LSP), but for something that is available right out of the box, it is a very capable feature.
 
 Here are some useful autocomplete commands to get started:
 
