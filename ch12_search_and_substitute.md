@@ -181,7 +181,7 @@ Let's break it down:
 - `"` is a literal double quote. It matches the first double quote.
 - `[^"]` means any character except for a double quote. It matches any alphanumeric and whitespace character as long as it is not a double quote.
 - `\+` means one or more. Since it is preceded by `[^"]`, Vim looks for one or more character that is not a double quote.
-- `"` is a literal double quote. IT matches the closing double quote.
+- `"` is a literal double quote. It matches the closing double quote.
 
 When Vim sees the first `"`, it begins the pattern capture. The moment it sees the second double quote in a line, it matches the second `"` pattern and stops the pattern capture. Meanwhile, all non-double-quote characters inbetween are captured by the `[^"]\+` pattern, in this case, the phrase `Vim is awesome!`. This is a common pattern to capture a phrase surrounded by a pair of similar delimiters.
 
