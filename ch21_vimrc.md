@@ -294,7 +294,7 @@ nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <Leader>tn :call ToggleNumber()<CR>
 ```
 
-Your vimrc should works as usual, but now it is only three lines long!
+Your vimrc should works as usual, but now it is only four lines long!
 
 With this setup, you easily know where to go. If you need to add more mappings, add them to the `/mappings.vim` file. In the future, you can always add more directories as your vimrc grows. For example, if you need to create a setting for your colorschemes, you can add a `~/.vim/settings/themes.vim`.
 
