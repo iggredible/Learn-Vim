@@ -46,7 +46,7 @@ This also allows you to search through the previous commands, edit them and reru
 
 ## Register And Autocomplete
 
-While in the command-line mode, you can insert texts from Vim register with `Ctrl-R` the same way as the insert mode. If you have the string "foo" saved in the register "a", you can insert it by running `Ctrl-R a`. Everything that you can get from the register in the insert mode, you can do the same from the command-line mode.
+While in the command-line mode, you can insert texts from Vim register with `Ctrl-R` the same way as the insert mode. If you have the string "foo" saved in the register a, you can insert it by running `Ctrl-R a`. Everything that you can get from the register in the insert mode, you can do the same from the command-line mode.
 
 In addition, you can also get the word under the cursor with `Ctrl-R Ctrl-W` (`Ctrl-R Ctrl-A` for the WORD under cursor). To get the line under the cursor, use `Ctrl-R Ctrl-L`. To get the filename under the cursor, use `Ctrl-R Ctrl-F`.
 

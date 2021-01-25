@@ -41,13 +41,13 @@ p    Paste the text after the cursor
 P    Paste the text before the cursor
 ```
 
-Both `p` and `P` accept a count and a register symbol as arguments. For example, to paste ten times, do `10p`. To paste the text from register "a, do `"ap`. To paste the text from register "a ten times, do `10"ap`. By the way, the `p` actually technically stands for "put", not "paste", but I figure paste is a more conventional word.
+Both `p` and `P` accept a count and a register symbol as arguments. For example, to paste ten times, do `10p`. To paste the text from register a, do `"ap`. To paste the text from register a ten times, do `10"ap`. By the way, the `p` actually technically stands for "put", not "paste", but I figure paste is a more conventional word.
 
 The general syntax to get the content from a specific register is `"a`, where `a` is the register symbol.
 
 ## Calling Registers From Insert Mode
 
-Everything you learn in this chapter can also be executed in insert mode. To get the text from register "a, normally you do `"ap`. But if you are in insert mode, run `Ctrl-R a`. The syntax to call registers from insert mode is:
+Everything you learn in this chapter can also be executed in insert mode. To get the text from register a, normally you do `"ap`. But if you are in insert mode, run `Ctrl-R a`. The syntax to call registers from insert mode is:
 
 ```
 Ctrl-R a
@@ -136,13 +136,13 @@ Another example:
 
 The named registers are Vim's most versatile register. It can store yanked, changed, and deleted texts into registers a-z. Unlike the previous 3 register types you've seen which automatically stores texts into registers, you have to explicitly tell Vim to use the named register, giving you full control.
 
-To yank a word into register "a, you can do it with `"ayiw`.
-- `"a` tells Vim that the next action (delete / change / yank) will be stored in register "a.
+To yank a word into register a, you can do it with `"ayiw`.
+- `"a` tells Vim that the next action (delete / change / yank) will be stored in register a.
 - `yiw` yanks the word.
 
-To get the text from register "a, run `"ap`. You can use all twenty-six alphabetical characters to store twenty-six different texts with named registers.
+To get the text from register a, run `"ap`. You can use all twenty-six alphabetical characters to store twenty-six different texts with named registers.
 
-Sometimes you may want to add to your existing named register. In this case, you can append your text instead of starting all over. To do that, you can use the uppercase version of that register. For example, suppose you have the word "Hello " already stored in register "a. If you want to add "world" into register "a, you can find the text "world" and yank it using "A register (`"Ayiw`).
+Sometimes you may want to add to your existing named register. In this case, you can append your text instead of starting all over. To do that, you can use the uppercase version of that register. For example, suppose you have the word "Hello " already stored in register a. If you want to add "world" into register a, you can find the text "world" and yank it using A register (`"Ayiw`).
 
 ## The Read-Only Registers
 
@@ -176,13 +176,13 @@ Here, you are telling Vim that you are using the expression register with `"=`. 
 Ctrl-R =1+1
 ```
 
-You can also get the values from any register via the expression register when appended with `@`. If you wish to get the text from register "a:
+You can also get the values from any register via the expression register when appended with `@`. If you wish to get the text from register a:
 
 ```
 "=@a
 ```
 
-Then press `<Enter>`, then `p`. Similarly, to get values from register "a while in insert mode:
+Then press `<Enter>`, then `p`. Similarly, to get values from register a while in insert mode:
 
 ```
 Ctrl-r =@a
@@ -228,21 +228,21 @@ There is a plugin called [vim-peekaboo](https://github.com/junegunn/vim-peekaboo
 
 The named registers are not just for storing texts. They can also execute macros with `@`. I will go over macros in the next chapter.
 
-Keep in mind since macros are stored inside Vim registers, you can accidentally overwrite the stored text with macros. If you store the text "Hello Vim" in register "a and you later record a macro in the same register (`qa{macro-sequence}q`), that macro will overwrite your "Hello Vim" text stored earlier.
+Keep in mind since macros are stored inside Vim registers, you can accidentally overwrite the stored text with macros. If you store the text "Hello Vim" in register a and you later record a macro in the same register (`qa{macro-sequence}q`), that macro will overwrite your "Hello Vim" text stored earlier.
 
 ## Clearing A Register
 
-Technically, there is no need to clear any register because the next register you store under the same name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in the register "a.
+Technically, there is no need to clear any register because the next register you store under the same name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in the register a.
 
-Another alternative is to run the command `:call setreg('a', '')` where "a is the register "a.
+Another alternative is to run the command `:call setreg('a', '')` where "a is the register a.
 
 One more way to clear register is to set the content of "a register to an empty string with the expression `:let @a = ''`.
 
 ## Putting The Content Of A Register
 
-You can use the `:put` command to paste the content of any one register. For example, if you run `:put a`, Vim will print the content of register "a below the current line. This behaves much like `"ap`, with the difference that the normal mode command `p` prints the register content after the cursor and the command `:put` prints the register content at newline.
+You can use the `:put` command to paste the content of any one register. For example, if you run `:put a`, Vim will print the content of register a below the current line. This behaves much like `"ap`, with the difference that the normal mode command `p` prints the register content after the cursor and the command `:put` prints the register content at newline.
 
-Since `:put` is a command-line command, you can pass it an address. `:10put a` will paste text from register "a to below line 10.
+Since `:put` is a command-line command, you can pass it an address. `:10put a` will paste text from register a to below line 10.
 
 One cool trick to pass `:put` with the black hole register (`"_`). Since the black hole register does not store any text, `:put _` will insert a blank line instead. You can combine this with the global command to insert multiple blank lines. For example, to insert blank lines below all lines that contain the text "end", run `:g/end/put _`. You will learn about the global command later.
 
@@ -257,6 +257,6 @@ I don't think you should memorize all the registers immediately. To become produ
 
 Since the unnamed register defaults to `p` and `P`, you only have to learn two registers: the named registers and the numbered registers. Gradually learn more registers when you need them. Take your time.
 
-The average human has a limited short-term memory capacity, about 5 - 7 items at once. That is why in my everyday editing, I only use about 5 -  7 named registers. There is no way I can remember all twenty-six in my head. I normally start with register "a, then "b, ascending the alphabetical order. Try it and experiment around to see what technique works best for you.
+The average human has a limited short-term memory capacity, about 5 - 7 items at once. That is why in my everyday editing, I only use about 5 -  7 named registers. There is no way I can remember all twenty-six in my head. I normally start with register a, then b, ascending the alphabetical order. Try it and experiment around to see what technique works best for you.
 
 Vim registers are powerful. Used strategically, it can save you from typing countless repeating texts. Next, let's learn about macros.

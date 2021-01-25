@@ -82,7 +82,7 @@ The `:normal` command accepts range as arguments. You can use this to run macro 
 
 ## Executing A Macro Across Multiple Files
 
-Suppose you have multiple `.txt` files, each contains some texts. Your task is to uppercase the first word only on lines containing the word "donut". Assume you have `0W~j` in register "a (the same macro as before). How can you quickly accomplish this?
+Suppose you have multiple `.txt` files, each contains some texts. Your task is to uppercase the first word only on lines containing the word "donut". Assume you have `0W~j` in register a (the same macro as before). How can you quickly accomplish this?
 
 First file:
 
@@ -136,7 +136,7 @@ qaqqa0W~j@aq
 
 Here is the breakdown of the steps:
 - `qaq` records an empty macro "a. It is necessary to start with an empty register because when you recursively call the macro, it will run whatever is in that register.
-- `qa` starts recording on register "a.
+- `qa` starts recording on register a.
 - `0` goes to the first character in the current line.
 - `W` goes to the next WORD.
 - `~` toggles the case of the character under the cursor.
@@ -150,9 +150,9 @@ How did the macro know when to stop? When the macro was on the last line, it tri
 
 ## Appending A Macro
 
-If you need to add actions to an existing macro, instead of recreating the macro from scratch, you can append actions to an existing one. In the register chapter, you learned that you can append a named register by using its uppercased symbol. The same rule applies. To append actions to register "a macro, use register "A.
+If you need to add actions to an existing macro, instead of recreating the macro from scratch, you can append actions to an existing one. In the register chapter, you learned that you can append a named register by using its uppercased symbol. The same rule applies. To append actions to register a macro, use register "A.
 
-In addition, you also want to add a dot at the end of the line. Assume you have the actions `0W~` stored in register "a already (it's a little different from the previous macro, it omits the `j` motion), run:
+In addition, you also want to add a dot at the end of the line. Assume you have the actions `0W~` stored in register a already (it's a little different from the previous macro, it omits the `j` motion), run:
 
 ```
 qAA.<Esc>q
@@ -179,7 +179,7 @@ c. powdered sugar donut
 d. plain donut
 ```
 
-First, let's call the existing macro (assume you have kept the macro from the previous section in register "a) with `:put a`:
+First, let's call the existing macro (assume you have kept the macro from the previous section in register a) with `:put a`:
 
 ```
 0W~A.^[
@@ -201,15 +201,15 @@ There is a small problem. Vim does not understand `<Esc>`. You can't literally t
 0W~$bideep fried ^[A.^[
 ```
 
-To add the amended instruction into register "a, you can do it the same way as adding a new entry into a named register. At the start of the line, run `"ay$` to store the yanked text in register "a.
+To add the amended instruction into register a, you can do it the same way as adding a new entry into a named register. At the start of the line, run `"ay$` to store the yanked text in register a.
 
 Now when you execute `@a`, your macro will toggle the case of the first word, add "deep fried " before "donut", and add a "." at the end of the line. Yum!
 
-An alternative way to amend a macro is to use a command line expression. Do `:let @a="`, then do `Ctrl-R Ctrl-R a`, this will literally paste the content of register "a. Finally, don't forget to close the double quotes (`"`). You might have something like `:let @a="0W~$bideep fried ^[A.^["`.
+An alternative way to amend a macro is to use a command line expression. Do `:let @a="`, then do `Ctrl-R Ctrl-R a`, this will literally paste the content of register a. Finally, don't forget to close the double quotes (`"`). You might have something like `:let @a="0W~$bideep fried ^[A.^["`.
 
 ## Macro Redundancy
 
-You can easily duplicate macros from one register to another. For example, to duplicate a macro in register "a to register "z, you can do `:let @z = @a`. `@a` represents the content of register "a. Now if you run `@z`, it does the exact same actions as `@a`.
+You can easily duplicate macros from one register to another. For example, to duplicate a macro in register a to register z, you can do `:let @z = @a`. `@a` represents the content of register a. Now if you run `@z`, it does the exact same actions as `@a`.
 
 I find creating a redundancy useful on my most frequently used macros. In my workflow, I usually record macros in the first seven alphabetical letters (a-g) and I often replace them without much thought. If I move the useful macros towards the end of the alphabets, I can preserve them without worrying that I might accidentally replace them.
 
@@ -232,7 +232,7 @@ qa0f{gui{jq
 ```
 
 The breakdown:
-- `qa` starts recording in register "a.
+- `qa` starts recording in register a.
 - `0` goes to first line.
 - `f{` finds the first instance of "{".
 - `gui{` lowercases (`gu`) the text inside the bracket text-object (`i{`).
