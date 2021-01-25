@@ -730,7 +730,7 @@ Vim has special primitives:
 - `v:none`
 - `v:null`
 
-By the way, `v:` is Vim's built-in variable. They will be covered more in Ch 26.
+By the way, `v:` is Vim's built-in variable. They will be covered more in a later chapter.
 
 In my experience, you won't use these special primitives often. If you need a truthy / falsy value, you can just use 0 (falsy) and non-0 (truthy). If you need an empty string, just use `""`. But it is still good to know, so let's quickly go over them.
 

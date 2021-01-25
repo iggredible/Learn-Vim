@@ -1,6 +1,6 @@
 # Ch23. Vim Runtime
 
-In the previous chapters, I mentioned that Vim automatically looks for special paths like `pack/` (Ch 22) and `compiler/` (Ch 19) inside the `~/.vim/` directory. These are examples of Vim runtime paths.
+In the previous chapters, I mentioned that Vim automatically looks for special paths like `pack/` (Ch. 22) and `compiler/` (Ch. 19) inside the `~/.vim/` directory. These are examples of Vim runtime paths.
 
 Vim has more runtime paths than these two. In this chapter, you will learn a high-level overview of these runtime paths. The goal of this chapter is to show you when they are called. Knowing this will allow you to understand and customize Vim further.
 
