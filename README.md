@@ -47,6 +47,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 ## Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
 - [Learn-Vim Spanish](https://github.com/victorhck/learn-Vim-es)(`es`)
+- [Learn-Vim Spanish Updated](https://github.com/EliazBobadilla/Tutorial-de-VIM-en-ES)(`es`)
 
 ## License & Copyright
 The materials here are all ©2020 Igor Irianto.
