@@ -242,9 +242,10 @@ You can split your vimrc to multiple files using Vim's `source` command. This co
 
 Let's create a file inside the `~/.vim` directory and name it `/settings` (`~/.vim/settings`). The name itself is arbitrary and you can name it whatever you like.
 
-You are going to split it into three components:
+You are going to split it into four components:
 - Third-party plugins (`~/.vim/settings/plugins.vim`).
 - General settings (`~/.vim/settings/configs.vim`).
+- Custom functions (`~/.vim/settings/functions.vim`).
 - Key mappings (`~/.vim/settings/mappings.vim`) .
 
 Inside `~/.vimrc`:
@@ -263,7 +264,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'preservim/nerdtree'
 call plug#end()
-
 ```
 
 Inside `~/.vim/settings/configs.vim`:
@@ -292,7 +292,6 @@ Inside `~/.vim/settings/mappings.vim`:
 inoremap jk <esc>
 nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <Leader>tn :call ToggleNumber()<CR>
-
 ```
 
 Your vimrc should works as usual, but now it is only three lines long!
