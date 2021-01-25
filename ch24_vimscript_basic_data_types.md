@@ -3,17 +3,15 @@
 In the next few chapters, you will learn about Vimscript, Vim's built-in programming language.
 
 When learning a new language, there are three basic elements to look for:
-
 - Primitives
 - Means of Combination
 - Means of Abstraction
 
-This chapter will cover the first part, Vim's primitive data types.
+In this chapter, you will learn Vim's primitive data types.
 
 ## Data Types
 
 Vim has 10 different data types:
-
 - Number
 - Float
 - String
@@ -25,7 +23,7 @@ Vim has 10 different data types:
 - Channel
 - Blob
 
-In this chapter, you will learn the first six types. In Ch. 27, you will learn about Funcref. For more about Vim data types, check out `:h variables`.
+I will cover the first six data types here. In Ch. 27, you will learn about Funcref. For more about Vim data types, check out `:h variables`.
 
 ## Echo
 
@@ -51,7 +49,7 @@ For the remaining of the chapter, I will use `:echo` (because it is one letter s
 
 ## Number
 
-Vim has 4 different number types: decimal, hexadecimal, binary, and octal.
+Vim has 4 different number types: decimal, hexadecimal, binary, and octal. By the way, when I say number data type, often this means an integer data type. In this guide, I will use the terms number and integer interchangeably.
 
 ### Decimal
 
@@ -71,7 +69,7 @@ Octals start with `0`, `0o`, and `0O`. Mnemonic: **O**ctal.
 
 ### Printing Numbers
 
-If you `echo` either a hexadecimal, binary, or octal number, Vim automatically converts them to decimals.
+If you `echo` either a hexadecimal, a binary, or an octal number, Vim automatically converts them to decimals.
 
 ```viml
 :echo 42
@@ -89,7 +87,7 @@ If you `echo` either a hexadecimal, binary, or octal number, Vim automatically c
 
 ### Truthy and Falsy
 
-In Vim, 0 is falsy and all non-0 values are truthy.
+In Vim, a 0 value is falsy and all non-0 values are truthy.
 
 The following will not echo anything.
 
@@ -107,7 +105,7 @@ However, this will:
 :endif
 ```
 
-Any values other than 0 will be truthy, including negative numbers. 100 is truthy. -1 is truthy.
+Any values other than 0 is truthy, including negative numbers. 100 is truthy. -1 is truthy.
 
 ### Number Arithmetic
 
@@ -154,7 +152,7 @@ Floats are numbers with trailing decimals. There are two ways to represent float
 " returns 0.25
 ```
 
-You need to give a float a dot and trailing digits. `25e-2` (no dot) and `1234.` (no trailing digits) are both invalid float numbers.
+You need to give a float a dot and trailing digits. `25e-2` (no dot) and `1234.` (has a dot, but no trailing digits) are both invalid float numbers.
 
 ### Float Arithmetic
 
@@ -187,14 +185,14 @@ To concatenate a string in Vim, use the `.` operator.
 
 ### String Arithmetic
 
-When you run arithmetic operators (`+ - * /`) against a string, Vim coerces the string into a number.
+When you run arithmetic operators (`+ - * /`) with a number and a string, Vim coerces the string into a number.
 
 ```viml
 :echo "12 donuts" + 3
 " returns 15
 ```
 
-When Vim sees "12 donuts", it extracts the 12 from the string and converts it into the number 12. Then it performs addition, returning 15. For this string-to-number coercion to work, the number character  needs to be the *first character* in the string.
+When Vim sees "12 donuts", it extracts the 12 from the string and converts it into the number 12. Then it performs addition, returning 15. For this string-to-number coercion to work, the number character needs to be the *first character* in the string.
 
 The following won't work because 12 is not the first character in the string:
 
@@ -210,7 +208,7 @@ This also won't work because an empty space is the first character of the string
 " returns 3
 ```
 
-This coercion works even with multiple strings:
+This coercion works even with two strings:
 
 ```
 :echo "12 donuts" + "6 pastries"
@@ -240,7 +238,7 @@ A neat trick to force a string-to-number conversion is to just add 0 or multiply
 " returns 12
 ```
 
-When arithmetic is done against a float number, Vim only looks at the number part.
+When arithmetic is done against a float in a string, Vim treats it like an integer, not a float:
 
 ```
 :echo "12.0 donuts" + 12
@@ -273,6 +271,7 @@ In the following if statement, Vim coerces "12donuts" into 12, which is truthy:
 :if "12donuts"
 :  echo "Yum"
 :endif
+" returns "Yum"
 ```
 
 On the other hand, this is falsy:
@@ -281,13 +280,14 @@ On the other hand, this is falsy:
 :if "donuts12"
 :  echo "Nope"
 :endif
+" rerturns nothing
 ```
 
-Vim coerces "donuts12" into 0, because the first character of the String is not a number.
+Vim coerces "donuts12" into 0, because the first character is not a number.
 
 ### Double vs Single quotes
 
-Double quotes behave differently than single quotes. Single quotes display characters literally.  Double quotes accepts special characters.
+Double quotes behave differently than single quotes. Single quotes display characters literally while double quotes accept special characters.
 
 What are special characters? Check out the newline and double-quotes display:
 
@@ -368,7 +368,7 @@ There are many other string procedures. Check out `:h string-functions`.
 
 ## List
 
-A Vimscript list is like an Array in Javascript, Python, or Ruby. It is an *ordered* sequence of items. You can mix-and-match the content with different data types:
+A Vimscript list is like an Array in Javascript or List in Python. It is an *ordered* sequence of items. You can mix-and-match the content with different data types:
 
 ```
 [1,2,3]
@@ -377,9 +377,9 @@ A Vimscript list is like an Array in Javascript, Python, or Ruby. It is an *orde
 [1,2,[3,4]]
 ```
 
-### Accessing List elements (sublists)
+### Sublists
 
-Vim's list is zero-indexed. You can access a particular item in a list with `[n]`, where n is the index.
+Vim list is zero-indexed. You can access a particular item in a list with `[n]`, where n is the index.
 
 ```
 :echo ["a", "sweet", "dessert"][0]
@@ -433,9 +433,9 @@ You can pass an index that exceeds the maximum items when slicing an array.
 " returns ['plain', 'strawberry', 'lemon', 'sugar', 'cream']
 ```
 
-### Targetting and Slicing String
+### Slicing String
 
-Many list targetting and slicing techniques above can be applied to string:
+You can slice and target strings just like lists:
 
 ```viml
 :echo "choco"[0]
@@ -462,7 +462,7 @@ You can use `+` to concatenate and mutate a list:
 " returns ["chocolate", "strawberry", "sugar"]
 ```
 
-### List functions
+### List Functions
 
 Let's explore Vim's built-in list functions.
 
@@ -521,7 +521,7 @@ The `v:val` variable is a Vim special variable. It is available when iterating a
 
 For more, check out `:h list-functions`.
 
-### List unpacking
+### List Unpacking
 
 You can unpack a list and assign variables to the list items:
 
@@ -599,10 +599,10 @@ If you are too lazy to put quotes around each key, you can use the `#{}` notatio
 
 The only requirement for using the `#{}` syntax is that each key must be either:
 
-- ASCII character
-- digit
-- `_`
-- `-`
+- ASCII character.
+- Digit.
+- An underscore (`_`).
+- A hyphen (`-`).
 
 Just like list, you can use any data type as values.
 
@@ -734,7 +734,7 @@ By the way, `v:` is Vim's built-in variable. They will be covered more in Ch 26.
 
 In my experience, you won't use these special primitives often. If you need a truthy / falsy value, you can just use 0 (falsy) and non-0 (truthy). If you need an empty string, just use `""`. But it is still good to know, so let's quickly go over them.
 
-### `v:true`
+### True
 
 This is equivalent to `true`. It is equivalent to a number with value of non-0 . When decoding json with `json_encode()`, it is interpreted as "true".
 
@@ -743,7 +743,7 @@ This is equivalent to `true`. It is equivalent to a number with value of non-0 .
 " returns {"test": true}
 ```
 
-### `v:false`
+### False
 
 This is equivalent to `false`. It is equivalent to a number with value of 0. When decoding json with `json_encode()`, it is interpreted as "false".
 
@@ -752,7 +752,7 @@ This is equivalent to `false`. It is equivalent to a number with value of 0. Whe
 " returns {"test": false}
 ```
 
-### `v:none`
+### None
 
 It is equivalent to an empty string. When decoding json with `json_encode()`, it is interpreted as an empty item (`null`).
 
@@ -761,7 +761,7 @@ It is equivalent to an empty string. When decoding json with `json_encode()`, it
 " returns {"test": null}
 ```
 
-### `v:null`
+### Null
 
 Similar to `v:none`.
 
