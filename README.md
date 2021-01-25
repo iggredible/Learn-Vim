@@ -39,8 +39,8 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 ### Part 3: Learn Vimscript the Smart Way (TBD)
 
-- [Ch 24 - Vimscript Basic Data Types](./ch24_vimscript_basic_data_types)
-- [Ch 25 - Vimscript Basic Expressions](./ch25_vimscript_equalities_conditionals_and_loops.md)
+- [Ch 24 - Vimscript Basic Data Types](./ch24_vimscript_basic_data_types.md)
+- [Ch 25 - Vimscript Condiitionals And Loops](./ch25_vimscript_conditionals_and_loops.md)
 - [Ch 26 - Vimscript Variable Scopes](./ch26_vimscript_variables_scopes.md)
 - [Ch 27 - Vimscript Functions](./ch27_vimscript_functions.md)
 
