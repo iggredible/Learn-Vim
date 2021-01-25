@@ -1,12 +1,12 @@
 # Ch22. Vim Packages
 
-The previous chapter talked about using external plugin managers to install plugins. However, starting at version 8, Vim comes with its own built-in plugin manager called *packages*. In this chapter, you will learn how to use Vim packages to install plugins.
+In the previous chapter, I mentioned using an external plugin manager to install plugins. Since version 8, Vim comes with its own built-in plugin manager called *packages*. In this chapter, you will learn how to use Vim packages to install plugins.
 
-To see if your Vim build has the ability to use packages, run `:version` and look for `+packages` attribute. Alternatively, you can also run `:echo has('packages')`. If it returns 1, then it has a packages ability.
+To see if your Vim build has the ability to use packages, run `:version` and look for `+packages` attribute. Alternatively, you can also run `:echo has('packages')` (if it returns 1, then it has the packages ability).
 
-## Pack
+## Pack Directory
 
-You should have a `~/.vim/` directory in the root path (check the previous chapter for a refresher). Inside, create a directory called `pack` (`~/.vim/pack/)`. Vim automatically knows to search inside this directory for packages.
+Check if you have a `~/.vim/` directory in the root path. If you don't, create one. Inside it, create a directory called `pack` (`~/.vim/pack/)`. Vim automatically knows to search inside this directory for packages.
 
 ## Two Types Of Loading
 
@@ -20,19 +20,21 @@ To load plugins automatically when Vim starts, you need to put them in the `star
 ~/.vim/pack/*/start/
 ```
 
-Now you may ask, "What is the `*` between `pack/` and `start/`?" `*` is arbitrary and can be anything you want. let's name it `packdemo/`:
+Now you may ask, "What is the `*` between `pack/` and `start/`?" `*` is an arbitrary name and can be anything you want. let's name it `packdemo/`:
 
 ```
 ~/.vim/pack/packdemo/start/
 ```
 
-Keep in mind that if you skip it and decide to do something like this:
+Keep in mind that if you skip it and do something like this instead:
 
 ```
 ~/.vim/pack/start/
 ```
 
-The package system won't work. It is imperative to put a name between `pack/` and `start/`. For this demo, let's try to install the [NERDTree](https://github.com/preservim/nerdtree) plugin. Go all the way to the `start/` directory (`cd ~/.vim/pack/packdemo/start/`) and clone the NERDTree repository:
+The package system won't work. It is imperative to put a name between `pack/` and `start/`.
+
+For this demo, let's try to install the [NERDTree](https://github.com/preservim/nerdtree) plugin. Go all the way to the `start/` directory (`cd ~/.vim/pack/packdemo/start/`) and clone the NERDTree repository:
 
 ```
 git clone https://github.com/preservim/nerdtree.git
@@ -70,11 +72,11 @@ Start Vim. The command to execute the game is `:KillKillKill`. Try running it. V
 
 Now try running the command again `:KillKillKill`. The command should work now.
 
-You may wonder, "Why would I ever want to manually load packages? Wouldn't it be better to automatically load everything?"
+You may wonder, "Why would I ever want to manually load packages? Isn't it better to automatically load everything at the start?"
 
-Great question. Sometimes there are plugins that you won't use all the time, like that KillerSheep game. You probably don't need to load 10 different games and slow down Vim startup time. However, once in a while, when you are bored, you might want to play a few games. Manually-loaded plugins are useful for nonessential plugins.
+Great question. Sometimes there are plugins that you won't use all the time, like that KillerSheep game. You probably don't need to load 10 different games and slow down Vim startup time. However, once in a while, when you are bored, you might want to play a few games. Use manual loading for nonessential plugins.
 
-You can also use manual plugins to conditionally add plugins. Maybe you use both Neovim and Vim and there are plugins optimized for Neovim. You can add something like this in your vimrc:
+You can also use this to conditionally add plugins. Maybe you use both Neovim and Vim and there are plugins optimized for Neovim. You can add something like this in your vimrc:
 
 ```
 if has('nvim')
@@ -92,7 +94,7 @@ Recall that the requirement to use Vim's package system is to have either:
 ~/.vim/pack/*/start/
 ```
 
-or
+Or:
 
 ```
 ~/.vim/pack/*/opt/
@@ -125,6 +127,6 @@ You may wonder if Vim package will make popular plugin managers like vim-pathoge
 
 The answer is, as always, "it depends."
 
-I still use vim-plug because it makes it easy to add, remove or update plugins. If you use many plugins, it may be more convenient to use plugin managers because it is easy to update many simultaneously. Some plugin managers also support asynchronous API installation.
+I still use vim-plug because it makes it easy to add, remove or update plugins. If you use many plugins, it may be more convenient to use plugin managers because it is easy to update many simultaneously. Some plugin managers also offer asynchronous functionalities.
 
-If you are a minimalist and only use a few plugins, try out Vim packages. If you use many plugins, you may want to consider using a plugin manager.
+If you are a minimalist, try out Vim packages. If you a heavy plugin user, you may want to consider using a plugin manager.
