@@ -20,6 +20,7 @@ echo pancake
 `let` is mutable, meaning you can change the value at any time in the future.
 
 ```
+let pancake = "pancake"
 let pancake = "not waffles"
 
 echo pancake
@@ -35,7 +36,7 @@ beverage = "orange juice"
 " throws an error
 ```
 
-You can define an immutable variable with `const` (both Vim variable setters are similar to Javascript's `let` and `const`).
+You can define an immutable variable with `const`.
 
 ```
 const waffle = "waffle"
@@ -47,23 +48,27 @@ const waffle = "pancake"
 " returns error
 
 let waffle = "pancake"
-" returns error
+" throws an error
 ```
 
-Before learning native Vimscript variables, it's good to learn the different sources of Vim variables that you can use. There are three more "variables" you can use inside Vim expressions: environment variable, option variable, and register variable.
+## Variable Sources
+
+There are three sources for variables: environment variable, option variable, and register variable.
 
 ### Environment Variable
 
-Suppose that you have a `SHELL` environment variable already available in your terminal. To access it from Vim:
+Vim can access your terminal environment variable. For example, if you have the `SHELL` environment variable available in your terminal, you can access it from Vim with:
 
 ```
 echo $SHELL
 " returns $SHELL value. In my case, it returns /bin/bash
 ```
 
-### Option variable
+### Option Variable
 
-You can access Vim options with `&` (options are the settings you access with `:set`). To see what background Vim uses, you can run:
+You can access Vim options with `&` (these are the settings you access with `set`).
+
+For example, to see what background Vim uses, you can run:
 
 ```
 echo &background
@@ -72,9 +77,11 @@ echo &background
 
 Alternatively, you can always run `set background?` to see the value of the `background` option.
 
-### Register variable
+### Register Variable
 
-You can access Vim registers (Ch. 08) with `@`. Suppose the value "chocolate" is already saved to register `a`. To access it, you can use `@a`. You can also update it with `let`.
+You can access Vim registers (Ch. 08) with `@`.
+
+Suppose the value "chocolate" is already saved in register a. To access it, you can use `@a`. You can also update it with `let`.
 
 ```
 echo @a
@@ -86,13 +93,11 @@ echo @a
 " returns "chocolate donut"
 ```
 
-Now when you paste from register `a` (`"ap`), it will return "chocolate donut".
-
-The operator `.=` concatenates two strings. The expression `let @a .= " donut"` is the same as `let @a = @a . " donut"`
+Now when you paste from register `a` (`"ap`), it will return "chocolate donut". The operator `.=` concatenates two strings. The expression `let @a .= " donut"` is the same as `let @a = @a . " donut"`
 
 ## Variable Scopes
 
-There are 9 variable scopes in Vim. You can recognize them from their prepended letter:
+There are 9 different variable scopes in Vim. You can recognize them from their prepended letter:
 
 ```
 g:           Global variable
@@ -101,7 +106,7 @@ b:           Buffer-local variable
 w:           Window-local variable
 t:           Tab-local variable
 s:           Sourced Vimscript variable
-l:           Function-local variable
+l:           Function local variable
 a:           Function formal parameter variable
 v:           Built-in Vim variable
 ```
@@ -122,7 +127,7 @@ Prepending `g:` to a variable also creates a global variable.
 let g:waffle = "waffle"
 ```
 
-Both `pancake` and `g:waffle` have the same scope. You can call each of them with either syntax.
+In this case both `pancake` and `g:waffle` have the same scope. You can call each of them with or without `g:`.
 
 ```
 echo pancake
@@ -138,9 +143,9 @@ echo g:waffle
 " returns "waffle"
 ```
 
-### Buffer variable
+### Buffer Variable
 
-A variable preceded with `b:` is a buffer variable. A buffer variable is a variable that is local to the current buffer (Ch 02). If you have multiple buffers open, each buffer will have their own separate list of buffer variables.
+A variable preceded with `b:` is a buffer variable. A buffer variable is a variable that is local to the current buffer (Ch. 02). If you have multiple buffers open, each buffer will have their own separate list of buffer variables.
 
 In buffer 1:
 
@@ -154,7 +159,7 @@ In buffer 2:
 const b:donut = "blueberry donut"
 ```
 
-Each `b:donut` buffer variable lives inside buffers 1 and 2, respectively.
+If you run `echo b:donut` from buffer 1, it will return "chocolate donut". If you run it from buffer 2, it will return "blueberry donut".
 
 On the side note, Vim has a *special* buffer variable `b:changedtick` that keeps track of all the changes done to the current buffer.
 
@@ -162,7 +167,7 @@ On the side note, Vim has a *special* buffer variable `b:changedtick` that keeps
 2. Make changes in Vim.
 3. Run `echo b:changedtick` again and note the number it now returns.
 
-### Window variable
+### Window Variable
 
 A variable preceded with `w:` is a window variable. It exists only in that window.
 
@@ -180,7 +185,7 @@ const w:donut = "raspberry donut"
 
 On each window, you can call `echo w:donut` to get unique values.
 
-### Tab variable
+### Tab Variable
 
 A variable preceded with `t:` is a tab variable. It exists only in that tab.
 
@@ -200,9 +205,9 @@ On each tab, you can call `echo t:donut` to get unique values.
 
 ### Script variable
 
-A variable preceded with `s:` is a script variable. These variables can only be accessed from inside scripts.
+A variable preceded with `s:` is a script variable. These variables can only be accessed from inside that script.
 
-If you have an arbitrary file `script.vim` and inside it you have:
+If you have an arbitrary file `dozen.vim` and inside it you have:
 
 ```
 let s:dozen = 12
@@ -226,9 +231,9 @@ Source the file with `:source dozen.vim`. Now call the `Consume` function:
 " Undefined variable error
 ```
 
-The `Consume` function can be called directly and it increments as expected. When you try to read `s:dozen` directly, Vim won't find it because you are out of scope. `s:dozen` script variable is only accessible from inside `script.vim`.
+When you call `Consume`, you see it decrements the `s:dozen` value as expected. When you try to get `s:dozen` value directly, Vim won't find it because you are out of scope. `s:dozen` is only accessible from inside `dozen.vim`.
 
-Each time you source the `script.vim` file, it resets the `s:dozen` counter. If you are in the middle of decrementing `s:dozen` value and you run `:source dozen.vim`, the counter resets back to 12. This can be a problem for unsuspecting users. To fix this issue, refactor the code:
+Each time you source the `dozen.vim` file, it resets the `s:dozen` counter. If you are in the middle of decrementing `s:dozen` value and you run `:source dozen.vim`, the counter resets back to 12. This can be a problem for unsuspecting users. To fix this issue, refactor the code:
 
 ```
 if !exists("s:dozen")
@@ -241,14 +246,15 @@ function Consume()
 endfunction
 ```
 
-### Function-local and Function formal parameter variable
+Now when you source `dozen.vim` while in the middle of decrementing, Vim reads `!exists("s:dozen")`, finds that it is true, and doesn't reset the value back to 12.
 
-Both the function-local variable (`l:`) and the function formal variable (`a:`) will be covered in the next chapter.
+### Function Local And Function Formal Parameter variable
 
-### Built-in Vim variables
+Both the function local variable (`l:`) and the function formal variable (`a:`) will be covered in the next chapter.
 
-A variable prepended with `v:` is a special built-in Vim variable. You cannot define these variables. You have seen some of them already. For example:
+### Built-in Vim Variables
 
+A variable prepended with `v:` is a special built-in Vim variable. You cannot define these variables. You have seen some of them already.
 - `v:version` tells you what Vim version you are using.
 - `v:key` contains the current item value when iterating through a dictionary.
 - `v:val` contains the current item value when running a `map()` or `filter()` operation.
@@ -258,4 +264,6 @@ There are other variables. For a list of Vim built-in variables, check out `:h v
 
 ## Using Vim Variable Scopes The Smart Way
 
-Being able to quickly access environment, option, and register variables give you a broad flexibility to customize your editor and terminal environment. You also learned that Vim has 9 different Vimscript variable scopes, each existing under a certain constraints. You can take advantage of these unique variable types to write your own custom plugins. But before that, let's learn how to create functions!
+Being able to quickly access environment, option, and register variables give you a broad flexibility to customize your editor and terminal environment. You also learned that Vim has 9 different variable scopes, each existing under a certain constraints. You can take advantage of these unique variable types to decouple your program.
+
+You made it this far. You learned about data types, means of combinations, and variable scopes. Only one thing is left: functions.
