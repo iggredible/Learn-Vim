@@ -1,20 +1,20 @@
 # Ch27. Vimscript Functions
 
-Functions are the pinnacles of programming. Can you imagine a programming language without functions? It is the ultimate means of abstraction. In this chapter, you will learn how to create your own Vimscript functions.
+Functions are means of abstraction, the third element in learning a new language.
 
-You have seen Vimscript functions in action. `len()`, `filter()`, `map()`, etc. You have also created basic custom Vimscript functions. Let's go deeper.
+In the previous chapters, you have seen Vimscript native functions (`len()`, `filter()`, `map()`, etc.) and custom functions in action. In this chapter, you will go deeper to learn how functions work.
 
 ## Function Syntax Rules
 
 At the core, a Vimscript function has the following syntax:
 
 ```
-function FunctionName()
-  do-something()
+function {FunctionName}()
+  {do-something}
 endfunction
 ```
 
-A function definition must start with an uppercase letter. It starts with the `function` keyword and ends with `endfunction`. Below is a valid function:
+A function definition must start with a capital letter. It starts with the `function` keyword and ends with `endfunction`. Below is a valid function:
 
 ```
 function! Tasty()
@@ -22,7 +22,7 @@ function! Tasty()
 endfunction
 ```
 
-But the following is not a valid function:
+The following is not a valid function because it does not start with a capital letter.
 
 ```
 function tasty()
@@ -30,13 +30,11 @@ function tasty()
 endfunction
 ```
 
-If you prepend a function with the script variable (`s:`), you can use it with a lower case. `function s:tasty()` is a valid name. The reason why Vim requires you to use an uppercase name is to prevent confusion with Vim's built-in functions (they are all lowercased).
+If you prepend a function with the script variable (`s:`), you can use it with a lower case. `function s:tasty()` is a valid name. The reason why Vim requires you to use an uppercase name is to prevent confusion with Vim's built-in functions (all lowercase).
 
-A function name cannot start with a number. `1Tasty()` is not a valid function name, but `Tasty1()` is.
+A function name cannot start with a number. `1Tasty()` is not a valid function name, but `Tasty1()` is. A function also cannot contain non-alphanumeric characters besides `_`. `Tasty-food()`, `Tasty&food()`, and `Tasty.food()` are not valid function names. `Tasty_food()` *is*.
 
-A function also cannot contain non-alphanumeric characters besides `_`. `Tasty-food()`, `Tasty&food()`, and `Tasty.food()` are not valid function names. `Tasty_food()` *is*.
-
-If you define two functions with the same name, Vim will throw an error complaining that the function `Tasty` already exists. To overwrite the previous function with the same name, add a `!` after the `function` keyword. 
+If you define two functions with the same name, Vim will throw an error complaining that the function `Tasty` already exists. To overwrite the previous function with the same name, add a `!` after the `function` keyword.
 
 ```
 function! Tasty()
@@ -44,11 +42,11 @@ function! Tasty()
 endfunction
 ```
 
-## Listing Functions
+## Listing Available Functions
 
 To see all the built-in and custom functions in Vim, you can run `:function` command. To look at the content of the `Tasty` function, you can run `:function Tasty`.
 
-You can also search for functions with pattern with `:function /pattern`, similar to Vim's search navigation (`/pattern`). To search for all function containing the phrase "map", run `:function/map`. If you use external plugins, Vim will display the functions defined in those plugins.
+You can also search for functions with pattern with `:function /pattern`, similar to Vim's search navigation (`/pattern`). To search for all function containing the phrase "map", run `:function /map`. If you use external plugins, Vim will display the functions defined in those plugins.
 
 If you want to look at where a function originates, you can use the `:verbose` command with the `:function` command. To look at where all the functions containing teh word "map" are originated, run:
 
@@ -69,9 +67,7 @@ To remove an existing function, use `:delfunction {function-name}`. To delete `T
 
 ## Function Return Value
 
-For a function to return a value, you need to pass it a `return`.
-
-If you don't pass it, like the function `Tasty`, Vim automatically returns an implicit value of 0.
+For a function to return a value, you need to pass it an explicit `return` value. Otherwise, Vim automatically returns an implicit value of 0.
 
 ```
 function! Tasty()
@@ -79,7 +75,7 @@ function! Tasty()
 endfunction
 ```
 
-Defining an empty `return` is also equivalent as returning a 0 value.
+An empty `return` is also equivalent to a 0 value.
 
 ```
 function! Tasty()
@@ -88,7 +84,7 @@ function! Tasty()
 endfunction
 ```
 
-If you run `:echo Tasty()`, note that after Vim displays "Tasty!", it returns 0, the implicit return value. To make `Tasty()` to return "Tasty" value, you can do this:
+If you run `:echo Tasty()` using the function above, after Vim displays "Tasty", it returns 0, the implicit return value. To make `Tasty()` to return "Tasty" value, you can do this:
 
 ```
 function! Tasty()
@@ -96,7 +92,9 @@ function! Tasty()
 endfunction
 ```
 
-You can use a function inside an expression. Vim will use the return value of that function. The expression `:echo Tasty() . " Food!"` evaluates the `Tasty` function and displays "Tasty Food!"
+Now when you run `:echo Tasty()`, it returns "Tasty" string.
+
+You can use a function inside an expression. Vim will use the return value of that function. The expression `:echo Tasty() . " Food!"` outputs "Tasty Food!"
 
 ## Formal Arguments
 
@@ -111,7 +109,7 @@ echo Tasty("pastry")
 " returns "Tasty pastry"
 ```
 
-`a:` is one of the variable scopes mentioned in the previous chapter. It is the formal parameter variable. It is Vim's way to get a formal parameter value in a function. Without it, Vim will throw an error:
+`a:` is one of the variable scopes mentioned in the last chapter. It is the formal parameter variable. It is Vim's way to get a formal parameter value in a function. Without it, Vim will throw an error:
 
 ```
 function! Tasty(food)
@@ -138,9 +136,9 @@ echo Yummy()
 " returns "Yummy in my tummy"
 ```
 
-The variable `location` is the same as `l:location`. When you define a variable in a function, that variable is local to that function. I prefer to be more verbose than not, so I prefer to put `l:` to indicate that this is a function variable.
+In this context, the variable `location` is the same as `l:location`. When you define a variable in a function, that variable is *local* to that function. When a user sees `location`, it could easily be mistaken as a global variable. I prefer to be more verbose than not, so I prefer to put `l:` to indicate that this is a function variable.
 
-Vim has special variables with aliases that look like regular variables. `v:count` for example, has an alias of `count`. Calling `count` is the same as calling `v:count`. It is easy to accidentally use it.
+Another reason to use `l:count` is that Vim has special variables with aliases that look like regular variables. `v:count` is one example. It has an alias of `count`. In Vim, calling `count` is the same as calling `v:count`. It is easy to accidentally call one of those special variables.
 
 ```
 function! Calories()
@@ -152,7 +150,7 @@ echo Calories()
 " throws an error
 ```
 
-The execution above throws an error, because `let count = "Count"` implicitly attempts to redefine Vim's special variable `v:count`. Recall that special variables (`v:`) are read-only. You cannot mutate it. To fix it, use `l:count`:
+The execution above throws an error because `let count = "Count"` implicitly attempts to redefine Vim's special variable `v:count`. Recall that special variables (`v:`) are read-only. You cannot mutate it. To fix it, use `l:count`:
 
 ```
 function! Calories()
@@ -164,11 +162,9 @@ echo Calories()
 " returns "I do not count my calories"
 ```
 
-It works now.
-
 ## Calling A Function
 
-Vim has a `:call` command to call a function. 
+Vim has a `:call` command to call a function.
 
 ```
 function! Tasty(food)
@@ -191,11 +187,11 @@ echo call("Tasty", ["gravy"])
 " returns "Tasty gravy"
 ```
 
-To clear any confusion, you have just used two different `call` commands: `:call` command-line command and `call()` function. The `call()` function accepts as its first argument the function name (in string) and its second argument the formal parameters (in list).
+To clear any confusion, you have just used two different `call` commands: the `:call` command-line command and the `call()` function. The `call()` function accepts as its first argument the function name (string) and its second argument the formal parameters (list).
 
 ## Default Argument
 
-You can provide a function parameter with a default value with `=`.
+You can provide a function parameter with a default value with `=`. If you call `Breakfast` with only one argument, the `beverage` argument will use the "milk" default value.
 
 ```
 function! Breakfast(meal, beverage = "Milk")
@@ -209,13 +205,11 @@ echo Breakfast("Cereal", "Orange Juice")
 " returns Cereal and Orange Juice
 ```
 
-If you call `Breakfast` with only one argument, the `beverage` argument will use the "milk" default value.
-
 ## Variable Arguments
 
-You can pass a variable argument, use `...`. Variable argument is useful when you don't know how many variables a user will give.
+You can pass a variable argument with three-dots (`...`). Variable argument is useful when you don't know how many variables a user will give.
 
-Suppose you are create an all-you-can-eat buffet (because you'll never know how much food your customer will eat):
+Suppose you are creating an all-you-can-eat buffet (you'll never know how much food your customer will eat):
 
 ```
 function! Buffet(...)
@@ -223,7 +217,7 @@ function! Buffet(...)
 endfunction
 ```
 
-If you run `echo Buffet("Noodles")`, it will echo "Noodles". Vim uses `a:1` to print the *first* argument passed to `...`, up to 20 (`a:1` is the first argument, `a:2` is the second argument, etc). If you run `echo Buffet("Noodles", "Sushi")`, it will still display just "Noodles", let's update it:
+If you run `echo Buffet("Noodles")`, it will output "Noodles". Vim uses `a:1` to print the *first* argument passed to `...`, up to 20 (`a:1` is the first argument, `a:2` is the second argument, etc). If you run `echo Buffet("Noodles", "Sushi")`, it will still display just "Noodles", let's update it:
 
 ```
 function! Buffet(...)
@@ -260,22 +254,21 @@ function! Buffet(...)
   let l:food_counter = 1
   let l:foods = ""
   while l:food_counter <= a:0
-    let l:foods .= a:{l:food_counter} . " " 
+    let l:foods .= a:{l:food_counter} . " "
     let l:food_counter += 1
   endwhile
   return l:foods
 endfunction
 ```
 
-The curly braces `a:{l:food_counter}` is Vim's string interpolation, it uses the value of `food_counter` counter to call the formal parameter argument `a:1`, `a:2`, `a:3`, etc.
+The curly braces `a:{l:food_counter}` is a string interpolation, it uses the value of `food_counter` counter to call the formal parameter arguments `a:1`, `a:2`, `a:3`, etc.
 
 ```
 echo Buffet("Noodles")
 " returns "Noodles"
 
 echo Buffet("Noodles", "Sushi", "Ice cream", "Tofu", "Mochi")
-" returns everything you passed
-" returns Noodles Sushi Ice cream Tofu Mochi
+" returns everything you passed: "Noodles Sushi Ice cream Tofu Mochi"
 ```
 
 The variable argument has one more special variable: `a:000`. It has the value of all variable arguments in a list format.
@@ -318,38 +311,37 @@ function! Breakfast() range
 endfunction
 ```
 
-If you are on line 100 and you run `call Breakfast()`, it will display 100 for both `firstline` and `lastline`. If you visually highlight (with `v`, `V`, or `Ctrl-V`) lines 101 to 105 and run `call Breakfast()`, `firstline` displays 101 and `lastline` displays 105.
+If you are on line 100 and you run `call Breakfast()`, it will display 100 for both `firstline` and `lastline`. If you visually highlight (`v`, `V`, or `Ctrl-V`) lines 101 to 105 and run `call Breakfast()`, `firstline` displays 101 and `lastline` displays 105. `firstline` and `lastline` displays the minimum and maximum range where the function is called.
 
-The `:call` command can accepts range argument. If you run `:11,20call Breakfast()`, it will display 11 for `firstline` and 20 for `lastline`.
+You can also use `:call` and passing it a range. If you run `:11,20call Breakfast()`, it will display 11 for `firstline` and 20 for `lastline`.
 
 You might ask, "That's nice that Vimscript function accepts range, but can't I get the line number with `line(".")`? Won't it do the same thing?"
 
-Good question. If this is what you meant:
+Good question. If this is what you mean:
 
 ```
 function! Breakfast()
-  echo line(".")  
+  echo line(".")
 endfunction
 ```
 
-Calling `11,20call Breakfast()` executes the `Breakfast` function 10 times (one for each line in the range). Compare that if you had passed the `range` argument:
+Calling `:11,20call Breakfast()` executes the `Breakfast` function 10 times (one for each line in the range). Compare that if you had passed the `range` argument:
 
 ```
 function! Breakfast() range
   echo line(".")
 endfunction
-
 ```
 
 Calling `11,20call Breakfast()` executes the `Breakfast` function *once*.
 
-If you pass a `range` keyword and you pass a numerical range (like `11,20`) on `call`, Vim only executes that function once. If you don't pass a `range` keyword and you pass a numerical range (like `11,20`) on `call`, Vim executes that function N times depending on the range.
+If you pass a `range` keyword and you pass a numerical range (like `11,20`) on `call`, Vim only executes that function once. If you don't pass a `range` keyword and you pass a numerical range (like `11,20`) on `call`, Vim executes that function N times depending on the range (in this case, N = 10).
 
 ## Dictionary
 
 You can add a function as a dictionary item by adding a `dict` keyword when defining a function.
 
-Suppose you have a function `SecondBreakfast` where you eat the same thing as the first breakfast.
+If you have a function `SecondBreakfast` that returns whatever `breakfast` item you have:
 
 ```
 function! SecondBreakfast() dict
@@ -360,7 +352,7 @@ endfunction
 Let's add this function to the `meals` dictionary:
 
 ```
-let meals = {"breakfast": "pancakes", "second_breakfast": function("SecondBreakfast"), "lunch": "pasta"} 
+let meals = {"breakfast": "pancakes", "second_breakfast": function("SecondBreakfast"), "lunch": "pasta"}
 
 echo meals.second_breakfast()
 " returns "pancakes"
@@ -368,7 +360,7 @@ echo meals.second_breakfast()
 
 With `dict` keyword, the key variable `self` refers to the dictionary where the function is stored (in this case, the `meals` dictionary). The expression `self.breakfast` is equal to `meals.breakfast`.
 
-An alternative way to add a function into a dictionary object is using a namespace.
+An alternative way to add a function into a dictionary object to use a namespace.
 
 ```
 function! meals.second_lunch()
@@ -379,13 +371,13 @@ echo meals.second_lunch()
 " returns "pasta"
 ```
 
-Note that with namespace, you do not have to use the `dict` keyword.
+With namespace, you do not have to use the `dict` keyword.
 
 ## Funcref
 
 A funcref is a reference to a function. It is one of Vimscript's basic data types mentioned in Ch. 24.
 
-The expression `function("SecondBreakfast")` is an example of funcref. Vim has a built-in function `function()` that returns a funcref variable when you pass it a function name (in string).
+The expression `function("SecondBreakfast")` above is an example of funcref. Vim has a built-in function `function()` that returns a funcref when you pass it a function name (string).
 
 ```
 function! Breakfast(item)
@@ -400,8 +392,8 @@ let Breakfastify = function("Breakfast")
 echo Breakfastify("oatmeal")
 " returns "I am having oatmeal for breakfast"
 
-echo Breakfastify("pancakes")
-" returns "I am having pancakes for breakfast"
+echo Breakfastify("pancake")
+" returns "I am having pancake for breakfast"
 ```
 
 In Vim, if you want to assign a function to a variable, you can't just run assign it directly like `let MyVar = MyFunc`. You need to use the `function()` function, like `let MyFar = function("MyFunc")`.
@@ -451,7 +443,7 @@ for meal in day_meals
 endfor
 ```
 
-If you don't want to call the function from inside `lambda`, you can refactor the map above into the following:
+If you don't want to call the function from inside lambda, you can refactor it:
 
 ```
 let day_meals = map(lunch_items, {index, item -> "I am having " . item . " for lunch"})
@@ -459,13 +451,11 @@ let day_meals = map(lunch_items, {index, item -> "I am having " . item . " for l
 
 ## Method Chaining
 
-You can chain several Vimscript functions and lambda expressions sequentially with `->`. The syntax is:
+You can chain several Vimscript functions and lambda expressions sequentially with `->`. Keep in mind that `->` must be followed by a method name *without space.*
 
 ```
 Source->Method1()->Method2()->...->MethodN()
 ```
-
-Syntactically, `->` must be followed by a method name *without space.*
 
 To convert a float to a number using method chaining:
 
@@ -491,7 +481,7 @@ echo dinner_items->CapitalizeList()->sort()->join(", ")
 " returns "Antipasto, Bruschetta, Calzone"
 ```
 
-With method chaining, the sequence is more easily read and understood.
+With method chaining, the sequence is more easily read and understood. I can just glance at `dinner_items->CapitalizeList()->sort()->join(", ")` and know exactly what is going on.
 
 ## Closure
 
@@ -509,7 +499,7 @@ function! Lunch()
 endfunction
 ```
 
-`appetizer` is defined inside the `Lunch` function, which returns `SecondLunch` funcref (`Lunch` is a function that returns a function). Notice that `SecondLunch` uses the `appetizer`, but in Vimscript, it doesn't have access to that variable. If you run `echo Lunch()()`, Vim will throw an undefined variable error.
+`appetizer` is defined inside the `Lunch` function, which returns `SecondLunch` funcref. Notice that `SecondLunch` uses the `appetizer`, but in Vimscript, it doesn't have access to that variable. If you try to run `echo Lunch()()`, Vim will throw an undefined variable error.
 
 To fix this issue, use the `closure` keyword. Let's refactor:
 
@@ -529,5 +519,8 @@ Now if you run `echo Lunch()()`, Vim will return "shrimp".
 
 ## Learn Vimscript Functions The Smart Way
 
-In this chapter, you learned the anatomy of Vim function. You learned how to use different special keywords `range`, `dict`, and `closure` to modify a function's behavior. You also learned how to use lambda and how to chain functions together. Vim functions are important tools to create complex abstractions. Now you should have sufficient knowledge to start writing your own plugins! 
+In this chapter, you learned the anatomy of Vim function. You learned how to use different special keywords `range`, `dict`, and `closure` to modify function behavior. You also learned how to use lambda and to chain multiple functions together. Functions are important tools for creating complex abstractions.
 
+This concludes this Vim guide. However, your Vim journey doesn't end here. In fact, it actually starts now. You should have sufficient knowledge to go on your own or even create your own plugins.
+
+Happy Vimming, friends!
