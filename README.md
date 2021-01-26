@@ -50,7 +50,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 - [Learn-Vim Spanish Updated](https://github.com/EliazBobadilla/Tutorial-de-VIM-en-ES)(`es`)
 
 ## License & Copyright
-The materials here are all ©2020 Igor Irianto.
+The materials here are all © 2020-2021 Igor Irianto.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
