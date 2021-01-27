@@ -12,10 +12,9 @@ To open a file in Vim, you can use `:edit`.
 :edit file.txt
 ```
 
-- If `file.txt` exists, it opens the `file.txt` buffer.
-- If `file.txt` doesn't exist, it creates a new buffer for `file.txt`.
+If `file.txt` exists, it opens the `file.txt` buffer. If `file.txt` doesn't exist, it creates a new buffer for `file.txt`.
 
-Autocomplete (`<Tab>`) works with `:edit`. For example, if your file is inside a [Rails](https://rubyonrails.org/) *a*pp *c*ontroller *u*sers controller directory `./app/controllers/users_controllers.rb`, you can use `<Tab>` to expand the terms quickly:
+Autocomplete with `<Tab>` works with `:edit`. For example, if your file is inside a [Rails](https://rubyonrails.org/) *a*pp *c*ontroller *u*sers controller directory `./app/controllers/users_controllers.rb`, you can use `<Tab>` to expand the terms quickly:
 
 ```
 :edit a<Tab>c<Tab>u<Tab>
