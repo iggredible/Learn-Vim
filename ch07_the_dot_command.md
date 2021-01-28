@@ -20,7 +20,7 @@ let three = "3";
 - Repeat what you just did with the dot command (`.`).
 - Continue pressing `n . n .` until you replace every word.
 
-Here the dot command repeated the `cwconst<esc>` sequence. It saved you from typing eight keystrokes in exchange for just one.
+Here the dot command repeated the `cwconst<Esc>` sequence. It saved you from typing eight keystrokes in exchange for just one.
 
 ## What Is A Change?
 
@@ -28,7 +28,7 @@ If you look at the definition of the dot command (`:h .`), it says that the dot 
 
 Any time you update (add, modify, or delete) the content of the current buffer, you are making a change. The exceptions are updates done by command-line commands (the commands starting with `:`) do not count as a change.
 
-In the first example, `cwconst<esc>` was the change. Now suppose you have this text:
+In the first example, `cwconst<Esc>` was the change. Now suppose you have this text:
 
 ```
 pancake, potatoes, fruit-juice,
@@ -56,7 +56,7 @@ potatoes
 fruit-juice
 ```
 
-Lets add a comma at the end of each line. Starting at the first line, do `A,<Esc>j`. By now, you realize that `j` does not cause a change. The change here is only `A,`. You can move and repeat the change with `j . j .`. The full command is `A,<esc>j.j.`.
+Lets add a comma at the end of each line. Starting at the first line, do `A,<Esc>j`. By now, you realize that `j` does not cause a change. The change here is only `A,`. You can move and repeat the change with `j . j .`. The full command is `A,<Esc>j.j.`.
 
 Every action from the moment you press the insert command operator (`A`) until you exit the insert command (`<Esc>`) is considered as a change.
 
