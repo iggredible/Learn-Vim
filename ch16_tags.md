@@ -109,7 +109,7 @@ donut	one.rb	/^  def donut$/;"	f	class:One
 The above tag item is composed of four components: a `tagname`, a `tagfile`, a `tagaddress`, and tag options.
 - `donut` is the `tagname`. When your cursor is on "donut", Vim searches the tag file for a line that has the "donut" string.
 - `one.rb` is the `tagfile`. Vim looks for a file `one.rb`.
-- `/^ def donut$/` is the `tagaddress`. `/.../` is a pattern indicator. `^` is a pattern for the first element on a line. It is followed by two spaces , then the string `def donut`. Finally, `$` is a pattern for the last element on a line.
+- `/^ def donut$/` is the `tagaddress`. `/.../` is a pattern indicator. `^` is a pattern for the first element on a line. It is followed by two spaces, then the string `def donut`. Finally, `$` is a pattern for the last element on a line.
 - `f class:One` is the tag option that tells Vim that the function `donut` is a function (`f`) and is part of the `One` class.
 
 Let's look at another item in the tag list:
