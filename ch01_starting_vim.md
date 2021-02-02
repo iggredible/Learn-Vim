@@ -130,7 +130,7 @@ You can launch Vim on split horizontal and vertical windows with `o` and `O`, re
 To open Vim with two horizontal windows, run:
 
 ```bash
-vim -o
+vim -o2
 ```
 
 To open Vim with 5 horizontal windows, run:
