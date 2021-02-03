@@ -42,7 +42,7 @@ There are several ways you can traverse buffers:
 - `:bnext` to go to the next buffer (`:bprevious` to go to the previous buffer).
 - `:buffer` + filename. Vim can autocomplete filename with `<Tab>`.
 - `:buffer` + `n`, where `n` is the buffer number. For example, typing `:buffer 2` will take you to buffer #2.
-- Jump to the older position in jump list with `Ctrl-o` and to the newer position with `Ctrl-i`. These are not buffer specific methods, but they can be used to jump between different buffers. I will talk more about jumps in Chapter 5.
+- Jump to the older position in jump list with `Ctrl-O` and to the newer position with `Ctrl-I`. These are not buffer specific methods, but they can be used to jump between different buffers. I will talk more about jumps in Chapter 5.
 - Go to the previously edited buffer with `Ctrl-^`.
 
 Once Vim creates a buffer, it will remain in your buffers list. To remove it, you can type `:bdelete`. It accepts either a buffer number (`:bdelete 3` to delete buffer #3) or a filename (`:bdelete` then use `<Tab>` to autocomplete).
