@@ -149,10 +149,10 @@ You may notice that running internal grep (`:vim`) can get slow if you have a la
 Let's talk about external grep. By default, it uses `grep` terminal command. To search for "lunch" inside a ruby file inside `app/controllers/` directory, you can do this:
 
 ```
-:grep "lunch" app/controllers/**/*.rb
+:grep -R "lunch" app/controllers/
 ```
 
-Note that instead of using `/pattern/`, it follows the terminal grep syntax `"pattern"`. Just like `:vim`, `:grep` accepts `*` and `**` wildcards. It also displays all matches using `quickfix`.
+Note that instead of using `/pattern/`, it follows the terminal grep syntax `"pattern"`. It also displays all matches using `quickfix`.
 
 Vim uses `grepprg` variable to determine which external program to run when running `:grep` so you don't have to always use the terminal `grep` command. Later I will show you how to change default the grep external program.
 
