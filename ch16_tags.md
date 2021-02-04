@@ -168,7 +168,7 @@ The point is, if you want to omit a directory, `--exclude` is your best friend.
 
 ## Tags Navigation
 
-You can get good milage using only `Ctrl-]`, but let's learn a few more tricks. The tag jump key `Ctrl-]` has an command-line mode alternative: `:tag {tag-name}`. If you run:
+You can get good mileage using only `Ctrl-]`, but let's learn a few more tricks. The tag jump key `Ctrl-]` has an command-line mode alternative: `:tag {tag-name}`. If you run:
 
 ```
 :tag donut
