@@ -41,7 +41,7 @@ You can use `**` to search recursively. If you want to look for all `*.md` files
 :edit test/unit/
 ```
 
-## Searching Files With `:find`
+## Searching Files With Find
 
 You can find files with `:find`. For example:
 
@@ -109,7 +109,7 @@ You might be thinking to add the entire project directories so when you press `t
 
 You can add the `set path+={your-path-here}` in your vimrc. Updating `path` takes only a few seconds and doing this will save you a lot of time.
 
-## Searching In Files With `:grep`
+## Searching In Files With Grep
 
 If you need to find in files (find phrases in files), you can use grep. Vim has two ways of doing that:
 
@@ -156,7 +156,7 @@ Note that instead of using `/pattern/`, it follows the terminal grep syntax `"pa
 
 Vim uses `grepprg` variable to determine which external program to run when running `:grep` so you don't have to always use the terminal `grep` command. Later I will show you how to change default the grep external program.
 
-## Browsing Files With `netrw`
+## Browsing Files With Netrw
 
 `netrw` is Vim's built-in file explorer. It is useful to see a project's structural hierarchy. To run `netrw`, you need these two settings in your `.vimrc`:
 
