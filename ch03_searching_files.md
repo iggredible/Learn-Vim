@@ -59,6 +59,8 @@ Autocomplete also works with `:find`:
 
 You may notice that `:find` looks like `:edit`. What's the difference?
 
+## Find And Path
+
 The difference is that `:find` finds file in `path`, `:edit` doesn't. Let's learn a little bit about this `path`. Once you learn how to modify your paths, `:find` can become a powerful searching tool. To check what your paths are, do:
 
 ```
