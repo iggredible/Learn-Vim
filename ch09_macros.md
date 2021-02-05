@@ -152,7 +152,7 @@ How did the macro know when to stop? When the macro was on the last line, it tri
 
 If you need to add actions to an existing macro, instead of recreating the macro from scratch, you can append actions to an existing one. In the register chapter, you learned that you can append a named register by using its uppercased symbol. The same rule applies. To append actions to register a macro, use register "A.
 
-In addition, you also want to add a dot at the end of the line. Assume you have the actions `0W~` stored in register a already (it's a little different from the previous macro, it omits the `j` motion), run:
+Record a macro in register a: `qa0W~q` (this sequence toggles the case of the next WORD in a line). If you want to append a new sequence to also add a dot at the end of the line, run:
 
 ```
 qAA.<Esc>q
@@ -169,7 +169,7 @@ Now when you execute `@a`, watch the cursor goes to the first character in the l
 
 What if you need to add new actions in the middle of a macro?
 
-Assume that you have a macro that toggles the first actual word and adding a period at the end of the line, `0W~A.<Esc>`. Suppose that between uppercasing the first word and adding a period at the end of the line, you need to add the word "deep fried" right before the word "donut" *(because the only thing better than regular donuts are deep fried donuts)*.
+Assume that you have a macro that toggles the first actual word and adding a period at the end of the line, `0W~A.<Esc>` in register a. Suppose that between uppercasing the first word and adding a period at the end of the line, you need to add the word "deep fried" right before the word "donut" *(because the only thing better than regular donuts are deep fried donuts)*.
 
 I will reuse the text from earlier section:
 ```
