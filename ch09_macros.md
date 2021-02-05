@@ -163,7 +163,7 @@ The breakdown:
 - `A.<Esc>` inserts at the end of the line (here `A` is the insert mode command, not to be confused with the macro "A) a dot, then exits insert mode.
 - `q` stops recording macro.
 
-Now when you execute `@a`, watch the cursor goes to the first character in the line (`0`), goes to the next WORD (`W`), toggles the case of the character under the cursor (`~`), goes to insert mode at the end of the line (`A`), writes a dot ("."), and exits insert mode (`<Esc>`).
+Now when you execute `@a`, it not only toggles the case of the next WORD, it also adds a dot at the end of the line.
 
 ## Amending A Macro
 
