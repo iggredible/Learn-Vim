@@ -566,7 +566,9 @@ strawberry sweetcake
 blueberry hotdog
 ```
 
-You can also substitute the nth match in a line with this trick:
+## Greedy And Non-Greedy
+
+You can substitute the nth match in a line with this trick:
 
 ```
 One Mississippi, two Mississippi, three Mississippi, four Mississippi, five Mississippi.
