@@ -523,7 +523,7 @@ bonjour vim
 You need to substitute the word "vim" with "friend" but only on the lines containing the word "hello" or "hola". Recall from earlier this chapter, you can use `|` for multiple alternative patterns.
 
 ```
-:%s/\v(hello|hola) vim)/\1 friend/g
+:%s/\v(hello|hola) vim/\1 friend/g
 ```
 
 The result:
