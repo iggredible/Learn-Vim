@@ -104,19 +104,19 @@ makeprg=make
 The default `:make` command is the `make` external command. To change the `:make` command to execute `g++ {your-file-name}` each time you run it, run:
 
 ```
-:set makeprg=g++\\ %
+:set makeprg=g++\ %
 ```
 
-The `\\` is to escape the space after `g++` (you need to escape the escape). The `%` symbol in Vim represents the current file. The command `g++\\ %` is equivalent to running `g++ hello.cpp`.
+The `\` is to escape the space after `g++`. The `%` symbol in Vim represents the current file. The command `g++\\ %` is equivalent to running `g++ hello.cpp`.
 
 Go to `./hello.cpp` then run `:make`. Vim compiles `hello.cpp` and creates `a.out` because you didn't specify the output. Let's refactor it so it will name the compiled output with the name of the original file minus the extension. Run or add this to vimrc:
 
 ```
-set makeprg=g++\\ %\\ -o\\ %<
+set makeprg=g++\ %\ -o\ %<
 ```
 
 The breakdown:
-- `g++\\ %` is the same as above. It is equivalent to running `g++ <your-file>`.
+- `g++\ %` is the same as above. It is equivalent to running `g++ <your-file>`.
 - `-o` is the output option.
 - `%<` in Vim represents the current file name without an extension (`hello.cpp` becomes `hello`).
 
