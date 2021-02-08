@@ -272,7 +272,7 @@ Vim will immediately jump to the `donut` procedure in `one.rb`, much like runnin
 :tjump pancake
 ```
 
-Vim will prompt you tag options to choose from, much like running `:tselect pancake`. With `tjump` You get the best of both methods.
+Vim will prompt you tag options to choose from, much like running `:tselect pancake`. With `tjump` you get the best of both methods.
 
 Vim has a normal mode key for `tjump`: `g Ctrl-]`. I personally like `g Ctrl-]` better than `Ctrl-]`.
 
