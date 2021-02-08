@@ -36,9 +36,9 @@ To go to the start of the line, use `Ctrl-b`. To go to the end of the line, use 
 Similar to the insert mode, inside the command-line mode, you have three ways to delete characters:
 
 ```
-Ctrl-h    Delete one character
-Ctrl-w    Delete one word
-Ctrl-u    Delete the entire line
+Ctrl-H    Delete one character
+Ctrl-W    Delete one word
+Ctrl-U    Delete the entire line
 ```
 Finally, if you want to edit the command like you would a normal textfile use `Ctrl-f`.
 
