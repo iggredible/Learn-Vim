@@ -139,7 +139,7 @@ Each time you save inside a `.cpp` file, Vim executes the `make` command.
 Vim has a `:compiler` command to quickly switch compilers. Your Vim build probably comes with several pre-built compiler configurations. To check what compilers you have, run:
 
 ```
-:e $VIMRUNTIME/compilers/<Tab>
+:e $VIMRUNTIME/compiler/<Tab>
 ```
 
 You should see a list of compilers for different programming languages.
