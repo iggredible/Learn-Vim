@@ -30,6 +30,14 @@ Now close Vim. The next time you start Vim, you will see both `"donut!"` and `"c
 
 ## Filetype Detection
 
+Before you start, to ensure that these detections work, make sure that your vimrc contains at least the following line:
+
+```
+filetype plugin indent on
+```
+
+Check out `:h filetype-overview` for more context. Essentially this turns on Vim's filetype detection.
+
 When you open a new file, Vim usually knows what kind of file it is. If you have a file `hello.rb`, running `:set filetype?` returns the correct response `filetype=ruby`.
 
 Vim knows how to detect "common" file types (Ruby, Python, Javascript, etc). But what if you have a custom file? You need to teach Vim to detect it and assign it with the correct file type.
@@ -41,14 +49,6 @@ There are two methods of detection: using file name and file content.
 File name detection detects a file type using the name of that file. When you open the `hello.rb` file, Vim knows it is a Ruby file from the `.rb` extension.
 
 There are two ways you can do file name detection: using `ftdetect/` runtime directory and using `filetype.vim` runtime file. Let's explore both.
-
-To ensure that these detections work, make sure that your vimrc contains at least the following line:
-
-```
-filetype plugin indent on
-```
-
-Check out `:h filetype-overview` for more context. Essentially this turns on Vim's filetype detection.
 
 #### `ftdetect/`
 
