@@ -91,7 +91,9 @@ set viewdir=$HOME/else/where
 
 ### Loading The View File
 
-Close the `foo.txt` if you haven't, then open `foo.txt` again. You should see the original text without the changes. That's expected. Let's load the View file. Run:
+Close the `foo.txt` if you haven't, then open `foo.txt` again. **You should see the original text without the changes.** That's expected. 
+
+To restore the state, you need to load the View file. Run:
 
 ```
 :loadview
