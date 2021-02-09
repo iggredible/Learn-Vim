@@ -13,10 +13,9 @@ Behind the scene, Vim looks at multiple places for a vimrc file. Here are the pl
 - `$HOME/.vim/vimrc`
 - `$EXINIT`
 - `$HOME/.exrc`
-- `$HOME/.vim/exrc`
 - `$VIMRUNTIME/default.vim`
 
-When you start Vim, it will check the above seven locations in that order for a vimrc file. The first found vimrc file will be used and the rest is ignored. 
+When you start Vim, it will check the above six locations in that order for a vimrc file. The first found vimrc file will be used and the rest is ignored. 
 
 First Vim will look for a `$VIMINIT`. If there is nothing there, Vim will check for `$HOME/.vimrc`. If there is nothing there, Vim will check for `$HOME/.vim/vimrc`. If Vim finds it, it will stop looking and use `$HOME/.vim/vimrc`. 
 
@@ -28,9 +27,9 @@ The third, `$HOME/.vim/vimrc`, is located inside the `~/.vim` directory. You mig
 
 The fourth, `$EXINIT` works similar to `$VIMINIT`. 
 
-The fifth and sixth, `$HOME/.exrc` and `$HOME/.vim/exrc` work similar to `$HOME/.vimrc` and `$HOME/.vim/vimrc`.
+The fifth, `$HOME/.exrc` works similar to `$HOME/.vimrc`.
 
-The seventh, `$VIMRUNTIME/defaults.vim` is the default vimrc that comes with your Vim build. In my case, I have Vim 8.2 installed using Homebrew, so my path is (`/usr/local/share/vim/vim82`). If Vim does not find any of the previous six vimrc files, it will use this file.
+The sixth, `$VIMRUNTIME/defaults.vim` is the default vimrc that comes with your Vim build. In my case, I have Vim 8.2 installed using Homebrew, so my path is (`/usr/local/share/vim/vim82`). If Vim does not find any of the previous six vimrc files, it will use this file.
 
 For the remaining of this chapter, I am assuming that the vimrc uses the `~/.vimrc` path. 
 
