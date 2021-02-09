@@ -42,6 +42,14 @@ File name detection detects a file type using the name of that file. When you op
 
 There are two ways you can do file name detection: using `ftdetect/` runtime directory and using `filetype.vim` runtime file. Let's explore both.
 
+To ensure that these detections work, make sure that your vimrc contains at least the following line:
+
+```
+filetype plugin indent on
+```
+
+Check out `:h filetype-overview` for more context. Essentially this turns on Vim's filetype detection.
+
 #### `ftdetect/`
 
 Let's create an obscure (yet tasty) file, `hello.chocodonut`. When you open it and you run `:set filetype?`, since it is not a common file name extension Vim doesn't know what to make of it. It returns `filetype=`.
