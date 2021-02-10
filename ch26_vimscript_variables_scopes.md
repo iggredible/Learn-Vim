@@ -36,7 +36,7 @@ beverage = "orange juice"
 " throws an error
 ```
 
-You can define an immutable variable with `const`.
+You can define an immutable variable with `const`. Being immutable, once a variable value is assigned, you cannot reassign it with a different value.
 
 ```
 const waffle = "waffle"
