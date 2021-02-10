@@ -292,26 +292,26 @@ Double quotes behave differently than single quotes. Single quotes display chara
 What are special characters? Check out the newline and double-quotes display:
 
 ```viml
-:echo "hello\\nworld"
+:echo "hello\nworld"
 " returns
 " hello
 " world
 
-:echo "hello \\"world\\""
+:echo "hello \"world\""
 " returns "hello "world""
 ```
 
 Compare that with single-quotes:
 
 ```
-:echo 'hello\\nworld'
-" returns 'hello\\nworld'
+:echo 'hello\nworld'
+" returns 'hello\nworld'
 
-:echo 'hello \\"world\\"'
-" returns 'hello \\"world\\"'
+:echo 'hello \"world\"'
+" returns 'hello \"world\"'
 ```
 
-Special characters are special string characters that when escaped, behave differently. `\\n` acts as a newline. `\\"` behaves like a literal `"`. For a list of other special characters, check out `:h expr-quote`.
+Special characters are special string characters that when escaped, behave differently. `\n` acts like a newline. `\"` behaves like a literal `"`. For a list of other special characters, check out `:h expr-quote`.
 
 ### String Procedures
 
