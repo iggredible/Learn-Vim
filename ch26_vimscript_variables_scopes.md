@@ -40,14 +40,7 @@ You can define an immutable variable with `const`.
 
 ```
 const waffle = "waffle"
-
-echo waffle
-"return waffle
-
 const waffle = "pancake"
-" returns error
-
-let waffle = "pancake"
 " throws an error
 ```
 
