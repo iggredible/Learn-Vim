@@ -476,14 +476,14 @@ The difference between `catch` and `finally` is that `finally` is always run, er
 You can catch specific error with `:catch`. According to `:h :catch`:
 
 ```
-catch /^Vim:Interrupt$/	            " catch interrupts (CTRL-C)
-catch /^Vim\\%((\\a\\+)\\)\\=:E/	    " catch all Vim errors
-catch /^Vim\\%((\\a\\+)\\)\\=:/	    " catch errors and interrupts
-catch /^Vim(write):/		              " catch all errors in :write
+catch /^Vim:Interrupt$/	             " catch interrupts (CTRL-C)
+catch /^Vim\\%((\\a\\+)\\)\\=:E/	   " catch all Vim errors
+catch /^Vim\\%((\\a\\+)\\)\\=:/	     " catch errors and interrupts
+catch /^Vim(write):/		             " catch all errors in :write
 catch /^Vim\\%((\\a\\+)\\)\\=:E123:/ " catch error E123
-catch /my-exception/		              " catch user exception
-catch /.*/			                      " catch everything
-catch				                        " same as /.*/
+catch /my-exception/		             " catch user exception
+catch /.*/			                     " catch everything
+catch				                         " same as /.*/
 ```
 
 If you notice from the list above, there is a catch for interrupt. Inside a `try` block, an interrupt is considered a catchable error.
