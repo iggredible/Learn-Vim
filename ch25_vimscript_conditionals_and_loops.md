@@ -225,7 +225,7 @@ echo 0 || 0
 echo "foo5" || "foo5"
 " returns 0
 
-echo "5foo || foo5"
+echo "5foo" || "foo5"
 " returns 1
 ```
 
