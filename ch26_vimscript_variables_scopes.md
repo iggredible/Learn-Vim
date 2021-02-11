@@ -2,7 +2,7 @@
 
 Before diving into Vimscript functions, let's learn about the different sources and scopes of Vim variables.
 
-## Mutable And Immutable Variable
+## Mutable And Immutable Variables
 
 You can assign a value to a variable in Vim with `let`:
 
