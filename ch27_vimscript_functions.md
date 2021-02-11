@@ -187,7 +187,9 @@ echo call("Tasty", ["gravy"])
 " returns "Tasty gravy"
 ```
 
-To clear any confusion, you have just used two different `call` commands: the `:call` command-line command and the `call()` function. The `call()` function accepts as its first argument the function name (string) and its second argument the formal parameters (list).
+To clear any confusion, you have just used two different `call` commands: the `:call` command-line command and the `call()` function. The `call()` function accepts as its first argument the function name (string) and its second argument the formal parameters (list). 
+
+To learn more about `:call` and `call()`, check out `:h call()` and `:h :call`.
 
 ## Default Argument
 
