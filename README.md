@@ -10,7 +10,7 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 ### Prologue
 
-- [New to Vim? Read This First](./ch00_new_to_vim_read_this_first.md)
+- [Ch 0     - New to Vim? Read This First](./ch00_new_to_vim_read_this_first.md)
 
 ### Part 1: Learn Vim the Smart Way
 
