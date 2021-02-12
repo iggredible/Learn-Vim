@@ -8,7 +8,11 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 ## Table Of Contents (In Progress)
 
-### Part 1: Learn Vim the Smart Way (DONE)
+### Prologue
+
+- [New to Vim? Read This First](./ch00_new_to_vim_read_this_first.md)
+
+### Part 1: Learn Vim the Smart Way
 
 - [Ch 1     - Starting Vim](./ch01_starting_vim.md)
 - [Ch 2     - Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)
@@ -31,13 +35,13 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 - [Ch 19    - Compile](./ch19_compile.md)
 - [Ch 20    - Views, Sessions, and Viminfo](./ch20_views_sessions_viminfo.md)
 
-### Part 2: Customize Vim the Smart Way (DONE)
+### Part 2: Customize Vim the Smart Way
 
 - [Ch 21 - Vimrc](./ch21_vimrc.md)
 - [Ch 22 - Vim Packages](./ch22_vim_packages.md)
 - [Ch 23 - Vim Runtime](./ch23_vim_runtime.md)
 
-### Part 3: Learn Vimscript the Smart Way (TBD)
+### Part 3: Learn Vimscript the Smart Way
 
 - [Ch 24 - Vimscript Basic Data Types](./ch24_vimscript_basic_data_types.md)
 - [Ch 25 - Vimscript Conditionals And Loops](./ch25_vimscript_conditionals_and_loops.md)
