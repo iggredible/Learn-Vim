@@ -274,14 +274,6 @@ g*    Search for word under cursor forward
 g#    Search for word under cursor backward
 
 ```
-When searching, I personally like to have these three options:
-
-```
-set hlsearch     to highlight matches
-set incsearch    pattern-match while typing
-set wrapscan     go to top after end of file
-```
-
 ## Marking Position
 
 You can use marks to save your current position and return to this position later. It's like a bookmark for text editing. You can set a mark with `mx`, where `x` can be any alphabetical letter `a-zA-Z`. There are two ways to return to mark: exact (line and column) with `` `x`` and linewise (`'x`).
