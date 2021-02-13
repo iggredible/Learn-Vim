@@ -1,6 +1,6 @@
 # New To Vim? Read This First
 
-## Why This Book Was Written
+## Why This Guide Was Written
 
 There are many places to learn Vim: the `vimtutor` is a great place to start and the `:help` manual has all the references you will ever need.
 
@@ -12,7 +12,7 @@ This is an opinionated guide. It covers techniques that I often use when using V
 
 This guide is examples-heavy. When learning a new skill, examples are indispensable, having numerous examples will solidify these concepts more effectively.
 
-Some of you may wonder why do you need to learn Vimscript? In my first year of using Vim, I was content with just knowing how to use Vim. Time passed and I started needing Vimscript more and more to write custom commands for my specific editing needs. As you are mastering Vim, you will sooner or later need to learn Vimscript. So why not sooner? Vimscript is a small language. You can learn its basics in just four chapters of this book.
+Some of you may wonder why do you need to learn Vimscript? In my first year of using Vim, I was content with just knowing how to use Vim. Time passed and I started needing Vimscript more and more to write custom commands for my specific editing needs. As you are mastering Vim, you will sooner or later need to learn Vimscript. So why not sooner? Vimscript is a small language. You can learn its basics in just four chapters of this guide.
 
 You can go far using Vim without knowing any Vimscript, but knowing it will help you excel even farther.
 
@@ -43,7 +43,7 @@ Once you can edit at 50% of the original speed, it's time to go full-time Vim.
 
 This is a practical guide. To become good in Vim you need to develop your muscle memory, not head knowledge.
 
-You don't learn how to ride a bike by reading a book about how to ride a bike. You need to actually ride a bike.
+You don't learn how to ride a bike by reading a guide about how to ride a bike. You need to actually ride a bike.
 
 You need to type along every commands referred in this guide. Not only that, but you need to repeat them several times and try different combinations. Look up what other features the command you just learned has. The `:help` command and Google are your best friends. Your goal is not to know everything about a command, but to be able to execute that command naturally and instinctively.
 
@@ -59,11 +59,11 @@ Most of the command or code-related phrases are in code-case (`like this`).
 
 Strings are surrounded by a pair of double-quotes ("like this").
 
-Vim commands can be abbreviated. For example, `:join` can be abbreviated as `:j`. Throughout the book, I will be mixing the shorthand and the longhand descriptions. For commands that are not frequently used in this book, I will use the longhand version. For commands that are frequently used, I will use the shorthand version. I apologize for the inconsistencies. In general, whenever you spot a new command, always check it on `:help` to see its abbreviations.
+Vim commands can be abbreviated. For example, `:join` can be abbreviated as `:j`. Throughout the guide, I will be mixing the shorthand and the longhand descriptions. For commands that are not frequently used in this guide, I will use the longhand version. For commands that are frequently used, I will use the shorthand version. I apologize for the inconsistencies. In general, whenever you spot a new command, always check it on `:help` to see its abbreviations.
 
 ## Vimrc
 
-At various points in the book, I will refer to vimrc options. If you're new to Vim, a vimrc is like a config file.
+At various points in the guide, I will refer to vimrc options. If you're new to Vim, a vimrc is like a config file.
 
 Vimrc won't be covered until chapter 21. For the sake of clarity, I will show briefly here how to set it up.
 
