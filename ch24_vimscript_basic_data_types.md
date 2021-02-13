@@ -25,9 +25,11 @@ Vim has 10 different data types:
 
 I will cover the first six data types here. In Ch. 27, you will learn about Funcref. For more about Vim data types, check out `:h variables`.
 
-## Echo
+## Following Along With Ex Mode
 
-Since Vim does not technically have a REPL, you can use `echo` or `echom` commands. The former prints the evaluated expression you give. The latter does the same, but in addition, it stores the result in the message history.
+Vim technically does not have a built-in REPL, but it has a mode, Ex mode, that can be used like one. You can go to the Ex mode with `Q` or `gQ`. The Ex mode is like an extended command-line mode (it's like typing command-line mode commands non-stop). To quit the Ex mode, type `:visual`.
+
+You can use either `:echo` or `:echom` on this chapter and the subsequent Vimscript chapters to code along. They are like `console.log` in JS or `print` in Python. The `:echo` command prints the evaluated expression you give. The `:echom` command does the same, but in addition, it stores the result in the message history.
 
 ```viml
 :echom "hello echo message"
@@ -44,8 +46,6 @@ To clear your message history, run:
 ```
 :messages clear
 ```
-
-For the remaining of the chapter, I will use `:echo` (because it is one letter shorter), but you are more than welcome to use `:echom` or other methods.
 
 ## Number
 
