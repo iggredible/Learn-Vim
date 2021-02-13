@@ -6,7 +6,7 @@
 
 Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
-## Table Of Contents (In Progress)
+## Table Of Contents 
 
 ### Prologue
 
