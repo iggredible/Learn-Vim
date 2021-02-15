@@ -45,7 +45,7 @@ This is a practical guide. To become good in Vim you need to develop your muscle
 
 You don't learn how to ride a bike by reading a guide about how to ride a bike. You need to actually ride a bike.
 
-You need to type along every commands referred in this guide. Not only that, but you need to repeat them several times and try different combinations. Look up what other features the command you just learned has. The `:help` command and Google are your best friends. Your goal is not to know everything about a command, but to be able to execute that command naturally and instinctively.
+You need to type along every commands referred in this guide. Not only that, but you need to repeat them several times and try different combinations. Look up what other features the command you just learned has. The `:help` command and search engines are your best friends. Your goal is not to know everything about a command, but to be able to execute that command naturally and instinctively.
 
 As much as I try to fashion this guide to be linear, some concepts in this guide have to be presented out-of-order. For example in chapter 1, I mention the substitute command (`:s`), even though it won't be covered until chapter 12. To remedy this, whenever a new concept that has not been covered yet is mentioned early, I will provide a quick how-to guide without a detailed explanation. So please bear with me :).
 
