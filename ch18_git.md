@@ -48,17 +48,13 @@ Alternatively you could run:
 vim -d file1.txt file2.txt
 ```
 
-<p align="center">
-  <img alt="Basic diffing with Vim" width="900" height="auto" src="images/diffing-basic.png">
-</p>
+![Basic diffing with Vim](diffing-basic.png)
 
 `vimdiff` displays two buffers side-by-side. On the left is `file1.txt` and on the right is `file2.txt`. The first differences (apples and oranges) are highlighted on both lines.
 
 Suppose you want to make the second buffer to have apples, not oranges. To transfer the content from your current position (you're currently on `file1.txt`) to `file2.txt`, first go to the next diff with `]c` (to jump to the previous diff window, use `[c`). The cursor should be on apples now. Run `:diffput`. Both files should now have apples.
 
-<p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="images/diffing-apples.png">
-</p>
+![Diffing apples](diffing-apples.png)
 
 If you need to transfer the text from the other buffer (orange juice, `file2.txt`) to replace the text on the current buffer (apple juice, `file1.txt`), with your cursor still on `file1.txt` window, first go to the next diff with `]c`. Your cursor now should be on apple juice. Run `:diffget` to get the orange juice from another buffer to replace apple juice in our buffer.
 
@@ -175,9 +171,7 @@ A conflict, great! Let's resolve the conflict using our newly-configured `merget
 git mergetool
 ```
 
-<p align="center">
-  <img alt="Three-way mergetool with Vim" width="900" height="auto" src="images/mergetool-initial.png">
-</p>
+![Three-way mergetool with Vim](mergetool-initial.png)
 
 Vim displays four windows. Pay attention to the top three:
 
@@ -276,9 +270,7 @@ When you run the `:Git` command without any parameters, vim-fugitive displays a 
 - `u` to unstage the file name under the cursor.
 - `>` / `<` to display or hide an inline diff of the file name under the cursor.
 
-<p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-git.png">
-</p>
+![Fugitive Git](fugitive-git.png)
 
 For more, check out `:h fugitive-staging-maps`.
 
@@ -294,17 +286,13 @@ Some things you can do while in this `"git blame"` mode:
 
 For more, check out `:h :Git_blame`.
 
-<p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-git-blame.png">
-</p>
+![Fugitive Git Blame](fugitive-git-blame.png)
 
 ## Gdiffsplit
 
 When you run the `:Gdiffsplit` command, vim-fugitive runs a `vimdiff` of the current file's latest changes against the index or work tree. If you run `:Gdiffsplit <commit>`, vim-fugitive runs a `vimdiff` against that file inside `<commit>`.
 
-<p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-gdiffsplit.png">
-</p>
+![Fugitive Gdiffsplit](fugitive-gdiffsplit.png)
 
 Because you are in a `vimdiff` mode, you can *get* or *put* the diff with `:diffput` and `:diffget`.
 
@@ -318,9 +306,7 @@ When you run the `:Gread` command in a file after you make changes, vim-fugitive
 
 When you run the `:Gclog` command, vim-fugitive displays the commit history. It is like running the `git log` command. Vim-fugitive uses Vim's quickfix to accomplish this, so you can use `:cnext` and `:cprevious` to traverse to the next or previous log information. You can open and close the log list with `:copen` and `:cclose`.
 
-<p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="images/fugitive-git-log.png">
-</p>
+![Fugitive Git Log](fugitive-git-log.png)
 
 While in this `"git log"` mode, you can do two things:
 - View the tree.

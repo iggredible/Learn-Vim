@@ -217,7 +217,7 @@ baz10
 
 Let's say that your windows layout look like the following (using strategically placed `split` and `vsplit`):
 
-![Session Layout](images/session-layout.png)
+![Session Layout](session-layout.png)
 
 To preserve this look, you need to save the Session. Run:
 

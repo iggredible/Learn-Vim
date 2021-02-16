@@ -254,9 +254,7 @@ You can mix and match these options. For example, `^hello | ^welcome friends$` w
 
 To search for files inside Vim using fzf.vim plugin, you can use the `:Files` method. Run `:Files` from Vim and you will be prompted with fzf search prompt.
 
-<p align="center">
-  <img alt="Finding files in fzf" width="900" height="auto" src="images/fzf-files.gif" />
-</p>
+![Finding files in fzf](fzf-files.gif)
 
 Since you will be using this command frequently, it is good to have this mapped. I map mine to `Ctrl-f`. In my vimrc, I have this:
 
@@ -268,9 +266,7 @@ nnoremap <silent> <C-f> :Files<CR>
 
 To search inside files, you can use the `:Rg` command.
 
-<p align="center">
-  <img alt="Finding in Files in fzf" width="900" height="auto" src="images/fzf-in-files.gif"/>
-</p>
+![Finding in files in fzf](fzf-in-files.gif)
 
 Again, since you will probably use this frequently, let's map it. I map mine to `<Leader>f`.
 
