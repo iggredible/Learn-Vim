@@ -10,7 +10,7 @@ There are many ways to get into insert mode from the normal mode. Here are some 
 
 ```
 i    Insert text before the cursor
-I    Insert text before the first non-blank character of the line.
+I    Insert text before the first non-blank character of the line
 a    Append text after the cursor
 A    Append text at the end of line
 o    Starts a new line below the cursor and insert text
@@ -35,7 +35,7 @@ Ctrl-C    Like Ctrl-[ and <Esc>, but does not check for abbreviation
 
 I find `<Esc>` key too far to reach, so I map my computer `<Caps-Lock>` to behave like `<Esc>`. If you search for Bill Joy's ADM-3A keyboard (Vi creator), you will see that the `<Esc>` key is not located on far top left like modern keyboards, but to the left of `q` key. This is why I think it makes sense to map  `<Caps lock>` to `<Esc>`.
 
-Another common convention I have seen Vim users do is mapping `esc` to `jj` or `jk` in insert mode.
+Another common convention I have seen Vim users do is mapping `<Esc>` to `jj` or `jk` in insert mode. If you prefer this option add this one of those lines (or both) in your vimrc file.
 
 ```
 inoremap jj <Esc>
@@ -66,7 +66,7 @@ Ctrl-U    Delete the entire line
 
 Vim registers can store texts for future use. To insert a text from any named register while in insert mode, type `Ctrl-R` plus the register symbol. There are many symbols you can use, but for this section, let's cover only the named registers (a-z).
 
-To see it in action, first you need to yank a word to register a. Move your cursor on any word. Then type:
+To see it in action, first you need to yank a word to register "a". Move your cursor on any word. Then type:
 
 ```
 "ayiw
@@ -75,7 +75,7 @@ To see it in action, first you need to yank a word to register a. Move your curs
 - `"a` tells Vim that the target of your next action will go to register a.
 - `yiw` yanks inner word. Review the chapter on Vim grammar for a refresher.
 
-Register a now contains the word you just yanked. While in insert mode, to paste the text stored in register a:
+Register "a" now contains the word you just yanked. While in insert mode, to paste the text stored in register "a":
 
 ```
 Ctrl-R a
