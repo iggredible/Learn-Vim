@@ -66,7 +66,7 @@ Ctrl-U    Delete the entire line
 
 Vim registers can store texts for future use. To insert a text from any named register while in insert mode, type `Ctrl-R` plus the register symbol. There are many symbols you can use, but for this section, let's cover only the named registers (a-z).
 
-To see it in action, first you need to yank a word to register "a". Move your cursor on any word. Then type:
+To see it in action, first you need to yank a word to register a. Move your cursor on any word. Then type:
 
 ```
 "ayiw
@@ -75,7 +75,7 @@ To see it in action, first you need to yank a word to register "a". Move your cu
 - `"a` tells Vim that the target of your next action will go to register a.
 - `yiw` yanks inner word. Review the chapter on Vim grammar for a refresher.
 
-Register "a" now contains the word you just yanked. While in insert mode, to paste the text stored in register "a":
+Register a now contains the word you just yanked. While in insert mode, to paste the text stored in register a:
 
 ```
 Ctrl-R a
