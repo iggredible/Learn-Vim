@@ -10,7 +10,11 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 This guide is and will always be free. 
 
-If you want to financially support this project, you can [purchase this guide on gumroad](https://gum.co/DADpa). You will get this guide in popular ebook formats: pdf, epub, and mobi. If you purchase the premium bundle, you'll also get 200 screencasts to cover the important parts of the book.
+If you want to financially support this project, you can [purchase this guide on gumroad](https://gum.co/DADpa). 
+
+There are two purchase options:
+- Ebooks (pdf, epub, mobi)
+- Ebooks (pdf, epub, mobi) + 200 bonus Screencasts
 
 <a href="https://gum.co/DADpa"><img src="images/learn-vim-cover.png" width="100"></a>
 
