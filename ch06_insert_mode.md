@@ -17,7 +17,7 @@ o    Starts a new line below the cursor and insert text
 O    Starts a new line above the cursor and insert text
 s    Delete the character under the cursor and insert text
 S    Delete the current line and insert text
-gi   Insert text in same position where the last insert mode was stopped in current buffer
+gi   Insert text in same position where the last insert mode was stopped
 gI   Insert text at the start of line (column 1)
 ```
 
