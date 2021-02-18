@@ -23,7 +23,7 @@ This guide is written for both beginner and advanced Vimmers. It starts out with
 
 Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
-## Purchase This Guide
+## Support This Project
 
 This guide is and will always be free.
 
