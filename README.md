@@ -3,22 +3,37 @@
 ## What is this about?
 
 *Learn Vim (the Smart Way)* is a guide to learn the good parts of Vim.
+There are many places to learn Vim: the `vimtutor` is a great place to start and the `help` manual has all the references you will ever need.
+
+However, the average user needs something more than `vimtutor` and less than the `help` manual. This guide attempts to bridge that gap by highlighting only the key features to learn the most useful parts of Vim in the least time possible.
+
+Chances are you won't need all 100% of Vim features. You probably only need to know about 20% to become a powerful Vimmer. This guide will show you which Vim features you will find most useful.
+
+This is an opinionated guide. It covers techniques that I often use when using Vim. The chapters are sequenced based on what I think would make the most logical sense for a beginner to learn Vim.
+
+This guide is examples-heavy. When learning a new skill, examples are indispensable, *having numerous examples will solidify the concepts more effectively.*
+
+Some of you may wonder why do you need to learn Vimscript? Won't learning just to use Vim enough? In my first year of using Vim, I was content with just knowing how to use Vim. Time passed and I started needing Vimscript more and more to write custom commands for my specific editing needs. As you are mastering Vim, you will sooner or later need to learn Vimscript. So why not sooner? Vimscript is a small language. You can learn its fundamentals in just four chapters of this guide.
+
+You can go far using Vim without knowing any Vimscript, but knowing it will help you excel even farther.
+
+This guide is written for both beginner and advanced Vimmers. It starts out with broad and simple concepts and ends with specific and advanced concepts. If you're an advanced user already, I would encourage you to read this guide from start to finish anyway, because you will learn something new!
+
+## I Want More Vim Tips!
 
 Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 ## Purchase This Guide
 
-This guide is and will always be free. 
+This guide is and will always be free.
 
-If you want to financially support this project, you can [purchase this guide on gumroad](https://gum.co/DADpa). 
-
-There are two purchase options:
+If you want to financially support this project, you can [purchase this guide on gumroad](https://gum.co/DADpa). There are two purchase options:
 - Ebooks (pdf, epub, mobi)
 - Ebooks (pdf, epub, mobi) + *200 bonus Screencasts*
 
 <a href="https://gum.co/DADpa"><img src="images/learn-vim-cover.png" width="100"></a>
 
-## Table Of Contents 
+## Table Of Contents
 
 ### Prologue
 
