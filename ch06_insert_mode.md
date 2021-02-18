@@ -10,7 +10,7 @@ There are many ways to get into insert mode from the normal mode. Here are some 
 
 ```
 i    Insert text before the cursor
-I    Insert text before the first non-blank character of the line.
+I    Insert text before the first non-blank character of the line
 a    Append text after the cursor
 A    Append text at the end of line
 o    Starts a new line below the cursor and insert text
@@ -35,7 +35,7 @@ Ctrl-C    Like Ctrl-[ and <Esc>, but does not check for abbreviation
 
 I find `<Esc>` key too far to reach, so I map my computer `<Caps-Lock>` to behave like `<Esc>`. If you search for Bill Joy's ADM-3A keyboard (Vi creator), you will see that the `<Esc>` key is not located on far top left like modern keyboards, but to the left of `q` key. This is why I think it makes sense to map  `<Caps lock>` to `<Esc>`.
 
-Another common convention I have seen Vim users do is mapping `esc` to `jj` or `jk` in insert mode.
+Another common convention I have seen Vim users do is mapping `<Esc>` to `jj` or `jk` in insert mode. If you prefer this option add this one of those lines (or both) in your vimrc file.
 
 ```
 inoremap jj <Esc>
