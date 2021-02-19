@@ -15,7 +15,7 @@ Here are the 10 Vim register types:
 3. The small delete register (`"-`).
 4. The named registers (`"a-z`).
 5. The read-only registers (`":`, `".`,and `"%`).
-6. The alternate buffer register (`"#`).
+6. The alternate file register (`"#`).
 7. The expression register (`"=`).
 8. The selection registers (`"*` and `"+`).
 9. The black hole register (`"_`).
