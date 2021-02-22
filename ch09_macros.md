@@ -185,7 +185,7 @@ First, let's call the existing macro (assume you have kept the macro from the pr
 0W~A.^[
 ```
 
-What is this `^[`? Didn't you do `0W~A.<Esc>`? `^[` is Vim's *internal code* representation of `<Esc>`. With certain special keys, Vim prints the representation of those keys in the form of internal codes. Some common keys that have internal code representations are `<Esc>`, `<Backspace>`, and `<Enter>`. There are more special keys, but they are not within the scope of this chapter.
+What is this `^[`? Didn't you do `0W~A.<Esc>`? Where is the `<Esc>`? `^[` is Vim's *internal code* representation of `<Esc>`. With certain special keys, Vim prints the representation of those keys in the form of internal codes. Some common keys that have internal code representations are `<Esc>`, `<Backspace>`, and `<Enter>`. There are more special keys, but they are not within the scope of this chapter.
 
 Back to the macro, right after the toggle case operator (`~`), let's add the instructions to go to the end of the line (`$`), go back one word (`b`), go to the insert mode (`i`), type "deep fried " (don't forget the space after "fried "), and exit insert mode (`<Esc>`).
 

@@ -414,7 +414,7 @@ Let's talk about the global flag. Run:
 Vim substitutes all pancakes with donuts in one swift command. The global command is one of the several flags the substitute command accepts. You pass flags at the end of the substitute command. Here is a list of useful flags:
 
 ```
-&    Reuse the flags from the previous substitute command. Must be passed as the first flag.
+&    Reuse the flags from the previous substitute command.
 g    Replace all matches in the line.
 c    Ask for substitution confirmation.
 e    Prevent error message from displaying when substitution fails.
