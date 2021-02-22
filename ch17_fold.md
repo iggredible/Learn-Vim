@@ -17,7 +17,7 @@ Fold me
 Hold me
 ```
 
-Type `zfj`. Vim folds both lines into one. You should see something like this:
+With the cursor in the first line, type `zfj`. Vim folds both lines into one. You should see something like this:
 
 ```
 +-- 2 lines: Fold me -----
