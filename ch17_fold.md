@@ -24,7 +24,7 @@ With the cursor in the first line, type `zfj`. Vim folds both lines into one. Yo
 ```
 
 Here is the breakdown:
-- `zf` `zf` is the fold operator.
+- `zf` is the fold operator.
 - `j` is the motion for the fold operator.
 
 You can open a folded text with `zo`. To close the fold, use `zc`.
@@ -39,7 +39,7 @@ You can execute a fold from the command-line mode with the `:fold` command. To f
 :,+1fold
 ```
 
-`,+1` is the range. If you don't pass parameters to the range, it defaults to the current line. `+1` is the range indicator for the next line. To fold the lines 5 to 10, run `:5,10fold`. To fold from the current line to the end of the line, run `:,$fold`.
+`,+1` is the range. If you don't pass parameters to the range, it defaults to the current line. `+1` is the range indicator for the next line. To fold the lines 5 to 10, run `:5,10fold`. To fold from the current position to the end of the line, run `:,$fold`.
 
 There are many other fold and unfold commands. I find them too many to remember when starting out. The most useful ones are:
 - `zR` to open all folds.
