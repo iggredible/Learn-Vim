@@ -139,6 +139,125 @@ What's this? A fold within a fold?
 
 Nested folds are valid. The text "Two" and "Two again" have fold level of one. The text "Three" and "Three again" have fold level of two. If you have a foldable text with a higher fold level within a foldable text, you will have multiple fold layers.
 
+## Expression Fold
+
+Expression fold allows you to define an expression to match for a fold. After you define the fold expressions, Vim scans each line for the value of `'foldexpr'`. This is the variable that you have to configure to return the appropriate value. If the `'foldexpr'` returns 0, then the line is not folded. If it returns 1, then that line has a fold level of 1. If it returns 2, then that line has a fold level of 2. There are more values other than integers, but I won't go over them. If you are curious, check out `:h fold-expr`.
+
+First, let's change the foldmethod:
+
+```
+:set foldmethod=expr
+```
+
+Suppose you have a list of breakfast foods and you want to fold all breakfast items starting with "p":
+
+```
+donut
+pancake
+pop-tarts
+protein bar
+salmon
+scrambled eggs
+```
+
+Next, change the `foldexpr` to capture the expressions starting with "p":
+
+```
+:set foldexpr=getline(v:lnum)[0]==\\"p\\"
+```
+
+The expression above looks complicated. Let's break it down:
+- `:set foldexpr` sets up the `'foldexpr'` option to accept a custom expression.
+- `getline()` is a Vimscript function that returns the content of any given line. If you run `:echo getline(5)`, it will return the content of line 5.
+- `v:lnum` is Vim's special variable for the `'foldexpr'` expression. Vim scans each line and at that moment stores each line's number in `v:lnum` variable. On line 5, `v:lnum` has value of 5. On line 10, `v:lnum` has value of 10.
+- `[0]` in the context of `getline(v:lnum)[0]` is the first character of each line. When Vim scans a line, `getline(v:lnum)` returns the content of each line. `getline(v:lnum)[0]` returns the first character of each line. On the first line of our list, "donut", `getline(v:lnum)[0]` returns "d". On the second line of our list, "pancake", `getline(v:lnum)[0]` returns "p".
+- `==\\"p\\"` is the second half of the equality expression. It checks if the expression you just evaluated is equal to "p". If it is true, it returns 1. If it is false, it returns 0. In Vim, 1 is truthy and 0 is falsy. So on the lines that start with an "p", it returns 1. Recall if a `'foldexpr'` has a value of 1, then it has a fold level of 1.
+
+After running this expression, you should see:
+
+```
+donut
++-- 3 lines: pancake -----
+salmon
+scrambled eggs
+```
+
+## Syntax Fold
+
+Syntax fold is determined by syntax language highlighting. If you use a language syntax plugin like [vim-polyglot](https://github.com/sheerun/vim-polyglot), the syntax fold will work right out of the box. Just change the fold method to syntax:
+
+```
+:set foldmethod=syntax
+```
+
+Let's assume you are editing a JavaScript file and you have vim-polyglot installed. If you have an array like the following:
+
+```
+const nums = [
+  one,
+  two,
+  three,
+  four
+]
+```
+
+It will be folded with a syntax fold. When you define a syntax highlighting for a particular language (typically inside the `syntax/` directory), you can add a `fold` attribute to make it foldable. Below is a snippet from vim-polyglot JavaScript syntax file. Notice the `fold` keyword at the end.
+
+```
+syntax region  jsBracket                      matchgroup=jsBrackets            start=/\[/ end=/\]/ contains=@jsExpression,jsSpreadExpression extend fold
+```
+
+This guide won't cover the `syntax` feature. If you're curious, check out `:h syntax.txt`.
+
+## Diff Fold
+
+Vim can do a diff procedure to compare two or more files.
+
+If you have `file1.txt`:
+
+```
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+```
+
+And `file2.txt`:
+
+```
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+emacs is ok
+```
+
+Run `vimdiff file1.txt file2.txt`:
+
+```
++-- 3 lines: vim is awesome -----
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+vim is awesome
+[vim is awesome] / [emacs is ok]
+```
+
+Vim automatically folds some of the identical lines. When you are running the `vimdiff` command, Vim automatically uses `foldmethod=diff`. If you run `:set foldmethod?`, it will return `diff`.
+
 ## Marker Fold
 
 To use a marker fold, run:
@@ -190,125 +309,6 @@ coffee2
 ```
 
 Now Vim uses `coffee1` and `coffee2` as the new folding markers. As a side note, an indicator must be a literal string and cannot be a regex.
-
-## Syntax Fold
-
-Syntax fold is determined by syntax language highlighting. If you use a language syntax plugin like [vim-polyglot](https://github.com/sheerun/vim-polyglot), the syntax fold will work right out of the box. Just change the fold method to syntax:
-
-```
-:set foldmethod=syntax
-```
-
-Let's assume you are editing a JavaScript file and you have vim-polyglot installed. If you have an array like the following:
-
-```
-const nums = [
-  one,
-  two,
-  three,
-  four
-]
-```
-
-It will be folded with a syntax fold. When you define a syntax highlighting for a particular language (typically inside the `syntax/` directory), you can add a `fold` attribute to make it foldable. Below is a snippet from vim-polyglot JavaScript syntax file. Notice the `fold` keyword at the end.
-
-```
-syntax region  jsBracket                      matchgroup=jsBrackets            start=/\[/ end=/\]/ contains=@jsExpression,jsSpreadExpression extend fold
-```
-
-This guide won't cover the `syntax` feature. If you're curious, check out `:h syntax.txt`.
-
-## Expression Fold
-
-Expression fold allows you to define an expression to match for a fold. After you define the fold expressions, Vim scans each line for the value of `'foldexpr'`. This is the variable that you have to configure to return the appropriate value. If the `'foldexpr'` returns 0, then the line is not folded. If it returns 1, then that line has a fold level of 1. If it returns 2, then that line has a fold level of 2. There are more values other than integers, but I won't go over them. If you are curious, check out `:h fold-expr`.
-
-First, let's change the foldmethod:
-
-```
-:set foldmethod=expr
-```
-
-Suppose you have a list of breakfast foods and you want to fold all breakfast items starting with "p":
-
-```
-donut
-pancake
-pop-tarts
-protein bar
-salmon
-scrambled eggs
-```
-
-Next, change the `foldexpr` to capture the expressions starting with "p":
-
-```
-:set foldexpr=getline(v:lnum)[0]==\\"p\\"
-```
-
-The expression above looks complicated. Let's break it down:
-- `:set foldexpr` sets up the `'foldexpr'` option to accept a custom expression.
-- `getline()` is a Vimscript function that returns the content of any given line. If you run `:echo getline(5)`, it will return the content of line 5.
-- `v:lnum` is Vim's special variable for the `'foldexpr'` expression. Vim scans each line and at that moment stores each line's number in `v:lnum` variable. On line 5, `v:lnum` has value of 5. On line 10, `v:lnum` has value of 10.
-- `[0]` in the context of `getline(v:lnum)[0]` is the first character of each line. When Vim scans a line, `getline(v:lnum)` returns the content of each line. `getline(v:lnum)[0]` returns the first character of each line. On the first line of our list, "donut", `getline(v:lnum)[0]` returns "d". On the second line of our list, "pancake", `getline(v:lnum)[0]` returns "p".
-- `==\\"p\\"` is the second half of the equality expression. It checks if the expression you just evaluated is equal to "p". If it is true, it returns 1. If it is false, it returns 0. In Vim, 1 is truthy and 0 is falsy. So on the lines that start with an "p", it returns 1. Recall if a `'foldexpr'` has a value of 1, then it has a fold level of 1.
-
-After running this expression, you should see:
-
-```
-donut
-+-- 3 lines: pancake -----
-salmon
-scrambled eggs
-```
-
-## Diff Fold
-
-Vim can do a diff procedure to compare two or more files.
-
-If you have `file1.txt`:
-
-```
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-```
-
-And `file2.txt`:
-
-```
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-emacs is ok
-```
-
-Run `vimdiff file1.txt file2.txt`:
-
-```
-+-- 3 lines: vim is awesome -----
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-vim is awesome
-[vim is awesome] / [emacs is ok]
-```
-
-Vim automatically folds some of the identical lines. When you are running the `vimdiff` command, Vim automatically uses `foldmethod=diff`. If you run `:set foldmethod?`, it will return `diff`.
 
 ## Persisting Fold
 
