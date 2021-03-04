@@ -240,7 +240,7 @@ One Vim trick you can use to add multiple files in different Vim window is to ru
 Then make a commit:
 
 ```
-:!git commit "Just git-added everything in my vim window, cool"
+:!git commit "Just git-added everything in my Vim window, cool"
 ```
 
 The `windo` command is one of Vim's "do" commands, similar to `argdo` that you saw previously. `windo` executes the command on each window.
@@ -265,7 +265,7 @@ One of the most popular ones is vim-fugitive. For the remaining of the chapter, 
 
 The vim-fugitive plugin allows you to run the git CLI without leaving the Vim editor. You will find that some commands are better when executed from inside Vim.
 
-To get started, install the vim-fugitive with a vim plugin manager ([vim-plug](https://github.com/junegunn/vim-plug), [vundle](https://github.com/VundleVim/Vundle.vim), [dein.vim](https://github.com/Shougo/dein.vim), etc).
+To get started, install the vim-fugitive with a Vim plugin manager ([vim-plug](https://github.com/junegunn/vim-plug), [vundle](https://github.com/VundleVim/Vundle.vim), [dein.vim](https://github.com/Shougo/dein.vim), etc).
 
 ## Git Status
 
