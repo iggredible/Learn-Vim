@@ -83,7 +83,7 @@ You might wonder, "Where did Vim save this View file?" To see where Vim saves it
 :set viewdir?
 ```
 
-The default should say `~/.vim/view` (if you have a different OS, it might show a different path. Check out `:h viewdir` for more). If you want to change it to a different path, add this into your vimrc:
+In Unix based OS the default should say `~/.vim/view` (if you have a different OS, it might show a different path. Check out `:h viewdir` for more). If you are running a Unix based OS and want to change it to a different path, add this into your vimrc:
 
 ```
 set viewdir=$HOME/else/where
