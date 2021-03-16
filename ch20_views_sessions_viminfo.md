@@ -293,7 +293,7 @@ Session is a useful tool to preserve your project's external attributes. However
 
 ## Viminfo
 
-If you notice, after yanking a word into register a and quitting Vim, the next time you open Vim you still that text stored in the register. This is actually a work of Viminfo. Without it, Vim won't remember the register after you close Vim.
+If you notice, after yanking a word into register a and quitting Vim, the next time you open Vim you still that text stored in register a. This is actually a work of Viminfo. Without it, Vim won't remember the register after you close Vim.
 
 If you use Vim 8 or higher, Vim enables Viminfo by default, so you may have been using Viminfo this whole time without knowing it!
 
