@@ -193,9 +193,9 @@ let mapleader = "\<space>"
 ```
 
 The `nnoremap` command used above can be broken down into three parts:
-- `map` is the map command.
 - `n` represents the normal mode.
 - `nore` means non-recursive.
+- `map` is the map command.
 
 At minimum, you could have used `nmap` instead of `nnoremap` (`nmap <silent> <C-f> :Gfiles<CR>`). However, it is a good practice to use the non-recursive variant to avoid potential infinite loop.
 
