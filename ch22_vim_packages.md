@@ -125,7 +125,7 @@ You can still use `start/` and `opt/` inside each of the directories.
 
 You may wonder if Vim package will make popular plugin managers like vim-pathogen, vundle.vim, dein.vim, and vim-plug obsolete.
 
-The answer is, as always, "it depends."
+The answer is, as always, "it depends".
 
 I still use vim-plug because it makes it easy to add, remove or update plugins. If you use many plugins, it may be more convenient to use plugin managers because it is easy to update many simultaneously. Some plugin managers also offer asynchronous functionalities.
 
