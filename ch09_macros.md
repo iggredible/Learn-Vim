@@ -135,13 +135,13 @@ qaqqa0W~j@aq
 ```
 
 Here is the breakdown of the steps:
-- `qaq` records an empty macro "a. It is necessary to start with an empty register because when you recursively call the macro, it will run whatever is in that register.
+- `qaq` records an empty macro a. It is necessary to start with an empty register because when you recursively call the macro, it will run whatever is in that register.
 - `qa` starts recording on register a.
 - `0` goes to the first character in the current line.
 - `W` goes to the next WORD.
 - `~` toggles the case of the character under the cursor.
 - `j` goes down one line.
-- `@a` executes macro "a.
+- `@a` executes macro a.
 - `q` stops recording.
 
 Now you can just run `@a` and watch Vim execute the macro recursively.
@@ -160,7 +160,7 @@ qAA.<Esc>q
 
 The breakdown:
 - `qA` starts recording the macro in register "A.
-- `A.<Esc>` inserts at the end of the line (here `A` is the insert mode command, not to be confused with the macro "A) a dot, then exits insert mode.
+- `A.<Esc>` inserts at the end of the line (here `A` is the insert mode command, not to be confused with the macro A) a dot, then exits insert mode.
 - `q` stops recording macro.
 
 Now when you execute `@a`, it not only toggles the case of the next WORD, it also adds a dot at the end of the line.
@@ -254,7 +254,7 @@ Running `99@a`, only executes the macro three times. It does not execute the mac
 
 Run the macro in parallel.
 
-Recall from earlier section that macros can be executed using the  command line command `:normal` (ex: `:3,5 normal @a` executes macro "a on lines 3-5). If you run `:1,$ normal @a`, you will see that the macro is being executed on all lines except the "foo" line. It works!
+Recall from earlier section that macros can be executed using the  command line command `:normal` (ex: `:3,5 normal @a` executes macro a on lines 3-5). If you run `:1,$ normal @a`, you will see that the macro is being executed on all lines except the "foo" line. It works!
 
 Although internally Vim does not actually run the macros in parallel, outwardly, it behaves like it. Vim executes `@a` *independently* on each line from the first to the last line (`1,$`). Since Vim executes these macros independently, each line does not know that one of the macro executions had failed on the "foo" line.
 
