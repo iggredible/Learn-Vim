@@ -267,8 +267,8 @@ Put your cursor on the second "app-a". Use the same technique as above (`Ctrl-v 
 Earlier in this chapter I mentioned that `gv` can quickly highlight the last visual mode highlight. You can also go to the location of the start and the end of the last visual mode with these two special marks:
 
 ```
-`<    Go to the last place of the previous visual mode highlight
-`>    Go to the first place of the previous visual mode highlight
+`<    Go to the first place of the previous visual mode highlight
+`>    Go to the last place of the previous visual mode highlight
 ```
 
 Earlier, I also mentioned that you can selectively execute command-line commands on a highlighted text, like `:s/const/let/g`. When you did that, you'd see this below:
