@@ -37,7 +37,7 @@ qa0gU$jq
 ```
 
 The breakdown:
-- `qa` starts recording a macro in the "a register.
+- `qa` starts recording a macro in the a register.
 - `0` goes to beginning of the line.
 - `gU$` uppercases the text from your current location to the end of the line.
 - `j` goes down one line.
@@ -63,7 +63,7 @@ qa0W~jq
 ```
 
 Here's the breakdown of the command above:
-- `qa` starts recording a macro in the "a register.
+- `qa` starts recording a macro in the a register.
 - `0` goes to the beginning of the line.
 - `W` goes to the next WORD.
 - `~` toggles the case of the character under the cursor.
@@ -150,7 +150,7 @@ How did the macro know when to stop? When the macro was on the last line, it tri
 
 ## Appending A Macro
 
-If you need to add actions to an existing macro, instead of recreating the macro from scratch, you can append actions to an existing one. In the register chapter, you learned that you can append a named register by using its uppercased symbol. The same rule applies. To append actions to register a macro, use register "A.
+If you need to add actions to an existing macro, instead of recreating the macro from scratch, you can append actions to an existing one. In the register chapter, you learned that you can append a named register by using its uppercased symbol. The same rule applies. To append actions to register a macro, use register A.
 
 Record a macro in register a: `qa0W~q` (this sequence toggles the case of the next WORD in a line). If you want to append a new sequence to also add a dot at the end of the line, run:
 
@@ -159,7 +159,7 @@ qAA.<Esc>q
 ```
 
 The breakdown:
-- `qA` starts recording the macro in register "A.
+- `qA` starts recording the macro in register A.
 - `A.<Esc>` inserts at the end of the line (here `A` is the insert mode command, not to be confused with the macro A) a dot, then exits insert mode.
 - `q` stops recording macro.
 

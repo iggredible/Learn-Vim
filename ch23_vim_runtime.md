@@ -154,13 +154,13 @@ One warning: these files are run each time a buffer file type is set (`set filet
 
 ## Indent Files
 
-Vim has an indent runtime path that works similar to ftplugin, where Vim looks for a file named the same as the opened file type. The purpose of these indent runtime paths is to store indent-related codes. If you the file `~/.vim/indent/chocodonut.vim`, it will be executed only when you open a chocodonut file type. You can store indent-related codes for chocodonut files here.
+Vim has an indent runtime path that works similar to ftplugin, where Vim looks for a file named the same as the opened file type. The purpose of these indent runtime paths is to store indent-related codes. If you have the file `~/.vim/indent/chocodonut.vim`, it will be executed only when you open a chocodonut file type. You can store indent-related codes for chocodonut files here.
 
 ## Colors
 
 Vim has a colors runtime path (`~/.vim/colors/`) to store color schemes. Any file that goes inside the directory will be displayed in the `:color` command-line command.
 
-If you have a `~/.vim/colors/beautifulprettycolors.vim` file, when you run `:color` and press tab, you will see `beautifulprettycolors` as one of the color options. If you prefer to add your own color scheme, this is the place to go.
+If you have a `~/.vim/colors/beautifulprettycolors.vim` file, when you run `:color` and press Tab, you will see `beautifulprettycolors` as one of the color options. If you prefer to add your own color scheme, this is the place to go.
 
 If you want to check out the color schemes other people made, a good place to visit is [vimcolors](https://vimcolors.com/).
 
