@@ -26,7 +26,7 @@ You should see an intro screen. This is the where you will be working on your fi
 
 There are several ways to exit Vim. The most common one is to type:
 
-```
+```viml
 :quit
 ```
 

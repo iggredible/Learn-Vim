@@ -17,7 +17,7 @@ a <= b		less than or equal to
 
 For example:
 
-```
+```viml
 :echo 5 == 5
 :echo 5 != 5
 :echo 10 > 5
@@ -28,14 +28,14 @@ For example:
 
 Just like Vim coerces strings into numbers in an arithmetic expression, it also coerces strings into numbers in an equality expression. Here it coerces "5foo" into 5. Since 5 is truthy, the expression below returns true (check out Ch. 24 to recap on string coercion).
 
-```
+```viml
 :echo 5 == "5foo"
 " returns true
 ```
 
 Also recall that if you start a string with a non-numerical character like "foo5", then the string is converted into number 0 (0 is falsy in Vim).
 
-```
+```viml
 echo 5 == "foo5"
 " returns false
 ```
@@ -44,14 +44,14 @@ echo 5 == "foo5"
 
 Vim has more logical operators for comparing strings:
 
-```
+```viml
 a =~ b
 a !~ b
 ```
 
 For examples:
 
-```
+```viml
 let str = "hearty breakfast"
 
 echo str =~ "hearty"
@@ -66,7 +66,7 @@ echo str !~ "dinner"
 
 The `=~` operator performs a regex match against the given string. In the example above, `str =~ "hearty"` returns true because `str` *contains* the "hearty" pattern. You can always use `==` and `!=`, but using them will compare the expression against the entire string. `=~` and `!~` are more flexible choices.
 
-```
+```viml
 echo str == "hearty"
 " returns false
 
@@ -76,14 +76,14 @@ echo str == "hearty breakfast"
 
 Let's try this one. Note the uppercase "H":
 
-```
+```viml
 echo str =~ "Hearty"
 " true
 ```
 
 It returns true even though "Hearty" is capitalized. Interesting... It turns out that my Vim setting is set to ignore case (`set ignorecase`), so when Vim checks for equality, it uses my Vim setting and ignores the case. If I were to turn off ignore case (`set noignorecase`), the comparison now returns false.
 
-```
+```viml
 set noignorecase
 echo str =~ "Hearty"
 " returns false because case matters
@@ -97,7 +97,7 @@ If you are writing a plugin for others, this is a tricky situation. Does the use
 
 Luckily, Vim has a logical operator that can *always* ignore or match case. To always match case, add a `#` at the end.
 
-```
+```viml
 set ignorecase
 echo str =~# "hearty"
 " returns true
@@ -118,7 +118,7 @@ echo str !~# "HearTY"
 
 To always ignore case when comparing, append it with `?`:
 
-```
+```viml
 set ignorecase
 echo str =~? "hearty"
 " true
@@ -145,7 +145,7 @@ Now that you have seen Vim's equality expressions, let's touch the fundamental c
 
 At minimum, the syntax is:
 
-```
+```viml
 if {clause}
   {some expression}
 endif
@@ -153,7 +153,7 @@ endif
 
 You can extend the case analysis with `elseif` and `else`.
 
-```
+```viml
 if {predicate1}
   {expression1}
 elseif {predicate2}
@@ -167,7 +167,7 @@ endif
 
 For example, the plugin [Vim-signify](https://github.com/mhinz/vim-signify) uses a different installation method depending on your Vim settings. Below is the installation instruction from their `readme`, using the `if` statement:
 
-```
+```viml
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
 else
@@ -179,19 +179,19 @@ endif
 
 Vim has a ternary expression for a one-liner case analysis:
 
-```
+```viml
 {predicate} ? expressiontrue : expressionfalse
 ```
 
 For example:
 
-```
+```viml
 echo 1 ? "I am true" : "I am false"
 ```
 
 Since 1 is truthy, Vim echoes "I am true". Suppose you want to conditionally set the `background` to dark if you are using Vim past a certain hour. Add this to vimrc:
 
-```
+```viml
 let &background = strftime("%H") < 18 ? "light" : "dark"
 ```
 
@@ -210,7 +210,7 @@ The logical "or" (`||`) works like many programming languages.
 
 Vim evaluates the expression and return either 1 (truthy) or 0 (falsy).
 
-```
+```viml
 echo 5 || 0
 " returns 1
 
@@ -229,7 +229,7 @@ echo "5foo || foo5"
 
 If the current expression evaluates to truthy, the subsequent expression won't be evaluated.
 
-```
+```viml
 let one_dozen = 12
 
 echo one_dozen || two_dozen
@@ -264,7 +264,7 @@ echo 0 && 10
 
 Unlike "or", "and" will evaluate the subsequent expression after it reaches the first falsy expression. It will continue to evaluate the subsequent truthy expressions until the end (or until the first falsy expression).
 
-```
+```viml
 let one_dozen = 12
 echo one_dozen && 10
 " returns 1
@@ -283,7 +283,7 @@ echo exists("one_dozen") && one_dozen == 12
 
 The `for` loop is commonly used with the list data type.
 
-```
+```viml
 let breakfasts = ["pancakes", "waffles", "eggs"]
 
 for breakfast in breakfasts
@@ -293,7 +293,7 @@ endfor
 
 It works with nested list:
 
-```
+```viml
 let meals = [["breakfast", "pancakes"], ["lunch", "fish"], ["dinner", "pasta"]]
 
 for [meal_type, food] in meals
@@ -303,7 +303,7 @@ endfor
 
 You can technically use the `for` loop with a dictionary using the `keys()` method.
 
-```
+```viml
 let beverages = #{breakfast: "milk", lunch: "orange juice", dinner: "water"}
 for beverage_type in keys(beverages)
   echo "I am drinking " . beverages[beverage_type] . " for " . beverage_type
@@ -314,7 +314,7 @@ endfor
 
 Another common loop is the `while` loop.
 
-```
+```viml
 let counter = 1
 while counter < 5
   echo "Counter is: " . counter
@@ -324,7 +324,7 @@ endwhile
 
 To get the content of the current line to the last line:
 
-```
+```viml
 let current_line = line(".")
 let last_line = line("$")
 
@@ -344,7 +344,7 @@ When you use `break` inside a `while` or `for` loop, it stops the loop.
 
 To get the texts from the start of the file to the current line, but stop when you see the word "donut":
 
-```
+```viml
 let line = 0
 let last_line = line("$")
 let total_word = ""
@@ -381,7 +381,7 @@ The `continue` method is similar to `break`, where it is invoked during a loop. 
 
 Suppose you have the same text but instead of `break`, you use `continue`:
 
-```
+```viml
 let line = 0
 let last_line = line("$")
 let total_word = ""
@@ -405,7 +405,7 @@ This time it returns `one two three four five`. It skips the line with the word 
 
 Vim has a `try`, `finally`, and `catch` to handle errors. To simulate an error, you can use the `throw` command.
 
-```
+```viml
 try
   echo "Try"
   throw "Nope"
@@ -416,7 +416,7 @@ Run this. Vim will complain with `"Exception not caught: Nope` error.
 
 Now add a catch block:
 
-```
+```viml
 try
   echo "Try"
   throw "Nope"
@@ -429,7 +429,7 @@ Now there is no longer any error. You should see "Try" and "Caught it" displayed
 
 Let's remove the `catch` and add a `finally`:
 
-```
+```viml
 try
   echo "Try"
   throw "Nope"
@@ -443,7 +443,7 @@ Run this. Now Vim displays the error and "Finally".
 
 Let's put all of them together:
 
-```
+```viml
 try
   echo "Try"
   throw "Nope"
@@ -458,7 +458,7 @@ This time Vim displays both "Caught it" and "Finally". No error is displayed bec
 
 Errors come from different places. Another source of error is calling a nonexistent function, like `Nope()` below:
 
-```
+```viml
 try
   echo "Try"
   call Nope()
@@ -473,7 +473,7 @@ The difference between `catch` and `finally` is that `finally` is always run, er
 
 You can catch specific error with `:catch`. According to `:h :catch`:
 
-```
+```viml
 :catch /^Vim:Interrupt$/	            " catch interrupts (CTRL-C)
 :catch /^Vim\\%((\\a\\+)\\)\\=:E/	    " catch all Vim errors
 :catch /^Vim\\%((\\a\\+)\\)\\=:/	    " catch errors and interrupts
@@ -486,7 +486,7 @@ You can catch specific error with `:catch`. According to `:h :catch`:
 
 If you notice from the list above, there is a catch for interrupt. Inside a `try` block, an interrupt is considered a catchable error.
 
-```
+```viml
 try
   catch /^Vim:Interrupt$/
   sleep 100
@@ -495,7 +495,7 @@ endtry
 
 In your vimrc, if you use a custom colorscheme, like [gruvbox](https://github.com/morhetz/gruvbox), and you accidentally delete the colorscheme directory but still have the line `colorscheme gruvbox` in your vimrc, Vim will throw an error when you `source` it. To fix this, I added this in my vimrc:
 
-```
+```viml
 try
   colorscheme gruvbox
 catch
