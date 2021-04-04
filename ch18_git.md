@@ -1,12 +1,16 @@
-# Ch 18. Git
+# Ch18. Git
 
-Vim and git are two great tools for two different things. Git is a version control tool. Vim is a text editor. In this chapter, you will learn different ways to integrate Vim and git together.
+Vim and git are two great tools for two different things. Git is a version control tool. Vim is a text editor.
+
+In this chapter, you will learn different ways to integrate Vim and git together.
 
 ## Diffing
 
-In the last chapter, you saw how you can run a `vimdiff` command to show differences between multiple files.
+Recall in the previous chapter, you can run a `vimdiff` command to show the differences between multiple files.
 
-Suppose you have two files, `file1.txt` and `file2.txt`. Inside `file1.txt`:
+Suppose you have two files, `file1.txt` and `file2.txt`. 
+
+Inside `file1.txt`:
 
 ```
 pancakes
@@ -45,20 +49,22 @@ vim -d file1.txt file2.txt
 ```
 
 <p align="center">
-  <img alt="Basic diffing with Vim" width="900" height="auto" src="./img/diffing-basic.png">
+  <img alt="Basic diffing with Vim" width="900" height="auto" src="images/diffing-basic.png">
 </p>
 
-`vimdiff` displays two buffers side-by-side. On the left is `file1.txt` and on the right is `file2.txt`. The two differences (apples and oranges) are highlighted on both lines.
+`vimdiff` displays two buffers side-by-side. On the left is `file1.txt` and on the right is `file2.txt`. The first differences (apples and oranges) are highlighted on both lines.
 
-Suppose you want to make the second buffer to have apples, not oranges. To transfer the content from your current position, `file1.txt`, to `file2.txt`, jump to the next diff with `]c` (to jump to the previous diff, use `[c`). The cursor should be on apples now. Run `:diffput`. Both files should now have apples.
+Suppose you want to make the second buffer to have apples, not oranges. To transfer the content from your current position (you're currently on `file1.txt`) to `file2.txt`, first go to the next diff with `]c` (to jump to the previous diff window, use `[c`). The cursor should be on apples now. Run `:diffput`. Both files should now have apples.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/diffing-apples.png">
+  <img alt="Diffing Apples" width="900" height="auto" src="images/diffing-apples.png">
 </p>
 
-If you need to transfer the text from the other buffer (orange juice) to replace the text on the current buffer (apple juice), first jump to the next diff with `]c`. Your cursor now should be on apple juice. Run `:diffget` to get the orange juice from another buffer to replace apple juice in our buffer.
+If you need to transfer the text from the other buffer (orange juice, `file2.txt`) to replace the text on the current buffer (apple juice, `file1.txt`), with your cursor still on `file1.txt` window, first go to the next diff with `]c`. Your cursor now should be on apple juice. Run `:diffget` to get the orange juice from another buffer to replace apple juice in our buffer.
 
-`:diffput` *puts out* the text from the current buffer to another buffer. `:diffget` *gets* the text from another buffer to the current buffer. If you have multiple buffers, you can run `:diffput fileN.txt` and `:diffget fileN.txt` to target the fileN buffer.
+`:diffput` *puts out* the text from the current buffer to another buffer. `:diffget` *gets* the text from another buffer to the current buffer.
+
+If you have multiple buffers, you can run `:diffput fileN.txt` and `:diffget fileN.txt` to target the the fileN buffer.
 
 ## Vim As A Merge Tool
 
@@ -74,7 +80,7 @@ git config merge.conflictstyle diff3
 git config mergetool.prompt false
 ```
 
-Alternatively, you can modify the `~/.gitconfig` directly (by default it should be in root, but yours might be in different place). If you haven't already, make your `gitconfig` to look like:
+Alternatively, you can modify the `~/.gitconfig` directly (by default it should be in root, but yours might be in different place). The commands above should modify your gitconfig to look like the setting below, if you haven't run them already, you can also manually edit your gitconfig.
 
 ```
 [core]
@@ -149,7 +155,7 @@ git add .
 git commit -m "Grapes not oranges"
 ```
 
-Phew, that's a lot of setup. Now you are ready to merge the apples branch into the master branch:
+Now you are ready to merge the apples branch into the master branch:
 
 ```
 git merge apples
@@ -170,7 +176,7 @@ git mergetool
 ```
 
 <p align="center">
-  <img alt="Three-way mergetool with Vim" width="900" height="auto" src="./img/mergetool-initial.png">
+  <img alt="Three-way mergetool with Vim" width="900" height="auto" src="images/mergetool-initial.png">
 </p>
 
 Vim displays four windows. Pay attention to the top three:
@@ -193,9 +199,11 @@ apples
 >>>>>>> apples
 ```
 
-The fourth window contains the merge conflict texts. With this setup, it is easier to see what change each environment has. You can see the content from `LOCAL`, `BASE`, and `REMOTE` at the same time. If you want to *get* the change from `LOCAL` (`grapes`), with the cursor over the highlighted areas, from the fourth window, run `:diffget LOCAL`. Likewise, if you want to *get* the change from `BASE` (`oranges`), run `:diffget BASE` and if you want to *get* the change from `REMOTE` (`apples`), run `:diffget REMOTE`.
+The fourth window contains the merge conflict texts. With this setup, it is easier to see what change each environment has. You can see the content from `LOCAL`, `BASE`, and `REMOTE` at the same time. 
 
-In this case, let's get the change from `LOCAL`. Run `:diffget LO` (short for `LOCAL`). The fourth window will now have grapes. Save and exit all files (`:qall`) when you are done. That wasn't bad, right?
+Your cursor should be on the fourth windows, on the highlighted area. To get the change from `LOCAL` (grapes), run `:diffget LOCAL`. To get the change from `BASE` (oranges), run `:diffget BASE` and to get the change from `REMOTE` (apples), run `:diffget REMOTE`.
+
+In this case, let's get the change from `LOCAL`. Run `:diffget LOCAL`. The fourth window will now have grapes. Save and exit all files (`:wqall`) when you are done. That wasn't bad, right?
 
 If you notice, you also have a file `breakfast.txt.orig` now. Git creates a backup file in case things don't go well. If you don't want git to create a backup during a merge, run:
 
@@ -205,7 +213,7 @@ git config --global mergetool.keepBackup false
 
 ## Git Inside Vim
 
-Vim does not have a native git integration. However, one way to run git commands from Vim is to use the bang operator, `!`, in the command-line mode.
+Vim does not have a native git feature built-in. One way to run git commands from Vim is to use the bang operator, `!`, in the command-line mode.
 
 Any git command can be run with `!`:
 
@@ -223,9 +231,25 @@ You can also use Vim's `%` (current buffer) or `#` (other buffer) conventions:
 :!git checkout #    " git checkout the other file
 ```
 
+One Vim trick you can use to add multiple files in different Vim window is to run:
+
+```
+:windo !git add %
+```
+
+Then make a commit:
+
+```
+:!git commit "Just git-added everything in my Vim window, cool"
+```
+
+The `windo` command is one of Vim's "do" commands, similar to `argdo` that you saw previously. `windo` executes the command on each window.
+
+Alternatively, you can also use `bufdo !git add %` to git add all buffers or `argdo !git add %` to git add all the file arguments, depending on your workflow.
+
 ## Plugins
 
-To integrate git inside Vim, you have to use plugins. Below is a list of popular git-related plugins for Vim:
+There are many Vim plugins for git support. Below is a list of some of the popular git-related plugins for Vim (there is probably more at the time you read this):
 
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [vim-signify](https://github.com/mhinz/vim-signify)
@@ -237,34 +261,32 @@ To integrate git inside Vim, you have to use plugins. Below is a list of popular
 
 One of the most popular ones is vim-fugitive. For the remaining of the chapter, I will go over a several git workflow using this plugin.
 
-## Vim-Fugitive
+## Vim-fugitive
 
 The vim-fugitive plugin allows you to run the git CLI without leaving the Vim editor. You will find that some commands are better when executed from inside Vim.
 
-To get started, install the vim-fugitive with a vim plugin manager ( [vim-plug](https://github.com/junegunn/vim-plug), [vundle](https://github.com/VundleVim/Vundle.vim), [dein.vim](https://github.com/Shougo/dein.vim), etc).
+To get started, install the vim-fugitive with a Vim plugin manager ([vim-plug](https://github.com/junegunn/vim-plug), [vundle](https://github.com/VundleVim/Vundle.vim), [dein.vim](https://github.com/Shougo/dein.vim), etc).
 
 ## Git Status
 
 When you run the `:Git` command without any parameters, vim-fugitive displays a git summary window. It shows the untracked, unstaged, and staged file(s). While in this "`git status`" mode, you can do several things:
-
-- `Ctrl-n` / `Ctrl-p` to go up or down the file list.
+- `Ctrl-N` / `Ctrl-P` to go up or down the file list.
 - `-` to stage or unstage the file name under the cursor.
 - `s` to stage the file name under the cursor.
 - `u` to unstage the file name under the cursor.
 - `>` / `<` to display or hide an inline diff of the file name under the cursor.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-git.png">
+  <img alt="Fugitive Git" width="900" height="auto" src="images/fugitive-git.png">
 </p>
 
 For more, check out `:h fugitive-staging-maps`.
 
 ## Git Blame
 
-When you run the `:Git blame` command from the current file, vim-fugitive displays a split blame window. This can be useful to see the person responsible for writing that buggy line of code so you can yell at him / her (that person is probably me).
+When you run the `:Git blame` command from the current file, vim-fugitive displays a split blame window. This can be useful to find the person responsible for writing that buggy line of code so you can yell at him / her (just kidding).
 
 Some things you can do while in this `"git blame"` mode:
-
 - `q` to close the blame window.
 - `A` to resize the author column.
 - `C` to resize the commit column.
@@ -273,7 +295,7 @@ Some things you can do while in this `"git blame"` mode:
 For more, check out `:h :Git_blame`.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-git-blame.png">
+  <img alt="Fugitive Git Blame" width="900" height="auto" src="images/fugitive-git-blame.png">
 </p>
 
 ## Gdiffsplit
@@ -281,7 +303,7 @@ For more, check out `:h :Git_blame`.
 When you run the `:Gdiffsplit` command, vim-fugitive runs a `vimdiff` of the current file's latest changes against the index or work tree. If you run `:Gdiffsplit <commit>`, vim-fugitive runs a `vimdiff` against that file inside `<commit>`.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-gdiffsplit.png">
+  <img alt="Fugitive Gdiffsplit" width="900" height="auto" src="images/fugitive-gdiffsplit.png">
 </p>
 
 Because you are in a `vimdiff` mode, you can *get* or *put* the diff with `:diffput` and `:diffget`.
@@ -297,7 +319,7 @@ When you run the `:Gread` command in a file after you make changes, vim-fugitive
 When you run the `:Gclog` command, vim-fugitive displays the commit history. It is like running the `git log` command. Vim-fugitive uses Vim's quickfix to accomplish this, so you can use `:cnext` and `:cprevious` to traverse to the next or previous log information. You can open and close the log list with `:copen` and `:cclose`.
 
 <p align="center">
-  <img alt="Finding files in FZF" width="900" height="auto" src="./img/fugitive-git-log.png">
+  <img alt="Fugitive Git Log" width="900" height="auto" src="images/fugitive-git-log.png">
 </p>
 
 While in this `"git log"` mode, you can do two things:
@@ -308,12 +330,12 @@ You can pass to `:Gclog` arguments just like the `git log` command. If your proj
 
 ## More Vim-Fugitive
 
-These are only a few examples of what vim-fugitive can do. To learn more about vim-fugitive, check out `:h fugitive.txt`. The point is, most / all popular git commands probably have their vim-fugitive version. You just have to look for them in the documentation.
+These are only a few examples of what vim-fugitive can do. To learn more about vim-fugitive, check out `:h fugitive.txt`. Most of the popular git commands are probably optimized with vim-fugitive. You just have to look for them in the documentation.
 
 If you are inside one of vim-fugitive's "special mode" (for example, inside `:Git` or `:Git blame` mode) and you want to learn what shortcuts are available, press `g?`. Vim-fugitive will display the appropriate `:help` window for the mode you are in. Neat!
 
 ## Learn Vim And Git The Smart Way
 
-Everybody has a different git workflow. You may find vim-fugitive to be a good compliment to your workflow (or not). Regardless, I would strongly encourage you to check out all the plugins listed above. There are probably others I didn't list. Use the best tool for the job.
+You may find vim-fugitive to be a good compliment to your workflow (or not). Regardless, I would strongly encourage you to check out all the plugins listed above. There are probably others I didn't list. Go try them out.
 
-One obvious way to get better with Vim-git integration is to read more about git. Git, on its own, is a vast topic and I am only showing a small part of it. With that, let's *git going* (pardon the pun) and talk about how to use Vim to compile your code!
+One obvious way to get better with Vim-git integration is to read more about git. Git, on its own, is a vast topic and I am only showing a fraction of it. With that, let's *git going* (pardon the pun) and talk about how to use Vim to compile your code!

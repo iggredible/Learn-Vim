@@ -1,4 +1,4 @@
-# Ch 16. Tags
+# Ch16. Tags
 
 One useful feature in text editing is being able to go to any definition quickly. In this chapter, you will learn how to use Vim tags to do that.
 
@@ -11,9 +11,9 @@ one = One.new
 one.donut
 ```
 
-`One`? `donut`? Well, these might have been obvious to the developers writing the code way back then, but now those developers are no longer here and it is up to you to understand these obscure lines of codes. One way to help understand this is to follow the source code where `One` and `donut` are defined.
+`One`? `donut`? Well, these might have been obvious to the developers writing the code way back then, but now those developers are no longer here and it is up to you to understand these obscure codes. One way to help understand this is to follow the source code where `One` and `donut` are defined.
 
-You can search for them with either `fzf` or `grep`, but it is faster to use tags.
+You can search for them with either `fzf` or `grep` (or `vimgrep`), but in this case, tags are faster.
 
 Think of tags like an address book:
 
@@ -69,23 +69,15 @@ Modern Vim does not come with tag generator, so you will have to download an ext
 
 If you look at Vim tutorials online, many will recommend [exuberant ctags](http://ctags.sourceforge.net/). It supports [41 programming languages](http://ctags.sourceforge.net/languages.html). I used it and it worked great. However, because it has not been maintained since 2009, Universal ctags would be a better choice. It works similar to exuberant ctags and is currently being maintained.
 
-I won't go into details on how to install the universal ctags. Check out the [universal ctags](https://github.com/universal-ctags/ctags) repository for more instructions. Once you have the universal ctags installed, run `ctags --version`. It should show:
+I won't go into details on how to install the universal ctags. Check out the [universal ctags](https://github.com/universal-ctags/ctags) repository for more instructions.
 
-```
-Universal Ctags 0.0.0(b43eb39), Copyright (C) 2015 Universal Ctags Team
-Universal Ctags is derived from Exuberant Ctags.
-Exuberant Ctags 5.8, Copyright (C) 1996-2009 Darren Hiebert
-```
-
-Make sure that you see "`Universal Ctags`".
-
-Next, let's generate a basic tag file. Run:
+Assuming you have the universal ctags installed, let's generate a basic tag file. Run:
 
 ```
 ctags -R .
 ```
 
-The `R` option tells `ctags` to run a recursive scan from your current location (`.`). You should see a `tags` file in your current directory. Inside you will see something like this:
+The `R` option tells ctags to run a recursive scan from your current location (`.`). You should see a `tags` file in your current directory. Inside you will see something like this:
 
 ```
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
@@ -102,7 +94,7 @@ donut	one.rb	/^  def donut$/;"	f	class:One
 initialize	one.rb	/^  def initialize$/;"	f	class:One
 ```
 
-Yours might look a little different depending on your Vim setting and the ctags generator. A tag file is composed of two parts: the tag metadata and the tag list. These metadata (`!TAG_FILE...`) are usually controlled by the ctags generator. I won't discuss it here, but feel free to check the documentation!
+Yours might look a little different depending on your Vim setting and the ctags generator. A tag file is composed of two parts: the tag metadata and the tag list. These metadata (`!TAG_FILE...`) are usually controlled by the ctags generator. I won't discuss it here, but feel free to check their docs for more! The tag list is a list of all the definitions indexed by ctags.
 
 Now go to `two.rb`, put the cursor on `donut`, and type `Ctrl-]`. Vim will take you to the file `one.rb` on the line where `def donut` is. Success! But how did Vim do this?
 
@@ -115,10 +107,9 @@ donut	one.rb	/^  def donut$/;"	f	class:One
 ```
 
 The above tag item is composed of four components: a `tagname`, a `tagfile`, a `tagaddress`, and tag options.
-
 - `donut` is the `tagname`. When your cursor is on "donut", Vim searches the tag file for a line that has the "donut" string.
 - `one.rb` is the `tagfile`. Vim looks for a file `one.rb`.
-- `/^ def donut$/` is the `tagaddress`. `/.../` is a pattern indicator. `^` is a pattern for the first element on a line. It is followed by two spaces , then the string `def donut`. Finally, `$` is a pattern for the last element on a line.
+- `/^ def donut$/` is the `tagaddress`. `/.../` is a pattern indicator. `^` is a pattern for the first element on a line. It is followed by two spaces, then the string `def donut`. Finally, `$` is a pattern for the last element on a line.
 - `f class:One` is the tag option that tells Vim that the function `donut` is a function (`f`) and is part of the `One` class.
 
 Let's look at another item in the tag list:
@@ -151,20 +142,20 @@ Also in the case of `./tags`, Vim will first look for a tag file inside the path
 
 If your `'tags'` file had said `tags=./tags,tags,/user/iggy/mytags/tags`, then Vim will also look at the `/user/iggy/mytags` directory for a tag file after Vim finishes searching `./tags` and `tags` directory. You don't have to store your tag file inside your project, you can keep them separate.
 
-To add to a tag file location, just run:
+To add a new tag file location, use the following:
 
 ```
-:set tags+=path/to/my/tags/file
+set tags+=path/to/my/tags/file
 ```
 
-## Generating Tags For A Large Project.
+## Generating Tags For A Large Project
 
 If you tried to run ctags in a large project, it may take a long time because Vim also looks inside every nested directories. If you are a Javascript developer, you know that `node_modules` can be very large. Imagine if you have a five sub-projects and each contains its own `node_modules` directory. If you run `ctags -R .`, ctags will try to scan through all 5 `node_modules`. You probably don't need to run ctags on `node_modules`.
 
 To run ctags excluding the `node_modules`, run:
 
 ```
- ctags -R --exclude=node_modules .
+ctags -R --exclude=node_modules .
 ```
 
 This time it should take less than a second. By the way, you can use the `exclude` option multiple times:
@@ -173,9 +164,11 @@ This time it should take less than a second. By the way, you can use the `exclud
 ctags -R --exclude=.git --exclude=vendor --exclude=node_modules --exclude=db --exclude=log .
 ```
 
+The point is, if you want to omit a directory, `--exclude` is your best friend.
+
 ## Tags Navigation
 
-You can get good milage using only `Ctrl-]`, but let's learn a few more tricks. The tag jump key `Ctrl-]` has an command-line mode alternative: `:tag my-tag`. If you run:
+You can get good mileage using only `Ctrl-]`, but let's learn a few more tricks. The tag jump key `Ctrl-]` has an command-line mode alternative: `:tag {tag-name}`. If you run:
 
 ```
 :tag donut
@@ -189,7 +182,7 @@ Vim will jump to the `donut` method, just like doing `Ctrl-]` on "donut" string.
 
 Vim lists all tags that starts with "d". In this case, "donut".
 
-In a real project, you may encounter multiple methods with the same name. Let's update the two files. Inside `one.rb`:
+In a real project, you may encounter multiple methods with the same name. Let's update the two ruby files from earlier. Inside `one.rb`:
 
 ```
 ## one.rb
@@ -208,7 +201,7 @@ class One
 end
 ```
 
-And `two.rb`:
+Inside `two.rb`:
 
 ```
 ## two.rb
@@ -261,7 +254,7 @@ You will see, on the bottom of the screen:
              def pancake
 ```
 
-If you type `2` then `<Return>`, Vim will jump to the procedure in `one.rb`. If you type `1` then `<Return>`, Vim will jump to the procedure in `two.rb`.
+If you type 2, Vim will jump to the procedure in `one.rb`. If you type 1, Vim will jump to the procedure in `two.rb`.
 
 Pay attention to the `pri` column. You have `F C` on the first match and `F` on the second match. This is what Vim uses to determine the tag priotity. `F C` means a fully-matched (`F`) global tag in the current (`C`) file. `F` means only a fully-matched (`F`) global tag. `F C` always have a higher priority than `F`.
 
@@ -279,13 +272,13 @@ Vim will immediately jump to the `donut` procedure in `one.rb`, much like runnin
 :tjump pancake
 ```
 
-Vim will prompt you tag options to choose from, much like running `:tselect pancake`. With `tjump` You get the best of both methods.
+Vim will prompt you tag options to choose from, much like running `:tselect pancake`. With `tjump` you get the best of both methods.
 
 Vim has a normal mode key for `tjump`: `g Ctrl-]`. I personally like `g Ctrl-]` better than `Ctrl-]`.
 
 ## Autocompletion With Tags
 
-Tags can assist autocompletions. Recall from chapter 6, Insert Mode, that you can use `Ctrl-x` sub-mode to do various autocompletions. One autocompletion sub-mode that I did not mention was `Ctrl-]`. If you do `Ctrl-x Ctrl-]` while in the insert mode, Vim will use the tag file for autocompletion.
+Tags can assist autocompletions. Recall from chapter 6, Insert Mode, that you can use `Ctrl-X` sub-mode to do various autocompletions. One autocompletion sub-mode that I did not mention was `Ctrl-]`. If you do `Ctrl-X Ctrl-]` while in the insert mode, Vim will use the tag file for autocompletion.
 
 If you go into the insert mode and type `Ctrl-x Ctrl-]`, you will see:
 
@@ -328,9 +321,9 @@ In normal mode, you can run `Ctrl-t` to achieve the same effect as `:pop`.
 
 ## Automatic Tag Generation
 
-One of the biggest drawbacks of Vim tags is that each time you make a significant change, you have to regenerate the tag file. If you recently renamed the `pancake` procedure to the `waffle` procedure, the tag file did not know that the `pancake` procedure had been renamed. It still stored `pancake` in the list of tags. You have to run `ctags -R .` to create an updated tag file. Recreating a new tag file can be cumbersome.
+One of the biggest drawbacks of Vim tags is that each time you make a significant change, you have to regenerate the tag file. If you recently renamed the `pancake` procedure to the `waffle` procedure, the tag file did not know that the `pancake` procedure had been renamed. It still stored `pancake` in the list of tags. You have to run `ctags -R .` to create an updated tag file. Recreating a new tag file this way can be cumbersome.
 
-Luckily there are several methods you can employ to generate tags automatically. My goal in this section is not to create a foolproof process, but to suggest some ideas so you can expand them.
+Luckily there are several methods you can employ to generate tags automatically. 
 
 ## Generate A Tag On Save
 
@@ -341,24 +334,13 @@ Vim has an autocommand (`autocmd`) method to execute any command on an event tri
 ```
 
 Breakdown:
-
-- `autocmd` is Vim's autocommand method. It accepts an event name, file pattern, and a command.
+- `autocmd` is a command-line command. It accepts an event, file pattern, and a command.
 - `BufWritePost` is an event for saving a buffer. Each time you save a file, you trigger a `BufWritePost` event.
-- `.rb` is a file pattern for ruby (`rb`) files.
+- `.rb` is a file pattern for ruby files.
 - `silent` is actually part of the command you are passing. Without this, Vim will display `press ENTER or type command to continue` each time you trigger the autocommand.
 - `!ctags -R .` is the command to execute. Recall that `!cmd` from inside Vim executes terminal command.
 
 Now each time you save from inside a ruby file, Vim will run `ctags -R .`.
-
-Add a new procedure in `two.rb`:
-
-```
-def waffle
-  "Two waffles"
-end
-```
-
-Save the file. If you check the tag file, you will see `waffle` as part of the tags. Success!
 
 ## Using Plugins
 
@@ -369,7 +351,7 @@ There are several plugins to generate ctags automatically:
 - [vim-easytags](https://github.com/xolox/vim-easytags)
 - [vim-autotag](https://github.com/craigemery/vim-autotag)
 
-I use vim-gutentags. If you use a Vim plugin manager ([vim-plug](https://github.com/junegunn/vim-plug), [vundle](https://github.com/VundleVim/Vundle.vim), [dein.vim](https://github.com/Shougo/dein.vim), etc), just install the plugin and it will work right ouf of the box!
+I use vim-gutentags. It is simple to use and will work right out of the box.
 
 ## Ctags And Git Hooks
 
@@ -377,9 +359,7 @@ Tim Pope, author of many great Vim plugins, wrote a blog suggesting to use git h
 
 ## Learn Tags The Smart Way
 
-A tag is useful once configured properly. If you are like me and you forget things easily, tags can help you visualize a project.
-
-Suppose you are faced with a new codebase and you want to understand what `functionFood` does, you can easily read it by jumping to its definition. Inside it, you learn that it also calls `functionBreakfast`. You follow it and you learn that it calls `functionPancake`. Your function call graph looks something like this:
+A tag is useful once configured properly. Suppose you are faced with a new codebase and you want to understand what `functionFood` does, you can easily read it by jumping to its definition. Inside it, you learn that it also calls `functionBreakfast`. You follow it and you learn that it calls `functionPancake`. Your function call graph looks something like this:
 
 ```
 functionFood -> functionBreakfast -> functionPancake

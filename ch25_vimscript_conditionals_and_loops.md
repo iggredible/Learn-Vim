@@ -1,10 +1,12 @@
-# Equalities, Conditionals, and Loops
+# Ch25. Vimscript Conditionals And Loops
 
-In this chapter, you will learn how to do equalities, conditionals, and loops using the data types you learned in the previous chapter.
+After learning what the basic data types are, the next step is to learn how to combine them together to start writing a basic program. A basic program consists of conditionals and loops.
 
-## Equalities (Logical Operators)
+In this chapter, you will learn how to use Vimscript data types to write conditionals and loops.
 
-Below are Vim's logical operators:
+## Relational Operators
+
+Vimscript relational operators are similar to many programming languages:
 
 ```
 a == b		equal to
@@ -26,14 +28,14 @@ For example:
 :echo 5 <= 5
 ```
 
-Just like Vim coerces strings into numbers in an arithmetic expression, it also coerces strings into numbers in an equality expression. Here it coerces "5foo" into 5. Since 5 is truthy, the expression below returns true (check out Ch. 24 to recap on string coercion).
+Recall that strings are coerced into numbers in an arithmetic expression. Here Vim also coerces strings into numbers in an equality expression. "5foo" is coerced into 5 (truthy):
 
 ```
 :echo 5 == "5foo"
 " returns true
 ```
 
-Also recall that if you start a string with a non-numerical character like "foo5", then the string is converted into number 0 (0 is falsy in Vim).
+Also recall that if you start a string with a non-numerical character like "foo5", the string is converted into number 0 (falsy).
 
 ```
 echo 5 == "foo5"
@@ -42,7 +44,7 @@ echo 5 == "foo5"
 
 ### String Logic Operators
 
-Vim has more logical operators for comparing strings:
+Vim has more relational operators for comparing strings:
 
 ```
 a =~ b
@@ -93,9 +95,9 @@ echo str =~ "Hearty"
 " returns true because case doesn't matter
 ```
 
-If you are writing a plugin for others, this is a tricky situation. Does the user have `ignorecase` or `noignorecase` setting? You definitely do *not* want to force your users to mutate their case ignore option. So what do you do?
+If you are writing a plugin for others, this is a tricky situation. Does the user use `ignorecase` or `noignorecase`? You definitely do *not* want to force your users to change their ignore case option. So what do you do?
 
-Luckily, Vim has a logical operator that can *always* ignore or match case. To always match case, add a `#` at the end.
+Luckily, Vim has an operator that can *always* ignore or match case. To always match case, add a `#` at the end.
 
 ```
 set ignorecase
@@ -139,9 +141,9 @@ echo str !~? "HearTY"
 
 I prefer to use `#` to always match the case and be on the safe side.
 
-## `if`
+## If
 
-Now that you have seen Vim's equality expressions, let's touch the fundamental conditional operator, the `if` statement.
+Now that you have seen Vim's equality expressions, let's touch a fundamental conditional operator, the `if` statement.
 
 At minimum, the syntax is:
 
@@ -165,7 +167,7 @@ else
 endif
 ```
 
-For example, the plugin [Vim-signify](https://github.com/mhinz/vim-signify) uses a different installation method depending on your Vim settings. Below is the installation instruction from their `readme`, using the `if` statement:
+For example, the plugin [vim-signify](https://github.com/mhinz/vim-signify) uses a different installation method depending on your Vim settings. Below is the installation instruction from their `readme`, using the `if` statement:
 
 ```
 if has('nvim') || has('patch-8.0.902')
@@ -223,7 +225,7 @@ echo 0 || 0
 echo "foo5" || "foo5"
 " returns 0
 
-echo "5foo || foo5"
+echo "5foo" || "foo5"
 " returns 1
 ```
 
@@ -262,7 +264,7 @@ echo 0 && 10
 " returns 0
 ```
 
-Unlike "or", "and" will evaluate the subsequent expression after it reaches the first falsy expression. It will continue to evaluate the subsequent truthy expressions until the end (or until the first falsy expression).
+Unlike "or", "and" will evaluate the subsequent expression after it reaches the first falsy expression. It will continue to evaluate the subsequent truthy expressions until the end or when it sees the first falsy expression.
 
 ```
 let one_dozen = 12
@@ -279,7 +281,7 @@ echo exists("one_dozen") && one_dozen == 12
 " returns 1
 ```
 
-## `for`
+## For
 
 The `for` loop is commonly used with the list data type.
 
@@ -310,7 +312,7 @@ for beverage_type in keys(beverages)
 endfor
 ```
 
-## `while`
+## While
 
 Another common loop is the `while` loop.
 
@@ -338,7 +340,7 @@ endwhile
 
 Often your program doesn't run the way you expect it to. As a result, it throws you for a loop (pun intended). What you need is a proper error handling.
 
-### `break`
+### Break
 
 When you use `break` inside a `while` or `for` loop, it stops the loop.
 
@@ -375,7 +377,7 @@ five
 
 Running the above `while` loop gives "one two three" and not the rest of the text because the loop breaks once it matches "donut".
 
-### `continue`
+### Continue
 
 The `continue` method is similar to `break`, where it is invoked during a loop. The difference is that instead of breaking out of the loop, it just skips that current iteration.
 
@@ -401,7 +403,7 @@ echo total_word
 
 This time it returns `one two three four five`. It skips the line with the word "donut", but the loop continues.
 
-### `try`, `finally`, and `catch`
+### Try, Finally, And Catch
 
 Vim has a `try`, `finally`, and `catch` to handle errors. To simulate an error, you can use the `throw` command.
 
@@ -474,17 +476,17 @@ The difference between `catch` and `finally` is that `finally` is always run, er
 You can catch specific error with `:catch`. According to `:h :catch`:
 
 ```
-:catch /^Vim:Interrupt$/	            " catch interrupts (CTRL-C)
-:catch /^Vim\\%((\\a\\+)\\)\\=:E/	    " catch all Vim errors
-:catch /^Vim\\%((\\a\\+)\\)\\=:/	    " catch errors and interrupts
-:catch /^Vim(write):/		              " catch all errors in :write
-:catch /^Vim\\%((\\a\\+)\\)\\=:E123:/ " catch error E123
-:catch /my-exception/		              " catch user exception
-:catch /.*/			                      " catch everything
-:catch				                        " same as /.*/
+catch /^Vim:Interrupt$/.             " catch interrupts (CTRL-C)
+catch /^Vim\\%((\\a\\+)\\)\\=:E/.    " catch all Vim errors
+catch /^Vim\\%((\\a\\+)\\)\\=:/.     " catch errors and interrupts
+catch /^Vim(write):/.                " catch all errors in :write
+catch /^Vim\\%((\\a\\+)\\)\\=:E123:/ " catch error E123
+catch /my-exception/.                " catch user exception
+catch /.*/                           " catch everything
+catch.                               " same as /.*/
 ```
 
-If you notice from the list above, there is a catch for interrupt. Inside a `try` block, an interrupt is considered a catchable error.
+Inside a `try` block, an interrupt is considered a catchable error.
 
 ```
 try
@@ -507,6 +509,6 @@ Now if you `source` vimrc without `gruvbox` directory, Vim will use the `colorsc
 
 ## Learn conditionals the smart way
 
-In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using equalities, conditionals, and loops. These are the building blocks of programming.
+In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using conditionals and loops. These are the building blocks of programming.
 
 Next, let's learn about variable scopes.
