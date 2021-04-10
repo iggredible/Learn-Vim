@@ -566,7 +566,7 @@ You can mutate multiple list items directly:
 :let favoriteFlavor = ["chocolate", "glazed", "plain"]
 :let favoriteFlavor[2:] = ["strawberry", "chocolate"]
 :echo favoriteFlavor
-returns ['chocolate', 'glazed', 'strawberry', 'chocolate']
+" returns ['chocolate', 'glazed', 'strawberry', 'chocolate']
 ```
 
 ## Dictionary
