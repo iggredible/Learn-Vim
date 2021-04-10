@@ -714,7 +714,7 @@ To convert a dictionary into a list of lists, use `items()`:
 :call map(mealPlans, 'v:key . " and milk"')
 
 :echo mealPlans
-" returns {'lunch': 'lunch and milk', 'breakfast': 'breakfast and milk', 'dinner': 'dinner and milk'}
+" returns {'lunch': 'pancakes and milk', 'breakfast': 'waffles and milk', 'dinner': 'donuts and milk'}
 ```
 
 The `v:key` is Vim's special variable, much like `v:val`. When iterating through a dictionary, `v:key` will hold the value of the current iterated key.
