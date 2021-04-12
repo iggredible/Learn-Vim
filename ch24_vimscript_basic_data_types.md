@@ -644,7 +644,7 @@ You can modify or even add a dictionary content:
 
 ### Dictionary Functions
 
-Let's explore some of Vim's built-in functions to handle Dictionaries.
+Let's explore some of Vim's built-in functions to handle dictionaries.
 
 To check the length of a dictionary, use `len()`.
 
@@ -655,7 +655,7 @@ To check the length of a dictionary, use `len()`.
 " returns 3
 ```
 
-To see if a dictionary contains a specific key, use `has_key()`
+To see if a dictionary contains a specific key, use `has_key()`.
 
 ```
 :let mealPlans = #{breakfast: "waffles", lunch: "pancakes", dinner: "donuts"}
@@ -709,7 +709,13 @@ To convert a dictionary into a list of lists, use `items()`:
 
 :echo breakfastNo
 " returns {'2': '9am', '11ses': '11am'}
+```
 
+Since a dictionary contains key-value pairs, Vim provides `v:key` special variable that works similar to `v:val`. When iterating through a dictionary, `v:key` will hold the value of the current iterated key. 
+
+If you have a `mealPlans` dictionary, you can map it using `v:key`.
+
+```
 :let mealPlans = #{breakfast: "waffles", lunch: "pancakes", dinner: "donuts"}
 :call map(mealPlans, 'v:key . " and milk"')
 
@@ -717,7 +723,15 @@ To convert a dictionary into a list of lists, use `items()`:
 " returns {'lunch': 'lunch and milk', 'breakfast': 'breakfast and milk', 'dinner': 'dinner and milk'}
 ```
 
-The `v:key` is Vim's special variable, much like `v:val`. When iterating through a dictionary, `v:key` will hold the value of the current iterated key.
+Similarly, you can map it using `v:val`:
+
+```
+:let mealPlans = #{breakfast: "waffles", lunch: "pancakes", dinner: "donuts"}
+:call map(mealPlans, 'v:val . " and milk"')
+
+:echo mealPlans
+" returns {'lunch': 'pancakes and milk', 'breakfast': 'waffles and milk', 'dinner': 'donuts and milk'}
+```
 
 To see more dictionary functions, check out `:h dict-functions`.
 
