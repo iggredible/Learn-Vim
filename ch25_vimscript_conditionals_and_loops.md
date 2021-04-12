@@ -264,7 +264,7 @@ echo 0 && 10
 " returns 0
 ```
 
-Unlike "or", "and" will evaluate the subsequent expression after it reaches the first falsy expression. It will continue to evaluate the subsequent truthy expressions until the end or when it sees the first falsy expression.
+`&&` evaluates an expression until it sees the first falsy expression. For example, if you have `true && true`, it will evaluate both and return `true`. If you have `true && false && true`, it will evaluate the first `true` and stop at the first `false`. It will not evaluate the third `true`.
 
 ```
 let one_dozen = 12
