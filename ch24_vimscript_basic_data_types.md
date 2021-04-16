@@ -720,7 +720,7 @@ If you have a `mealPlans` dictionary, you can map it using `v:key`.
 :call map(mealPlans, 'v:key . " and milk"')
 
 :echo mealPlans
-" returns {'lunch': 'pancakes and milk', 'breakfast': 'waffles and milk', 'dinner': 'donuts and milk'}
+" returns {'lunch': 'lunch and milk', 'breakfast': 'breakfast and milk', 'dinner': 'dinner and milk'}
 ```
 
 Similarly, you can map it using `v:val`:
