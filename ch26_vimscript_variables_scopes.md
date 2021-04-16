@@ -127,7 +127,7 @@ echo pancake
 " returns "pancake"
 
 echo g:pancake
-"returns "pancake"
+" returns "pancake"
 
 echo waffle
 " returns "waffle"
