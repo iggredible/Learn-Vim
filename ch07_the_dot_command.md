@@ -15,7 +15,7 @@ let three = "3";
 ```
 
 - Search with `/let` to go to the match.
-- Change with  `cwconst<Esc>` to replace "let" with "const".
+- Change with `cwconst<Esc>` to replace "let" with "const".
 - Navigate with `n` to find the next match using the previous search.
 - Repeat what you just did with the dot command (`.`).
 - Continue pressing `n . n .` until you replace every word.
