@@ -1,4 +1,4 @@
-# Ch26. Vimscript Variables And Scopes
+# Ch26. Vimscript Variable Scopes
 
 Before diving into Vimscript functions, let's learn about the different sources and scopes of Vim variables.
 
