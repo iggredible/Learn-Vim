@@ -63,7 +63,7 @@ function fzf#vim#maps(mode, ...)
 
 ## Removing A Function
 
-To remove an existing function, use `:delfunction {function-name}`. To delete `Tasty`, run `:delfunction Tasty`.
+To remove an existing function, use `:delfunction {Function_name}`. To delete `Tasty`, run `:delfunction Tasty`.
 
 ## Function Return Value
 
