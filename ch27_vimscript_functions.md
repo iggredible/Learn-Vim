@@ -48,7 +48,7 @@ To see all the built-in and custom functions in Vim, you can run `:function` com
 
 You can also search for functions with pattern with `:function /pattern`, similar to Vim's search navigation (`/pattern`). To search for all function containing the phrase "map", run `:function /map`. If you use external plugins, Vim will display the functions defined in those plugins.
 
-If you want to look at where a function originates, you can use the `:verbose` command with the `:function` command. To look at where all the functions containing teh word "map" are originated, run:
+If you want to look at where a function originates, you can use the `:verbose` command with the `:function` command. To look at where all the functions containing the word "map" are originated, run:
 
 ```
 :verbose function /map
