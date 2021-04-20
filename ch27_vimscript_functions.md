@@ -227,7 +227,7 @@ function! Buffet(...)
 endfunction
 
 echo Buffet("Noodles", "Sushi")
-" Returns "Noodles Sushi"
+" returns "Noodles Sushi"
 ```
 
 The problem with this approach is if you now run `echo Buffet("Noodles")` (with only one variable), Vim complains that it has an undefined variable `a:2`. How can you make it flexible enough to display exactly what the user gives?
