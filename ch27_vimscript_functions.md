@@ -398,7 +398,7 @@ echo Breakfastify("pancake")
 " returns "I am having pancake for breakfast"
 ```
 
-In Vim, if you want to assign a function to a variable, you can't just run assign it directly like `let MyVar = MyFunc`. You need to use the `function()` function, like `let MyFar = function("MyFunc")`.
+In Vim, if you want to assign a function to a variable, you can't just run assign it directly like `let MyVar = MyFunc`. You need to use the `function()` function, like `let MyVar = function("MyFunc")`.
 
 You can use funcref with maps and filters. Note that maps and filters will pass an index as the first argument and the iterated value as the second argument.
 
