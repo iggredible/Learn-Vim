@@ -185,7 +185,11 @@ nnoremap <Leader>tn :call ToggleNumber()<CR>
 
 On the first one, I map `Ctrl-F` to [fzf.vim](https://github.com/junegunn/fzf.vim) plugin's `:Gfiles` command (quickly search for Git files). On the second one, I map `<Leader>tn` to call a custom function `ToggleNumber` (toggles `norelativenumber` and `relativenumber` options). The `Ctrl-F` mapping overwrites Vim's native page scroll. Your mapping will overwrite Vim controls if they collide. Because I almost never used that feature, I decided that it is safe to overwrite it.
 
-By the way, I personally like to use `<Space>` as the leader key instead of Vim's default. To change your leader key, add this in your vimrc:
+By the way, what is this "leader" key in `<Leader>tn`?
+
+Vim has a leader key to help with mappings. For example, I mapped `<Leader>tn` to run the `ToggleNumber()` function. Without the leader key, I would be using `tn`, but Vim already has `t` (the "till" search navigation). With the leader key, I can now press the key assigned as a leader, then `tn` without interfering with existing commands. The leader key is a key that you can setup to start your mapping combo. By default Vim uses the backslash as the leader key (so `<Leader>tn` becomes "backslash-t-n").
+
+I personally like to use `<Space>` as the leader key instead of the backslash default. To change your leader key, add this in your vimrc:
 
 ```
 let mapleader = "\<space>"
