@@ -42,7 +42,7 @@ Let's try another example:
 pancake, potatoes, fruit-juice,
 ```
 
-This time, your task is to delete the comma, not the breakfast items. Go to the first comma using, delete it, then repeat two more times with `f,x..` Easy, right? Wait a minute, it didn't work! Why?
+This time, your task is to delete the comma, not the breakfast items. With the cursor at the beginning of the line, go to the first comma, delete it, then repeat two more times with `f,x..` Easy, right? Wait a minute, it didn't work! Why?
 
 A change excludes motions because it does not update buffer content. The command `f,x` consisted of two actions: the command `f,` to move the cursor to "," and `x` to delete a character. Only the latter, `x`, caused a change. Contrast that with `df,` from the earlier example. In it, `f,` is a directive to the delete operator `d`, not a motion to move the cursor. The `f,` in `df,` and `f,x` have two very different roles.
 
