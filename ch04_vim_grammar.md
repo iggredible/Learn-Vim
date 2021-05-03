@@ -96,7 +96,7 @@ i + object    Inner text object
 a + object    Outer text object
 ```
 
-Inner text object selects the object inside *without* the white space or the surrounding objects. Outer text object selects the object inside *including* the white space or the surrounding objects. Generally, an outer text object always selects more text than an inner text object. If your cursor is somewhere inside the parentheses in the expression `(hello vim)`:
+Inner text object selects the object inside *without* the white space or the surrounding objects. Outer text object selects the object inside *including* the white space or the surrounding objects. Generally, an outer text object always selects more text than an inner text object. If your cursor is somewhere inside the parentheses in the expression `(hello Vim)`:
 - To delete the text inside the parentheses without deleting the parentheses: `di(`.
 - To delete the parentheses and the text inside: `da(`.
 
