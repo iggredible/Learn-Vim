@@ -232,9 +232,9 @@ Keep in mind since macros are stored inside Vim registers, you can accidentally 
 
 ## Clearing A Register
 
-Technically, there is no need to clear any register because the next register you store under the same name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in the register a.
+Technically, there is no need to clear any register because the next text that you store under the same register name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in the register a.
 
-Another alternative is to run the command `:call setreg('a', '')` where "a is the register a.
+Another alternative is to run the command `:call setreg('a', 'hello register a')` where a is the register a and "hello register a" is the text that you want to store.
 
 One more way to clear register is to set the content of "a register to an empty string with the expression `:let @a = ''`.
 
