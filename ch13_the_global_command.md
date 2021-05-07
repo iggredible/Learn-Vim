@@ -533,9 +533,9 @@ const arrayA = [
 ]
 ```
 
-:g/\[/+1,/\]/-1sort
 This is great! But the command looks complicated. Let's break it down. This command also follows the form `:g/pattern1/,/pattern2/command`.
-`:g/\[/` is the global command pattern.
+
+- `:g/\[/` is the global command pattern.
 - `/\[/+1` is the first pattern. It matches a literal left square bracket "[". The `+1` refers to the line below it.
 - `/\]/-1` is the second pattern. It matches a literal right square bracket "]". The `-1` refers to the line above it.
 - `/\[/+1,/\]/-1` then refers to any lines between "[" and "]".
