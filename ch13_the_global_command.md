@@ -72,13 +72,13 @@ console.log("three: ", three);
 To run the global command on non-matching lines, you can run:
 
 ```
-:g!/{pattern}/{command}
+:g!/pattern/command
 ```
 
 or
 
 ```
-:v/{pattern}/{command}
+:v/pattern/command
 ```
 
 If you run `:v/console/d`, it will delete all lines *not* containing "console".
