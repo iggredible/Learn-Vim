@@ -15,7 +15,7 @@ There are 4 different commands you can use to enter the command-line mode:
 
 You can enter the command-line mode from the normal mode or the visual mode.
 
-To leave the command-line mode, you can use `<Esc>`, `Ctrl-c, or Ctrl-[`.
+To leave the command-line mode, you can use `<Esc>`, `Ctrl-C, or Ctrl-[`.
 
 *Other literatures might refer the "Command-line command" as "Ex command" and the "External command" as "filter command" or "bang operator".*
 
@@ -31,7 +31,7 @@ While in the command-line mode, you can move to the left or to the right, one ch
 
 If you need to move word-wise, use `Shift-Left` or `Shift-Right` (in some OS, you might have to use `Ctrl` instead of `Shift`).
 
-To go to the start of the line, use `Ctrl-b`. To go to the end of the line, use `Ctrl-e`.
+To go to the start of the line, use `Ctrl-B`. To go to the end of the line, use `Ctrl-E`.
 
 Similar to the insert mode, inside the command-line mode, you have three ways to delete characters:
 
@@ -40,7 +40,7 @@ Ctrl-H    Delete one character
 Ctrl-W    Delete one word
 Ctrl-U    Delete the entire line
 ```
-Finally, if you want to edit the command like you would a normal textfile use `Ctrl-f`.
+Finally, if you want to edit the command like you would a normal textfile use `Ctrl-F`.
 
 This also allows you to search through the previous commands, edit them and rerun them by pressing `<Enter>` in "command-line editing normal mode".
 

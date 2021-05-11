@@ -19,7 +19,7 @@ Let's go through each of them.
 The syntax to read the STDOUT of an external command into the current buffer is:
 
 ```
-:r !{cmd}
+:r !cmd
 ```
 
 `:r` is Vim's read command. If you use it without `!`, you can use it to get the content of a file. If you have a file `file1.txt` in the current directory and you run:
@@ -63,7 +63,7 @@ Now the STDOUT from running `cat file1.txt` will be inserted after line 10.
 The command `:w`, in addition to saving a file, can be used to pass the text in the current buffer as the STDIN for an external command. The syntax is:
 
 ```
-:w !{cmd}
+:w !cmd
 ```
 
 If you have these expressions:
