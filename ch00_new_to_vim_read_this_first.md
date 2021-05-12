@@ -1,4 +1,4 @@
-# New To Vim? Read This First
+# Ch00. New to Vim? Read This First
 
 ## Why This Guide Was Written
 
