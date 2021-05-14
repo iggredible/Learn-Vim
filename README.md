@@ -24,7 +24,7 @@ If you want to financially support this project, you can [purchase this guide on
 
 ### Prologue
 
-- [Ch 0     - New to Vim? Read This First](./ch00_new_to_vim_read_this_first.md)
+- [Ch 0     - Read This First](./ch00_read_this_first.md)
 
 ### Part 1: Learn Vim the Smart Way
 
