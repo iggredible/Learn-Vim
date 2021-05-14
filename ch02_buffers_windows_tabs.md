@@ -16,13 +16,11 @@ What is a *buffer*?
 
 A buffer is an in-memory space where you can write and edit some text. When you open a file in Vim, the data is bound to a buffer. When you open 3 files in Vim, you have 3 buffers.
 
-Have two empty files, `file1.js` and `file2.j` (if possible, create them with Vim) available. Run this in the terminal:
+Have two empty files, `file1.js` and `file2.js` available (if possible, create them with Vim). Run this in the terminal:
 
 ```bash
 vim file1.js
 ```
-
-![one buffer displayed with highlight](images/screen-one-buffer-file1-highlighted.png)
 
 What you are seeing is `file1.js` *buffer*. Whenever you open a new file, Vim creates a new buffer.
 
@@ -32,11 +30,7 @@ Exit Vim. This time, open two new files:
 vim file1.js file2.js
 ```
 
-![one buffer displayed.png](images/screen-one-buffer.png)
-
-Vim displays `file1.js` buffer, but it actually creates two buffers: `file1.js` buffer and `file2.js` buffer. Run `:buffers` to see all the buffers (alternatively, you can use `:ls` or `:files` too).
-
-![buffers command showing 2 buffers](images/screen-one-buffer-buffers-command.png)
+Vim currently displays `file1.js` buffer, but it actually creates two buffers: `file1.js` buffer and `file2.js` buffer. Run `:buffers` to see all the buffers (alternatively, you can use `:ls` or `:files` too). You should see *both* `file1.js` and `file2.js` listed. Running `vim file1 file2 file3 ... filen` creates n amount of buffers. Each time you open a new file, Vim create a new buffer for that file.
 
 There are several ways you can traverse buffers:
 - `:bnext` to go to the next buffer (`:bprevious` to go to the previous buffer).
@@ -47,7 +41,7 @@ There are several ways you can traverse buffers:
 
 Once Vim creates a buffer, it will remain in your buffers list. To remove it, you can type `:bdelete`. It accepts either a buffer number (`:bdelete 3` to delete buffer #3) or a filename (`:bdelete` then use `<Tab>` to autocomplete).
 
-The hardest thing for me when learning about buffer was visualizing how buffers worked. Imagine a deck of playing cards. If I have 2 buffers, I have a stack of 2 cards. The card on top is the card I see. If I see `file1.js` buffer displayed then the `file1.js` card is on the top of the deck. I can't see the other card, `file2.js`. If I switch buffers to `file2.js`, that `file2.js` card is now on the top of the deck and `file1.js` card is at the bottom.
+The hardest thing for me when learning about buffer was visualizing how it worked because my mind was used to windows from when using a mainstream text editor. A good analogy is a deck of playing cards. If I have 2 buffers, I have a stack of 2 cards. The card on top is the only card I see, but I know there are card(s) below it. If I see `file1.js` buffer displayed then the `file1.js` card is on the top of the deck. I can't see the other card, the `file2.js`, but it's there. If I switch buffers to `file2.js`, that `file2.js` card is now on the top of the deck and `file1.js` card is at the bottom.
 
 If you haven't used Vim before, this is a new concept. Take your time to understand it.
 
@@ -73,9 +67,7 @@ To save and quit all, run:
 
 ## Windows
 
-A window is a viewport on a buffer. You can have multiple windows. Most text editors have the ability to display multiple windows. Below you see a VSCode with 3 windows:
-
-![VSCode showing 3 windows](images/screen-vscode-3-windows.png)
+A window is a viewport on a buffer. If you're coming from a mainstream editor, this concept may be familiar to you. Most text editors have the ability to display multiple windows. In Vim, you can also have multiple windows.
 
 Let's open `file1.js` from the terminal again:
 
@@ -83,17 +75,13 @@ Let's open `file1.js` from the terminal again:
 vim file1.js
 ```
 
-![one buffer displayed.png](images/screen-one-buffer.png)
-
-Earlier I said that you're looking at `file1.js` buffer. While that was correct, it was incomplete. You are looking at `file1.js` buffer displayed through **a window**. A window is what you are seeing a buffer through.
+Earlier I said that you're looking at `file1.js` buffer. While that was correct, that statement was incomplete. You are looking at `file1.js` buffer displayed through **a window**. A window is what you are seeing a buffer through.
 
 Don't quit Vim yet. Run:
 
 ```
 :split file2.js
 ```
-
-![split window horizontally](images/screen-split-window.png)
 
 Now you are looking at two buffers through **two windows**. The top window displays `file2.js` buffer. The bottom window displays `file1.js` buffer.
 
@@ -112,19 +100,15 @@ Now run:
 :vsplit file3.js
 ```
 
-![split window vertically and horizontally](images/screen-split-window-vertically-and-horizontally.png)
-
-
-You are now seeing three windows displaying three buffers. The top left window displays `file3.js` buffer, the top right window displays `file2.js` buffer, and the bottom window displays `file1.js` buffer.
+You are now seeing three windows displaying three buffers. One window displays `file3.js` buffer, another window displays `file2.js` buffer, and another window displays `file1.js` buffer.
 
 You can have multiple windows displaying the same buffer. While you're on the top left window, type:
+
 ```
 :buffer file2.js
 ```
-![split window vertically and horizontally with two file2.js](images/screen-split-window-vertically-and-horizontally-two-file2.png)
 
-
-Now both top left and top right windows are displaying `file2.js` buffer. If you start typing on the top left, you can see that the content on both top left and top right window are being updated in real-time.
+Now both two windows are displaying `file2.js` buffer. If you start typing on a `file2.js` window, you will see that both windows that display `file2.js` buffers are being updated in real-time.
 
 To close the current window, you can run `Ctrl-W C` or type `:quit`. When you close a window, the buffer will still be there (run `:buffers` to confirm this).
 
@@ -136,6 +120,7 @@ Ctrl-W S    Opens a new horizontal split
 Ctrl-W C    Closes a window
 Ctrl-W O    Makes the current window the only one on screen and closes other windows
 ```
+
 And here is a list of useful window command-line commands:
 
 ```
@@ -162,8 +147,6 @@ To open `file2.js` in a new tab:
 :tabnew file2.js
 ```
 
-![screen displays tab 2](images/screen-tab2.png)
-
 You can also let Vim autocomplete the file you want to open in a *new tab* by pressing `<Tab>` (no pun intended).
 
 Below is a list of useful tab navigations:
@@ -181,10 +164,6 @@ You can also run `gt` to go to next tab page (you can go to previous tab with `g
 
 One advantage of having multiple tabs is you can have different window arrangements in different tabs. Maybe you want your first tab to have 3 vertical windows and second tab to have a mixed horizontal and vertical windows layout. Tab is the perfect tool for the job!
 
-![first tab with multiple windows](images/tabs-file1js.png)
-
-![second tab with multiple windows](images/tabs-file2js.png)
-
 To start Vim with multiple tabs, you can do this from the terminal:
 
 ```bash
@@ -195,15 +174,9 @@ vim -p file1.js file2.js file3.js
 
 Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W H/J/K/L`.
 
-![cartesian movement in x and y axis](images/cartesian-xy.png)
-
 Moving between buffers is like traveling across the Z axis in a Cartesian coordinate. Imagine your buffer files lining up across the Z axis. You can traverse the Z axis one buffer at a time with `:bnext` and `:bprevious`. You can jump to any coordinate in Z axis with `:buffer filename/buffernumber`.
 
-![cartesian movement in z axis](images/cartesian-z.png)
-
 You can move in *three-dimensional space* by combining window and buffer movements. You can move to the top, right, bottom, or left window (X-Y navigations) with window navigations. Since each window contains buffers, you can move forward and backward (Z navigations) with buffer movements.
-
-![cartesian movement in x, y, and z axis](images/cartesian-xyz.png)
 
 ## Using Buffers, Windows, and Tabs The Smart Way
 

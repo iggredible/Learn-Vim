@@ -215,11 +215,7 @@ baz9
 baz10
 ```
 
-Let's say that your windows layout look like the following (using strategically placed `split` and `vsplit`):
-
-![Session Layout](images/session-layout.png)
-
-To preserve this look, you need to save the Session. Run:
+Now let's say that you split your windows with `:split` and `:vsplit`. To preserve this look, you need to save the Session. Run:
 
 ```
 :mksession
@@ -243,7 +239,7 @@ To load a Session, run:
 :source Session.vim
 ```
 
-Now Vim looks like just the way you left it! Alternatively, you can also load a Session file from the terminal:
+Now Vim looks like just the way you left it, including the split windows! Alternatively, you can also load a Session file from the terminal:
 
 ```
 vim -S Session.vim
