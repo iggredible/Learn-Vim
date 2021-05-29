@@ -4,7 +4,7 @@ The goal of this chapter is to introduce you to how to search quickly in Vim. Be
 
 This chapter is divided into two parts: how to search without plugins and how to search with [fzf.vim](https://github.com/junegunn/fzf.vim) plugin. Let's get started!
 
-## Opening And Editing Files
+## Opening and Editing Files
 
 To open a file in Vim, you can use `:edit`.
 
@@ -59,7 +59,7 @@ Autocomplete also works with `:find`:
 
 You may notice that `:find` looks like `:edit`. What's the difference?
 
-## Find And Path
+## Find and Path
 
 The difference is that `:find` finds file in `path`, `:edit` doesn't. Let's learn a little bit about this `path`. Once you learn how to modify your paths, `:find` can become a powerful searching tool. To check what your paths are, do:
 
@@ -111,7 +111,7 @@ You might be thinking to add the entire project directories so when you press `t
 
 You can add the `set path+={your-path-here}` in your vimrc. Updating `path` takes only a few seconds and doing this will save you a lot of time.
 
-## Searching In Files With Grep
+## Searching in Files With Grep
 
 If you need to find in files (find phrases in files), you can use grep. Vim has two ways of doing that:
 
@@ -260,7 +260,7 @@ Since you will be using this command frequently, it is good to have this mapped.
 nnoremap <silent> <C-f> :Files<CR>
 ```
 
-## Finding In Files
+## Finding in Files
 
 To search inside files, you can use the `:Rg` command.
 
@@ -309,7 +309,7 @@ You might wonder, "Well, this is nice but I never used `:grep` in Vim, plus can'
 
 That is a very good question. You may need to use `:grep` in Vim to do search and replace in multiple files, which I will cover next.
 
-## Search And Replace In Multiple Files
+## Search and Replace in Multiple Files
 
 Modern text editors like VSCode makes it very easy to search and replace a string across multiple files. In this section, I will show you two different methods to easily do that in Vim.
 
@@ -332,7 +332,7 @@ The second method is to search and replace in select files. With this method, yo
 3. Select all files you want to perform search-and-replace on. To select multiple files, use `<Tab>` / `<Shift-Tab>`. This is only possible if you have the multiple flag (`-m`) in `FZF_DEFAULT_OPTS`.
 4. Run `:bufdo %s/pizza/donut/g | update`. The command `:bufdo %s/pizza/donut/g | update` looks similar to the earlier `:cfdo %s/pizza/donut/g | update` command. The difference is instead of substituting all quickfix entries (`:cfdo`), you are substituting all buffer entries (`:bufdo`).
 
-## Learn Search The Smart Way
+## Learn Search the Smart Way
 
 Searching is the bread-and-butter of text editing. Learning how to search well in Vim will improve your text editing workflow significantly.
 

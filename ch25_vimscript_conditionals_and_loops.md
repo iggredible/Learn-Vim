@@ -1,4 +1,4 @@
-# Ch25. Vimscript Conditionals And Loops
+# Ch25. Vimscript Conditionals and Loops
 
 After learning what the basic data types are, the next step is to learn how to combine them together to start writing a basic program. A basic program consists of conditionals and loops.
 
@@ -199,7 +199,7 @@ let &background = strftime("%H") < 18 ? "light" : "dark"
 
 `&background` is the `'background'` option in Vim. `strftime("%H")` returns the current time in hours. If it is not yet 6 PM, use a light background. Otherwise, use a dark background.
 
-## Or
+## or
 
 The logical "or" (`||`) works like many programming languages.
 
@@ -243,7 +243,7 @@ echo two_dozen || one_dozen
 
 Note that `two_dozen` is never defined. The expression `one_dozen || two_dozen` doesn't throw any error because `one_dozen` is evaluated first found to be truthy, so Vim doesn't evaluate `two_dozen`.
 
-## And
+## and
 
 The logical "and" (`&&`) is the complement of the logical or.
 
@@ -281,7 +281,7 @@ echo exists("one_dozen") && one_dozen == 12
 " returns 1
 ```
 
-## For
+## for
 
 The `for` loop is commonly used with the list data type.
 
@@ -403,7 +403,7 @@ echo total_word
 
 This time it returns `one two three four five`. It skips the line with the word "donut", but the loop continues.
 
-### Try, Finally, And Catch
+### try, finally, and catch
 
 Vim has a `try`, `finally`, and `catch` to handle errors. To simulate an error, you can use the `throw` command.
 
@@ -507,7 +507,7 @@ endtry
 
 Now if you `source` vimrc without `gruvbox` directory, Vim will use the `colorscheme default`.
 
-## Learn conditionals the smart way
+## Learn Conditionals the Smart Way
 
 In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using conditionals and loops. These are the building blocks of programming.
 

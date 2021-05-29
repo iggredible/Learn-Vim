@@ -124,7 +124,7 @@ When you run `:make` from inside `./hello.cpp`, it is compiled into `./hello`. T
 
 For more, check out `:h :compiler` and `:h write-compiler-plugin`.
 
-## Auto-compile On Save
+## Auto-compile on Save
 
 You can make life even easier by automating compilation. Recall that you can use Vim's `autocmd` to trigger automatic actions based on certain events. To automatically compile `.cpp` files on each save add this on your vimrc:
 
@@ -160,7 +160,7 @@ Vim runs the `$VIMRUNTIME/compiler/ruby.vim` script and changes the `makeprg` to
 
 You don't have to use the `:compiler` and `makeprg` to compile a program. You can run a test script, lint a file, send a signal, or anything you want.
 
-## Creating A Custom Compiler
+## Creating a Custom Compiler
 
 Let's create a simple Typescript compiler. Install Typescript (`npm install -g typescript`) to your machine. You should now have the `tsc` command. If you haven't played with typescript before, `tsc` compiles a Typescript file into a Javascript file. Suppose that you have a file, `hello.ts`:
 
@@ -287,7 +287,7 @@ autocmd BufEnter *_spec.rb let b:dispatch = 'bundle exec rspec %'
 
 Now each time you enter a file (`BufEnter`) that ends with `_spec.rb`, running `:Dispatch` automatically executes `bundle exec rspec {your-current-ruby-spec-file}`.
 
-## Learn Compile The Smart Way
+## Learn Compile the Smart Way
 
 In this chapter, you learned that you can use the `make` and `compiler` commands to run *any* process from inside Vim asynchronously to complement your programming workflow. Vim's ability to extend itself with other programs makes it powerful.
 

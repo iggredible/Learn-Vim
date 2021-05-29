@@ -2,7 +2,7 @@
 
 We all make all sorts of typing mistakes. That's why undo is an essential feature in any modern software. Vim's undo system is not only capable of undoing and redoing simple mistakes, but also accessing different text states, giving you control to all the texts you have ever typed. In this chapter, you will learn how to undo, redo, navigate an undo branch, persist undo, and travel across time.
 
-## Undo, Redo, And UNDO
+## Undo, Redo, and UNDO
 
 To perform a basic undo, you can use `u` or run `:undo`.
 
@@ -64,7 +64,7 @@ I personally do not use `U` because it is hard to remember the original state (I
 
 Vim sets a maximum number of how many times you can undo in `undolevels` option variable. You can check it with `:echo &undolevels`. I have mine set to be 1000. To change yours to 1000, run `:set undolevels=1000`. Feel free to set it to any number you like.
 
-## Breaking The Blocks
+## Breaking the Blocks
 
 I mentioned earlier that `u` undoes a single "change" similar to the dot command's change: the texts inserted from when you enter the insert mode until you exit it count as a change.
 
@@ -270,7 +270,7 @@ The same set of arguments work with `:earlier` counterpart: `:later`.
 :later 10f    go to the state 10 saves later
 ```
 
-## Learn Undo The Smart Way
+## Learn Undo the Smart Way
 
 `u` and `Ctrl-R` are two indispensable Vim commands for correcting mistakes. Learn them first. Next, learn how to use `:earlier` and `:later` using the time arguments first. After that, take your time to understand the undo tree. The [vim-mundo](https://github.com/simnalamburt/vim-mundo) plugin helped me a lot. Type along the texts in this chapter and check the undo tree as you make each change. Once you grasp it, you will never see undo system the same way again.
 

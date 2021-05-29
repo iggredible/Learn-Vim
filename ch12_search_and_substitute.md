@@ -1,4 +1,4 @@
-# Ch12. Search And Substitute
+# Ch12. Search and Substitute
 
 This chapter covers two separate but related concepts: search and substitute. Often when editing, you need to search multiple texts based on their least common denominator patterns. By learning how to use regular expressions in search and substitute instead of literal strings, you will be able to target any text quickly.
 
@@ -32,7 +32,7 @@ Hello
 
 There is one downside. What if you need to search for only a lowercase string? When you do `/hello`, Vim now does case insensitive search. You can use `\C` pattern anywhere in your search term to tell Vim that the subsequent search term will be case sensitive. If you do `/\Chello`, it will strictly match "hello", not "HELLO" or "Hello".
 
-## First And Last Character In A Line
+## First and Last Character in a Line
 
 You can use `^` to match the first character in a line and `$` to match the last character in a line.
 
@@ -60,7 +60,7 @@ What if you want to quickly recall *n* last search term? You can quickly travers
 
 When you reach the end of a file while searching, Vim throws an error: `"Search hit the BOTTOM without match for: {your-search}"`. Sometimes this can be a good safeguard from oversearching, but other times you want to cycle the search back to the top again. You can use the `set wrapscan` option to make Vim to search back at the top of the file when you reach the end of the file. To turn this feature off, do `set nowrapscan`.
 
-## Searching For Alternative Words
+## Searching for Alternative Words
 
 It is common to search for multiple words at once. If you need to search for *either* "hello vim" or "hola vim", but not "salve vim" or "bonjour vim", you can use the `|` pattern.
 
@@ -77,7 +77,7 @@ To match both "hello" and  "hola", you can do `/hello\|hola`. You have to escape
 
 If you don't want to type `\|` every time, you can use the `magic` syntax (`\v`) at the start of the search: `/\vhello|hola`. I will not cover `magic` in this guide, but with `\v`, you don't have to escape special characters anymore. To learn more about `\v`, feel free to check out `:h \v`.
 
-## Setting The Start And End Of A Match
+## Setting the Start and End of a Match
 
 Maybe you need to search for a text that is a part of a compound word. If you have these texts:
 
@@ -119,7 +119,7 @@ You can combine these ranges together. If you need to search for digits 0-9 and 
 
 To do a negative search, you can add `^` inside the character range brackets. To search for a non-digit, run `/[^0-9]`. Vim will match any character as long as it is not a digit. Beware that the caret (`^`) inside the range brackets is different from the beginning-of-a-line caret (ex: `/^hello`). If a caret is outside of a pair of brackets and is the first character in the search term, it means "the first character in a line". If a caret is inside a pair of brackets and it is the first character inside the brackets, it means a negative search operator. `/^abc` matches the first "abc" in a line and `/[^abc]` matches any character except for an "a", "b", or "c".
 
-## Searching For Repeating Characters
+## Searching for Repeating Characters
 
 If you need to search for double digits in this text:
 
@@ -163,7 +163,7 @@ Vim has predefined ranges for common characters like digits and alphas. I will n
 
 You can use them like you would use character ranges. To search for any single digit, instead of using `/[0-9]`, you can use `/\d` for a more concise syntax.
 
-## Search Example: Capturing A Text Between A Pair Of Similar Characters
+## Search Example: Capturing a Text Between a Pair of Similar Characters
 
 If you want to search for a phrase surrounded by a pair of double quotes:
 
@@ -188,7 +188,7 @@ When Vim sees the first `"`, it begins the pattern capture. The moment it sees t
 - To capture a phrase surrounded by single quotes, you can use `/'[^']\+'`.
 - To capture a phrase surrounded by zeroes, you can use `/0[^0]\+0`.
 
-## Search Example: Capturing A Phone Number
+## Search Example: Capturing a Phone Number
 
 If you want to match a US phone number separated by a hyphen (`-`), like `123-456-7890`, you can use:
 
@@ -230,7 +230,7 @@ Let's substitute "good" with "awesome" because Vim is awesome. Run `:s/good/awes
 vim is awesome
 ```
 
-## Repeating The Last Substitution
+## Repeating the Last Substitution
 
 You can repeat the last substitute command with either the normal command `&` or by running `:s`. If you have just run `:s/good/awesome/`, running either `&` or `:s` will repeat it.
 
@@ -426,7 +426,7 @@ There are more flags that I do not list above. To read about all the flags, chec
 
 By the way, the repeat-substitution commands (`&` and `:s`) do not retain the flags. Running `&` will only repeat `:s/pancake/donut/` without `g`. To quickly repeat the last substitute command with all the flags, run `:&&`.
 
-## Changing The Delimiter
+## Changing the Delimiter
 
 If you need to replace a URL with a long path:
 
@@ -542,7 +542,7 @@ Here is the breakdown:
 - `\1` is the first group, which is either the text "hello" or "hola".
 - `friend` is the literal word "friend".
 
-## Substituting The Start And The End Of A Pattern
+## Substituting the Start and the End of a Pattern
 
 Recall that you can use `\zs` and `\ze` to define the start and the end of a match. This technique works in substitution too. If you have:
 
@@ -566,7 +566,7 @@ strawberry sweetcake
 blueberry hotdog
 ```
 
-## Greedy And Non-Greedy
+## Greedy and Non-greedy
 
 You can substitute the nth match in a line with this trick:
 
@@ -710,7 +710,7 @@ The breakdown:
 - `q` stops the macro recording.
 - `99@q` executes the macro ninety-nine times. Vim will stop the macro execution after it encounters the first error, so Vim won't actually execute the macro ninety-nine times.
 
-## Learning Search And Substitution The Smart Way
+## Learning Search and Substitution the Smart Way
 
 The ability to do search well is a necessary skill in editing. Mastering the search lets you to utilize the flexibility of regular expressions to search for any pattern in a file. Take your time to learn these. To get better with regular expression you need to be actively using regular expressions. I once read a book about regular expression without actually doing it and I forgot almost everything I read afterwards. Active coding is the best way to master any skill.
 

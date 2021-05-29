@@ -4,7 +4,7 @@ It is easy to get intimidated by the complexity of Vim commands. If you see a Vi
 
 This is the most important chapter in the entire guide. Once you understand the underlying grammatical structure, you will be able to "speak" to Vim. By the way, when I say *Vim language* in this chapter, I am not talking about Vimscript language (Vim's built-in programming language, you will learn that in later chapters).
 
-## How To Learn A Language
+## How to Learn a Language
 
 I am not a native English speaker. I learned English when I was 13 when I moved to the US. There are three things you need to do to learn to speak a new language:
 
@@ -60,7 +60,7 @@ c    Delete text, save to register, and start insert mode
 
 Btw, after you yank a text, you can paste it with `p` (after the cursor) or `P` (before the cursor).
 
-## Verb And Noun
+## Verb and Noun
 
 Now that you know basic nouns and verbs, let's apply the grammar rule, verb + noun! Suppose you have this expression:
 
@@ -152,7 +152,7 @@ t         XML tags
 
 To learn more, check out `:h text-objects`.
 
-## Composability And Grammar
+## Composability and Grammar
 
 Vim grammar is subset of Vim's composability feature. Let's discuss composability in Vim and why this is a great feature to have in a text editor.
 
@@ -201,7 +201,7 @@ This composable behavior echoes Unix philosophy: *do one thing well*. An operato
 
 Motions and operators are extendable. You can create custom motions and operators to add to your Vim toolbelt. The [`vim-textobj-user`](https://github.com/kana/vim-textobj-user) plugin allows you to create your own text objects. It also contains a [list](https://github.com/kana/vim-textobj-user/wiki) of user-made custom text objects.
 
-## Learn Vim Grammar The Smart Way
+## Learn Vim Grammar the Smart Way
 
 You just learned about Vim grammar's rule: `verb + noun`. One of my biggest Vim "AHA!" moments was when I had just learned about the uppercase (`gU`) operator and wanted to uppercase the current word, I *instinctively* ran `gUiw` and it worked! The word was uppercased. At that moment, I finally began to understand Vim. My hope is that you will have your own "AHA!" moment soon, if not already.
 

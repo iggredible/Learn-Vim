@@ -4,7 +4,7 @@ In the last three chapters, you learned how to use the search commands (`/`, `?`
 
 In this chapter, you will learn various tips and tricks for the command-line mode.
 
-## Entering And Exiting The Command-line Mode
+## Entering and Exiting the Command-line Mode
 
 The command-line mode is a mode in itself, just like normal mode, insert mode, and visual mode. When you are in this mode, the cursor goes to the bottom of the screen where you can type in different commands.
 
@@ -19,7 +19,7 @@ To leave the command-line mode, you can use `<Esc>`, `Ctrl-C, or Ctrl-[`.
 
 *Other literatures might refer the "Command-line command" as "Ex command" and the "External command" as "filter command" or "bang operator".*
 
-## Repeating The Previous Command
+## Repeating the Previous Command
 
 You can repeat the previous command-line command or external command with `@:`.
 
@@ -44,7 +44,7 @@ Finally, if you want to edit the command like you would a normal textfile use `C
 
 This also allows you to search through the previous commands, edit them and rerun them by pressing `<Enter>` in "command-line editing normal mode".
 
-## Register And Autocomplete
+## Register and Autocomplete
 
 While in the command-line mode, you can insert texts from Vim register with `Ctrl-R` the same way as the insert mode. If you have the string "foo" saved in the register a, you can insert it by running `Ctrl-R a`. Everything that you can get from the register in the insert mode, you can do the same from the command-line mode.
 
@@ -54,14 +54,14 @@ You can also autocomplete existing commands. To autocomplete the `echo` command,
 
 Some command-line commands accept file names as arguments. One example is `edit`. You can autocomplete here too. After typing the command, `:e ` (don't forget the space), press `<Tab>`. Vim will list all the relevant file names that you can choose from so you don't have to type it from scratch.
 
-## History Window And Command-line Window
+## History Window and Command-line Window
 
 You can view the histoy of command-line commands and search terms (this requires the `+cmdline_hist` feature).
 
 To open the command-line history, run `:his :`. You should see something like the following:
 
 ```
-##  cmd History
+## Cmd history
 2  e file1.txt
 3  g/foo/d
 4  s/foo/bar/g
@@ -89,7 +89,7 @@ To quit this window, press `Ctrl-C`, `Ctrl-W C`, or type `:quit`.
 
 Vim has hundreds of built-in commands. To see all the commands Vim have, check out `:h ex-cmd-index` or `:h :index`.
 
-## Learn Command-line Mode The Smart Way
+## Learn Command-line Mode the Smart Way
 
 Compared to the other three modes, the command-line mode is like the Swiss Army knife of text editing. You can edit text, modify files, and execute commands, just to name a few. This chapter is a collection of odds and ends of the command-line mode. It also brings Vim modes into closure. Now that you know how to use the normal, insert, visual, and command-line mode you can edit text with Vim faster than ever.
 

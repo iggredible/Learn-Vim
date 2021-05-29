@@ -1,4 +1,4 @@
-# Ch20. Views, Sessions, And Viminfo
+# Ch20. Views, Sessions, and Viminfo
 
 After you worked on a project for a while, you may find the project to gradually take shape with its own settings, folds, buffers, layouts, etc. It's like decorating your apartment after living in it for a while. The problem is, when you close Vim, you lose those changes. Wouldn't it be nice if you can keep those changes so the next time you open Vim, it looks just like you had never left?
 
@@ -65,7 +65,7 @@ To learn what other options are available for `viewoptions`, check out `:h viewo
 viewoptions=folds,cursor,curdir,localoptions
 ```
 
-### Saving The View
+### Saving the View
 
 With the `foo.txt` window properly folded and having `nonumber norelativenumber` options, let's save the View. Run:
 
@@ -89,7 +89,7 @@ In Unix based OS the default should say `~/.vim/view` (if you have a different O
 set viewdir=$HOME/else/where
 ```
 
-### Loading The View File
+### Loading the View File
 
 Close the `foo.txt` if you haven't, then open `foo.txt` again. **You should see the original text without the changes.** That's expected. 
 
@@ -166,7 +166,7 @@ Now you don't have to worry about creating and loading View anymore when you are
 
 If a View saves the settings of a window, a Session saves the information of all windows (including the layout).
 
-### Creating A New Session
+### Creating a New Session
 
 Suppose you are working with these 3 files in a `foobarbaz` project:
 
@@ -231,7 +231,7 @@ If you want to save the Session file somewhere else, you can pass an argument to
 
 If you want to overwrite the existing Session file, call the command with a `!` (`:mksession! ~/some/where/else.vim`).
 
-### Loading A Session
+### Loading a Session
 
 To load a Session, run:
 
@@ -314,7 +314,7 @@ The default Viminfo location for Unix is `$HOME/.viminfo` (`~/.viminfo`). If you
 
 *Make sure that you have `nocompatible` option set (`set nocompatible`), otherwise your Viminfo will not work.*
 
-### Writing And Reading Viminfo
+### Writing and Reading Viminfo
 
 Although you will use only one Viminfo file, you can create multiple Viminfo files. To write a Viminfo file, use the `:wviminfo` command (`:wv` for short).
 
@@ -385,7 +385,7 @@ This looks cryptic. Let's break it down:
 
 There are other options that you can pass. To learn more, check out `:h 'viminfo'`.
 
-## Using Views, Sessions, And Viminfo The Smart Way
+## Using Views, Sessions, and Viminfo the Smart Way
 
 Vim has View, Session, and Viminfo to take different level of your Vim environment snapshots. For micro projects, use Views. For larger projects, use Sessions. You should take your time to check out all the options that View, Session, and Viminfo offers.
 

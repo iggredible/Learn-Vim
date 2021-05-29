@@ -1,4 +1,4 @@
-# Ch05. Moving In A File
+# Ch05. Moving in a File
 
 In the beginning, moving with a keyboard feels slow and awkward but don't give up! Once you get used to it, you can go anywhere in a file faster than using a mouse.
 
@@ -118,7 +118,7 @@ const hello = "world";
 
 With your cursor at the start of the line, you can go to the last character in current line (";") with one keypress: `$`. If you want to go to "w" in "world", you can use `fw`. A good tip to go anywhere in a line is to look for least-common-letters like "j", "x", "z" near your target.
 
-## Sentence And Paragraph Navigation
+## Sentence and Paragraph Navigation
 
 Next two navigation units are sentence and paragraph.
 
@@ -338,7 +338,7 @@ For more, check out `:h jump-motions`.
 
 Why are jumps useful? Because you can navigate the jump list with `Ctrl-O` to move up the jump list and `Ctrl-I` to move down the jump list. You can jump across different files, which I will discuss more in the next part.
 
-## Learn Navigation The Smart Way
+## Learn Navigation the Smart Way
 
 If you are new to Vim, this is a lot to learn. I do not expect anyone to remember everything immediately. It takes time before you can execute them without thinking.
 

@@ -2,7 +2,7 @@
 
 Highlighting and applying changes to a body of text is a common feature in many text editors and word processors. Vim can do this using visual mode. In this chapter, you will learn how to use the visual mode to manipulate texts efficiently.
 
-## The Three Types Of Visual Modes
+## The Three Types of Visual Modes
 
 Vim has three different visual modes. They are:
 
@@ -163,7 +163,7 @@ Chapter One
 
 To learn more about operators in visual mode, check out `:h visual-operators`.
 
-## Visual Mode And Command-line Commands
+## Visual Mode and Command-line Commands
 
 You can selectively apply command-line commands on a highlighted text block. If you have these statements and you want to substitute "const" with "let" only on the first two lines:
 
@@ -183,7 +183,7 @@ const three = "three";
 
 Notice I said you can do this with *any* visual mode. You do not have to highlight the entire line to run the command on that line. As long as you select at least a character on each line, the command is applied.
 
-## Adding Text On Multiple Lines
+## Adding Text on Multiple Lines
 
 You can add text on multiple lines in Vim using the block-wise visual mode. If you need to add a semicolon at the end of each line:
 
@@ -262,7 +262,7 @@ Put your cursor on the second "app-a". Use the same technique as above (`Ctrl-V 
 <div id="app-e"></div>
 ```
 
-## Selecting The Last Visual Mode Area
+## Selecting the Last Visual Mode Area
 
 Earlier in this chapter I mentioned that `gv` can quickly highlight the last visual mode highlight. You can also go to the location of the start and the end of the last visual mode with these two special marks:
 
@@ -313,7 +313,7 @@ Contrast this select mode with visual mode: if you highlight a line of text with
 
 I personally never used select mode, but it's good to know that it exists.
 
-## Learn Visual Mode The Smart Way
+## Learn Visual Mode the Smart Way
 
 The visual mode is Vim's representation of the text highlighting procedure.
 

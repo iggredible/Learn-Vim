@@ -58,7 +58,7 @@ If you need to transfer the text from the other buffer (orange juice, `file2.txt
 
 If you have multiple buffers, you can run `:diffput fileN.txt` and `:diffget fileN.txt` to target the the fileN buffer.
 
-## Vim As A Merge Tool
+## Vim As a Merge Tool
 
 > "I love resolving merge conflicts!" - Nobody
 
@@ -284,7 +284,7 @@ When you run the `:Gdiffsplit` command, vim-fugitive runs a `vimdiff` of the cur
 
 Because you are in a `vimdiff` mode, you can *get* or *put* the diff with `:diffput` and `:diffget`.
 
-## Gwrite And Gread
+## Gwrite and Gread
 
 When you run the `:Gwrite` command in a file after you make changes, vim-fugitive stages the changes. It is like running `git add <current-file>`.
 
@@ -300,13 +300,13 @@ While in this `"git log"` mode, you can do two things:
 
 You can pass to `:Gclog` arguments just like the `git log` command. If your project has a long commit history and you only need to view the last three commits, you can run `:Gclog -3`. If you need to filter it based on the committer's date, you can run something like `:Gclog --after="January 1" --before="March 14"`.
 
-## More Vim-Fugitive
+## More Vim-fugitive
 
 These are only a few examples of what vim-fugitive can do. To learn more about vim-fugitive, check out `:h fugitive.txt`. Most of the popular git commands are probably optimized with vim-fugitive. You just have to look for them in the documentation.
 
 If you are inside one of vim-fugitive's "special mode" (for example, inside `:Git` or `:Git blame` mode) and you want to learn what shortcuts are available, press `g?`. Vim-fugitive will display the appropriate `:help` window for the mode you are in. Neat!
 
-## Learn Vim And Git The Smart Way
+## Learn Vim and Git the Smart Way
 
 You may find vim-fugitive to be a good compliment to your workflow (or not). Regardless, I would strongly encourage you to check out all the plugins listed above. There are probably others I didn't list. Go try them out.
 

@@ -361,7 +361,7 @@ Now after you fold inside a `.txt` file and exit Vim, the next time you open tha
 
 By default, Vim saves the fold information when running `mkview` inside `~/.vim/view` for the Unix system. For more information, check out `:h 'viewdir'`.
 
-## Learn Fold The Smart Way
+## Learn Fold the Smart Way
 
 When I first started Vim, I neglected ot learn fold because I didn't think it was useful. However, the longer I code, the more useful I find folding is. Strategically placed folds can give you a better overview of the text structure, like a book's table of content.
 

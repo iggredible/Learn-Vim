@@ -61,7 +61,7 @@ function fzf#vim#maps(mode, ...)
         Last set from ~/.vim/plugged/fzf.vim/autoload/fzf/vim.vim line 1263
 ```
 
-## Removing A Function
+## Removing a Function
 
 To remove an existing function, use `:delfunction {Function_name}`. To delete `Tasty`, run `:delfunction Tasty`.
 
@@ -162,7 +162,7 @@ echo Calories()
 " returns "I do not count my calories"
 ```
 
-## Calling A Function
+## Calling a Function
 
 Vim has a `:call` command to call a function.
 
@@ -519,7 +519,7 @@ endfunction
 
 Now if you run `echo Lunch()()`, Vim will return "shrimp".
 
-## Learn Vimscript Functions The Smart Way
+## Learn Vimscript Functions the Smart Way
 
 In this chapter, you learned the anatomy of Vim function. You learned how to use different special keywords `range`, `dict`, and `closure` to modify function behavior. You also learned how to use lambda and to chain multiple functions together. Functions are important tools for creating complex abstractions.
 

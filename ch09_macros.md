@@ -80,7 +80,7 @@ Running `@a` in normal mode is not the only way you can execute macros in Vim. Y
 
 The `:normal` command accepts range as arguments. You can use this to run macro in select ranges. If you want to execute your macro between lines 2 and 3, you can run `:2,3 normal @a`.
 
-## Executing A Macro Across Multiple Files
+## Executing a Macro Across Multiple Files
 
 Suppose you have multiple `.txt` files, each contains some texts. Your task is to uppercase the first word only on lines containing the word "donut". Assume you have `0W~j` in register a (the same macro as before). How can you quickly accomplish this?
 
@@ -148,7 +148,7 @@ Now you can just run `@a` and watch Vim execute the macro recursively.
 
 How did the macro know when to stop? When the macro was on the last line, it triedto run `j`, since there was no more line to go to, it stopped the macro execution.
 
-## Appending A Macro
+## Appending a Macro
 
 If you need to add actions to an existing macro, instead of recreating the macro from scratch, you can append actions to an existing one. In the register chapter, you learned that you can append a named register by using its uppercased symbol. The same rule applies. To append actions to register a macro, use register A.
 
@@ -165,7 +165,7 @@ The breakdown:
 
 Now when you execute `@a`, it not only toggles the case of the next WORD, it also adds a dot at the end of the line.
 
-## Amending A Macro
+## Amending a Macro
 
 What if you need to add new actions in the middle of a macro?
 
@@ -213,7 +213,7 @@ You can easily duplicate macros from one register to another. For example, to du
 
 I find creating a redundancy useful on my most frequently used macros. In my workflow, I usually record macros in the first seven alphabetical letters (a-g) and I often replace them without much thought. If I move the useful macros towards the end of the alphabets, I can preserve them without worrying that I might accidentally replace them.
 
-## Series Vs Parallel Macro
+## Series vs Parallel Macro
 
 Vim can execute macros in series and parallel. Suppose you have this text:
 
@@ -258,7 +258,7 @@ Recall from earlier section that macros can be executed using the  command line 
 
 Although internally Vim does not actually run the macros in parallel, outwardly, it behaves like it. Vim executes `@a` *independently* on each line from the first to the last line (`1,$`). Since Vim executes these macros independently, each line does not know that one of the macro executions had failed on the "foo" line.
 
-## Learn Macros The Smart Way
+## Learn Macros the Smart Way
 
 Many things you do in editing are repetitive. To get better at editing, get into the habit of detecting repetitive actions. Use macros (or dot command) so you don't have to perform the same action twice. Almost everything that you can do in Vim can be replicated with macros.
 

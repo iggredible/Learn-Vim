@@ -170,7 +170,7 @@ To start Vim with multiple tabs, you can do this from the terminal:
 vim -p file1.js file2.js file3.js
 ```
 
-## Moving In 3D
+## Moving in 3D
 
 Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W H/J/K/L`.
 
@@ -178,7 +178,7 @@ Moving between buffers is like traveling across the Z axis in a Cartesian coordi
 
 You can move in *three-dimensional space* by combining window and buffer movements. You can move to the top, right, bottom, or left window (X-Y navigations) with window navigations. Since each window contains buffers, you can move forward and backward (Z navigations) with buffer movements.
 
-## Using Buffers, Windows, and Tabs The Smart Way
+## Using Buffers, Windows, and Tabs the Smart Way
 
 You have learned what buffers, windows, and tabs are and how they work in Vim. Now that you understand them better, you can use them in your own workflow.
 

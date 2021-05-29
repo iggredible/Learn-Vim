@@ -30,7 +30,7 @@ There are several ways to exit Vim. The most common one is to type:
 
 You can type `:q` for short. That command is a command-line mode command (another one of Vim modes). If you type `:` in normal mode, the cursor will move to the bottom of the screen where you can type some commands. You will learn about the command-line mode later in chapter 15. If you are in insert mode, typing `:` will literally produce the character ":" on the screen. In this case, you need to switch back to normal mode. Type `<Esc>` to switch to normal mode. By the way, you can also return to normal mode from command-line mode by pressing `<Esc>`. You will notice that you can "escape" out of several Vim modes back to normal mode by pressing `<Esc>`.
 
-## Saving A File
+## Saving a File
 
 To save your changes, type:
 
@@ -159,7 +159,7 @@ vim -O5 hello1.txt hello2.txt
 
 If you need to suspend Vim while in the middle of editing, you can press `Ctrl-z`. You can also run either the `:stop` or `:suspend` command. To return to the suspended Vim, run `fg` from the terminal.
 
-## Starting Vim The Smart Way
+## Starting Vim the Smart Way
 
 You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `-c cmd`). As you learn more commands throughout this guide, see if you can apply it on start. Also being a terminal command, you can combine `vim` with many other terminal commands. For example, you can redirect the output of the `ls` command to be edited in Vim with `ls -l | vim -`.
 

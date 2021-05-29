@@ -1,4 +1,4 @@
-# Ch07. The Dot Command
+# Ch07. the Dot Command
 
 In general, you should try to avoid redoing what you just did whenever possible. In this chapter, you will learn how to use the dot command to easily redo the previous change. It is a versatile command for reducing simple repetitions.
 
@@ -22,7 +22,7 @@ let three = "3";
 
 Here the dot command repeated the `cwconst<Esc>` sequence. It saved you from typing eight keystrokes in exchange for just one.
 
-## What Is A Change?
+## What Is a Change?
 
 If you look at the definition of the dot command (`:h .`), it says that the dot command repeats the last change. What is a change?
 
@@ -94,7 +94,7 @@ Let's remove all the z's. Starting from the first character on the first line, v
 
 When you deleted a column of three z's (`Ctrl-vjjd`), it was counted as a change. Visual mode operation can be used to target multiple lines as part of a change.
 
-## Including A Motion In A Change
+## Including a Motion in a Change
 
 Let's revisit the first example in this chapter. Recall that the command `/letcwconst<Esc>` followed by `n . n .`  replaced all "let" with "const" in the following expressions:
 
@@ -110,7 +110,7 @@ There is a faster way to accomplish this. After you searched `/let`, run `cgncon
 
 When you are editing, always be on the lookout for motions that can do several things at once like `gn` whenever possible.
 
-## Learn The Dot Command The Smart Way
+## Learn the Dot Command the Smart Way
 
 The dot command's power comes from exchanging several keystrokes for one. It is probably not a profitable exchange to use the dot command for single key operations like `x`. If your last change requires a complex operation like `cgnconst<Esc>`, the dot command reduces nine keypresses into one, a very profitable trade-off.
 

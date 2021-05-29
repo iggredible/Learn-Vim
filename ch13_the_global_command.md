@@ -1,4 +1,4 @@
-# Ch13. The Global Command
+# Ch13. the Global Command
 
 So far you have learned how to repeat the last change with the dot command (`.`), to replay actions with macros (`q`), and to store texts in the registers (`"`).
 
@@ -132,7 +132,7 @@ To match the lines containing between three to six zeroes, run:
 :g/0\{3,6\}/d
 ```
 
-## Passing A Range
+## Passing a Range
 
 You can pass a range before the `g` command. Here are some ways you can do it:
 - `:1,5g/console/d`  matches the string "console" between lines 1 and 5 and deletes them.
@@ -174,7 +174,7 @@ Let's break it down:
 - `/./` is a pattern for "non-empty lines". It matches the lines with at least one character, so it matches the lines with "const" and "console" and it does not match empty lines.
 - `normal A;` runs the `:normal` command-line command. `A;` is the normal mode command to insert a ";" at the end of the line.
 
-## Executing A Macro
+## Executing a Macro
 
 You can also execute a macro with the global command. A macro can be executed with the `normal` command. If you have the expressions:
 
@@ -249,7 +249,7 @@ You can also combine `g` with `v` to find positive and negative patterns. For ex
 
 Instead of looking for the line containing the pattern "two", it will look for the lines *not* containing the pattern "two".
 
-## Changing The Delimiter
+## Changing the Delimiter
 
 You can change the global command's delimiter like the substitute command. The rules are the same: you can use any single byte character except for alphabets, numbers, `"`, `|`, and `\`.
 
@@ -293,7 +293,7 @@ It spells *"grep"*, the same `grep` from the command line. This is **not** a coi
 
 Your computer probably still has the Ed editor. Run `ed` from the terminal (hint: to quit, type `q`).
 
-## Reversing The Entire Buffer
+## Reversing the Entire Buffer
 
 To reverse the entire file, run:
 
@@ -311,7 +311,7 @@ If you need to reverse only a few lines, pass it a range. To reverse the lines b
 
 To learn more about the move command, check out `:h :move`.
 
-## Aggregating All TODOs
+## Aggregating All Todos
 
 When coding, sometimes I would write TODOs in the file I'm editing:
 
@@ -392,7 +392,7 @@ Recall from the register chapter that deleted texts are stored inside the number
 
 By passing `_` after `d`, Vim won't use up your scratch registers.
 
-## Reduce Multiple Empty Lines To One Empty Line
+## Reduce Multiple Empty Lines to One Empty Line
 
 If you have a text with multiple empty lines:
 
@@ -541,7 +541,7 @@ This is great! But the command looks complicated. Let's break it down. This comm
 - `/\[/+1,/\]/-1` then refers to any lines between "[" and "]".
 - `sort` is a command-line command to sort.
 
-## Learn The Global Command The Smart Way
+## Learn the Global Command the Smart Way
 
 The global command executes the command-line command against all matching lines. With it, you only need to run a command once and Vim will do the rest for you. To become proficient at the global command, two things are required: a good vocabulary of command-line commands and a knowledge of regular expressions. As you spend more time using Vim, you will naturally learn more command-line commands. A regular expression knowledge will require a more active approach. But once you become comfortable with regular expressions, you will be ahead of many.
 

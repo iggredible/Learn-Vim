@@ -2,7 +2,7 @@
 
 Before diving into Vimscript functions, let's learn about the different sources and scopes of Vim variables.
 
-## Mutable And Immutable Variables
+## Mutable and Immutable Variables
 
 You can assign a value to a variable in Vim with `let`:
 
@@ -104,7 +104,7 @@ a:           Function formal parameter variable
 v:           Built-in Vim variable
 ```
 
-### Global variable
+### Global Variable
 
 When you are declaring a "regular" variable:
 
@@ -196,7 +196,7 @@ const t:donut = "blackberry donut"
 
 On each tab, you can call `echo t:donut` to get unique values.
 
-### Script variable
+### Script Variable
 
 A variable preceded with `s:` is a script variable. These variables can only be accessed from inside that script.
 
@@ -241,7 +241,7 @@ endfunction
 
 Now when you source `dozen.vim` while in the middle of decrementing, Vim reads `!exists("s:dozen")`, finds that it is true, and doesn't reset the value back to 12.
 
-### Function Local And Function Formal Parameter variable
+### Function Local and Function Formal Parameter Variable
 
 Both the function local variable (`l:`) and the function formal variable (`a:`) will be covered in the next chapter.
 
@@ -255,7 +255,7 @@ A variable prepended with `v:` is a special built-in Vim variable. You cannot de
 
 There are other variables. For a list of Vim built-in variables, check out `:h vim-variable` or `:h v:`.
 
-## Using Vim Variable Scopes The Smart Way
+## Using Vim Variable Scopes the Smart Way
 
 Being able to quickly access environment, option, and register variables give you a broad flexibility to customize your editor and terminal environment. You also learned that Vim has 9 different variable scopes, each existing under a certain constraints. You can take advantage of these unique variable types to decouple your program.
 

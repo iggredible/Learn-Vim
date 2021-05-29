@@ -285,7 +285,7 @@ On the other hand, this is falsy:
 
 Vim coerces "donuts12" into 0, because the first character is not a number.
 
-### Double vs Single quotes
+### Double vs Single Quotes
 
 Double quotes behave differently than single quotes. Single quotes display characters literally while double quotes accept special characters.
 
@@ -784,7 +784,7 @@ Similar to `v:none`.
 " returns {"test": null}
 ```
 
-## Learn Data Types The Smart Way
+## Learn Data Types the Smart Way
 
 In this chapter, you learned about Vimscript's basic data types: number, float, string, list, dictionary, and special. Learning these is the first step to start Vimscript programming.
 

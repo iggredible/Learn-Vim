@@ -18,7 +18,7 @@ You can go far using Vim without knowing any Vimscript, but knowing it will help
 
 This guide is written for both beginner and advanced Vimmers. It starts out with broad and simple concepts and ends with specific and advanced concepts. If you're an advanced user already, I would encourage you to read this guide from start to finish anyway, because you will learn something new!
 
-## How To Transition To Vim From Using A Different Text Editor
+## How to Transition to Vim From Using a Different Text Editor
 
 Learning Vim is a satisfying experience, albeit hard. There are two main approaches to learn Vim:
 
@@ -39,7 +39,7 @@ Everyone programs differently. Upon introspection, you will find that there are 
 
 Once you can edit at 50% of the original speed, it's time to go full-time Vim.
 
-## How To Read This Guide
+## How to Read This Guide
 
 This is a practical guide. To become good in Vim you need to develop your muscle memory, not head knowledge.
 

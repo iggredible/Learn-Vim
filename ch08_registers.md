@@ -56,7 +56,7 @@ Ctrl-R a
 Where `a` is the register symbol. Now that you know how to store and retrieve registers, let's dive in!
 
 
-##  The Unnamed Register
+## The Unnamed Register
 
 To get the text from the unnamed register, do `""p`. It stores the last text you yanked, changed, or deleted. If you do another yank, change, or delete, Vim will automatically replace the old text. The unnamed register is like a computer's standard copy / paste operation.
 
@@ -144,7 +144,7 @@ To get the text from register a, run `"ap`. You can use all twenty-six alphabeti
 
 Sometimes you may want to add to your existing named register. In this case, you can append your text instead of starting all over. To do that, you can use the uppercase version of that register. For example, suppose you have the word "Hello " already stored in register a. If you want to add "world" into register a, you can find the text "world" and yank it using A register (`"Ayiw`).
 
-## The Read-Only Registers
+## The Read-only Registers
 
 Vim has three read-only registers: `.`, `:`, and `%`. They are pretty simple to use:
 
@@ -218,19 +218,19 @@ The black hole register is like the `/dev/null` of registers.
 
 To paste your last search (`/` or `?`), you can use the last search pattern register (`"/`). To paste the last search term, use `"/p`.
 
-## Viewing The Registers
+## Viewing the Registers
 
 To view all your registers, use the `:register` command. To view only registers "a, "1, and "-, use `:register a 1 -`.
 
 There is a plugin called [vim-peekaboo](https://github.com/junegunn/vim-peekaboo) that lets you to peek into the contents of the registers when you hit `"` or `@` in normal mode and `Ctrl-R` in insert mode. I find this plugin very useful because most times, I can't remember the content in my registers. Give it a try!
 
-## Executing A Register
+## Executing a Register
 
 The named registers are not just for storing texts. They can also execute macros with `@`. I will go over macros in the next chapter.
 
 Keep in mind since macros are stored inside Vim registers, you can accidentally overwrite the stored text with macros. If you store the text "Hello Vim" in register a and you later record a macro in the same register (`qa{macro-sequence}q`), that macro will overwrite your "Hello Vim" text stored earlier.
 
-## Clearing A Register
+## Clearing a Register
 
 Technically, there is no need to clear any register because the next text that you store under the same register name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in the register a.
 
@@ -238,7 +238,7 @@ Another alternative is to run the command `:call setreg('a', 'hello register a')
 
 One more way to clear register is to set the content of "a register to an empty string with the expression `:let @a = ''`.
 
-## Putting The Content Of A Register
+## Putting the Content of a Register
 
 You can use the `:put` command to paste the content of any one register. For example, if you run `:put a`, Vim will print the content of register a below the current line. This behaves much like `"ap`, with the difference that the normal mode command `p` prints the register content after the cursor and the command `:put` prints the register content at newline.
 
@@ -246,7 +246,7 @@ Since `:put` is a command-line command, you can pass it an address. `:10put a` w
 
 One cool trick to pass `:put` with the black hole register (`"_`). Since the black hole register does not store any text, `:put _` will insert a blank line instead. You can combine this with the global command to insert multiple blank lines. For example, to insert blank lines below all lines that contain the text "end", run `:g/end/put _`. You will learn about the global command later.
 
-## Learning Registers The Smart Way
+## Learning Registers the Smart Way
 
 You made it to the end. Congratulations! If you are feeling overwhelmed by the sheer information, you are not alone. When I first started learning about Vim registers, there were way too much information to take at once.
 

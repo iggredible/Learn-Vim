@@ -32,7 +32,7 @@ The sixth, `$VIMRUNTIME/defaults.vim` is the default vimrc that comes with your 
 
 For the remaining of this chapter, I am assuming that the vimrc uses the `~/.vimrc` path. 
 
-## What To Put In My Vimrc?
+## What to Put in My Vimrc?
 
 A question I asked when I started was, "What should I put in my vimrc?"
 
@@ -369,7 +369,7 @@ Your vimrc should look like this:
 +-- 5 lines: mappings --------
 ```
 
-## Running Vim With Or Without Vimrc And Plugins
+## Running Vim With or Without Vimrc and Plugins
 
 If you need to run Vim without both vimrc and plugins, run:
 
@@ -395,6 +395,6 @@ If you need to run Vim with a *different* vimrc, say `~/.vimrc-backup`, run:
 vim -u ~/.vimrc-backup
 ```
 
-## Configure Vimrc The Smart Way
+## Configure Vimrc the Smart Way
 
 Vimrc is an important component of Vim customization. A good way to start building your vimrc is by reading other people's vimrcs and gradually build it over time. The best vimrc is not the one that developer X uses, but the one that is tailored exactly to fit your thinking framework and editing style.
