@@ -93,7 +93,7 @@ nnoremap <expr> gzz ToTitle() .. '_'
 
 Easy peasy.
 
-## the ToTitle Function
+## The ToTitle Function
 
 The `ToTitle()` function is easily the longest function in this file.
 
