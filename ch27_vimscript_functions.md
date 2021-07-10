@@ -523,6 +523,4 @@ Now if you run `echo Lunch()()`, Vim will return "shrimp".
 
 In this chapter, you learned the anatomy of Vim function. You learned how to use different special keywords `range`, `dict`, and `closure` to modify function behavior. You also learned how to use lambda and to chain multiple functions together. Functions are important tools for creating complex abstractions.
 
-This concludes this Vim guide. However, your Vim journey doesn't end here. In fact, it actually starts now. You should have sufficient knowledge to go on your own. You may even create your own plugins. Learning Vim is a lifelong pursuit, so never stop learning!
-
-Happy Vimming, friends!
+Next, let's put everything that you have learned together to make your own plugin.
