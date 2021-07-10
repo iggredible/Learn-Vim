@@ -323,7 +323,7 @@ The first method is to replace *all* matching phrases in your project. You will 
 Let's break down the commands:
 
 1. `:grep pizza` uses ripgrep to search for all instances of "pizza" (by the way, this would still work even if you didn't reassign `grepprg` to use ripgrep. You would have to do `:grep "pizza" . -R` instead of `:grep "pizza"`).
-2. `:cfdo` executes any command you pass to all files in your quickfix list. In this case, your command is the substitution command `%s/pizza/donut/g`. The pipe (`|`) is a chain operator. The `updat` command saves each file after substitution. I will cover substitute command in more depth in a later chapter.
+2. `:cfdo` executes any command you pass to all files in your quickfix list. In this case, your command is the substitution command `%s/pizza/donut/g`. The pipe (`|`) is a chain operator. The `update` command saves each file after substitution. I will cover substitute command in more depth in a later chapter.
 
 The second method is to search and replace in select files. With this method, you can manually choose which files you want to perform select and replace on. Here is what you do:
 
