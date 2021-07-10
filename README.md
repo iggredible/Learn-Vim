@@ -61,6 +61,7 @@ If you want to financially support this project, you can [purchase this guide on
 - [Ch 25 - Vimscript Conditionals And Loops](./ch25_vimscript_conditionals_and_loops.md)
 - [Ch 26 - Vimscript Variable Scopes](./ch26_vimscript_variable_scopes.md)
 - [Ch 27 - Vimscript Functions](./ch27_vimscript_functions.md)
+- [Ch 28 - Plugin Example: Writing a Titlecase Plugin](./ch28_plugin_example_writing-a-titlecase-plugin.md)
 
 ## Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
