@@ -48,20 +48,21 @@ If you want to financially support this project, you can [purchase this guide on
 - [Ch 18    - Git](./ch18_git.md)
 - [Ch 19    - Compile](./ch19_compile.md)
 - [Ch 20    - Views, Sessions, and Viminfo](./ch20_views_sessions_viminfo.md)
+- [Ch 21    - Multiple File Operations](./ch21_multiple_file_operations.md)
 
 ### Part 2: Customize Vim the Smart Way
 
-- [Ch 21 - Vimrc](./ch21_vimrc.md)
-- [Ch 22 - Vim Packages](./ch22_vim_packages.md)
-- [Ch 23 - Vim Runtime](./ch23_vim_runtime.md)
+- [Ch 22 - Vimrc](./ch22_vimrc.md)
+- [Ch 23 - Vim Packages](./ch23_vim_packages.md)
+- [Ch 24 - Vim Runtime](./ch24_vim_runtime.md)
 
 ### Part 3: Learn Vimscript the Smart Way
 
-- [Ch 24 - Vimscript Basic Data Types](./ch24_vimscript_basic_data_types.md)
-- [Ch 25 - Vimscript Conditionals And Loops](./ch25_vimscript_conditionals_and_loops.md)
-- [Ch 26 - Vimscript Variable Scopes](./ch26_vimscript_variable_scopes.md)
-- [Ch 27 - Vimscript Functions](./ch27_vimscript_functions.md)
-- [Ch 28 - Plugin Example: Writing a Titlecase Plugin](./ch28_plugin_example_writing-a-titlecase-plugin.md)
+- [Ch 25 - Vimscript Basic Data Types](./ch25_vimscript_basic_data_types.md)
+- [Ch 26 - Vimscript Conditionals And Loops](./ch26_vimscript_conditionals_and_loops.md)
+- [Ch 27 - Vimscript Variable Scopes](./ch27_vimscript_variable_scopes.md)
+- [Ch 28 - Vimscript Functions](./ch28_vimscript_functions.md)
+- [Ch 29 - Plugin Example: Writing a Titlecase Plugin](./ch29_plugin_example_writing-a-titlecase-plugin.md)
 
 ## Translations
 - [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
