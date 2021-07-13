@@ -84,7 +84,7 @@ Once you're done, don't forget to save them with `:update`.
 
 Sometimes you need to run the commands only on the first n items of the argument list. If that's the case, just pass to the `argdo` command an address. For example, to run the substitute command  only on the first 3 items from the list, run `:1,3argdo %s/donut/pancake/g`.
 
-## Buffers
+## Buffer List
 
 The buffer list will be organically created when you edit new files because each time you create a new file / open a file, Vim saves it in a buffer (unless you explicitly delete it). So if you already opened 3 files: `file1.rb file2.rb file3.rb`, you already have 3 items in your buffer list. To display the buffer list, run `:buffers` (alternatively: `:ls` or `:files`). To traverse forward and backward, use `:bnext` and `:bprev`. To go to the first and last buffer from the list, use `:bfirst` and `:blast` (having a blast yet? :D).
 
@@ -92,7 +92,7 @@ By the way, here's a cool buffer trick unrelated to this chapter: if you have a 
 
 Back to the topic, the mechanics to run operation across all buffers is similar to the arg list. Once you have created your buffer list, you just need to prepend the command(s) that you want to run with `:bufdo` instead of `:argdo`. So if you want to substitute all "donut" with "pancake" across all buffers then save the changes, run `:bufdo %s/donut/pancake/g | update`.
 
-## Windows and Tabs
+## Window and Tab List
 
 The windows and tabs list are also similar to the arg and buffer list. The only differences are their context and syntax. 
 
@@ -100,7 +100,7 @@ Window operations are performed on each open window and performed with `:windo`.
 
 For example, if you have three windows opened (you can open new windows with `Ctrl-W v` for a vertical window and `Ctrl-W s` for a horizontal window) and you run `:windo 0put ='hello' . @%`, Vim will output "hello" + filename to all open windows.
 
-## Quickfixes
+## Quickfix List
 
 In the previous chapters (Ch3 and Ch19), I have spoken about quickfixes. Quickfix has many uses. Many popular plugins use quickfixes, so it's good to spend more time to understand them.
 
