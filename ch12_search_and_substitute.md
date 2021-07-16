@@ -262,7 +262,7 @@ To substitute the "let" into "const" on lines three to five, you can do:
 
 Here are some range variations you can pass:
 
-- `:,3/let/const/` - if nothing is given before the comma, it represents the current line. Substitute from current line to line 3.
+- `:,3s/let/const/` - if nothing is given before the comma, it represents the current line. Substitute from current line to line 3.
 - `:1,s/let/const/` - if nothing is given after the comma, it also represents the current line. Substitute from line 1 to current line.
 - `:3s/let/const/` - if only one value is given as range (no comma), it does substitution on that line only.
 
