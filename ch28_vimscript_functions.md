@@ -201,10 +201,10 @@ function! Breakfast(meal, beverage = "Milk")
 endfunction
 
 echo Breakfast("Hash Browns")
-" returns hash browns and milk
+" returns I had hash browns and milk for breakfast
 
 echo Breakfast("Cereal", "Orange Juice")
-" returns Cereal and Orange Juice
+" returns I had Cereal and Orange Juice for breakfast
 ```
 
 ## Variable Arguments
