@@ -232,7 +232,7 @@ echo Buffet("Noodles", "Sushi")
 
 The problem with this approach is if you now run `echo Buffet("Noodles")` (with only one variable), Vim complains that it has an undefined variable `a:2`. How can you make it flexible enough to display exactly what the user gives?
 
-Luckily, Vim has a special variable `a:0` to display the *length* of the argument passed into `...`.
+Luckily, Vim has a special variable `a:0` to display the *number* of the arguments passed into `...`.
 
 ```
 function! Buffet(...)
