@@ -236,6 +236,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 ```
 
+After you add them, you will need to open `vim` and run `:PlugInstall`. It will install all plugins that are defined in your `vimrc` file and are not installed. In our case, it will install `fzf.vim` and `fzf`. 
+
 For more info about this plugin, you can check out [fzf.vim repo](https://github.com/junegunn/fzf/blob/master/README-VIM.md).
 
 ## Fzf Syntax
