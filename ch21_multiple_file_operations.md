@@ -38,7 +38,7 @@ If you want to make a list of all Javascript files that start with "a" in the cu
 :args a*.js
 ```
 
-The wildcard matches one or more of any character in the current directory, but what if you need to search recursively in any directory? You can use the double wildcard (`**`). To get all Javascript files inside the directories within your current location, run:
+The wildcard matches one or more of any filename character in the current directory, but what if you need to search recursively in any directory? You can use the double wildcard (`**`). To get all Javascript files inside the directories within your current location, run:
 
 ```
 :args **/*.js
@@ -53,7 +53,7 @@ The arg list is useful if you need to target a specific type of file or a few fi
 :argdo %s/donut/pancake/g | update
 
 ```
-If you run the `args` aggregate command again, it will replace the previous list. For example, if you previously ran:
+If you run the `args` command again, it will replace the previous list. For example, if you previously ran:
 
 ```
 :args file1 file2 file3
@@ -65,7 +65,7 @@ Assuming these files exist, you now have a list of `file1`, `file2`, and `file3`
 :args file4 file5
 ```
 
-Your initial list of `file1`, `file2`, and `file3` is replaced with `file4` and `file5`. If you have `file1`, `file2`, and `file3` in your arg list and you want to *add* `file4` and `file5` into your initial files list, use the `:arga` argument. Run:
+Your initial list of `file1`, `file2`, and `file3` is replaced with `file4` and `file5`. If you have `file1`, `file2`, and `file3` in your arg list and you want to *add* `file4` and `file5` into your initial files list, use the `:arga` command. Run:
 
 ```
 :arga file4 file5
