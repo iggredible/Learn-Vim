@@ -18,7 +18,7 @@ Practically speaking, you will probably only use one or two most of the time (I 
 
 Learning eight commands might sound daunting. But in reality, these commands work similarly. After learning one, learning the rest will get easier. They all share the same big idea: make a list of their respective categories then pass them the command that you want to run.
 
-### Argument List
+## Argument List
 
 The argument list is the most basic list. It creates a list of files. To create a list of file1, file2, and file3, you can run:
 
