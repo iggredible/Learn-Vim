@@ -116,7 +116,7 @@ The command can be stacked:
 vim +%s/pancake/bagel/g +%s/bagel/egg/g +%s/egg/donut/g hello.txt
 ```
 
-Vim will replace all instances of "pancake" with "bagel", then replace "bagel" with "egg", then replace "egg" with "donut" (you willl learn substitution in a later chapter).
+Vim will replace all instances of "pancake" with "bagel", then replace "bagel" with "egg", then replace "egg" with "donut" (you will learn substitution in a later chapter).
 
 You can also pass the `c` flag followed by the command instead of the `+` syntax:
 
