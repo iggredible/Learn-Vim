@@ -56,7 +56,7 @@ potatoes
 fruit-juice
 ```
 
-Lets add a comma at the end of each line. Starting at the first line, do `A,<Esc>j`. By now, you realize that `j` does not cause a change. The change here is only `A,`. You can move and repeat the change with `j . j .`. The full command is `A,<Esc>j.j.`.
+Let's add a comma at the end of each line. Starting at the first line, do `A,<Esc>j`. By now, you realize that `j` does not cause a change. The change here is only `A,`. You can move and repeat the change with `j . j .`. The full command is `A,<Esc>j.j.`.
 
 Every action from the moment you press the insert command operator (`A`) until you exit the insert command (`<Esc>`) is considered as a change.
 
