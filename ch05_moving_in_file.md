@@ -342,10 +342,10 @@ Why are jumps useful? Because you can navigate the jump list with `Ctrl-O` to mo
 
 If you are new to Vim, this is a lot to learn. I do not expect anyone to remember everything immediately. It takes time before you can execute them without thinking.
 
-I think the best way to get started is to memorize a few essential motions. I recommend starting out with these 10 motions: `h, j, k, l, w, b, G, /, ?, n`. Repeat them sufficiantly until you can use them without thinking.
+I think the best way to get started is to memorize a few essential motions. I recommend starting out with these 10 motions: `h, j, k, l, w, b, G, /, ?, n`. Repeat them sufficiently until you can use them without thinking.
 
 To improve your navigation skill, here are my suggestions:
-1. Watch for repeated actions. If you find yourself doing `l` repeatedly, look for a motion that will take you forward faster. You will find that you can use `w`. If you catch yourself repeatedly doing `w`, look if there is a motion that will take you across the current line quickly. You will find that you can use the `f`. If you can describe your need succintly, there is a good chance Vim has a way to do it.
+1. Watch for repeated actions. If you find yourself doing `l` repeatedly, look for a motion that will take you forward faster. You will find that you can use `w`. If you catch yourself repeatedly doing `w`, look if there is a motion that will take you across the current line quickly. You will find that you can use the `f`. If you can describe your need succinctly, there is a good chance Vim has a way to do it.
 2. Whenever you learn a new move, spend some time until you can do it without thinking.
 
 Finally, realize that you do not need to know every single Vim command to be productive. Most Vim users don't. I don't. Learn the commands that will help you accomplish your task at that moment.
