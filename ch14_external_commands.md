@@ -30,7 +30,7 @@ The syntax to read the STDOUT of an external command into the current buffer is:
 
 Vim will put the content of `file1.txt` into the current buffer.
 
-If you run the `:r` command followed by a `!` and an external command, the output of that commmand will be inserted into the current buffer. To get the result of the `ls` command, run:
+If you run the `:r` command followed by a `!` and an external command, the output of that command will be inserted into the current buffer. To get the result of the `ls` command, run:
 
 ```
 :r !ls
