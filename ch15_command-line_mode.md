@@ -56,7 +56,7 @@ Some command-line commands accept file names as arguments. One example is `edit`
 
 ## History Window and Command-line Window
 
-You can view the histoy of command-line commands and search terms (this requires the `+cmdline_hist` feature).
+You can view the history of command-line commands and search terms (this requires the `+cmdline_hist` feature).
 
 To open the command-line history, run `:his :`. You should see something like the following:
 

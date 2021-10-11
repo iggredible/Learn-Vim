@@ -1,6 +1,6 @@
 # Ch21. Vimrc
 
-In the previous chapters, you learned how to use Vim. In this chapter, you will learn how to orgnize and configure vimrc. 
+In the previous chapters, you learned how to use Vim. In this chapter, you will learn how to organize and configure vimrc. 
 
 ## How Vim Finds Vimrc
 
@@ -364,7 +364,7 @@ Your vimrc should look like this:
 
 +-- 5 lines: configs ---------
 
-+-- 9 ilnes: functions -------
++-- 9 lines: functions -------
 
 +-- 5 lines: mappings --------
 ```
