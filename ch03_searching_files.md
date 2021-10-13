@@ -77,7 +77,7 @@ path=.,/usr/include,,
 - `,` means to search in the current directory.
 - `/usr/include` is the directory for C compilers header files.
 
-The first two are important and the third one can be ignored for now. The take-home here is that you can modify your own paths. Let's assume this is your project structure:
+The first two are important and the third one can be ignored for now. The takeaway here is that you can modify your own paths. Let's assume this is your project structure:
 
 ```
 app/
@@ -89,7 +89,7 @@ app/
     ...
 ```
 
-If you want to go to `users_controller.rb` from the root directory, you have to go through several directories (and pressing a considerable amount of tabs). Often when working with a framework, you spend 90% of your time in a particular directory. In this situation, you only care about going to the `controllers/` directory with the least amount of keypress. The `path` setting can shorten that journey.
+If you want to go to `users_controller.rb` from the root directory, you have to go through several directories (and pressing a considerable amount of tabs). Often when working with a framework, you spend 90% of your time in a particular directory. In this situation, you only care about going to the `controllers/` directory with the least amount of keystrokes. The `path` setting can shorten that journey.
 
 You need to add the `app/controllers/` to the current `path`. Here is how you can do it:
 
@@ -107,7 +107,7 @@ You might be thinking to add the entire project directories so when you press `t
 :set path+=$PWD/**
 ```
 
-`$PWD` is the current working directory. If you try to add your entire project to `path` hoping to make all files to be reachable upon a `tab` press, although this may work for a small project, doing this will slow down your search significantly if you have a large number of files in your project. I recommend adding only the `path` of your most visited files / directories.
+`$PWD` is the current working directory. If you try to add your entire project to `path` hoping to make all files reachable upon a `tab` press, although this may work for a small project, doing this will slow down your search significantly if you have a large number of files in your project. I recommend adding only the `path` of your most visited files / directories.
 
 You can add the `set path+={your-path-here}` in your vimrc. Updating `path` takes only a few seconds and doing this will save you a lot of time.
 
@@ -146,7 +146,7 @@ After running that, you will be redirected to the first result. Vim's `vim` sear
 
 To learn more about quickfix, check out `:h quickfix`.
 
-You may notice that running internal grep (`:vim`) can get slow if you have a large number of matches. This is because Vim reads the searches into memory. Vim loads each matching files as if they are being edited. If Vim checks a large number of files, it will consume a large amount of memory.
+You may notice that running internal grep (`:vim`) can get slow if you have a large number of matches. This is because Vim reads the searches into memory. Vim loads each matching file as if it is being edited. If Vim checks a large number of files, it will consume a large amount of memory.
 
 Let's talk about external grep. By default, it uses `grep` terminal command. To search for "lunch" inside a ruby file inside `app/controllers/` directory, you can do this:
 
