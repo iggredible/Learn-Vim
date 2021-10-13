@@ -72,12 +72,12 @@ const learn = "vim";
 - To delete from your current location to the beginning of the next word: `dw`.
 - To change from your current location to the end of the current paragraph, say `c}`.
 
-Motions also accept count number as arguments (I will discourse this in the next chapter). If you need to go up 3 lines, instead of pressing `k` 3 times, you can do `3k`. Count works with Vim grammar.
+Motions also accept count number as arguments (I will discuss this in the next chapter). If you need to go up 3 lines, instead of pressing `k` 3 times, you can do `3k`. Count works with Vim grammar.
 - To yank two characters to the left: `y2h`.
 - To delete the next two words: `d2w`.
 - To change the next two lines: `c2j`.
 
-Right now, you may have to think long and hard to do even a simple command. You're not alone. When I first started, I had similar struggles but I got faster in time. So will you. Repetition, repetition, repetition.
+Right now, you may have to think long and hard to execute even a simple command. You're not alone. When I first started, I had similar struggles but I got faster in time. So will you. Repetition, repetition, repetition.
 
 As a side note, linewise operations (operations affecting the entire line) are common operations in text editing. In general, by typing an operator command twice, Vim performs a linewise operation for that action. For example, `dd`, `yy`, and `cc` perform **deletion**, **yank**, and **change** on the entire line. Try this with other operators!
 
@@ -203,8 +203,8 @@ Motions and operators are extendable. You can create custom motions and operator
 
 ## Learn Vim Grammar the Smart Way
 
-You just learned about Vim grammar's rule: `verb + noun`. One of my biggest Vim "AHA!" moments was when I had just learned about the uppercase (`gU`) operator and wanted to uppercase the current word, I *instinctively* ran `gUiw` and it worked! The word was uppercased. At that moment, I finally began to understand Vim. My hope is that you will have your own "AHA!" moment soon, if not already.
+You just learned about Vim grammar's rule: `verb + noun`. One of my biggest Vim "AHA!" moment was when I had just learned about the uppercase (`gU`) operator and wanted to uppercase the current word, I *instinctively* ran `gUiw` and it worked! The word was uppercased. At that moment, I finally began to understand Vim. My hope is that you will have your own "AHA!" moment soon, if not already.
 
-The goal is this chapter is to show you the `verb + noun` pattern in Vim so you will approach learning Vim like learning a new language instead of memorizing every command combinations.
+The goal of this chapter is to show you the `verb + noun` pattern in Vim so you will approach learning Vim like learning a new language instead of memorizing every command combination.
 
 Learn the pattern and understand the implications. That's the smart way to learn.
