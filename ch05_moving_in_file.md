@@ -73,7 +73,7 @@ ge    Move backward to end of the previous word
 gE    Move backward to end of the previous WORD
 ```
 
-So what are the similarities and differences between a word and a WORD? Both word and WORD are separated by non-blank characters. A word is a sequence of characters containing *only* `a-zA-Z0-9_`. A WORD is a sequence of all characters except white space (a white space means either space, tab, and EOL). To learn more, check out `:h word` and `:h WORD`.
+So what are the similarities and differences between a word and a WORD? Both word and WORD are separated by blank characters. A word is a sequence of characters containing *only* `a-zA-Z0-9_`. A WORD is a sequence of all characters except white space (a white space means either space, tab, and EOL). To learn more, check out `:h word` and `:h WORD`.
 
 For example, suppose you have:
 
