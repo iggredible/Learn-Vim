@@ -67,7 +67,7 @@ At various points in the guide, I will refer to vimrc options. If you're new to 
 
 Vimrc won't be covered until chapter 21. For the sake of clarity, I will show briefly here how to set it up.
 
-Suppose you need to set the number options (`set number`). If you don't have a vimrc already, create one. It is usually placed at the root directory named `.vimrc`. Depending on your OS, the location may differ. In macOS, I have it on `~/.vimrc`. To see where you should put yours, check out `:h vimrc`.
+Suppose you need to set the number options (`set number`). If you don't have a vimrc already, create one. It is usually placed in your home directory and named `.vimrc`. Depending on your OS, the location may differ. In macOS, I have it on `~/.vimrc`. To see where you should put yours, check out `:h vimrc`.
 
 Inside it, add `set number`. Save it (`:w`), then source it (`:source %`). You should now see line numbers displayed on the left side.
 
