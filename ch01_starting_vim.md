@@ -4,9 +4,9 @@ In this chapter, you will learn different ways to start Vim from the terminal. I
 
 ## Installing
 
-I won't go through the detailed instruction how to install Vim in a specific machine. The good news is, most Unix-based computers should come with Vim installed. If not, most distros should have some instructions to install Vim.
+I won't go through the detailed instruction how to install Vim on a specific machine. The good news is, most Unix-based computers should come with Vim installed. If not, most distros should have some instructions to install Vim.
 
-For download informations, check out Vim's official download website or Vim's official github repository:
+To download more information about Vim installation process, check out Vim's official download website or Vim's official github repository:
 - [Vim website](https://www.vim.org/download.php)
 - [Vim github](https://github.com/vim/vim)
 
@@ -18,7 +18,7 @@ Now that you have Vim installed, run this from the terminal:
 vim
 ```
 
-You should see an intro screen. This is the where you will be working on your file. Unlike most text editors and IDEs, Vim is a modal editor. If you want to type "hello", you need to switch to insert mode with `i`. Press `ihello<Esc>` to insert the text "hello".
+You should see an intro screen. This is the where you will be working on your new file. Unlike most text editors and IDEs, Vim is a modal editor. If you want to type "hello", you need to switch to insert mode with `i`. Press `ihello<Esc>` to insert the text "hello".
 
 ## Exiting Vim
 
@@ -56,7 +56,7 @@ To quit without saving any changes, add `!` after `:q` to force quit:
 :q!
 ```
 
-There are other ways to exit Vim, but these are the ones you will use daily.
+There are other ways to exit Vim, but these are the ones you will use on a daily basis.
 
 ## Help
 
@@ -102,15 +102,15 @@ Many things you do from the terminal can also be done from inside Vim. To see th
 :version
 ```
 
-If you want to open the file `hello.txt` and immediately execute a command, you can pass to the `vim` command the `+{cmd}` option.
+If you want to open the file `hello.txt` and immediately execute a Vim command, you can pass to the `vim` command the `+{cmd}` option.
 
-In Vim, you can substitute texts with the `:s` command (short for `:substitute`). If you want to open `hello.txt` and substitute all "pancake" with "bagel", run:
+In Vim, you can substitute strings with the `:s` command (short for `:substitute`). If you want to open `hello.txt` and substitute all "pancake" with "bagel", run:
 
 ```bash
 vim +%s/pancake/bagel/g hello.txt
 ```
 
-The command can be stacked:
+These Vim commands can be stacked:
 
 ```bash
 vim +%s/pancake/bagel/g +%s/bagel/egg/g +%s/egg/donut/g hello.txt
@@ -118,7 +118,7 @@ vim +%s/pancake/bagel/g +%s/bagel/egg/g +%s/egg/donut/g hello.txt
 
 Vim will replace all instances of "pancake" with "bagel", then replace "bagel" with "egg", then replace "egg" with "donut" (you will learn substitution in a later chapter).
 
-You can also pass the `c` flag followed by the command instead of the `+` syntax:
+You can also pass the `-c` option followed by a Vim command instead of the `+` syntax:
 
 ```bash
 vim -c %s/pancake/bagel/g hello.txt
@@ -127,7 +127,7 @@ vim -c %s/pancake/bagel/g -c %s/bagel/egg/g -c %s/egg/donut/g hello.txt
 
 ## Opening Multiple Windows
 
-You can launch Vim on split horizontal and vertical windows with `o` and `O`, respectively.
+You can launch Vim on split horizontal and vertical windows with the `-o` and `-O` options, respectively.
 
 To open Vim with two horizontal windows, run:
 
@@ -161,6 +161,6 @@ If you need to suspend Vim while in the middle of editing, you can press `Ctrl-z
 
 ## Starting Vim the Smart Way
 
-You can pass the `vim` command with different options and flags, just like any terminal commands. One of the options is the command-line command (`+{cmd}` or `-c cmd`). As you learn more commands throughout this guide, see if you can apply it on start. Also being a terminal command, you can combine `vim` with many other terminal commands. For example, you can redirect the output of the `ls` command to be edited in Vim with `ls -l | vim -`.
+The `vim` command can take many different options, just like any other terminal command. Two options allows to pass a Vim command as a parameter: `+{cmd}` and `-c cmd`. As you learn more commands throughout this guide, see if you can apply it when starting Vim. Also being a terminal command, you can combine `vim` with many other terminal commands. For example, you can redirect the output of the `ls` command to be edited in Vim with `ls -l | vim -`.
 
-To learn more about Vim terminal command, check out `man vim`. To learn more about the Vim editor, continue reading this guide along with the `:help` command.
+To learn more about `vim` command in the terminal, check out `man vim`. To learn more about the Vim editor, continue reading this guide along with the `:help` command.
