@@ -57,9 +57,9 @@ If you type "hello world!" and exit insert mode, Vim will repeat the text 10 tim
 When you make a typing mistake, it can be cumbersome to type `<Backspace>` repeatedly. It may make more sense to go to normal mode and delete your mistake. You can also delete several characters at a time while in insert mode.
 
 ```
-Ctrl-H    Delete one character
-Ctrl-W    Delete one word
-Ctrl-U    Delete the entire line
+Ctrl-h    Delete one character
+Ctrl-w    Delete one word
+Ctrl-u    Delete the entire line
 ```
 
 ## Insert From Register
