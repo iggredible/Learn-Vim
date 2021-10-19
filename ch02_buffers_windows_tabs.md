@@ -1,8 +1,8 @@
 # Ch02. Buffers, Windows, and Tabs
 
-If you have used a modern text editor, you are probably familiar with windows and tabs. Vim uses three display abstractions instead of two: buffers, windows, and tabs. In this chapter, I will explain what buffers, windows, and tabs are and how they work in Vim.
+If you used a modern text editor before, you are probably familiar with windows and tabs. Vim uses three display abstractions instead of two: buffers, windows, and tabs. In this chapter, I will explain what buffers, windows, and tabs are and how they work in Vim.
 
-Before you start, make sure you have the `set hidden` option in vimrc. Without it, whenever you switch buffers and your current buffer is not saved, Vim will prompt you to save the file (you don't want that if you want to move quickly). I haven't covered vimrc yet. If you don't have a vimrc, create one. It is usually placed at the root directory and named `.vimrc`. I have mine on `~/.vimrc`. To see where you should create your vimrc, check out `:h vimrc`. Inside it, add:
+Before you start, make sure you have the `set hidden` option in vimrc. Without it, whenever you switch buffers and your current buffer is not saved, Vim will prompt you to save the file (you don't want that if you want to move quickly). I haven't covered vimrc yet. If you don't have a vimrc, create one. It is usually placed in your home directory and is named `.vimrc`. I have mine on `~/.vimrc`. To see where you should create your vimrc, check out `:h vimrc`. Inside it, add:
 
 ```
 set hidden
@@ -36,12 +36,12 @@ There are several ways you can traverse buffers:
 - `:bnext` to go to the next buffer (`:bprevious` to go to the previous buffer).
 - `:buffer` + filename. Vim can autocomplete filename with `<Tab>`.
 - `:buffer` + `n`, where `n` is the buffer number. For example, typing `:buffer 2` will take you to buffer #2.
-- Jump to the older position in jump list with `Ctrl-O` and to the newer position with `Ctrl-I`. These are not buffer specific methods, but they can be used to jump between different buffers. I will talk more about jumps in Chapter 5.
+- Jump to the older position in the jump list with `Ctrl-O` and to the newer position with `Ctrl-I`. These are not buffer specific methods, but they can be used to jump between different buffers. I will explain jumps in further details in Chapter 5.
 - Go to the previously edited buffer with `Ctrl-^`.
 
-Once Vim creates a buffer, it will remain in your buffers list. To remove it, you can type `:bdelete`. It accepts either a buffer number (`:bdelete 3` to delete buffer #3) or a filename (`:bdelete` then use `<Tab>` to autocomplete).
+Once Vim creates a buffer, it will remain in your buffers list. To remove it, you can type `:bdelete`. It can also accept a buffer number as a parameter (`:bdelete 3` to delete buffer #3) or a filename (`:bdelete` then use `<Tab>` to autocomplete).
 
-The hardest thing for me when learning about buffer was visualizing how it worked because my mind was used to windows from when using a mainstream text editor. A good analogy is a deck of playing cards. If I have 2 buffers, I have a stack of 2 cards. The card on top is the only card I see, but I know there are card(s) below it. If I see `file1.js` buffer displayed then the `file1.js` card is on the top of the deck. I can't see the other card, the `file2.js`, but it's there. If I switch buffers to `file2.js`, that `file2.js` card is now on the top of the deck and `file1.js` card is at the bottom.
+The hardest thing for me when learning about buffers was visualizing how they worked because my mind was used to windows from when using a mainstream text editor. A good analogy is a deck of playing cards. If I have 2 buffers, I have a stack of 2 cards. The card on top is the only card I see, but I know there are cards below it. If I see `file1.js` buffer displayed then the `file1.js` card is on the top of the deck. I can't see the other card, `file2.js` here, but it's there. If I switch buffers to `file2.js`, that `file2.js` card is now on the top of the deck and `file1.js` card is below it.
 
 If you haven't used Vim before, this is a new concept. Take your time to understand it.
 
@@ -75,7 +75,7 @@ Let's open `file1.js` from the terminal again:
 vim file1.js
 ```
 
-Earlier I said that you're looking at `file1.js` buffer. While that was correct, that statement was incomplete. You are looking at `file1.js` buffer displayed through **a window**. A window is what you are seeing a buffer through.
+Earlier I wrote that you're looking at `file1.js` buffer. While that was correct, that statement was incomplete. You are looking at the `file1.js` buffer, displayed through **a window**. A window is how you are viewing a buffer through.
 
 Don't quit Vim yet. Run:
 
@@ -129,11 +129,11 @@ And here is a list of useful window command-line commands:
 :new filename       Create new window
 ```
 
-Take your time to understand them. For more, check out `:h window`.
+Take your time to understand them. For more information, check out `:h window`.
 
 ## Tabs
 
-A tab is a collection of windows. Think of it like a layout for windows. In most modern text editors (and modern internet browsers), a tab means an open file / page and when you close it, that file / page goes away. In Vim, a tab does not represent an open file. When you close a tab in Vim, you are not closing a file. You are only closing the layout. The data for those files are stored in-memory in buffers. The buffers are still there.
+A tab is a collection of windows. Think of it like a layout for windows. In most modern text editors (and modern internet browsers), a tab means an open file / page and when you close it, that file / page goes away. In Vim, a tab does not represent an opened file. When you close a tab in Vim, you are not closing a file. You are only closing the layout. The files opened in that layout are still not closed, they are still opened in their buffers.
 
 Let's see Vim tabs in action. Open `file1.js`:
 
@@ -172,19 +172,19 @@ vim -p file1.js file2.js file3.js
 
 ## Moving in 3D
 
-Moving between windows is like traveling two-dimensionally along X-Y axis in a Cartesian coordinate. You can move to the top, right, bottom, and left window with `Ctrl-W H/J/K/L`.
+Moving between windows is like traveling two-dimensionally along the X-Y axis in Cartesian coordinates. You can move to the top, right, bottom, and left window with `Ctrl-W H/J/K/L`.
 
-Moving between buffers is like traveling across the Z axis in a Cartesian coordinate. Imagine your buffer files lining up across the Z axis. You can traverse the Z axis one buffer at a time with `:bnext` and `:bprevious`. You can jump to any coordinate in Z axis with `:buffer filename/buffernumber`.
+Moving between buffers is like traveling across the Z axis in Cartesian coordinates. Imagine your buffer files lining up across the Z axis. You can traverse the Z axis one buffer at a time with `:bnext` and `:bprevious`. You can jump to any coordinate in Z axis with `:buffer filename/buffernumber`.
 
-You can move in *three-dimensional space* by combining window and buffer movements. You can move to the top, right, bottom, or left window (X-Y navigations) with window navigations. Since each window contains buffers, you can move forward and backward (Z navigations) with buffer movements.
+You can move in *three-dimensional space* by combining window and buffer movements. You can move to the top, right, bottom, or left window (X-Y navigations) with window movements. Since each window contains buffers, you can move forward and backward (Z navigations) with buffer movements.
 
 ## Using Buffers, Windows, and Tabs the Smart Way
 
 You have learned what buffers, windows, and tabs are and how they work in Vim. Now that you understand them better, you can use them in your own workflow.
 
 Everyone has a different workflow, here is mine for example:
-- First I use buffers to store all the required files for the current task. Vim can handle many open buffers before it starts slowing down. Plus having many buffers opened won't crowd my screen. I am only seeing one buffer (assuming I have only one window) at any time, allowing me to focus on one screen. When I need to go somewhere, I can quickly fly to any open buffer anytime.
+- First, I use buffers to store all the required files for the current task. Vim can handle many opened buffers before it starts slowing down. Plus having many buffers opened won't crowd my screen. I am only seeing one buffer (assuming I only have one window) at any time, allowing me to focus on one screen. When I need to go somewhere, I can quickly fly to any open buffer anytime.
 - I use multiple windows to view multiple buffers at once, usually when diffing files, reading docs, or following a code flow. I try to keep the number of windows opened to no more than three because my screen will get crowded (I use a small laptop). When I am done, I close any extra windows. Fewer windows means less distractions.
 - Instead of tabs, I use [tmux](https://github.com/tmux/tmux/wiki) windows. I usually use multiple tmux windows at once. For example, one tmux window for client-side codes and another for backend codes.
 
-My workflow may look different than yours based on your editing style and that's fine. Experiment around to discover your own flow suited for your coding style.
+My workflow may look different from yours based on your editing style and that's fine. Experiment around to discover your own flow, suiting your coding style.
