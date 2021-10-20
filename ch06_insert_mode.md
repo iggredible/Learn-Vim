@@ -156,6 +156,6 @@ Ctrl-O D      Delete from current location to the end of the line
 
 ## Learn Insert Mode the Smart Way
 
-If you are like me and you come from another text editor, it can be tempting to stay in insert mode. However, staying in insert mode when you're not entering a text is an anti-pattern. Develop a habit to go to normal mode when your fingers aren't typing new texts.
+If you are like me and you come from another text editor, it can be tempting to stay in insert mode. However, staying in insert mode when you're not entering a text is an anti-pattern. Develop a habit to go to normal mode when your fingers aren't typing new text.
 
 When you need to insert a text, first ask yourself if that text already exists. If it does, try to yank or move that text instead of typing it. If you have to use insert mode, see if you can autocomplete that text whenever possible. Avoid typing the same word more than once if you can.
