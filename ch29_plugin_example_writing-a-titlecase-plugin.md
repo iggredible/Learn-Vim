@@ -1,4 +1,4 @@
-# Ch28. Write a Plugin: Creating a Titlecase Operator
+# Ch29. Write a Plugin: Creating a Titlecase Operator
 
 When you start to get good at Vim, you may want to write your own plugins. I recently wrote my first Vim plugin, [totitle-vim](https://github.com/iggredible/totitle-vim). It is a titlecase operator plugin, akin to Vim's uppercase `gU`, lowercase `gu`, and togglecase `g~` operators.
 

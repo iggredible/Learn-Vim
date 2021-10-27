@@ -1,4 +1,4 @@
-# Ch27. Vimscript Functions
+# Ch28. Vimscript Functions
 
 Functions are means of abstraction, the third element in learning a new language.
 

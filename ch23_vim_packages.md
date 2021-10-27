@@ -1,4 +1,4 @@
-# Ch22. Vim Packages
+# Ch21. Vim Packages
 
 In the previous chapter, I mentioned using an external plugin manager to install plugins. Since version 8, Vim comes with its own built-in plugin manager called *packages*. In this chapter, you will learn how to use Vim packages to install plugins.
 

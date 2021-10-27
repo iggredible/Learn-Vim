@@ -1,4 +1,4 @@
-# Ch23. Vim Runtime
+# Ch24. Vim Runtime
 
 In the previous chapters, I mentioned that Vim automatically looks for special paths like `pack/` (Ch. 22) and `compiler/` (Ch. 19) inside the `~/.vim/` directory. These are examples of Vim runtime paths.
 

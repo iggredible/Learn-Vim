@@ -1,4 +1,4 @@
-# Ch24. Vimscript Basic Data Types
+# Ch25. Vimscript Basic Data Types
 
 In the next few chapters, you will learn about Vimscript, Vim's built-in programming language.
 

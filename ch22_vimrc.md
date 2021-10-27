@@ -1,4 +1,4 @@
-# Ch21. Vimrc
+# Ch22. Vimrc
 
 In the previous chapters, you learned how to use Vim. In this chapter, you will learn how to organize and configure vimrc. 
 

@@ -1,4 +1,4 @@
-# Ch25. Vimscript Conditionals and Loops
+# Ch26. Vimscript Conditionals and Loops
 
 After learning what the basic data types are, the next step is to learn how to combine them together to start writing a basic program. A basic program consists of conditionals and loops.
 
