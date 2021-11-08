@@ -137,7 +137,7 @@ hello vim
 
 The breakdown:
 - `.!` executes the filter command on the current line.
-- `!tr '[:lower:]' '[:upper:]'` calls the `tr` command to replace all lowercase characters with uppercase ones.
+- `tr '[:lower:]' '[:upper:]'` calls the `tr` command to replace all lowercase characters with uppercase ones.
 
 It is imperative to pass a range to run the external command as a filter. If you try running the command above without the `.` (`:!tr '[:lower:]' '[:upper:]'`), you will see an error.
 
