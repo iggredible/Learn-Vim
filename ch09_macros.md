@@ -205,7 +205,7 @@ To add the amended instruction into register a, you can do it the same way as ad
 
 Now when you execute `@a`, your macro will toggle the case of the first word, add "deep fried " before "donut", and add a "." at the end of the line. Yum!
 
-An alternative way to amend a macro is to use a command line expression. Do `:let @a="`, then do `Ctrl-R Ctrl-R a`, this will literally paste the content of register a. Finally, don't forget to close the double quotes (`"`). You might have something like `:let @a="0W~$bideep fried ^[A.^["`.
+An alternative way to amend a macro is to use a command line expression. Do `:let @a="`, then do `Ctrl-R a`, this will literally paste the content of register a. Finally, don't forget to close the double quotes (`"`). You might have something like `:let @a="0W~$bideep fried ^[A.^["`.
 
 ## Macro Redundancy
 
