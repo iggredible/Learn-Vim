@@ -235,6 +235,7 @@ Add these inside your `.vimrc` plugins. You need to use [fzf.vim](https://github
 call plug#begin()
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+call plug#end()
 ```
 
 After adding these lines, you will need to open `vim` and run `:PlugInstall`. It will install all plugins that are defined in your `vimrc` file and are not installed. In our case, it will install `fzf.vim` and `fzf`. 
