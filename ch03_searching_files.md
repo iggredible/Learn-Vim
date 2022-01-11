@@ -232,6 +232,7 @@ After installing fzf and ripgrep, let's set up the fzf plugin. I am using [vim-p
 Add these inside your `.vimrc` plugins. You need to use [fzf.vim](https://github.com/junegunn/fzf.vim) plugin (created by the same fzf author).
 
 ```
+call plug#begin()
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 ```
