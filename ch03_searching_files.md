@@ -268,7 +268,7 @@ nnoremap <silent> <C-f> :Files<CR>
 
 To search inside files, you can use the `:Rg` command.
 
-Again, since you will probably use this frequently, let's map it to a keyboard shortcut. I map mine to `<Leader>f`.
+Again, since you will probably use this frequently, let's map it to a keyboard shortcut. I map mine to `<Leader>f`. The `<Leader>` key is mapped to `\` by default.
 
 ```
 nnoremap <silent> <Leader>f :Rg<CR>
