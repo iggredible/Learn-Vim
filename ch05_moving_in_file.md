@@ -257,7 +257,7 @@ let onetwo = 12;
 
 If you are searching for "let", run `/let`. To quickly search for "let" again, you can just do `n`. To search for "let" again in opposite direction, run `N`. If you run `?let`, it will search for "let" backwards. If you use `n`, it will now search for "let" backwards (`N` will search for "let" forwards now).
 
-You can enable search highlight with `set hlsearch`. Now when you search for `/let`, it will highlight *all* matching phrases in the file. In addition, you can set incremental search with `set incsearch`. This will highlight the pattern while typing. By default, your matching phrases will remain highlighted until you search for another phrase. This can quickly turn into an annoyance. To disable highlight, you can run `:nohlsearch`. Because I use this no-highlight feature frequently, I created a map in vimrc:
+You can enable search highlight with `set hlsearch`. Now when you search for `/let`, it will highlight *all* matching phrases in the file. In addition, you can set incremental search with `set incsearch`. This will highlight the pattern while typing. By default, your matching phrases will remain highlighted until you search for another phrase. This can quickly turn into an annoyance. To disable highlight, you can run `:nohlsearch` or simply `:noh`. Because I use this no-highlight feature frequently, I created a map in vimrc:
 
 ```
 nnoremap <esc><esc> :noh<return><esc>
