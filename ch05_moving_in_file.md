@@ -336,7 +336,7 @@ I don't recommend memorizing this list. A good rule of thumb is, any motion that
 
 For more, check out `:h jump-motions`.
 
-Why are jumps useful? Because you can navigate the jump list with `Ctrl-O` to move up the jump list and `Ctrl-I` to move down the jump list. You can jump across different files, which I will discuss more in the next part.
+Why are jumps useful? Because you can navigate the jump list with `Ctrl-O` to move up the jump list and `Ctrl-I` to move down the jump list. `hjkl` are not "jump" commands, but you can manually add the current location to jump list with `m'` before movement. For example, `m'5j` adds current location to jump list and goes down 5 lines, and you can come back with `Ctrl-O`. You can jump across different files, which I will discuss more in the next part.
 
 ## Learn Navigation the Smart Way
 
