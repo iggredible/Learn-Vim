@@ -13,6 +13,8 @@ h   Left
 j   Down
 k   Up
 l   Right
+gj  Down in a soft-wrapped line
+gk  Up in a soft-wrapped line
 ```
 
 You can also move with directional arrows. If you are just starting, feel free to use any method you're most comfortable with.
