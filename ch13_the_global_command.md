@@ -382,7 +382,7 @@ console.log("three: ", three);
 // TODO: create a startup selling an automatic puppy feeder
 ```
 
-## Black Hole Delete
+## Black Hole Deletion
 
 Recall from the register chapter that deleted texts are stored inside the numbered registers (granted they are sufficiently large ). Whenever you run `:g/console/d`, Vim stores the deleted lines in the numbered registers. If you delete many lines, you can quickly fill up all the numbered registers. To avoid this, you can always use the black hole register (`"_`) to *not* store your deleted lines into the registers. Run:
 
