@@ -192,7 +192,7 @@ console.log("three: ", three);
 Notice that the lines with "const" do not have semi-colons. Let's create a macro to add a comma to the end of those lines in the register a:
 
 ```
-qa0A;<Esc>q
+qaA;<Esc>q
 ```
 
 If you need a refresher, check out the chapter on macro. Now run:
