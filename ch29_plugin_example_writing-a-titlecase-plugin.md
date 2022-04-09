@@ -8,7 +8,7 @@ In this chapter, I will present the breakdown of the `totitle-vim` plugin. I hop
 
 I use Vim to write my articles, including this very guide.
 
-One main issue was to create a proper title case for the headings. One way to automate this is to capitalize each word in the header with `g/^#/ s/\<./\u\0/g`. For MVP, this command was good enough, but it is still not as good as having an actual title case. The words "The" and "Of" in "Capitalize The First Letter Of Each Word" should be capitalized. Without a proper capitalization, the sentence looks slightly off.
+One main issue was to create a proper title case for the headings. One way to automate this is to capitalize each word in the header with `g/^#/ s/\<./\u\0/g`. For basic use, this command was good enough, but it is still not as good as having an actual title case. The words "The" and "Of" in "Capitalize The First Letter Of Each Word" should be capitalized. Without a proper capitalization, the sentence looks slightly off.
 
 At first, I wasn't planning to write a plugin. Also it turns out that there is a titlecase plugin already: [vim-titlecase](https://github.com/christoomey/vim-titlecase). However, there were a few things that didn't function quite the way I wanted them to. The main one was the blockwise visual mode behavior. If I have the phrase:
 
