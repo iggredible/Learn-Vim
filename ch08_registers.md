@@ -198,7 +198,7 @@ If you are on an external program (like Chrome browser) and you copy a block of 
 
 You may wonder if `"*` and `"+` do the same thing, why does Vim have two different registers? Some machines use X11 window system. This system has 3 types of selections: primary, secondary, and clipboard. If your machine uses X11, Vim uses X11's *primary* selection with the `quotestar` (`"*`) register and X11's *clipboard* selection with the `quoteplus` (`"+`) register. This is only applicable if you have `+xterm_clipboard` option available in your Vim build. If your Vim doesn't have `xterm_clipboard`, it's not a big deal. It just means that both `quotestar` and `quoteplus` are interchangeable (mine doesn't either).
 
-I find doing `"*p` or `"+p` to be cumbersome. To make Vim to paste copied text from the external program with just `p`, you can add this in your vimrc:
+I find doing `=*p` or `=+p` (or `"*p` or `"+p`) to be cumbersome. To make Vim to paste copied text from the external program with just `p`, you can add this in your vimrc:
 
 ```
 set clipboard=unnamed
