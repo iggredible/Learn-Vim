@@ -4,7 +4,7 @@ In the previous chapters, you learned how to use Vim. In this chapter, you will 
 
 ## How Vim Finds Vimrc
 
-The conventional wisdom for vimrc is to add a `.vimrc` dotfile in the root directory `~/.vimrc` (it might be different depending on your OS).
+The conventional wisdom for vimrc is to add a `.vimrc` dotfile in the home directory `~/.vimrc` (it might be different depending on your OS).
 
 Behind the scene, Vim looks at multiple places for a vimrc file. Here are the places that Vim checks:
 - `$VIMINIT`
@@ -12,7 +12,7 @@ Behind the scene, Vim looks at multiple places for a vimrc file. Here are the pl
 - `$HOME/.vim/vimrc`
 - `$EXINIT`
 - `$HOME/.exrc`
-- `$VIMRUNTIME/default.vim`
+- `$VIMRUNTIME/defaults.vim`
 
 When you start Vim, it will check the above six locations in that order for a vimrc file. The first found vimrc file will be used and the rest is ignored. 
 
@@ -20,7 +20,7 @@ First Vim will look for a `$VIMINIT`. If there is nothing there, Vim will check 
 
 The first location, `$VIMINIT`, is an environment variable. By default it is undefined. If you want to use `~/dotfiles/testvimrc` as your `$VIMINIT` value, you can create an environment variable containing the path of that vimrc. After you run `export VIMINIT='let $MYVIMRC="$HOME/dotfiles/testvimrc" | source $MYVIMRC'`, Vim will now use `~/dotfiles/testvimrc` as your vimrc file.
 
-The second location, `$HOME/.vimrc`, is the conventional path for many Vim users. `$HOME` in many cases is your root directory (`~`). If you have a `~/.vimrc` file, Vim will use this as your vimrc file.
+The second location, `$HOME/.vimrc`, is the conventional path for many Vim users. `$HOME` in many cases is your home directory (`~`). If you have a `~/.vimrc` file, Vim will use this as your vimrc file.
 
 The third, `$HOME/.vim/vimrc`, is located inside the `~/.vim` directory. You might have the `~/.vim` directory already for your plugins, custom scripts, or View files. Note that there is no dot in vimrc file name (`$HOME/.vim/.vimrc` won't work, but `$HOME/.vim/vimrc` will).
 
