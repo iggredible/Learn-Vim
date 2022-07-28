@@ -24,7 +24,7 @@ Character-wise visual mode works with individual characters. Press `v` on the fi
 
 Line-wise visual mode works with lines. Press `V` and watch Vim selects the entire line your cursor is on. Just like character-wise visual mode, if you run `gU`, Vim uppercases the highlighted characters.
 
-Block-wise visual mode works with rows and columns. It gives you more freedom of movement than the other two modes. If you press `Ctrl-V`, Vim highlights the character under the cursor just like character-wise visual mode, except instead of highlighting each character until the end of the line before going down to the next line, it goes to the next line with minimal highlighting. Try moving around with `h/j/k/l` and watch the cursor moves.
+Block-wise visual mode works with rows and columns. It gives you more freedom of movement than the other two modes. If you press `Ctrl-V`, Vim highlights the character under the cursor just like character-wise visual mode, except instead of highlighting each character until the end of the line before going down to the next line, it goes to the next line with minimal highlighting. Try moving around with `h/j/k/l` and watch the cursor move.
 
 On the bottom left of your Vim window, you will see either `-- VISUAL --`, `-- VISUAL LINE --`, or `-- VISUAL BLOCK --` displayed to indicate which visual mode you are in.
 
@@ -52,7 +52,7 @@ two
 three
 ```
 
-This time let's start from the line "two". Press `v` to go to the character-wise visual mode (here the square brackets `[]` represents the character highlights):
+This time let's start from the line "two". Press `v` to go to the character-wise visual mode (here the square brackets `[]` represent the character highlights):
 
 ```
 one
@@ -76,7 +76,7 @@ one
 three
 ```
 
-Is there a way to freely expand visual selection to go to any direction you want? Definitely. Let's back up a little bit to where you have the line "two" and "three" highlighted.
+Is there a way to freely expand visual selection to go move in any direction you want? Definitely. Let's back up a little bit to where you have the line "two" and "three" highlighted.
 
 ```
 one
@@ -84,7 +84,7 @@ one
 t]hree    <-- cursor
 ```
 
-Visual highlight follows the cursor movement. If you want to expand it upward to line "one", you need to move the cursor up to the line "two". Right now the cursor is on the line "three". You can toggle the cursor location with either `o` or `O`.
+Visual highlight follows the cursor movement. If you want to expand it upward to the line "one", you need to move the cursor up to the line "two". Right now the cursor is on the line "three". You can toggle the cursor location with either `o` or `O`.
 
 ```
 one
@@ -147,7 +147,7 @@ Chapter One
 Chapter One
 ```
 
-Now go to the second line, select it with line-wise visual mode:
+Now go to the second line and select it with line-wise visual mode:
 
 ```
 Chapter One
@@ -264,7 +264,7 @@ Put your cursor on the second "app-a". Use the same technique as above (`Ctrl-V 
 
 ## Selecting the Last Visual Mode Area
 
-Earlier in this chapter I mentioned that `gv` can quickly highlight the last visual mode highlight. You can also go to the location of the start and the end of the last visual mode with these two special marks:
+Earlier in this chapter, I mentioned that `gv` can quickly highlight the last visual mode highlight. You can also go to the location of the start and the end of the last visual mode with these two special marks:
 
 ```
 `<    Go to the first place of the previous visual mode highlight
@@ -293,7 +293,7 @@ You can also enter visual mode from the insert mode. To go to character-wise vis
 Ctrl-O v
 ```
 
-Recall that running `Ctrl-O` while in the insert mode lets you to execute a normal mode command. While in this normal-mode-command-pending mode, run `v` to enter character-wise visual mode. Notice that on the bottom left of the screen, it says `--(insert) VISUAL--`. This trick works with any visual mode operator: `v`, `V`, and `Ctrl-V`.
+Recall that running `Ctrl-O` while in the insert mode lets you execute a normal mode command. While in this normal-mode-command-pending mode, run `v` to enter character-wise visual mode. Notice that on the bottom left of the screen, it says `--(insert) VISUAL--`. This trick works with any visual mode operator: `v`, `V`, and `Ctrl-V`.
 
 ## Select Mode
 
