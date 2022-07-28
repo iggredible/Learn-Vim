@@ -76,7 +76,7 @@ one
 three
 ```
 
-Is there a way to freely expand visual selection to go move in any direction you want? Definitely. Let's back up a little bit to where you have the line "two" and "three" highlighted.
+Is there a way to freely expand visual selection to move in any direction you want? Definitely. Let's back up a little bit to where you have the line "two" and "three" highlighted.
 
 ```
 one
@@ -147,7 +147,7 @@ Chapter One
 Chapter One
 ```
 
-Now go to the second line and select it with line-wise visual mode:
+Now, go to the second line and select it with line-wise visual mode:
 
 ```
 Chapter One
