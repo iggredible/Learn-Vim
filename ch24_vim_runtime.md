@@ -251,7 +251,7 @@ Vim has an environment variable `$VIMRUNTIME` for default scripts and support fi
 
 The structure should look familiar. It contains many runtime paths you learned in this chapter.
 
-Recall in Chapter 21, you learned that when you open Vim, it looks for a vimrc files in seven different locations. I said that the last location Vim checks is `$VIMRUNTIME/default.vim`. If Vim fails to find any uservimrc files, Vim uses a `default.vim` as vimrc.
+Recall in Chapter 21, you learned that when you open Vim, it looks for a vimrc files in seven different locations. I said that the last location Vim checks is `$VIMRUNTIME/defaults.vim`. If Vim fails to find any user vimrc files, Vim uses a `defaults.vim` as vimrc.
 
 Have you ever tried running Vim without syntax plugin like vim-polyglot and yet your file is still syntatically highlighted? That is because when Vim fails to find a syntax file from the runtime path, Vim looks for a syntax file from `$VIMRUNTIME` syntax directory.
 
