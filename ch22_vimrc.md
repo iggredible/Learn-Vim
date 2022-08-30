@@ -397,6 +397,12 @@ If you need to run Vim with a *different* vimrc, say `~/.vimrc-backup`, run:
 vim -u ~/.vimrc-backup
 ```
 
+If you need to run Vim with only `defaults.vim` and without plugins, which is helpful to fix broken vimrc, run:
+
+```
+vim --clean
+```
+
 ## Configure Vimrc the Smart Way
 
 Vimrc is an important component of Vim customization. A good way to start building your vimrc is by reading other people's vimrcs and gradually build it over time. The best vimrc is not the one that developer X uses, but the one that is tailored exactly to fit your thinking framework and editing style.
