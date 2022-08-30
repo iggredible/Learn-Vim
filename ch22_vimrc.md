@@ -259,6 +259,8 @@ source $HOME/.vim/settings/functions.vim
 source $HOME/.vim/settings/mappings.vim
 ```
 
+You can edit these files by putting your cursor under the path and press `gf`.
+
 Inside `~/.vim/settings/plugins.vim`:
 
 ```
