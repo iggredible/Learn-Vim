@@ -390,3 +390,8 @@ There are other options that you can pass. To learn more, check out `:h 'viminfo
 Vim has View, Session, and Viminfo to take different level of your Vim environment snapshots. For micro projects, use Views. For larger projects, use Sessions. You should take your time to check out all the options that View, Session, and Viminfo offers.
 
 Create your own View, Session, and Viminfo for your own editing style. If you ever need to use Vim outside of your computer, you can just load your settings and you will immediately feel at home!
+
+## Link
+- Prev [Ch19. Compile](./ch19_compile.md)
+- Next [# Multiple File Operations
+](./ch21_multiple_file_operations.md)

@@ -214,3 +214,7 @@ The filter normal command only works on motions / text objects that are at least
 Vim is not an IDE. It is a lightweight modal editor that is highly extensible by design. Because of this extensibility, you have an easy access to any external command in your system. Armed with these external commands, Vim is one step closer from becoming an IDE. Someone said that the Unix system is the first IDE ever.
 
 The bang command is as useful as how many external commands you know. Don't worry if your external command knowledge is limited. I still have a lot to learn too. Take this as a motivation for continuous learning. Whenever you need to modify a text, look if there is an external command that can solve your problem. Don't worry about mastering everything, just learn the ones you need to complete the current task.
+
+## Link
+- Prev [Ch13. the Global Command](./ch13_the_global_command.md)
+- Next [Ch15. Command-line Mode](./ch15_command-line_mode.md)

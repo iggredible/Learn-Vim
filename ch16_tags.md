@@ -368,3 +368,7 @@ functionFood -> functionBreakfast -> functionPancake
 This gives you insight that this code flow is related to having a pancake for breakfast.
 
 To learn more about tags, check out `:h tags`. Now that you know how to use tags, let's explore a different feature: folding.
+
+## Link
+- Prev [Ch15. Command-line Mode](./ch15_command-line_mode.md)
+- Next [Ch17. Fold](./ch17_fold.md)

@@ -353,3 +353,7 @@ To improve your navigation skill, here are my suggestions:
 Finally, realize that you do not need to know every single Vim command to be productive. Most Vim users don't. I don't. Learn the commands that will help you accomplish your task at that moment.
 
 Take your time. Navigation skill is a very important skill in Vim. Learn one small thing every day and learn it well.
+
+## Link
+- Prev [Ch04. Vim Grammar](./ch04_vim_grammar.md)
+- Next [Ch06. Insert Mode](./ch06_insert_mode.md)

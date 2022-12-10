@@ -550,3 +550,7 @@ Some of the examples here are complicated. Do not be intimidated. Really take yo
 Whenever you need to run multiple commands, pause and see if you can use the `g` command. Identify the best command for the job and write a pattern to target as many things at once.
 
 Now that you know how powerful the global command is, let's learn how to use the external commands to increase your tool arsenals.
+
+## Link
+- Prev [Ch12. Search and Substitute](./ch12_search_and_substitute.md)
+- Next [Ch14. External Commands](./ch14_external_commands.md)

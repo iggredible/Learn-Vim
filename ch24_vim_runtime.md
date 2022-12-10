@@ -282,3 +282,7 @@ Try this yourself: create an arbitrary path and add it to your runtimepath. Add 
 ## Learn Runtime the Smart Way
 
 Take your time reading it and play around with these runtime paths. To see how runtime paths are being used in the wild, go to the repository of one of your favorite Vim plugins and study its directory structure. You should be able to understand most of them now. Try to follow along and discern the big picture. Now that you understand Vim directory structure, you're ready to learn Vimscript.
+
+## Link
+- Prev [Ch23. Vim Packages](./ch23_vim_packages.md)
+- Next [Ch25. Vimscript Basic Data Types](./ch25_vimscript_basic_data_types.md)

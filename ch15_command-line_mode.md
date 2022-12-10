@@ -94,3 +94,7 @@ Vim has hundreds of built-in commands. To see all the commands Vim have, check o
 Compared to the other three modes, the command-line mode is like the Swiss Army knife of text editing. You can edit text, modify files, and execute commands, just to name a few. This chapter is a collection of odds and ends of the command-line mode. It also brings Vim modes into closure. Now that you know how to use the normal, insert, visual, and command-line mode you can edit text with Vim faster than ever.
 
 It's time to move away from Vim modes and learn how to do an even faster navigation with Vim tags.
+
+## Link
+- Prev [Ch14. External Commands](./ch14_external_commands.md)
+- Next [Ch16. Tags](./ch16_tags.md)

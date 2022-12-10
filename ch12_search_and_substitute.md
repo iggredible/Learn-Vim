@@ -717,3 +717,7 @@ The ability to do search well is a necessary skill in editing. Mastering the sea
 A good way to improve your pattern matching skill is whenever you need to search for a pattern (like "hello 123"), instead of querying for the literal search term (`/hello 123`), try to come up with a pattern for it (something like `/\v(\l+) (\d+)`). Many of these regular expression concepts are also applicable in general programming, not only when using Vim.
 
 Now that you learned about advanced search and substitution in Vim, let's learn one of the most versatile commands, the global command.
+
+## Link
+- Prev [Ch11. Visual Mode](./ch11_visual_mode.md)
+- Next [Ch13. the Global Command](./ch13_the_global_command.md)

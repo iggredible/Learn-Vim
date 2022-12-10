@@ -318,3 +318,7 @@ I personally never used select mode, but it's good to know that it exists.
 The visual mode is Vim's representation of the text highlighting procedure.
 
 If you find yourself using visual mode operation far more often than normal mode operations, be careful. This is an anti-pattern. It takes more keystrokes to run a visual mode operation than its normal mode counterpart. For example, if you need to delete an inner word, why use four keystrokes, `viwd` (visually highlight an inner word then delete), if you can accomplish it with just three keystrokes (`diw`)? The latter is more direct and concise. Of course, there will be times when visual modes are appropriate, but in general, favor a more direct approach.
+
+## Link
+- Prev [Ch10. Undo](./ch10_undo.md)
+- Next [Ch12. Search and Substitute](./ch12_search_and_substitute.md)

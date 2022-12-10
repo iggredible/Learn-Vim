@@ -276,3 +276,7 @@ The same set of arguments work with `:earlier` counterpart: `:later`.
 
 Prior to this chapter, you learned how to find any text in a project space, with undo, you can now find any text in a time dimension. You are now able to search for any text by its location and time written. You have achieved Vim-omnipresence.
 
+
+## Link
+- Prev [Ch09. Macros](./ch09_macros.md)
+- Next [Ch11. Visual Mode](./ch11_visual_mode.md)

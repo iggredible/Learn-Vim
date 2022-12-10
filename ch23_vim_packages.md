@@ -130,3 +130,7 @@ The answer is, as always, "it depends".
 I still use vim-plug because it makes it easy to add, remove or update plugins. If you use many plugins, it may be more convenient to use plugin managers because it is easy to update many simultaneously. Some plugin managers also offer asynchronous functionalities.
 
 If you are a minimalist, try out Vim packages. If you a heavy plugin user, you may want to consider using a plugin manager.
+
+## Link
+- Prev [Ch22. Vimrc](./ch22_vimrc.md)
+- Next [Ch24. Vim Runtime](./ch24_vim_runtime.md)

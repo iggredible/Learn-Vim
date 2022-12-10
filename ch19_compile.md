@@ -291,3 +291,7 @@ Now each time you enter a file (`BufEnter`) that ends with `_spec.rb`, running `
 
 In this chapter, you learned that you can use the `make` and `compiler` commands to run *any* process from inside Vim asynchronously to complement your programming workflow. Vim's ability to extend itself with other programs makes it powerful.
 
+
+## Link
+- Prev [Ch18. Git](./ch18_git.md)
+- Next [Ch20. Views, Sessions, and Viminfo](./ch20_views_sessions_viminfo.md)
