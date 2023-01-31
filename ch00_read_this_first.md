@@ -89,7 +89,7 @@ To learn more about Vim, please follow [@learnvim](https://twitter.com/learnvim)
 
 ## Thank Yous
 
-This guide wouldn't be possible without Bram Moleenar for creating Vim, my wife who had been very patient and supportive throughout the journey, all the [contributors](https://github.com/iggredible/Learn-Vim/graphs/contributors) of the learn-vim project, the Vim community, and many, many others that weren't mentioned.
+This guide wouldn't be possible without Bram Molenaar for creating Vim, my wife who had been very patient and supportive throughout the journey, all the [contributors](https://github.com/iggredible/Learn-Vim/graphs/contributors) of the learn-vim project, the Vim community, and many, many others that weren't mentioned.
 
 Thank you. You all help make text editing fun :)
 
