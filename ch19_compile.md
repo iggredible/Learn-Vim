@@ -63,7 +63,7 @@ Let's use the makefile to compile a basic `.cpp` program. First, let's create a 
 #include <iostream>
 
 int main() {
-    std::cout << "Hello!\\n";
+    std::cout << "Hello!\n";
     return 0;
 }
 ```
