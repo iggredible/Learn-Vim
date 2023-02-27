@@ -524,3 +524,7 @@ Now if you run `echo Lunch()()`, Vim will return "shrimp".
 In this chapter, you learned the anatomy of Vim function. You learned how to use different special keywords `range`, `dict`, and `closure` to modify function behavior. You also learned how to use lambda and to chain multiple functions together. Functions are important tools for creating complex abstractions.
 
 Next, let's put everything that you have learned together to make your own plugin.
+
+## Link
+- Prev [Ch27. Vimscript Variable Scopes](./ch27_vimscript_variable_scopes.md)
+- Next [Ch29. Write a Plugin: Creating a Titlecase Operator](./ch29_plugin_example_writing-a-titlecase-plugin.md)

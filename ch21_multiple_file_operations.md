@@ -185,3 +185,7 @@ Knowing how to do a multiple file operation is a useful skill to have in editing
 Practically speaking, you probably won't use all eight equally. You will gravitate towards one or two. When you are starting out, pick one (I personally suggest starting with the arg list `:argdo`) and master it. Once you are comfortable with one, then learn the next one. You will find that learning the second, third, fourth gets easier. Be creative. Use it with different combinations. Keep practicing until you can do this effortlessly and without much thinking. Make it part of your muscle memory.
 
 With that being said, you've mastered Vim editing. Congratulations!
+
+## Link
+- Prev [Ch20. Views, Sessions, and Viminfo](./ch20_views_sessions_viminfo.md)
+- Next [Ch22. Vimrc](./ch22_vimrc.md)

@@ -900,3 +900,6 @@ Finally, if you are writing your own plugin locally at first and you want to tes
 You made it to the end! This chapter is the amalgamation of all the Vimscript chapters. Here you are finally putting to practice what you've learned so far. Hopefully having read this, you understood not only how to create Vim plugins, but also encouraged you to write your own plugin. 
 
 Whenever you find yourself repeating the same sequence of actions multiple times, you should try to create your own! It was said that you shouldn't reinvent the wheel. However, I think it can be beneficial to reinvent the wheel for the sake of learning. Read other people's plugins. Recreate them. Learn from them. Write your own! Who knows, maybe you will write the next awesome, super-popular plugin after reading this. Maybe you will be the next legendary Tim Pope. When that happens, let me know! 
+
+## Link
+- Prev [Ch28. Vimscript Functions](./ch28_vimscript_functions.md)

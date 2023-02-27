@@ -93,3 +93,6 @@ This guide wouldn't be possible without Bram Moleenar for creating Vim, my wife 
 
 Thank you. You all help make text editing fun :)
 
+
+## Link
+- Next [Ch01. Starting Vim](./ch01_starting_vim.md)

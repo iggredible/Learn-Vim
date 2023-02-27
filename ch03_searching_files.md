@@ -343,3 +343,7 @@ Searching is the bread-and-butter of text editing. Learning how to search well i
 Fzf.vim is a game-changer. I can't imagine using Vim without it. I think it is very important to have a good search tool when starting Vim. I've seen people struggling to transition to Vim because it seems to be missing critical features modern text editors have, like an easy and powerful search feature. I hope this chapter will help you to make the transition to Vim easier. 
 
 You also just saw Vim's extensibility in action - the ability to extend search functionality with a plugin and an external program. In the future, keep in mind of what other features you wish to extend Vim with. Chances are, it's already in Vim, someone has created a plugin or there is a program for it already. Next, you'll learn about a very important topic in Vim: Vim grammar.
+
+## Link
+- Prev [Ch02. Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)
+- Next [Ch04. Vim Grammar](./ch04_vim_grammar.md)

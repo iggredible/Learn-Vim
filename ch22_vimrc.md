@@ -406,3 +406,8 @@ vim --clean
 ## Configure Vimrc the Smart Way
 
 Vimrc is an important component of Vim customization. A good way to start building your vimrc is by reading other people's vimrcs and gradually build it over time. The best vimrc is not the one that developer X uses, but the one that is tailored exactly to fit your thinking framework and editing style.
+
+## Link
+- Prev [# Multiple File Operations
+](./ch21_multiple_file_operations.md)
+- Next [Ch23. Vim Packages](./ch23_vim_packages.md)

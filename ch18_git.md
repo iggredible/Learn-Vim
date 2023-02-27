@@ -311,3 +311,7 @@ If you are inside one of vim-fugitive's "special mode" (for example, inside `:Gi
 You may find vim-fugitive to be a good compliment to your workflow (or not). Regardless, I would strongly encourage you to check out all the plugins listed above. There are probably others I didn't list. Go try them out.
 
 One obvious way to get better with Vim-git integration is to read more about git. Git, on its own, is a vast topic and I am only showing a fraction of it. With that, let's *git going* (pardon the pun) and talk about how to use Vim to compile your code!
+
+## Link
+- Prev [Ch17. Fold](./ch17_fold.md)
+- Next [Ch19. Compile](./ch19_compile.md)

@@ -512,3 +512,7 @@ Now if you `source` vimrc without `gruvbox` directory, Vim will use the `colorsc
 In the previous chapter, you learned about Vim basic data types. In this chapter, you learned how to combine them to write basic programs using conditionals and loops. These are the building blocks of programming.
 
 Next, let's learn about variable scopes.
+
+## Link
+- Prev [Ch25. Vimscript Basic Data Types](./ch25_vimscript_basic_data_types.md)
+- Next [Ch27. Vimscript Variable Scopes](./ch27_vimscript_variable_scopes.md)
