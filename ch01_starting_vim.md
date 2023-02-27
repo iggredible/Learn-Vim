@@ -155,6 +155,8 @@ vim -O5
 vim -O5 hello1.txt hello2.txt
 ```
 
+You can use `<ctrl> + w + w` to switch the panes in order.
+
 ## Suspending
 
 If you need to suspend Vim while in the middle of editing, you can press `Ctrl-z`. You can also run either the `:stop` or `:suspend` command. To return to the suspended Vim, run `fg` from the terminal.
