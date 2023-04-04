@@ -107,7 +107,7 @@ The default `:make` command is the `make` external command. To change the `:make
 :set makeprg=g++\ %
 ```
 
-The `\` is to escape the space after `g++`. The `%` symbol in Vim represents the current file. The command `g++\\ %` is equivalent to running `g++ hello.cpp`.
+The `\` is to escape the space after `g++`. The `%` symbol in Vim represents the current file. The command `g++\ %` is equivalent to running `g++ hello.cpp`.
 
 Go to `./hello.cpp` then run `:make`. Vim compiles `hello.cpp` and creates `a.out` because you didn't specify the output. Let's refactor it so it will name the compiled output with the name of the original file minus the extension. Run or add this to vimrc:
 
@@ -248,7 +248,7 @@ Vim-dispatch has several commands, but the two main ones are `:Make` and `:Dispa
 Vim-dispatch's `:Make` command is similar to Vim's `:make`, but it runs asynchronously. If you are in a Javascript project and you need to run `npm t`, you might attempt to set your makeprg to be:
 
 ```
-:set makeprg=npm\\ t
+:set makeprg=npm\ t
 ```
 
 If you run:
