@@ -71,7 +71,7 @@ Suppose you need to set the number options (`set number`). If you don't have a v
 
 Inside it, add `set number`. Save it (`:w`), then source it (`:source %`). You should now see line numbers displayed on the left side.
 
-Alternatively, if you don't want to a make permanent setting change, you can always run the `set` command inline, by running `:set number`. The downside of this approach is that this setting is temporary. When you close Vim, the option disappears.
+Alternatively, if you don't want to make a permanent setting change, you can always run the `set` command inline, by running `:set number`. The downside of this approach is that this setting is temporary. When you close Vim, the option disappears.
 
 Since we are learning about Vim and not Vi, a setting that you must have is the `nocompatible` option. Add `set nocompatible` in your vimrc. Many Vim-specific features are disabled when it is running on `compatible` option.
 
