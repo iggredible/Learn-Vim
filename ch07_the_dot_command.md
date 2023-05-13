@@ -94,7 +94,7 @@ Let's remove all the z's. Starting from the first character on the first line, v
 
 When you deleted a column of three z's (`Ctrl-vjjd`), it was counted as a change. Visual mode operation can be used to target multiple lines as part of a change.
 
-If (`Crtl-V`) doesn't switch the window to VISUAL BLOCK mode, you can try (`Ctrl-Q`), read more at: [Ctrl-V don't work in WLS](https://vi.stackexchange.com/questions/12227/vim-v-visual-block-mode-not-working)
+If `Crtl-V` doesn't switch the window to VISUAL BLOCK mode, you can try (`Ctrl-Q`), read more at: [Ctrl-V don't work in WLS](https://vi.stackexchange.com/questions/12227/vim-v-visual-block-mode-not-working).
 
 ## Including a Motion in a Change
 
