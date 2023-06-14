@@ -595,10 +595,10 @@ If you use `(.{-}Mississippi)`, you get five matches: "One Mississippi", "Two Mi
 Let's do a simpler example. If you have the string:
 
 ```
-abc1de1
+abc1defg1
 ```
 
-You can match "abc1de1" (greedy) with:
+You can match "abc1defg1" (greedy) with:
 
 ```
 /a.*1
