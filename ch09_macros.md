@@ -146,7 +146,7 @@ Here is the breakdown of the steps:
 
 Now you can just run `@a` and watch Vim execute the macro recursively.
 
-How did the macro know when to stop? When the macro was on the last line, it triedto run `j`, since there was no more line to go to, it stopped the macro execution.
+How did the macro know when to stop? When the macro was on the last line, it tried to run `j`, since there was no more line to go to, it stopped the macro execution.
 
 ## Appending a Macro
 
