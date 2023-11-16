@@ -651,7 +651,7 @@ To check the length of a dictionary, use `len()`.
 ```
 :let mealPlans = #{breakfast: "waffles", lunch: "pancakes", dinner: "donuts"}
 
-:echo len(meaPlans)
+:echo len(mealPlans)
 " returns 3
 ```
 
