@@ -88,10 +88,19 @@ Now you are looking at two buffers through **two windows**. The top window displ
 If you want to navigate between windows, use these shortcuts:
 
 ```
-Ctrl-W H    Moves the cursor to the left window
-Ctrl-W J    Moves the cursor to the window below
-Ctrl-W K    Moves the cursor to the window upper
-Ctrl-W L    Moves the cursor to the right window
+Ctrl-W h    Moves the cursor to the left window
+Ctrl-W j    Moves the cursor to the window below
+Ctrl-W k    Moves the cursor to the window upper
+Ctrl-W l    Moves the cursor to the right window
+```
+
+If you want to move your windows, use these ones:
+
+```
+Ctrl-W H    Moves current window to the far left
+Ctrl-W J    Moves current window to the very bottom
+Ctrl-W K    Moves current window to the very top
+Ctrl-W L    Moves current window to the far right
 ```
 
 Now run:
@@ -115,10 +124,10 @@ To close the current window, you can run `Ctrl-W C` or type `:quit`. When you cl
 Here are some useful normal-mode window commands:
 
 ```
-Ctrl-W V    Opens a new vertical split
-Ctrl-W S    Opens a new horizontal split
-Ctrl-W C    Closes a window
-Ctrl-W O    Makes the current window the only one on screen and closes other windows
+Ctrl-W v    Opens a new vertical split
+Ctrl-W s    Opens a new horizontal split
+Ctrl-W c    Closes a window
+Ctrl-W o    Makes the current window the only one on screen and closes other windows
 ```
 
 And here is a list of useful window command-line commands:
