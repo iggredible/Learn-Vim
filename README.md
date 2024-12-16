@@ -16,9 +16,12 @@ Follow [@learnvim](https://twitter.com/learnvim) for updates, Vim tips, etc.
 
 This guide is and will always be free.
 
-If you want to financially support this project, you can [purchase this guide on Leanpub](https://leanpub.com/learnvim).
+If you want to financially support this project, you can either [purchase this guide on Leanpub](https://leanpub.com/learnvim) or [buy me a coffee](https://www.buymeacoffee.com/iggredible)!
 
 <a href="https://leanpub.com/learnvim"><img src="images/learn-vim-cover.png" width="100"></a>
+
+<a href="https://www.buymeacoffee.com/iggredible" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 
 ## Table Of Contents
 
