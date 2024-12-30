@@ -68,7 +68,7 @@ If you want to financially support this project, you can either [purchase this g
 - [Ch 29 - Plugin Example: Writing a Titlecase Plugin](./ch29_plugin_example_writing-a-titlecase-plugin.md)
 
 ## Translations
-- [Learn-Vim 中文翻译](https://github.com/wsdjeg/Learn-Vim_zh_cn)(`zh-CN`)
+- [Learn-Vim 中文翻译](https://wsdjeg.net/wiki/learn-vim/)(`zh-CN`)
 - [Learn-Vim Spanish](https://github.com/victorhck/learn-Vim-es)(`es`)
 
 ## License & Copyright
