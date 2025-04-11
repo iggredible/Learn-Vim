@@ -1,3 +1,4 @@
+fix REDEME
 # Learn Vim (the Smart Way)
 
 ## What is this about?
