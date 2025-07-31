@@ -789,3 +789,7 @@ Similar to `v:none`.
 In this chapter, you learned about Vimscript's basic data types: number, float, string, list, dictionary, and special. Learning these is the first step to start Vimscript programming.
 
 In the next chapter, you will learn how to combine them for writing expressions like equalities, conditionals, and loops.
+
+## Link
+- Prev [Ch24. Vim Runtime](./ch24_vim_runtime.md)
+- Next [Ch26. Vimscript Conditionals and Loops](./ch26_vimscript_conditionals_and_loops.md)

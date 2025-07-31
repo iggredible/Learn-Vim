@@ -164,3 +164,7 @@ If you need to suspend Vim while in the middle of editing, you can press `Ctrl-z
 The `vim` command can take many different options, just like any other terminal command. Two options allow you to pass a Vim command as a parameter: `+{cmd}` and `-c cmd`. As you learn more commands throughout this guide, see if you can apply it when starting Vim. Also being a terminal command, you can combine `vim` with many other terminal commands. For example, you can redirect the output of the `ls` command to be edited in Vim with `ls -l | vim -`.
 
 To learn more about `vim` command in the terminal, check out `man vim`. To learn more about the Vim editor, continue reading this guide along with the `:help` command.
+
+## Link
+- Prev [Ch00. Read This First](./ch00_read_this_first.md)
+- Next [Ch02. Buffers, Windows, and Tabs](./ch02_buffers_windows_tabs.md)

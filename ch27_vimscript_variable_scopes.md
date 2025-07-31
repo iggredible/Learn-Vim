@@ -260,3 +260,7 @@ There are other variables. For a list of Vim built-in variables, check out `:h v
 Being able to quickly access environment, option, and register variables give you a broad flexibility to customize your editor and terminal environment. You also learned that Vim has 9 different variable scopes, each existing under a certain constraints. You can take advantage of these unique variable types to decouple your program.
 
 You made it this far. You learned about data types, means of combinations, and variable scopes. Only one thing is left: functions.
+
+## Link
+- Prev [Ch26. Vimscript Conditionals and Loops](./ch26_vimscript_conditionals_and_loops.md)
+- Next [Ch28. Vimscript Functions](./ch28_vimscript_functions.md)

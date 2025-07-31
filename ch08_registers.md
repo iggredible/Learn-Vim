@@ -260,3 +260,7 @@ Since the unnamed register defaults to `p` and `P`, you only have to learn two r
 The average human has a limited short-term memory capacity, about 5 - 7 items at once. That is why in my everyday editing, I only use about 5 -  7 named registers. There is no way I can remember all twenty-six in my head. I normally start with register a, then b, ascending the alphabetical order. Try it and experiment around to see what technique works best for you.
 
 Vim registers are powerful. Used strategically, it can save you from typing countless repeating texts. Next, let's learn about macros.
+
+## Link
+- Prev [Ch07. the Dot Command](./ch07_the_dot_command.md)
+- Next [Ch09. Macros](./ch09_macros.md)

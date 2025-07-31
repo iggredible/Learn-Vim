@@ -208,3 +208,7 @@ You just learned about Vim grammar's rule: `verb + noun`. One of my biggest Vim 
 The goal of this chapter is to show you the `verb + noun` pattern in Vim so you will approach learning Vim like learning a new language instead of memorizing every command combination.
 
 Learn the pattern and understand the implications. That's the smart way to learn.
+
+## Link
+- Prev [Ch03. Searching Files](./ch03_searching_files.md)
+- Next [Ch05. Moving in a File](./ch05_moving_in_file.md)
