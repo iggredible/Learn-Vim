@@ -88,10 +88,10 @@ Now you are looking at two buffers through **two windows**. The top window displ
 If you want to navigate between windows, use these shortcuts:
 
 ```
-Ctrl-W H    Moves the cursor to the left window
-Ctrl-W J    Moves the cursor to the window below
-Ctrl-W K    Moves the cursor to the window upper
-Ctrl-W L    Moves the cursor to the right window
+Ctrl-W h    Moves the cursor to the left window
+Ctrl-W j    Moves the cursor to the window below
+Ctrl-W k    Moves the cursor to the window upper
+Ctrl-W l    Moves the cursor to the right window
 ```
 
 Now run:
