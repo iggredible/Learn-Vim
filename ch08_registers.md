@@ -68,7 +68,7 @@ Numbered registers automatically fill themselves up in ascending order. There ar
 
 ### The Yanked Register
 
-If you yank an entire line of text (`yy`), Vim actually saves that text in two registers:
+If you yank, Vim actually saves that text in two registers:
 
 1. The unnamed register (`p`).
 2. The yanked register (`"0p`).
@@ -85,7 +85,7 @@ The yanked register will have the text from step one.
 If you:
 1. Yank a line (`yy`)
 2. Delete a line (`dd`)
-3. Yank another line (`yy`)
+3. Yank a word (`yw`)
 
 The yanked register will have the text from step three.
 
