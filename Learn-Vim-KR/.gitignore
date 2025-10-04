@@ -1,0 +1,23 @@
+# https://www.toptal.com/developers/gitignore/api/vim 에서 생성됨
+# https://www.toptal.com/developers/gitignore?templates=vim 에서 편집
+
+### Vim ###
+# 스왑 파일
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# 세션 파일
+Session.vim
+
+# 임시 파일
+.netrwhist
+*~
+# 자동 생성된 태그 파일
+tags
+# 영구 실행 취소 파일
+[._]*.un~
+
+# https://www.toptal.com/developers/gitignore/api/vim 끝
