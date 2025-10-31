@@ -1,6 +1,6 @@
 # Ch08. Registers
 
-Learning Vim registers is like learning algebra for the first time. You didn't think you need it until you needed it.
+Learning Vim registers is like learning algebra for the first time. You didn't think you would need it until you needed it.
 
 You've probably used Vim registers when you yanked or deleted a text then pasted it with `p` or `P`. However, did you know that Vim has 10 different types of registers? Used correctly, Vim registers can save you from repetitive typing.
 
@@ -24,7 +24,7 @@ Here are the 10 Vim register types:
 
 ## Register Operators
 
-To use registers, you need to first store them with operators. Here are some operators that store values to registers:
+To use registers, you need to first populate them using operators. Here are some operators that store values into registers:
 
 ```
 y    Yank (copy)
@@ -32,16 +32,16 @@ c    Delete text and start insert mode
 d    Delete text
 ```
 
-There are more operators (like `s` or `x`), but the above are the useful ones. The rule of thumb is, if an operator can remove a text, it probably stores the text to registers.
+There are more operators (like `s` or `x`), but the ones listed above are among the more useful ones. The rule of thumb is that if an operator can remove a piece of text, it probably stores that text to registers.
 
-To paste a text from registers, you can use:
+To paste a text from a register, you can use:
 
 ```
 p    Paste the text after the cursor
 P    Paste the text before the cursor
 ```
 
-Both `p` and `P` accept a count and a register symbol as arguments. For example, to paste ten times, do `10p`. To paste the text from register a, do `"ap`. To paste the text from register a ten times, do `10"ap`. By the way, the `p` actually technically stands for "put", not "paste", but I figure paste is a more conventional word.
+Both `p` and `P` accept a count and a register symbol as arguments. For example, to paste ten times, do `10p`. To paste the text from register a, do `"ap`. To paste the text from register a ten times, do `10"ap`. By the way, the `p` actually technically stands for "put", not "paste", but I figure paste is a more ubiquitous word.
 
 The general syntax to get the content from a specific register is `"a`, where `a` is the register symbol.
 
@@ -105,14 +105,14 @@ line one
 
 With your cursor on "line three", delete them one by one with `dd`. Once all lines are deleted, register 1 should contain "line one" (most recent), register two "line two" (second most recent), and register three "line three" (oldest). To get the content from register one, do `"1p`.
 
-As a side note, these numbered registers are automatically incremented when using the dot command. If your numbered register one (`"1`) contains "line one", register two (`"2`) "line two", and register three (`"3`) "line three", you can paste them sequentially with this trick:
+As a side note, these numbered registers are automatically incremented each time you use the dot command. If your numbered register one (`"1`) contains "line one", register two (`"2`) "line two", and register three (`"3`) "line three", you can paste them sequentially with this trick:
 - Do `"1P` to paste the content from the numbered register one ("1).
 - Do `.` to paste the content from the numbered register two ("2).
 - Do `.` to paste the content from the numbered register three ("3).
 
 This trick works with any numbered register. If you started with `"5P`,  `.`  would do `"6P`, `.` again would do `"7P`, and so on.
 
-Small deletions like a word deletion (`dw`) or word change (`cw`) do not get stored in the numbered registers. They are stored in the small delete register (`"-`), which I will discuss next.
+Text from small deletions, like a word deletion (`dw`) or word change (`cw`), does not get stored in the numbered registers. It is stored in the _small delete register_ (`"-`), which I will discuss next.
 
 ## The Small Delete Register
 
@@ -134,7 +134,7 @@ Another example:
 
 ## The Named Register
 
-The named registers are Vim's most versatile register. It can store yanked, changed, and deleted texts into registers a-z. Unlike the previous 3 register types you've seen which automatically stores texts into registers, you have to explicitly tell Vim to use the named register, giving you full control.
+The named registers are Vim's most versatile register type. It can store yanked, changed, and deleted texts into registers `a-z`. Unlike the previous 3 register types you've seen, which are automatically populated, you have to explicitly tell Vim to use a given named register, giving you full control over it.
 
 To yank a word into register a, you can do it with `"ayiw`.
 - `"a` tells Vim that the next action (delete / change / yank) will be stored in register a.
@@ -142,7 +142,7 @@ To yank a word into register a, you can do it with `"ayiw`.
 
 To get the text from register a, run `"ap`. You can use all twenty-six alphabetical characters to store twenty-six different texts with named registers.
 
-Sometimes you may want to add to your existing named register. In this case, you can append your text instead of starting all over. To do that, you can use the uppercase version of that register. For example, suppose you have the word "Hello " already stored in register a. If you want to add "world" into register a, you can find the text "world" and yank it using A register (`"Ayiw`).
+Sometimes you may want to add to your existing named register. In this case, you can append your text instead of overwriting the register's existing contents. To do that, you can use the uppercase version of that register. For example, suppose you have the word "Hello " already stored in register a. If you want to add "world" into register a, you can find the text "world" and yank it using A register (`"Ayiw`).
 
 ## The Read-only Registers
 
@@ -150,11 +150,11 @@ Vim has three read-only registers: `.`, `:`, and `%`. They are pretty simple to 
 
 ```
 .    Stores the last inserted text
-:    Stores the last executed command-line
+:    Stores the last executed command-line command
 %    Stores the name of current file
 ```
 
-If the last text you wrote was "Hello Vim", running `".p` will print out the text "Hello Vim". If you want to get the name of current file, run `"%p`. If you run `:s/foo/bar/g` command, running `":p` will print out the literal text "s/foo/bar/g".
+If the last text you wrote was "Hello Vim", running `".p` will paste the text "Hello Vim" into the buffer. If you want to paste in the name of current file, run `"%p`. If you run `:s/foo/bar/g` command, running `":p` will paste the literal text "s/foo/bar/g".
 
 ## The Alternate File Register
 
@@ -162,9 +162,9 @@ In Vim, `#` usually represents the alternate file. An alternative file is the la
 
 ## The Expression Register
 
-Vim has an expression register, `"=`, to evaluate expressions.
+Vim has an expression register, `"=`, for evaluating expressions.
 
-To evaluate mathematical expressions `1 + 1`, run:
+To evaluate mathematical expressions like `1 + 1`, run:
 
 ```
 "=1+1<Enter>p
@@ -176,19 +176,19 @@ Here, you are telling Vim that you are using the expression register with `"=`. 
 Ctrl-R =1+1
 ```
 
-You can also get the values from any register via the expression register when appended with `@`. If you wish to get the text from register a:
+You can also get the values from any register via the expression register when you prepend `@` to the register name. If you wish to get the text from register a:
 
 ```
 "=@a
 ```
 
-Then press `<Enter>`, then `p`. Similarly, to get values from register a while in insert mode:
+Press `<Enter>`, then `p`. Similarly, to get values from register a while in insert mode:
 
 ```
 Ctrl-r =@a
 ```
 
-Expression is a vast topic in Vim, so I will only cover the basics here. I will address expressions in more details in later Vimscript chapters.
+Expressions are a vast topic in Vim, so I will only cover the basics here. I will address expressions in more detail in later Vimscript chapters.
 
 ## The Selection Registers
 
@@ -198,7 +198,7 @@ If you are on an external program (like Chrome browser) and you copy a block of 
 
 You may wonder if `"*` and `"+` do the same thing, why does Vim have two different registers? Some machines use X11 window system. This system has 3 types of selections: primary, secondary, and clipboard. If your machine uses X11, Vim uses X11's *primary* selection with the `quotestar` (`"*`) register and X11's *clipboard* selection with the `quoteplus` (`"+`) register. This is only applicable if you have `+xterm_clipboard` option available in your Vim build. If your Vim doesn't have `xterm_clipboard`, it's not a big deal. It just means that both `quotestar` and `quoteplus` are interchangeable (mine doesn't either).
 
-I find doing `=*p` or `=+p` (or `"*p` or `"+p`) to be cumbersome. To make Vim to paste copied text from the external program with just `p`, you can add this in your vimrc:
+I find doing `=*p` or `=+p` (or `"*p` or `"+p`) to be cumbersome. To make Vim to paste copied text from the external program with just `p`, you can add this to your vimrc:
 
 ```
 set clipboard=unnamed
@@ -208,7 +208,7 @@ Now when I copy a text from an external program, I can paste it with the unnamed
 
 ## The Black Hole Register
 
-Each time you delete or change a text, that text is stored in Vim register automatically. There will be times when you don't want to save anything into the register. How can you do that?
+Each time you delete or change some text, that text is stored in Vim register automatically. There will be times when you don't want to save anything to the register. How can you do that?
 
 You can use the black hole register (`"_`). To delete a line and not have Vim store the deleted line into any register, use `"_dd`.
 
@@ -222,21 +222,21 @@ To paste your last search (`/` or `?`), you can use the last search pattern regi
 
 To view all your registers, use the `:register` command. To view only registers "a, "1, and "-, use `:register a 1 -`.
 
-There is a plugin called [vim-peekaboo](https://github.com/junegunn/vim-peekaboo) that lets you to peek into the contents of the registers when you hit `"` or `@` in normal mode and `Ctrl-R` in insert mode. I find this plugin very useful because most times, I can't remember the content in my registers. Give it a try!
+There is a plugin called [vim-peekaboo](https://github.com/junegunn/vim-peekaboo) that lets you to peek into the contents of the registers when you hit `"` or `@` in normal mode and `Ctrl-R` in insert mode. I find this plugin very useful because most of the time, I can't remember the content in my registers. Give it a try!
 
 ## Executing a Register
 
-The named registers are not just for storing texts. They can also execute macros with `@`. I will go over macros in the next chapter.
+The named registers are not just for storing text. They can also execute macros with `@`. I will go over macros in the next chapter.
 
-Keep in mind since macros are stored inside Vim registers, you can accidentally overwrite the stored text with macros. If you store the text "Hello Vim" in register a and you later record a macro in the same register (`qa{macro-sequence}q`), that macro will overwrite your "Hello Vim" text stored earlier.
+Keep in mind since macros are stored inside Vim registers, you can accidentally overwrite the stored text with macros. If you store the text "Hello Vim" in register a and you later record a macro in the same register (`qa{macro-sequence}q`), that macro will overwrite the "Hello Vim" text that you stored earlier.
 
 ## Clearing a Register
 
-Technically, there is no need to clear any register because the next text that you store under the same register name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in the register a.
+Technically, there is no need to clear any register because the next text that you store under the same register name will overwrite it. However, you can quickly clear any named register by recording an empty macro. For example, if you run `qaq`, Vim will record an empty macro in register a.
 
-Another alternative is to run the command `:call setreg('a', 'hello register a')` where a is the register a and "hello register a" is the text that you want to store.
+Another alternative is to run the command `:call setreg('a', 'hello register a')` where a is register a and "hello register a" is the text that you want to store.
 
-One more way to clear register is to set the content of "a register to an empty string with the expression `:let @a = ''`.
+One more way to clear register a is to set the content of `"a` to an empty string, using the expression `:let @a = ''`.
 
 ## Putting the Content of a Register
 
@@ -248,16 +248,16 @@ One cool trick to pass `:put` with the black hole register (`"_`). Since the bla
 
 ## Learning Registers the Smart Way
 
-You made it to the end. Congratulations! If you are feeling overwhelmed by the sheer information, you are not alone. When I first started learning about Vim registers, there were way too much information to take at once.
+You made it to the end. Congratulations! If you are feeling overwhelmed by the sheer amount of information, you are not alone. When I first started learning about Vim registers, there was way too much information to take in at once.
 
 I don't think you should memorize all the registers immediately. To become productive, you can start by using only these 3 registers:
 1. The unnamed register (`""`).
 2. The named registers (`"a-z`).
 3. The numbered registers (`"0-9`).
 
-Since the unnamed register defaults to `p` and `P`, you only have to learn two registers: the named registers and the numbered registers. Gradually learn more registers when you need them. Take your time.
+Since the unnamed register defaults to `p` and `P`, you only have to learn two registers: the named registers and the numbered registers, and gradually more when you need them. Take your time.
 
-The average human has a limited short-term memory capacity, about 5 - 7 items at once. That is why in my everyday editing, I only use about 5 -  7 named registers. There is no way I can remember all twenty-six in my head. I normally start with register a, then b, ascending the alphabetical order. Try it and experiment around to see what technique works best for you.
+The average human has a limited short-term memory capacity: about 5 - 7 items at once. That is why in my everyday editing, I only use about 5 -  7 named registers. There is no way I can remember all twenty-six in my head. I normally start with register a, then b, ascending in alphabetical order. Try it and experiment around to see what technique works best for you.
 
 Vim registers are powerful. Used strategically, it can save you from typing countless repeating texts. Next, let's learn about macros.
 
