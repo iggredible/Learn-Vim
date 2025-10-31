@@ -4,19 +4,19 @@
 
 There are many places to learn Vim: the `vimtutor` is a great place to start and the `:help` manual has all the references you will ever need.
 
-However, the average user needs something more than `vimtutor` and less than the `:help` manual. This guide attempts to bridge that gap by highlighting only the key features to learn the most useful parts of Vim in the least time possible.
+However, the average user needs something more than `vimtutor` and less than the `:help` manual. This guide attempts to bridge that gap by highlighting only the key features to learn the most useful parts of Vim in the least amount of time possible.
 
-Chances are you won't need all 100% of Vim features. You probably only need to know about 20% of them to become a powerful Vimmer. This guide will show you which Vim features you will find most useful.
+Chances are you won't need all of Vim features. You probably only need to know about 20% of them to become a powerful Vimmer. This guide will show you which Vim features you will find most useful.
 
-This is an opinionated guide. It covers techniques that I often use when using Vim. The chapters are sequenced based on what I think would make the most logical sense for a beginner to learn Vim.
+This is an opinionated guide. It covers techniques that I often use when using Vim. The chapters are sequenced based on which Vim topics I think would make the most logical sense for a beginner to learn.
 
-This guide is examples-heavy. When learning a new skill, examples are indispensable, having numerous examples will solidify these concepts more effectively.
+This guide is example-heavy. When learning new concepts, examples are indispensable, and having numerous examples will solidify these concepts more effectively.
 
-Some of you may wonder why do you need to learn Vimscript? In my first year of using Vim, I was content with just knowing how to use Vim. Time passed and I started needing Vimscript more and more to write custom commands for my specific editing needs. As you are mastering Vim, you will sooner or later need to learn Vimscript. So why not sooner? Vimscript is a small language. You can learn its basics in just four chapters of this guide.
+Some of you may be wondering: 'Why do I need to learn Vimscript?' In my first year of using Vim, I was content with just knowing how to use Vim. Time passed and I started needing Vimscript more and more to write custom commands for my specific editing needs. As you are mastering Vim, you will find that, sooner or later, you will need to learn Vimscript. So why not sooner? Vimscript is a small language. You can learn its basics in just four chapters of this guide.
 
-You can go far using Vim without knowing any Vimscript, but knowing it will help you excel even farther.
+You can go far using Vim without knowing any Vimscript, but knowing it will help you excel even further.
 
-This guide is written for both beginner and advanced Vimmers. It starts out with broad and simple concepts and ends with specific and advanced concepts. If you're an advanced user already, I would encourage you to read this guide from start to finish anyway, because you will learn something new!
+This guide is written for both beginner and advanced Vimmers. It starts out with broad and simple concepts and ends with specific and advanced concepts. If you're an advanced user already, I encourage you to read this guide from start to finish anyway, because you may learn something new!
 
 ## How to Transition to Vim From Using a Different Text Editor
 

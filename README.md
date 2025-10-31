@@ -4,9 +4,9 @@
 
 *Learn Vim (the Smart Way)* is a guide to learn the good parts of Vim.
 
-There are many places to learn Vim: the `vimtutor` is a great place to start and the `help` manual has all the references you will ever need. However, the average user needs something more than `vimtutor` and less than the `help` manual. This guide attempts to bridge that gap by highlighting only the key features to learn the most useful parts of Vim in the least time possible.
+There are many places to learn Vim: the `vimtutor` is a great place to start and the `help` manual has all the references you will ever need. However, the average user needs something more than `vimtutor` and less than the `help` manual. This guide attempts to bridge that gap by highlighting only the key features to learn the most useful parts of Vim in the least amount of time possible.
 
-This guide is written for both beginner and advanced Vimmers. It starts out with broad and simple concepts and ends with specific and advanced concepts. If you're an advanced user already, I would encourage you to read this guide from start to finish anyway, because you will learn something new!
+This guide is written for both beginner and advanced Vimmers. It starts out with broad and simple concepts and ends with specific and advanced concepts. If you're an advanced user already, I encourage you to read this guide from start to finish anyway, because you may learn something new!
 
 ## I Want More Vim Tips!
 
