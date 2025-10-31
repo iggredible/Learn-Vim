@@ -2,11 +2,11 @@
 
 Insert mode is the default mode of many text editors. In this mode, what you type is what you get.
 
-However, that does not mean there isn't much to learn. Vim's insert mode contains many useful features. In this chapter, you will learn how to use these insert mode features in Vim to improve your typing efficiency.
+However, that does not mean there isn't much to learn. Vim's insert mode contains many useful features. In this chapter, you will learn how to use these features in Vim to improve your typing efficiency.
 
 ## Ways to Go to Insert Mode
 
-There are many ways to get into insert mode from the normal mode. Here are some of them:
+There are many ways to get into insert mode from normal mode. Here are some of them:
 
 ```
 i    Insert text before the cursor
@@ -21,11 +21,11 @@ gi   Insert text in same position where the last insert mode was stopped
 gI   Insert text at the start of line (column 1)
 ```
 
-Notice the lowercase / uppercase pattern. For each lowercase command, there is an uppercase counterpart. If you are new, don't worry if you don't remember the whole list above. Start with `i` and `o`. They should be enough to get you started. Gradually learn more over time.
+Notice the lowercase / uppercase pattern. For each lowercase command, there is an uppercase counterpart. If you are new to Vim, don't worry if you don't remember the whole list above. Start with `i` and `o`. They should be enough to get you started. Gradually learn more over time.
 
 ## Different Ways to Exit Insert Mode
 
-There are a few different ways to return to the normal mode while in the insert mode:
+There are a few different ways to return to normal mode while in insert mode:
 
 ```
 <Esc>     Exits insert mode and go to normal mode
@@ -33,9 +33,9 @@ Ctrl-[    Exits insert mode and go to normal mode
 Ctrl-C    Like Ctrl-[ and <Esc>, but does not check for abbreviation
 ```
 
-I find `<Esc>` key too far to reach, so I map my computer `<Caps-Lock>` to behave like `<Esc>`. If you search for Bill Joy's ADM-3A keyboard (Vi creator), you will see that the `<Esc>` key is not located on far top left like modern keyboards, but to the left of `q` key. This is why I think it makes sense to map  `<Caps lock>` to `<Esc>`.
+I find `<Esc>` key too far to reach, so I map my computer `<Caps-Lock>` to behave like `<Esc>`. If you search for the ADM-3A keyboard that Bill Joy (Vi creator) used, you will see that the `<Esc>` key is not located on the farmost top-left like on most modern keyboards, but on the left of `q` key. This is why I think it makes sense to map  `<Caps-Lock>` to `<Esc>`.
 
-Another common convention I have seen Vim users do is mapping `<Esc>` to `jj` or `jk` in insert mode. If you prefer this option add this one of those lines (or both) in your vimrc file.
+Another common habit I have seen Vim users do is map `<Esc>` to `jj` or `jk` in insert mode. If you prefer this option, add this one of those lines (or both) in your vimrc file.
 
 ```
 inoremap jj <Esc>
@@ -66,14 +66,14 @@ Ctrl-u    Delete the entire line
 
 Vim registers can store texts for future use. To insert a text from any named register while in insert mode, type `Ctrl-R` plus the register symbol. There are many symbols you can use, but for this section, let's cover only the named registers (a-z).
 
-To see it in action, first you need to yank a word to register a. Move your cursor on any word. Then type:
+To see it in action, first you need to yank a word into register a. Move your cursor on any word. Then type:
 
 ```
 "ayiw
 ```
 
-- `"a` tells Vim that the target of your next action will go to register a.
-- `yiw` yanks inner word. Review the chapter on Vim grammar for a refresher.
+- `"a` tells Vim that the target of your next action will go into register a.
+- `yiw` yanks the inner word. Review the chapter on Vim grammar for a refresher.
 
 Register a now contains the word you just yanked. While in insert mode, to paste the text stored in register a:
 
@@ -94,7 +94,7 @@ Ctrl-X Ctrl-E    Scroll down
 
 ## Autocompletion
 
-As mentioned above, if you press `Ctrl-X` from insert mode, Vim will enter a sub-mode. You can do text autocompletion while in this insert mode sub-mode. Although it is not as good as [intellisense](https://code.visualstudio.com/docs/editor/intellisense) or any other Language Server Protocol (LSP), but for something that is available right out of the box, it is a very capable feature.
+As mentioned above, if you press `Ctrl-X` from insert mode, Vim will enter a sub-mode. You can do text autocompletion while in this insert mode sub-mode. The text autocompletion in Vim is not as good as [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) or any other Language Server Protocol (LSP), but for something that is available right out of the box, it is a very capable feature.
 
 Here are some useful autocomplete commands to get started:
 
@@ -156,9 +156,9 @@ Ctrl-O D      Delete from current location to the end of the line
 
 ## Learn Insert Mode the Smart Way
 
-If you are like me and you come from another text editor, it can be tempting to stay in insert mode. However, staying in insert mode when you're not entering a text is an anti-pattern. Develop a habit to go to normal mode when your fingers aren't typing new text.
+If you are like me and you come from another text editor, it can be tempting to stay in insert mode. However, staying in insert mode when you're not entering a text is an anti-pattern. Make it a habit to return to normal mode when your fingers aren't typing new text.
 
-When you need to insert a text, first ask yourself if that text already exists. If it does, try to yank or move that text instead of typing it. If you have to use insert mode, see if you can autocomplete that text whenever possible. Avoid typing the same word more than once if you can.
+When you need to insert some text, first ask yourself if that text already exists. If it does, try to yank or move that text instead of typing it. If you have to use insert mode, see if you can autocomplete that text whenever possible. Avoid typing the same word more than once if you can.
 
 ## Link
 - Prev [Ch05. Moving in a File](./ch05_moving_in_file.md)
