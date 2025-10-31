@@ -6,7 +6,7 @@ In general, you should try to avoid redoing what you just did whenever possible.
 
 Just like its name, you can use the dot command by pressing the dot key (`.`).
 
-For example, if you want to replace all "let" with "const" in the following expressions:
+For example, if you want to replace all instances of "let" with "const" in the following expressions:
 
 ```
 let one = "1";
@@ -15,18 +15,18 @@ let three = "3";
 ```
 
 - Search with `/let` to go to the match.
-- Change with `cwconst<Esc>` to replace "let" with "const".
+- Do `cwconst<Esc>` to replace "let" with "const".
 - Navigate with `n` to find the next match using the previous search.
 - Repeat what you just did with the dot command (`.`).
-- Continue pressing `n . n .` until you replace every word.
+- Continue pressing `n . n .` until you replace every instance of "let".
 
-Here the dot command repeated the `cwconst<Esc>` sequence. It saved you from typing eight keystrokes in exchange for just one.
+Here, the dot command repeated the `cwconst<Esc>` sequence of normal mode commands. It saved you from typing eight keystrokes in exchange for just one.
 
 ## What Is a Change?
 
-If you look at the definition of the dot command (`:h .`), it says that the dot command repeats the last change. What is a change?
+If you look at the definition of the dot command (`:h .`), it says that the dot command repeats the last change. What qualifies as a _change_?
 
-Any time you update (add, modify, or delete) the content of the current buffer, you are making a change. The exceptions are updates done by command-line commands (the commands starting with `:`) do not count as a change.
+Any time you update (add, modify, or delete) the content of the current buffer, you are making a change. The exceptions are updates done by command-line commands (the commands starting with `:`); these do not count as a change.
 
 In the first example, `cwconst<Esc>` was the change. Now suppose you have this text:
 
@@ -34,7 +34,7 @@ In the first example, `cwconst<Esc>` was the change. Now suppose you have this t
 pancake, potatoes, fruit-juice,
 ```
 
-To delete the text from the start of the line to the next occurrence of a comma, first delete to the comma, then repeat twice it with `df,..`. 
+To delete the text from the start of the line to the next occurrence of a comma, first delete to the comma with `df,`, then repeat twice it with `..`. 
 
 Let's try another example:
 
@@ -42,9 +42,12 @@ Let's try another example:
 pancake, potatoes, fruit-juice,
 ```
 
-This time, your task is to delete the comma, not the breakfast items. With the cursor at the beginning of the line, go to the first comma, delete it, then repeat two more times with `f,x..` Easy, right? Wait a minute, it didn't work! Why?
+This time, your task is to delete the comma, not the breakfast items. With the cursor at the beginning of the line, go to the first comma and delete it with `f,x`, then repeat the operation two more times with `..` Easy, right? Wait a minute, it didn't work! Why?
 
-A change excludes motions because it does not update buffer content. The command `f,x` consisted of two actions: the command `f,` to move the cursor to "," and `x` to delete a character. Only the latter, `x`, caused a change. Contrast that with `df,` from the earlier example. In it, `f,` is a directive to the delete operator `d`, not a motion to move the cursor. The `f,` in `df,` and `f,x` have two very different roles.
+A change excludes motions, because they do not update buffer content. The command `f,x` consisted of two actions:
+- the command `f,` to move the cursor to ","
+- and `x` to delete a character.
+Only the latter, `x`, caused a change. Contrast that with `df,` from the earlier example. In it, `f,` is a directive to the delete operator `d`, not a motion to move the cursor. The `f,` in `df,` and `f,x` have two very different roles.
 
 Let's finish the last task. After you run `f,` then `x`, go to the next comma with `;` to repeat the latest `f`. Finally, use `.` to delete the character under the cursor. Repeat `; . ; .` until everything is deleted. The full command is `f,x;.;.`.
 
@@ -58,7 +61,7 @@ fruit-juice
 
 Let's add a comma at the end of each line. Starting at the first line, do `A,<Esc>j`. By now, you realize that `j` does not cause a change. The change here is only `A,`. You can move and repeat the change with `j . j .`. The full command is `A,<Esc>j.j.`.
 
-Every action from the moment you press the insert command operator (`A`) until you exit the insert command (`<Esc>`) is considered as a change.
+Each action from the moment you press the insert command operator (`A`) until you exit the insert command (`<Esc>`) is considered as part of a single change.
 
 ## Multi-line Repeat
 
@@ -77,7 +80,7 @@ let eight = "8";
 let nine = "9";
 ```
 
-Your goal is to delete all lines except the "foo" line. First, delete the first three lines with `d2j`, then to the line below the "foo" line. On the next line, use the dot command twice. The full command is `d2jj..`.
+Your goal is to delete all lines except the "foo" line. First, delete the first three lines with `d2j`, then go to the line below the "foo" line. On the next line, use the dot command twice. The full command is `d2jj..`.
 
 Here the change was `d2j`. In this context, `2j` was not a motion, but a part of the delete operator.
 
@@ -90,11 +93,11 @@ zlet zzthree = "3";
 let four = "4";
 ```
 
-Let's remove all the z's. Starting from the first character on the first line, visually select only the first z from the first three lines with blockwise visual mode (`Ctrl-Vjj`). If you're not familiar with blockwise visual mode, I will cover them in a later chapter. Once you have the three z's visually selected, delete them with the delete operator (`d`). Then move to the next word (`w`) to the next z. Repeat the change two more times (`..`). The full command is `Ctrl-vjjdw..`.
+Let's remove all the z's. Starting from the first character on the first line, visually select only the first z from the first three lines in blockwise visual mode (`Ctrl-Vjj`). If you're not familiar with blockwise visual mode, I will cover it in a later chapter. Once you have the three z's visually selected, delete them with the delete operator (`d`). Then move to the next word (`w`) to the next z. Repeat the change two more times (`..`). The full command is `Ctrl-vjjdw..`.
 
 When you deleted a column of three z's (`Ctrl-vjjd`), it was counted as a change. Visual mode operation can be used to target multiple lines as part of a change.
 
-If `Crtl-V` doesn't switch the window to VISUAL BLOCK mode, you can try (`Ctrl-Q`), read more at: [Ctrl-V don't work in WLS](https://vi.stackexchange.com/questions/12227/vim-v-visual-block-mode-not-working).
+If `Ctrl-V` doesn't switch the window to VISUAL BLOCK mode, you can try (`Ctrl-Q`), read more at: [Ctrl-V don't work in WLS](https://vi.stackexchange.com/questions/12227/vim-v-visual-block-mode-not-working).
 
 ## Including a Motion in a Change
 
@@ -114,9 +117,9 @@ When you are editing, always be on the lookout for motions that can do several t
 
 ## Learn the Dot Command the Smart Way
 
-The dot command's power comes from exchanging several keystrokes for one. It is probably not a profitable exchange to use the dot command for single key operations like `x`. If your last change requires a complex operation like `cgnconst<Esc>`, the dot command reduces nine keypresses into one, a very profitable trade-off.
+The dot command's power comes from exchanging several keystrokes for one. It is probably not a profitable exchange to use the dot command for single key operations like `x`. If your last change requires a complex operation like `cgnconst<Esc>`, the dot command aggregates nine keypresses into just one, a very profitable trade-off.
 
-When editing, think about repeatability. For example, if I need to remove the next three words, is it more economical to use `d3w` or to do `dw` then `.` two times? Will you be deleting a word again? If so, then it makes sense to use `dw` and repeat it several times instead of `d3w` because `dw` is more reusable than `d3w`. 
+When editing, think about repeatability. For example, if you needed to remove the next three words, would it be more economical to use `d3w` or to do `dw` then `.` two times? Will you be deleting a word again? If so, then it would make more sense to use `dw` and repeat it several times instead of `d3w`, because `dw` is more reusable than `d3w`. 
 
 The dot command is a versatile command for automating single changes. In a later chapter, you will learn how to automate more complex actions with Vim macros. But first, let's learn about registers to store and retrieve text.
 
