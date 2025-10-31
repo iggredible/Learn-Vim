@@ -1,8 +1,8 @@
 # Ch05. Moving in a File
 
-In the beginning, moving with a keyboard feels slow and awkward but don't give up! Once you get used to it, you can go anywhere in a file faster than using a mouse.
+In the beginning, moving with a keyboard may feel slow and awkward, but don't give up! Once you get used to it, you can go anywhere in a file faster than if you were using a mouse.
 
-In this chapter, you will learn the essential motions and how to use them efficiently. Keep in mind that this is **not** the entire motion that Vim has. The goal here is to introduce useful motions to become productive quickly. If you need to learn more, check out `:h motion.txt`.
+In this chapter, you will learn the essential motions and how to use them efficiently. Keep in mind that this does **not** cover the entire range of motions that Vim has. The goal here is to introduce useful motions to become productive quickly. If you need to learn more, check out `:h motion.txt`.
 
 ## Character Navigation
 
@@ -19,7 +19,7 @@ gk  Up in a soft-wrapped line
 
 You can also move with directional arrows. If you are just starting, feel free to use any method you're most comfortable with.
 
-I prefer `hjkl` because my right hand can stay in the home row. Doing this gives me shorter reach to surrounding keys. To get used to `hjkl`, I actually disabled the arrow buttons when starting out by adding these in `~/.vimrc`:
+I prefer `hjkl` because my right hand can stay in the home row. Doing this decreases the distance from my fingers to the keys I need. To get used to `hjkl`, I actually disabled the arrow buttons when starting out, by adding these in `~/.vimrc`:
 
 ```
 noremap <Up> <NOP>
@@ -30,7 +30,7 @@ noremap <Right> <NOP>
 
 There are also plugins to help break this bad habit. One of them is [vim-hardtime](https://github.com/takac/vim-hardtime). To my surprise, it took me less than a week to get used to `hjkl`.
 
-If you wonder why Vim uses `hjkl` to move, this is because Lear-Siegler ADM-3A terminal where Bill Joy wrote Vi, didn't have arrow keys and used `hjkl` as left/down/up/right.*
+If you wonder why Vim uses `hjkl` to move, this is because the Lear-Siegler ADM-3A terminal, which Bill Joy used to write Vi, didn't have arrow keys and used `hjkl` as left/down/up/right.*
 
 ## Relative Numbering
 
@@ -42,7 +42,7 @@ set relativenumber number
 
 This displays my current line number and relative line numbers.
 
-It is easy why having a number on the left column is useful, but some of you may ask how having relative numbers on the left column may be useful. Having a relative number allows me to quickly see how many lines apart my cursor is from the target text. With this, I can easily spot that my target text is 12 lines below me so I can do `d12j` to delete them. Otherwise, if I'm on line 69 and my target is on line 81, I have to do mental calculation (81 - 69 = 12). Doing math while editing takes too much mental resources. The less I have to think about where I need to go, the better.
+It is easy to see why having a number on the left column is useful, but some of you may be asking how having relative numbers on the left column would be useful. Having a relative number allows me to quickly see how many lines apart my cursor is from the target text. With this, I can easily see that my target text is 12 lines below me, so I can do `d12j` to delete it. Otherwise, if I'm on line 69 and my target is on line 81, I have to do mental math (81 - 69 = 12). Doing math while editing takes too much mental resources. The less I have to think about where I need to go, the better.
 
 This is 100% personal preference. Experiment with `relativenumber` / `norelativenumber`, `number` / `nonumber` and use whatever you find most useful!
 
@@ -75,7 +75,7 @@ ge    Move backward to end of the previous word
 gE    Move backward to end of the previous WORD
 ```
 
-So what are the similarities and differences between a word and a WORD? Both word and WORD are separated by blank characters. A word is a sequence of characters containing *only* `a-zA-Z0-9_`. A WORD is a sequence of all characters except white space (a white space means either space, tab, and EOL). To learn more, check out `:h word` and `:h WORD`.
+So what are the similarities and differences between a word and a WORD? Both word and WORD are separated by blank characters. A word is a sequence of characters containing *only* `a-zA-Z0-9_`. A WORD is a sequence of all characters except whitespace (whitespace means either space, tab, and EOL). To learn more, check out `:h word` and `:h WORD`.
 
 For example, suppose you have:
 
@@ -83,9 +83,9 @@ For example, suppose you have:
 const hello = "world";
 ```
 
-With your cursor at the start of the line, to go to the end of the line with `l`, it will take you 21 key presses. Using `w`, it will take 6. Using `W`, it will only take 4. Both word and WORD are good options to travel short distance.
+With your cursor at the start of the line, going to the end of the line with `l` will cost you 21 key presses. Using `w`, it will cost 6. Using `W`, it will cost only 4. Both word and WORD are good options to travel short distances.
 
-However, you can get from "c" to ";" in one keystroke with current line navigation.
+However, you can get from "c" to ";" in one keystroke with *current line navigation*.
 
 ## Current Line Navigation
 
@@ -167,7 +167,7 @@ Check out `:h sentence` and `:h paragraph` to learn more.
 
 ## Match Navigation
 
-Programmers write and edit codes. Codes typically use parentheses, braces, and brackets. You can easily get lost in them. If you're inside one, you can jump to the other pair (if it exists) with `%`. You can also use this to find out whether you have matching parentheses, braces, and brackets.
+Programmers write and edit code. Code syntax typically uses parentheses, braces, and brackets. You can easily get lost in them. If you're inside a pair of parentheses, for example, you can jump to one parenthesis (if it exists) with `%`. You can also use this to find out whether you have matching parentheses, braces, and brackets.
 
 ```
 %    Navigate to another match, usually works for (), [], {}
@@ -190,7 +190,7 @@ I personally like to complement `%` with visual indicators plugins like [vim-rai
 
 You can jump to line number `n` with `nG`. For example, if you want to jump to line 7, use `7G`. To jump to the first line, use either `1G` or `gg`. To jump to the last line, use `G`.
 
-Often you don't know exactly what line number your target is, but you know it's approximately at 70% of the whole file. In this case, you can do `70%`. To jump halfway through the file, you can do `50%`.
+Often you don't know exactly what line number your target is, but you know it's at approximately 70% of the whole file. In this case, you can do `70%`. To jump halfway through the file, you can do `50%`.
 
 ```
 gg    Go to the first line
@@ -267,7 +267,7 @@ nnoremap <esc><esc> :noh<return><esc>
 
 You can quickly search for the text under the cursor with `*` to search forward and `#` to search backward. If your cursor is on the string "one", pressing `*` will be the same as if you had done `/\<one\>`.
 
-Both `\<` and `\>` in `/\<one\>` mean whole word search. It does not match "one" if it is a part of a bigger word. It will match for the word "one" but not "onetwo".  If your cursor is over "one" and you want to search forward to match whole or partial words like "one" and "onetwo", you need to use `g*` instead of `*`.
+The `\<` and `\>` in `/\<one\>` mean _whole word search_. It does not match "one" if it is a part of a bigger word. It will match for the word "one" but not "onetwo".  If your cursor is over "one" and you want to search forward to match whole or partial words like "one" and "onetwo", you need to use `g*` instead of `*`.
 
 ```
 *     Search for whole word under cursor forward
@@ -290,9 +290,9 @@ There is a difference between marking with lowercase letters (a-z) and uppercase
 
 Let's talk about local marks. Each buffer can have its own set of local marks. If I have two files opened, I can set a mark "a" (`ma`)  in the first file and another mark "a" (`ma`) in the second file.
 
-Unlike local marks where you can have a set of marks in each buffer, you only get one set of global marks. If you set `mA` inside `myFile.txt`, the next time you run `mA` in a different file, it will overwrite the first "A" mark. One advantage of global marks is you can jump to any global mark even if you are inside a completely different project. Global marks can travel across files.
+Unlike local marks where you can have a set of marks in each buffer, you only get one set of global marks. If you set `mA` inside `myFile.txt`, the next time you run `mA` in a different file, the first "A" mark will be overwritten. One advantage of global marks is you can jump to any global mark even if you are inside a completely different project. Global marks can travel across files.
 
-To view all marks, use `:marks`. You may notice from the marks list there are more marks other than `a-zA-Z`. Some of them are:
+To view all marks, use `:marks`. You may notice from the marks list that there are more marks than just `a-zA-Z`. Some of them are:
 
 ```
 ''    Jump back to the last line in current buffer before jump
@@ -304,7 +304,7 @@ To view all marks, use `:marks`. You may notice from the marks list there are mo
 `0    Jump back to the last edited file when exiting vim
 ```
 
-There are more marks than the ones listed above. I won't cover them here because I think they are rarely used, but if you're curious, check out `:h marks`.
+There are more marks than the ones listed above. I won't cover them here, because I think they are rarely used. But if you're curious, check out `:h marks`.
 
 ## Jump
 
@@ -334,25 +334,25 @@ H       Go to the top line of displayed window
 :tag    Jump to tag definition
 ```
 
-I don't recommend memorizing this list. A good rule of thumb is, any motion that moves farther than a word and current line navigation is probably a jump. Vim keeps track of where you've been when you move around and you can see this list inside `:jumps`. 
+I don't recommend memorizing this list. A good rule of thumb is this: any motion that moves farther than a word and current line navigation is probably a jump. Vim keeps track of where you've been when you move around; you can see this list inside `:jumps`. 
 
 For more, check out `:h jump-motions`.
 
-Why are jumps useful? Because you can navigate the jump list with `Ctrl-O` to move up the jump list and `Ctrl-I` to move down the jump list. `hjkl` are not "jump" commands, but you can manually add the current location to jump list with `m'` before movement. For example, `m'5j` adds current location to jump list and goes down 5 lines, and you can come back with `Ctrl-O`. You can jump across different files, which I will discuss more in the next part.
+Why are jumps useful? Because you can navigate the jump list easily; just do `Ctrl-O` to move up the jump list and `Ctrl-I` to move down it. `hjkl` are not "jump" commands. But you can manually add the current location to the jump list with `m'` before the movement. For example, `m'5j` adds your current location in the file to the jump list and goes down 5 lines; you can come back with `Ctrl-O`. You can jump across different files, a motion that I will discuss more in the next part.
 
 ## Learn Navigation the Smart Way
 
-If you are new to Vim, this is a lot to learn. I do not expect anyone to remember everything immediately. It takes time before you can execute them without thinking.
+If you are new to Vim, this is a lot to learn. I do not expect anyone to remember everything immediately. It takes time before you can execute these motions without even thinking about it.
 
 I think the best way to get started is to memorize a few essential motions. I recommend starting out with these 10 motions: `h, j, k, l, w, b, G, /, ?, n`. Repeat them sufficiently until you can use them without thinking.
 
-To improve your navigation skill, here are my suggestions:
-1. Watch for repeated actions. If you find yourself doing `l` repeatedly, look for a motion that will take you forward faster. You will find that you can use `w`. If you catch yourself repeatedly doing `w`, look if there is a motion that will take you across the current line quickly. You will find that you can use the `f`. If you can describe your need succinctly, there is a good chance Vim has a way to do it.
+To improve your navigation skills in Vim, here are my suggestions:
+1. Watch for repeated actions. If you find yourself doing `l` repeatedly, look for a motion that will take you forward faster. You will find that you can use `w`. If you catch yourself repeatedly doing `w`, look into whether or not there is a motion that will take you across the current line more quickly. You will find that you can do `f`. If you can describe your need succinctly, there is a good chance Vim has a way to do it.
 2. Whenever you learn a new move, spend some time until you can do it without thinking.
 
-Finally, realize that you do not need to know every single Vim command to be productive. Most Vim users don't. I don't. Learn the commands that will help you accomplish your task at that moment.
+Finally, realize that you do not need to know every single Vim command to be productive. Most Vim users don't. I don't. Learn the commands that will help you accomplish your task in any given moment of your text-editing session.
 
-Take your time. Navigation skill is a very important skill in Vim. Learn one small thing every day and learn it well.
+Take your time. Navigation is a very important skill in Vim. Learn one small thing every day and learn it well.
 
 ## Link
 - Prev [Ch04. Vim Grammar](./ch04_vim_grammar.md)
