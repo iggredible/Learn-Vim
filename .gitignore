@@ -24,3 +24,6 @@ tags
 
 # mdBook build output
 book/output/
+dist/
+
+book/src/ch*.md
