@@ -216,13 +216,23 @@ First, make sure you have [fzf](https://github.com/junegunn/fzf) and [ripgrep](h
 
 Ripgrep is a search tool much like grep (hence the name). It is generally faster than grep and has many useful features. Fzf is a general-purpose command-line fuzzy finder. You can use it with any commands, including ripgrep. Together, they make a powerful search tool combination.
 
-Fzf does not use ripgrep by default, so we need to tell fzf to use ripgrep by defining a `FZF_DEFAULT_COMMAND` variable. In my `.zshrc` (`.bashrc` if you use bash), I have these:
+Fzf does not use ripgrep by default, so we need to set the `FZF_DEFAULT_COMMAND` variable.
+
+For Zsh (.zshrc) or Bash (.bashrc):
 
 ```
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m'
 fi
+```
+
+For Fish Shell (~/.config/fish/config.fish):
+```
+if command -q rg
+    set -gx FZF_DEFAULT_COMMAND 'rg --files'
+    set -gx FZF_DEFAULT_OPTS '-m'
+end
 ```
 
 Pay attention to `-m` in `FZF_DEFAULT_OPTS`. This option allows us to make multiple selections with `<Tab>` or `<Shift-Tab>`. You don't need this line to make fzf work with Vim, but I think it is a useful option to have. It will come in handy when you want to perform search and replace in multiple files which I'll cover in just a little. The fzf command accepts many more options, but I won't cover them here. To learn more, check out [fzf's repo](https://github.com/junegunn/fzf#usage) or `man fzf`. At minimum you should have `export FZF_DEFAULT_COMMAND='rg'`.
