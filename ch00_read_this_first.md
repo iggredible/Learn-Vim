@@ -79,7 +79,7 @@ In general, whenever a passage mentions a vimrc option, just add that option int
 
 ## Future, Errors, Questions
 
-Expect more updates in the future. If you find any errors or have any questions, please feel free to reach out.
+Expect more updates in the future. If you find any errors or have any questions, please feel free to reach out. The repository is at <https://github.com/iggredible/Learn-Vim>
 
 I also have planned a few more upcoming chapters, so stay tuned!
 
